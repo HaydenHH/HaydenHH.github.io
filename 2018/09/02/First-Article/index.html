@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Article [ ART JOURNAL ]</title>
+  <title>First Article [ Fountain ]</title>
   
     <!-- stylesheets list from config.yml -->
     
@@ -34,7 +34,7 @@
     
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"> Hayden </a>
+      <a class="navbar-brand" href="#"> Fountain </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -56,16 +56,18 @@
 
 <div id="content-outer" class="container-fluid">
   <div id="content-inner">
-    
-<article id="post">
-  <h1 class="article-title">First Article</h1>
-  <h1 id="This-is-my-first-article"><a href="#This-is-my-first-article" class="headerlink" title="This is my first article"></a>This is my first article</h1><p><em>虽然看起来很难，但是总是得有开始</em><br><a id="more"></a><br>小刘说要建一个社会人相亲相爱创业小组的网站，这很好。<br>不过，好像很难！<br><strong>你可能要学会用终端命令来上传你的博客或者作品！</strong></p>
+    <div id="post-container" class="container-fluid">
+
+	<article id="post" class="col-sm-12 col-md-8">
+	  <h1 class="article-title">First Article</h1>
+	  <h1 id="This-is-my-first-article"><a href="#This-is-my-first-article" class="headerlink" title="This is my first article"></a>This is my first article</h1><p><em>虽然看起来很难，但是总是得有开始</em><br><a id="more"></a><br>小刘说要建一个社会人相亲相爱创业小组的网站，这很好。<br>不过，好像很难！<br><strong>你可能要学会用终端命令来上传你的博客或者作品！</strong></p>
 <hr>
 <p>总之先上传一个试试。</p>
 
-     <p></p>
-</article>
-<div id="disqus_thread"></div>
+	     <p></p>
+	</article>
+	<div id="disqus_thread"></div>
+</div>
 <script>
 
 /**
@@ -77,7 +79,9 @@ this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL va
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
 (function() { // DON'T EDIT BELOW THIS LINE
+
 var d = document, s = d.createElement('script');
 s.src = 'https://hayden-2.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());

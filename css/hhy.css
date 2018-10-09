@@ -2,6 +2,7 @@
 body {
   padding: 0px;
   margin: 0;
+  color: #1A282C;
 }
 #menu-inner #menu-nav button {
   margin-right: 30px;
@@ -50,8 +51,34 @@ body {
   font-size: 0.8em;
   display: inline-block;
 }
+#post {
+  margin-top: 50px;
+  padding: 10px 30px;
+  background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
+  background-size: 100% 3%;
+  line-height: 35px;
+}
+#post h1 {
+  font-size: 3.2em;
+  text-transform: uppercase;
+}
+#post blockquote {
+  font-size: 1em;
+  color: #3B4F50;
+  vertical-align: baseline;
+  font-style: italic;
+  display: block;
+  padding: 10px 30px;
+  padding-top: 15px;
+  background-color: #E0E0DE;
+  border-left: 7px solid #1A282C;
+}
 #post .article-title {
-  font-size: 50px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #9BAAB4;
+}
+#post img {
+  width: 100%;
 }
 #bottom-outer {
   text-align: center;
