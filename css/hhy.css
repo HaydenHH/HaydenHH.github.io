@@ -1,7 +1,4 @@
-.cotainer-fuild {
-  padding: 0;
-  margin: 0;
-}
+@whi +:#E3EAED;
 body {
   padding: 0px;
   margin: 0;
@@ -9,15 +6,53 @@ body {
 #menu-inner #menu-nav button {
   margin-right: 30px;
 }
-#recent-posts .recent-post-item {
-  border: 1px solid red;
+#recent-posts .block-title {
+  display: block;
 }
-#recent-posts .recent-post-preview {
+#recent-posts .recent-post-item {
+  padding: 5px 10px 15px 5px;
+  margin-top: 5px;
+  border: 1px solid #9BAAB4;
+  transition: 0.87s;
+}
+#recent-posts .recent-post-item:hover {
+  border: 1px solid #F2F3F3;
+}
+#recent-posts .recent-post-item:hover .recent-post-info > a {
+  text-decoration: underline;
+}
+#recent-posts .recent-post-item:hover .recent-post-info > a:before {
+  content: 'read';
   display: inline-block;
+  font-size: 0.5em;
+  transform: translateX(-10px);
+}
+#recent-posts .recent-post-item .recent-post-preview .post-summary {
+  font-size: 0.8em;
+}
+#recent-posts .recent-post-item .recent-post-preview .post-summary span {
+  font-size: 1.5em;
+  font-weight: border;
+}
+#recent-posts .recent-post-info {
+  text-align: right;
+}
+#recent-posts .recent-post-info > a {
+  font-size: 1.5em;
+  color: #1A282C;
+  font-style: italic;
+}
+#recent-posts .recent-post-info time {
+  font-size: 0.65em;
+  font-style: italic;
 }
 #recent-posts .recent-post-author {
+  font-size: 0.8em;
   display: inline-block;
 }
 #post .article-title {
   font-size: 50px;
+}
+#bottom-outer {
+  text-align: center;
 }

@@ -1,7 +1,8 @@
-.cotainer-fuild{
-	padding: 0;
-	margin: 0;
-}
+@dark:#1A282C;
+@grey-light:#9BAAB4;
+@light:#CAD8DF;
+@whi:#F2F3F3;
+@whi+:#E3EAED;
 
 body {
   padding: 0px;
@@ -18,13 +19,56 @@ body {
 }
 
 #recent-posts{
+	.block-title{
+		display: block;
+	}
 	.recent-post-item{
-		border: 1px solid red;
+		padding: 5px 10px 15px 5px;
+		margin-top: 5px;
+		border: 1px solid @grey-light;
+		transition: 0.87s;
+		&:hover{
+			// background-color: @whi;
+			border: 1px solid @whi;
+
+			.recent-post-info > a{
+				
+				&:before{
+					content: 'read';
+					display: inline-block;
+					font-size: 0.5em;
+					
+					transform: translateX(-10px);
+				}
+				text-decoration: underline;
+			}
+		}
+		.recent-post-preview{
+			.post-summary{
+				font-size: 0.8em;
+				 span{
+					font-size: 1.5em;
+					font-weight: border;
+				}
+			}
+			
+		}
 	}
-	.recent-post-preview{
-		display: inline-block;
+	.recent-post-info{
+		text-align: right;
+		& > a{
+			font-size: 1.5em;
+			color:@dark;
+			font-style: italic;
+		}
+		time{
+			font-size: 0.65em;
+			font-style: italic;
+		}
 	}
+	
 	.recent-post-author{
+		font-size: 0.8em;
 		display: inline-block;
 	}
 }
@@ -33,4 +77,8 @@ body {
 	.article-title{
 		font-size: 50px;
 	}
+}
+
+#bottom-outer{
+	text-align: center;
 }
