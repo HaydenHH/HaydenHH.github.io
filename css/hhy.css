@@ -14,6 +14,9 @@ body {
 #menu-inner #menu-nav button {
   margin-right: 30px;
 }
+#content-inner {
+  overflow: hidden;
+}
 #recent-posts .block-title {
   display: block;
 }
@@ -26,11 +29,14 @@ body {
 #recent-posts .recent-post-item:hover {
   border: 1px solid #F2F3F3;
 }
+#recent-posts .recent-post-item:hover .recent-post-placeholder > span {
+  color: #6e7878;
+}
 #recent-posts .recent-post-item:hover .recent-post-info > a {
   text-decoration: underline;
 }
 #recent-posts .recent-post-item:hover .recent-post-info > a:before {
-  content: 'read';
+  content: 'read >>';
   display: inline-block;
   font-size: 0.5em;
   transform: translateX(-10px);
@@ -46,6 +52,15 @@ body {
   height: 200px;
   background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
   background-size: 100% 5%;
+  overflow: hidden;
+}
+#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span,
+#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span a,
+#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder span span {
+  height: 100%;
+  font-size: .3em;
+  font-style: italic;
+  color: #d7dbdb;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary {
   font-size: 0.8em;
@@ -71,7 +86,20 @@ body {
   display: inline-block;
 }
 #post-list {
+  transform: translateX(85%);
+  transition: 1.2s ease-out;
   text-align: right;
+}
+#post-list:hover {
+  transform: translateX(0%);
+  transition: 0.2s ease-in;
+}
+#post-list:hover h2 {
+  border-color: #9BAAB4;
+}
+#post-list h2 {
+  transition: .5s;
+  border-left: 15px double #1A282C;
 }
 #post-list > ul {
   background-color: #F2F3F3;
@@ -81,14 +109,19 @@ body {
   padding: 0;
 }
 #post-list > ul .post-list-item {
-  padding: 20px 10px;
+  padding: 5px 10px;
 }
 #post-list > ul .post-list-item:nth-child(2n) {
   background-color: #e5e7e7;
 }
+#post-list > ul .post-list-item:nth-child(2n) a {
+  color: #3e5f69;
+}
 #post-list > ul .post-list-item a {
   color: #537f8c;
   text-decoration: none;
+  font-size: .8em;
+  user-select: none;
 }
 #post-list > ul .post-list-item a:hover {
   color: #000000;
@@ -97,7 +130,7 @@ body {
   margin-top: 50px;
   padding: 10px 30px;
   background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
-  background-size: 100% 1%;
+  background-size: 100% 3%;
   line-height: 35px;
 }
 #post h1 {
