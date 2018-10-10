@@ -76,7 +76,7 @@ body {
 					height: 100%;
 					font-size: .3em;
 					font-style: italic;
-					color:darken(@whi+, 10%);
+					color:darken(@whi+, 30%);
 				}
 			}
 			.post-summary{
@@ -110,9 +110,13 @@ body {
 // recent-post -----------------------------------------------------------
 
 #post-list{
+	&>span{
+		position: absolute;
+		left: -50px;
+	}
 	transform:translateX(85%); 
 	transition: 1.2s ease-out;
-	&:hover{
+	&:hover,&:active{
 		transform:translateX(0%); 
 		transition: .20s ease-in;
 		h2{
@@ -120,14 +124,15 @@ body {
 		}
 	}
 	
-	text-align: right;
+	
 	h2{
 		transition: .5s;
 		border-left: 15px double @dark;
 	}
 	& > ul{
-		background-color: @whi;
+		clear: both;
 		text-align: right;
+		background-color: @whi;
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -135,7 +140,7 @@ body {
 			&:nth-child(2n){
 				background-color: darken(@whi, 5%) ;
 				a{
-					color:lighten(@dark, 19%);
+					color:lighten(@dark, 36%);
 				}
 			}
 			
@@ -158,8 +163,8 @@ body {
 	padding: 10px 30px;
 	background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
 	// -webkit-background-size: 1%;
-	background-size: 100% 3%;
-	line-height: 35px;
+	background-size: 100% 2%;
+	line-height: 1.7em;
 	h1{
 		font-size: 3.2em;
 		text-transform: uppercase;

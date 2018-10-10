@@ -60,7 +60,7 @@ body {
   height: 100%;
   font-size: .3em;
   font-style: italic;
-  color: #d7dbdb;
+  color: #a2aaaa;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary {
   font-size: 0.8em;
@@ -88,13 +88,18 @@ body {
 #post-list {
   transform: translateX(85%);
   transition: 1.2s ease-out;
-  text-align: right;
 }
-#post-list:hover {
+#post-list > span {
+  position: absolute;
+  left: -50px;
+}
+#post-list:hover,
+#post-list:active {
   transform: translateX(0%);
   transition: 0.2s ease-in;
 }
-#post-list:hover h2 {
+#post-list:hover h2,
+#post-list:active h2 {
   border-color: #9BAAB4;
 }
 #post-list h2 {
@@ -102,8 +107,9 @@ body {
   border-left: 15px double #1A282C;
 }
 #post-list > ul {
-  background-color: #F2F3F3;
+  clear: both;
   text-align: right;
+  background-color: #F2F3F3;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -115,7 +121,7 @@ body {
   background-color: #e5e7e7;
 }
 #post-list > ul .post-list-item:nth-child(2n) a {
-  color: #3e5f69;
+  color: #5e919f;
 }
 #post-list > ul .post-list-item a {
   color: #537f8c;
@@ -130,8 +136,8 @@ body {
   margin-top: 50px;
   padding: 10px 30px;
   background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
-  background-size: 100% 3%;
-  line-height: 35px;
+  background-size: 100% 2%;
+  line-height: 1.7em;
 }
 #post h1 {
   font-size: 3.2em;
