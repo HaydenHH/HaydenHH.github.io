@@ -6,6 +6,16 @@
 @whi+:#E3EAED;
 @quo:#E0E0DE;
 
+
+.link{
+	color:lighten(@dark, 30%);
+	text-decoration: none;
+	&:hover{
+		color: darken(@dark, 100%);
+	}
+}
+
+
 body {
   padding: 0px;
   margin: 0;
@@ -33,9 +43,7 @@ body {
 		&:hover{
 			// background-color: @whi;
 			border: 1px solid @whi;
-
 			.recent-post-info > a{
-				
 				&:before{
 					content: 'read';
 					display: inline-block;
@@ -47,6 +55,17 @@ body {
 			}
 		}
 		.recent-post-preview{
+			padding-left: 5px;
+			img{
+				width: 100%;
+			}
+			.recent-post-placeholder{
+				margin-left: 15px;
+				height: 200px;
+				background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
+				// -webkit-background-size: 1%;
+				background-size: 100% 5%;
+			}
 			.post-summary{
 				font-size: 0.8em;
 				 span{
@@ -75,6 +94,30 @@ body {
 		display: inline-block;
 	}
 }
+// recent-post -----------------------------------------------------------
+
+#post-list{
+	text-align: right;
+	& > ul{
+		background-color: @whi;
+		text-align: right;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		.post-list-item{
+			&:nth-child(2n){
+				background-color: darken(@whi, 5%) ;
+			}
+			
+			padding: 20px 10px;
+			a{
+			 	.link;
+			}
+		}
+		
+	}
+}
+
 #post-container{
 
 }
@@ -83,7 +126,7 @@ body {
 	padding: 10px 30px;
 	background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
 	// -webkit-background-size: 1%;
-	background-size: 100% 3%;
+	background-size: 100% 1%;
 	line-height: 35px;
 	h1{
 		font-size: 3.2em;
