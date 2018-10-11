@@ -9,17 +9,22 @@ window.onload = function(){
 		$(this).parent('.recent-post-info').parent('.recent-post-item').css({
 			'background':'#ddd',
 			'transition':'0.3s ease-out'
-	})
-		
-	}, function() {
-		$(this).parent('.recent-post-info').parent('.recent-post-item').css({
-			'background':'#F2F3F3',
-			'transition':'0.78s'
-	})
-	});
-	}, function() {
-		$(this).css('background','white')
+		})
+		}, function() {
+			$(this).parent('.recent-post-info').parent('.recent-post-item').css({
+				'background':'#F2F3F3',
+				'transition':'0.78s'
+			})
+		});
+		}, function() {
+			$(this).css('background','white')
 	});
 	
 	
+
+	$('#post-list').popover('toggle')
+
+
+
+
 }
