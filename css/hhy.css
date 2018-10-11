@@ -90,12 +90,14 @@ body {
   transition: 1.2s ease-out;
 }
 #post-list:hover,
-#post-list:active {
+#post-list:active,
+#post-list:focus {
   transform: translateX(0%);
   transition: 0.2s ease-in;
 }
 #post-list:hover h2,
-#post-list:active h2 {
+#post-list:active h2,
+#post-list:focus h2 {
   border-color: #9BAAB4;
 }
 #post-list h2 {
