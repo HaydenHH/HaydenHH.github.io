@@ -86,12 +86,8 @@ body {
   display: inline-block;
 }
 #post-list {
-  transform: translateX(85%);
+  transform: translateX(90%);
   transition: 1.2s ease-out;
-}
-#post-list > span {
-  position: absolute;
-  left: -50px;
 }
 #post-list:hover,
 #post-list:active {
