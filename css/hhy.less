@@ -1,28 +1,32 @@
 @dark:#1A282C;
 @dark-:#3B4F50;
-@grey-light:#9BAAB4;
+@grey-light:#8D8B81;
+@yel:#EDC329;
+@bro:#BB8B15;
 @light:#CAD8DF;
 @whi:#F2F3F3;
 @whi+:#E3EAED;
 @quo:#E0E0DE;
 
 
-.link{
-	color:lighten(@dark, 30%);
-	text-decoration: none;
-	&:hover{
-		color: darken(@dark, 100%);
-	}
-}
+
 
 
 body {
   padding: 0px;
   margin: 0;
   color:@dark;
+  p::selection,h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,a::selection,div::selection,span::selection{
+  	color:white;
+  	background-color: @yel;
+  }
 }
 
+
 #menu-inner{
+	& > nav{
+		background-color: @yel;
+	}
 	#menu-nav{
 		button{
 			margin-right: 30px;
@@ -35,6 +39,10 @@ body {
 }
 
 #recent-posts{
+	margin-top: 5px;
+	& > h1{
+		.hL;
+	}
 	.block-title{
 		display: block;
 	}
@@ -42,26 +50,25 @@ body {
 		padding: 5px 10px 15px 5px;
 		margin-top: 5px;
 		border: 1px solid @grey-light;
-		transition: 0.87s;
-		&:hover{
+		transition: 0.5s;
+		&:hover,&:focus,&:active{
 			// background-color: @whi;
 			border: 1px solid @whi;
+			border-top: 10px solid @yel;
 			.recent-post-placeholder > span{
 				color:darken(@whi+, 50%);
 			}
 			.recent-post-info > a{
-				&:before{
-					content: 'read >>';
-					display: inline-block;
-					font-size: 0.5em;
-					
-					transform: translateX(-10px);
-				}
+				.read;
 				text-decoration: underline;
 			}
 		}
 		.recent-post-preview{
 			padding-left: 5px;
+			.recent-post-img{
+				height: 250px;
+				overflow:hidden;
+			}
 			img{
 				width: 100%;
 			}
@@ -81,9 +88,30 @@ body {
 			}
 			.post-summary{
 				font-size: 0.8em;
+				font-style: italic;
+
 				 span{
-					font-size: 1.5em;
+					font-size: 1.2em;
 					font-weight: border;
+					margin-top: 25px;
+
+				}
+				p{
+					margin-top: 5px;
+				}
+				a{
+					color:@bro;
+					padding: 2px 30px;
+					border: 1px solid @bro;
+					transition: .3s;
+
+					&:hover{
+						text-decoration: none;
+						color:@whi;
+						background-color: @yel;
+						border: 1px solid @yel;
+
+					}
 				}
 			}
 			
@@ -111,20 +139,21 @@ body {
 
 #post-list{
 	
-	transform:translateX(90%); 
-	transition: 1.2s ease-out;
-	&:active, &:focus{
-		transform:translateX(0%); 
-		transition: .20s ease-in;
-		h2{
-			border-color:@grey-light;
-		}
-	}
+	// transform:translateX(90%); 
+	// transition: 1.2s ease-out;
+	// &:active, &:focus{
+	// 	transform:translateX(0%); 
+	// 	transition: .20s ease-in;
+	// 	h2{
+	// 		border-color:@grey-light;
+	// 	}
+	// }
 	
 	
 	h2{
 		transition: .5s;
 		border-left: 15px double @dark;
+		.hL
 	}
 	& > ul{
 		clear: both;
@@ -134,15 +163,22 @@ body {
 		margin: 0;
 		padding: 0;
 		.post-list-item{
+			padding: 5px 10px;
+			transition: .1s ease-in;
 			&:nth-child(2n){
 				background-color: darken(@whi, 5%) ;
 				a{
 					color:lighten(@dark, 36%);
 				}
 			}
-			
-			padding: 5px 10px;
+			&:hover{
+				background-color: @yel ;
+				a{
+					.read;
+				}
+			}
 			a{
+
 			 	.link;
 			 	font-size: .8em;
 			 	user-select: none;
@@ -156,14 +192,16 @@ body {
 
 }
 #post{
-	margin-top: 50px;
+
+	border-top: 30px solid @yel;
 	padding: 10px 30px;
+	padding-bottom: 150px;
 	background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
 	// -webkit-background-size: 1%;
 	background-size: 100% 2%;
 	line-height: 1.7em;
 	h1{
-		font-size: 3.2em;
+		font-size: 2.5em;
 		text-transform: uppercase;
 	}
 	blockquote{
@@ -189,4 +227,32 @@ body {
 
 #bottom-outer{
 	text-align: center;
+}
+
+//---------------------------------------------------------------------------------------------
+
+.link{
+	color:lighten(@dark, 30%);
+	text-decoration: none;
+	&:hover{
+		color: darken(@dark, 100%);
+	}
+}
+
+.hL{
+	border-left: 15px double @yel;
+	transition: .3s;
+	&:hover{
+		border-left: 5px solid @yel;
+	}
+}
+
+.read{
+	&:before{
+		content: 'read >>';
+		display: inline-block;
+		font-size: 0.5em;
+		
+		transform: translateX(-10px);
+	}
 }
