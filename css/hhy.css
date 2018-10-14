@@ -1,5 +1,6 @@
 @whi +:#E3EAED;
 body {
+  background-color: #EDC329;
   padding: 0px;
   margin: 0;
   color: #1A282C;
@@ -22,11 +23,35 @@ body span::selection {
 #menu-inner #menu-nav button {
   margin-right: 30px;
 }
+.page-nav {
+  margin: 20px 0;
+}
+.page-nav a,
+.page-nav span {
+  color: #F2F3F3;
+  margin-right: 2px;
+}
+.page-nav .page-number,
+.page-nav .extend {
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-style: italic;
+  font-size: .8em;
+  text-decoration: none;
+  background-color: #EDC329;
+}
+.page-nav .page-number:hover,
+.page-nav .extend:hover {
+  color: #1A282C;
+}
+.page-nav .current {
+  background-color: #8D8B81;
+}
+.page-nav .current:hover {
+  color: #F2F3F3;
+}
 #content-inner {
   overflow: hidden;
-}
-#recent-posts {
-  margin-top: 5px;
 }
 #recent-posts > h1 {
   border-left: 15px double #EDC329;
@@ -37,6 +62,45 @@ body span::selection {
 }
 #recent-posts .block-title {
   display: block;
+}
+#recent-posts .cat-journal .recent-post-cat > a {
+  background-color: #EDC329;
+  color: black;
+}
+#recent-posts .cat-gallery .recent-post-cat > a {
+  background-color: #8F8FEA;
+  color: white;
+}
+#recent-posts .recent-post-cat {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+#recent-posts .recent-post-cat:after {
+  content: '';
+  display: block;
+  transition: .5s;
+  transform: rotate(1deg);
+  box-shadow: 3px 8px 2px #a2aaaa;
+  position: absolute;
+  width: 90%;
+  height: 50%;
+  top: 25%;
+  z-index: -1;
+}
+#recent-posts .recent-post-cat:hover a {
+  text-decoration: none;
+}
+#recent-posts .recent-post-cat:hover:after {
+  transform: rotate(3deg);
+  background-color: #6e7878;
+  box-shadow: 5px 9px 3px #a2aaaa;
+}
+#recent-posts .recent-post-cat a {
+  color: #1A282C;
+  padding: 5px 30px;
+  font-size: .8em;
+  font-style: italic;
 }
 #recent-posts .recent-post-item {
   padding: 5px 10px 15px 5px;
@@ -178,19 +242,65 @@ body span::selection {
 #post-list > ul .post-list-item a:hover {
   color: #000000;
 }
-#post {
-  border-top: 30px solid #EDC329;
-  padding: 10px 30px;
+#post-list #post-list-more {
+  background-color: #EDC329;
+  padding: 10px ;
+  transition: .5s;
+  text-align: right;
+  font-size: .8em;
+}
+#post-list #post-list-more a {
+  color: #537f8c;
+  text-decoration: none;
+}
+#post-list #post-list-more a:hover {
+  color: #000000;
+}
+#post-list #post-list-more:hover {
+  background-color: #e9bb14;
+  padding-bottom: 20px;
+}
+#post-list #post-list-more:hover a {
+  transform: scale(1.2);
+}
+#post-list #post-list-more:hover a:before {
+  content: 'read >>';
+  display: inline-block;
+  font-size: 0.5em;
+  transform: translateX(-10px);
+}
+#post-container {
+  margin-top: 0px;
+}
+#post-container #post-head {
+  height: 130px;
+  border-top-right-radius: 5px;
+  background-color: #EDC329;
+}
+#post-container .article-tags a {
+  padding: 2px 15px;
+  border-radius: 3px;
+  color: #F2F3F3;
+  font-size: .8em;
+}
+#post-container .article-title {
+  color: #F2F3F3;
+  padding: 10px 0px;
+  border-bottom: 1px solid #F2F3F3;
+}
+#post-container #post {
+  padding: 50px 10px;
   padding-bottom: 150px;
   background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
-  background-size: 100% 2%;
+  background-size: 100% 1%;
   line-height: 1.7em;
 }
-#post h1 {
+#post-container #post h1 {
   font-size: 2.5em;
   text-transform: uppercase;
+  margin: 20px 0;
 }
-#post blockquote {
+#post-container #post blockquote {
   font-size: 1em;
   color: #3B4F50;
   vertical-align: baseline;
@@ -201,15 +311,22 @@ body span::selection {
   background-color: #E0E0DE;
   border-left: 7px solid #1A282C;
 }
-#post .article-title {
-  padding: 10px 0px;
-  border-bottom: 1px solid #8D8B81;
-}
-#post img {
+#post-container #post img {
   width: 100%;
 }
 #bottom-outer {
+  margin: 100px 0;
   text-align: center;
+}
+#bottom-outer #bottom-info {
+  color: #8D8B81;
+  font-size: .8em;
+}
+#bottom-outer #bottom-info a {
+  color: #EDC329;
+}
+#bottom-outer #bottom-info a:hover {
+  color: #BB8B15;
 }
 .link {
   color: #537f8c;
@@ -230,4 +347,7 @@ body span::selection {
   display: inline-block;
   font-size: 0.5em;
   transform: translateX(-10px);
+}
+.holder {
+  margin-top: 50px;
 }

@@ -6,6 +6,8 @@ window.onload = function(){
 	$(".recent-post-item").hover(function() {
 		$(this).css('background','#F2F3F3')
 		$(".recent-post-title").hover(function() {
+		var thisBoColor = $(this).parent('.recent-post-info').parent('.recent-post-item').css('borderColor');
+		console.log(thisBoColor)	
 		$(this).parent('.recent-post-info').parent('.recent-post-item').css({
 			'background':'#EDC329',
 			'transition':'0.3s ease-out'
@@ -19,30 +21,23 @@ window.onload = function(){
 		}, function() {
 			$(this).css('background','white')
 	});
+
+	var cat = $(".recent-post-cat a")
+	cat.each(function(){
+		console.log(this.text)
+		var aClass = 'cat-' + this.text;
+		$(this).parent().parent().parent().addClass(aClass)
+	})
 	
-	
-	// var revImgB = $('.recent-post-img');
-	// var revImg = $('.recent-post-img img');
-	// revImgB.mousemove(function(e) { 
-      
- //          var target = e.target || e.srcElement,
- //          rect = target.getBoundingClientRect(),
- //          btWidth = rect.right - rect.left,
- //          btHeight = rect.top - rect.bottom,
- //          offsetX = e.clientX -  rect.left,
- //          offsetY = e.clientY - rect.top;
-          
- //          var cenX = btWidth / 2,
- //            cenY = btHeight / 2;
-            
- //          var goX = [cenX - offsetX] ,
- //            goY = [cenY - offsetY]  ;
- 
- //          console.log(goX,goY)
- //          $('.recent-post-img img').css({
- //          	'transform': 'translateY(' + -goY + ')'
- //          })
- //      })  
+	var tag = $(".article-tags a")
+	tag.each(function(i=0){
+		i++
+		console.log(this.text)
+		var ran = Math.round(Math.random()*20) + 50
+		$(this).css({
+			'backgroundColor' : 'hsl(' +  ran * i + ',82%,42%)'
+		})
+	})
 
 
 

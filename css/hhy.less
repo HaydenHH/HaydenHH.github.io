@@ -7,12 +7,15 @@
 @whi:#F2F3F3;
 @whi+:#E3EAED;
 @quo:#E0E0DE;
-
+@pur:#8F8FEA;
+@gre:#99E0A2;
+@blu:#83AEFF;
 
 
 
 
 body {
+  background-color: @yel;
   padding: 0px;
   margin: 0;
   color:@dark;
@@ -34,23 +37,94 @@ body {
 	}
 }
 
+.page-nav{
+	margin: 20px 0;
+	a,span{
+		color:@whi;
+		margin-right:2px;
+	}
+	
+	.page-number, .extend {
+		padding: 5px 20px;
+		border-radius: 3px;
+		font-style: italic;
+		font-size: .8em;
+		text-decoration: none;
+		background-color: @yel;
+		&:hover{
+			color: @dark;
+		}
+	}
+	.current{
+		background-color: @grey-light;
+		&:hover{
+			color: @whi;
+		}
+	}
+}
+
 #content-inner{
 	overflow: hidden;
 }
 
 #recent-posts{
-	margin-top: 5px;
+	
 	& > h1{
 		.hL;
 	}
 	.block-title{
 		display: block;
 	}
+	.cat-journal .recent-post-cat > a{
+		background-color: @yel;
+		color:contrast(@gre, black, white);
+	}
+	.cat-gallery .recent-post-cat > a{
+		background-color: @pur;
+		color:contrast(@pur, black, white);
+	}
+	.recent-post-cat{
+		position: absolute;
+		left: 0;
+		z-index: 2;
+		
+		&:after{
+			content: '';
+			display: block;
+			transition: .5s;
+			transform: rotate(1deg);
+			box-shadow: 3px 8px 2px  darken(@whi,30%);
+			position: absolute;
+			width: 90%;
+			height: 50%;
+			top:25%;
+			z-index: -1;
+		}
+		&:hover{
+			a{
+				text-decoration: none;
+			}
+			&:after{
+			transform: rotate(3deg);
+			background-color:darken(@whi,50%);
+			box-shadow: 5px 9px 3px darken(@whi,30%);
+			}
+		}
+		
+		a{
+			color:@dark;
+			padding: 5px 30px;
+			font-size: .8em;
+			font-style: italic;
+		}
+	}
+
 	.recent-post-item{
 		padding: 5px 10px 15px 5px;
 		margin-top: 5px;
 		border: 1px solid @grey-light;
 		transition: 0.5s;
+
 		&:hover,&:focus,&:active{
 			// background-color: @whi;
 			border: 1px solid @whi;
@@ -184,49 +258,96 @@ body {
 			 	user-select: none;
 			}
 		}
-		
+	}
+	#post-list-more{
+		background-color: @yel;
+		padding: 10px ;
+		transition: .5s;
+		text-align: right;
+		font-size: .8em;
+		a{.link;}
+		&:hover{
+				background-color: darken(@yel, 5%) ;
+				padding-bottom: 20px;
+				a{
+					transform: scale(1.2);
+					.read;
+				}
+			}
 	}
 }
 
 #post-container{
-
-}
-#post{
-
-	border-top: 30px solid @yel;
-	padding: 10px 30px;
-	padding-bottom: 150px;
-	background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
-	// -webkit-background-size: 1%;
-	background-size: 100% 2%;
-	line-height: 1.7em;
-	h1{
-		font-size: 2.5em;
-		text-transform: uppercase;
+	margin-top: 0px;
+	#post-head{
+		height: 130px;
+		border-top-right-radius : 5px;
+		background-color: @yel;
 	}
-	blockquote{
-		font-size: 1em;
-		color:@dark-;
-		vertical-align: baseline;
-		font-style: italic;
-		display: block;
-		padding: 10px 30px;
-		padding-top: 15px;
-		background-color: @quo;
-		border-left: 7px solid @dark;
+
+	
+
+	.article-tags a{
+		padding: 2px 15px;
+		border-radius: 3px;
+		color: @whi;
+		font-size: .8em;
+		
+		
 	}
 	.article-title{
+			color: @whi;
+			padding: 10px 0px;
+			border-bottom: 1px solid @whi;
+		}
+	#post{
 		
-		padding: 10px 0px;
-		border-bottom: 1px solid @grey-light;
-	}
-	img{
-		width: 100%;
+		
+		padding: 50px 10px;
+		padding-bottom: 150px;
+		background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
+		// -webkit-background-size: 1%;
+		background-size: 100% 1%;
+		line-height: 1.7em;
+		h1{
+			font-size: 2.5em;
+			text-transform: uppercase;
+			margin:20px 0;
+		}
+		blockquote{
+			font-size: 1em;
+			color:@dark-;
+			vertical-align: baseline;
+			font-style: italic;
+			display: block;
+			padding: 10px 30px;
+			padding-top: 15px;
+			background-color: @quo;
+			border-left: 7px solid @dark;
+		}
+		
+		img{
+			width: 100%;
+		}
 	}
 }
 
+
+
 #bottom-outer{
+	margin: 100px 0;
 	text-align: center;
+
+	#bottom-info{
+		color:@grey-light;
+		font-size: .8em;
+		a{
+			color: @yel;
+			&:hover{
+				color:@bro;
+			}
+		}
+	}
 }
 
 //---------------------------------------------------------------------------------------------
@@ -255,4 +376,8 @@ body {
 		
 		transform: translateX(-10px);
 	}
+}
+
+.holder{
+	margin-top: 50px;
 }
