@@ -58,7 +58,7 @@ window.onload = function(){
 
 
 
-
+$("#picCar .carousel-item:eq(0)").addClass('active')
 
 
 

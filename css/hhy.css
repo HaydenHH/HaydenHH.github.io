@@ -26,6 +26,20 @@ body span::selection {
 #showPic {
   padding: 0;
 }
+#picCar .carousel-item {
+  height: 450px;
+  overflow: hidden;
+}
+#picCar .card {
+  height: 400px;
+}
+#picCar .card .card-body {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+#picCar .card .card-body img {
+  padding: 0;
+}
 .page-nav {
   margin: 20px 0;
 }
