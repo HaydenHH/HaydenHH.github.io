@@ -23,6 +23,9 @@ body span::selection {
 #menu-inner #menu-nav button {
   margin-right: 30px;
 }
+#showPic {
+  padding: 0;
+}
 .page-nav {
   margin: 20px 0;
 }
@@ -327,6 +330,25 @@ body span::selection {
 }
 #bottom-outer #bottom-info a:hover {
   color: #BB8B15;
+}
+#archive {
+  color: #1A282C;
+}
+#archive a {
+  color: #537f8c;
+  text-decoration: none;
+}
+#archive a:hover {
+  color: #000000;
+}
+#archive h2 {
+  transition: .5s;
+  border-left: 15px double #1A282C;
+  border-left: 15px double #EDC329;
+  transition: .3s;
+}
+#archive h2:hover {
+  border-left: 5px solid #EDC329;
 }
 .link {
   color: #537f8c;

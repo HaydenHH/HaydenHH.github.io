@@ -39,6 +39,33 @@ window.onload = function(){
 		})
 	})
 
+	var catList = $("aside .category-list");
+	catList.addClass('list-group')
+	catList.find('li').addClass('list-group-item d-flex justify-content-between align-items-center')
+	catList.find('li').find('span').addClass('badge badge-warning badge-pill')
+
+	var tagList = $("aside .tag-list");
+	tagList.addClass('list-group')
+	tagList.find('li').addClass('list-group-item d-flex justify-content-between align-items-center')
+	tagList.find('li').find('span').addClass('badge badge-warning badge-pill')
+
+
+
+	var archiveList = $("aside .archive-list");
+	archiveList.addClass('list-group')
+	archiveList.find('li').addClass('list-group-item d-flex justify-content-between align-items-center')
+	archiveList.find('li').find('span').addClass('badge badge-warning badge-pill')
+
+
+
+
+
+
+
+
+
+
+
 
 
 
