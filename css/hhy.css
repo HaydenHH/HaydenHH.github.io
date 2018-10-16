@@ -290,7 +290,7 @@ body span::selection {
   margin-top: 0px;
 }
 #post-container #post-head {
-  height: 130px;
+  padding-bottom: 30px;
   border-top-right-radius: 5px;
   background-color: #EDC329;
 }
@@ -328,6 +328,15 @@ body span::selection {
   background-color: #E0E0DE;
   border-left: 7px solid #1A282C;
 }
+#post-container #post code {
+  font-size: 1em;
+  color: #3B4F50;
+  vertical-align: baseline;
+  display: block;
+  padding: 10px 30px;
+  padding-top: 15px;
+  background-color: #E0E0DE;
+}
 #post-container #post img {
   width: 100%;
 }
@@ -348,6 +357,9 @@ body span::selection {
 #archive {
   color: #1A282C;
 }
+#archive aside {
+  margin-top: 5px;
+}
 #archive a {
   color: #537f8c;
   text-decoration: none;
@@ -363,6 +375,24 @@ body span::selection {
 }
 #archive h2:hover {
   border-left: 5px solid #EDC329;
+}
+#tag > h1,
+#category > h1 {
+  border-left: 15px double #EDC329;
+  transition: .3s;
+}
+#tag > h1:hover,
+#category > h1:hover {
+  border-left: 5px solid #EDC329;
+}
+#tag a,
+#category a {
+  color: #537f8c;
+  text-decoration: none;
+}
+#tag a:hover,
+#category a:hover {
+  color: #000000;
 }
 .link {
   color: #537f8c;

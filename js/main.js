@@ -38,6 +38,7 @@ window.onload = function(){
 			'backgroundColor' : 'hsl(' +  ran * i + ',82%,42%)'
 		})
 	})
+// archieve
 
 	var catList = $("aside .category-list");
 	catList.addClass('list-group')
@@ -56,9 +57,26 @@ window.onload = function(){
 	archiveList.find('li').addClass('list-group-item d-flex justify-content-between align-items-center')
 	archiveList.find('li').find('span').addClass('badge badge-warning badge-pill')
 
+//-----------------
+
+// archieve-article
+
+	var tagItem = $(".tag-item");
+	tagItem.addClass('list-group-item d-flex justify-content-between align-items-center')
+	tagItem.find('span').addClass('badge badge-secondary')
+
+	var catItem = $(".category-item");
+	catItem.addClass('list-group-item d-flex justify-content-between align-items-center')
+	catItem.find('span').addClass('badge badge-secondary')
 
 
-$("#picCar .carousel-item:eq(0)").addClass('active')
+	var archiItem = $(".archive-item");
+	archiItem.addClass('list-group-item d-flex justify-content-between align-items-center')
+	archiItem.find('span').addClass('badge badge-secondary')
+
+//------------------
+
+	$("#picCar .carousel-item:eq(0)").addClass('active')
 
 
 

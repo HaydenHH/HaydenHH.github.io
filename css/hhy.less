@@ -296,19 +296,21 @@ body {
 #post-container{
 	margin-top: 0px;
 	#post-head{
-		height: 130px;
+		padding-bottom: 30px;
 		border-top-right-radius : 5px;
 		background-color: @yel;
+
 	}
 
 	
 
-	.article-tags a{
-		padding: 2px 15px;
-		border-radius: 3px;
-		color: @whi;
-		font-size: .8em;
-		
+	.article-tags{
+		a{
+			padding: 2px 15px;
+			border-radius: 3px;
+			color: @whi;
+			font-size: .8em;
+		} 	
 		
 	}
 	.article-title{
@@ -341,7 +343,15 @@ body {
 			background-color: @quo;
 			border-left: 7px solid @dark;
 		}
-		
+		code{
+			font-size: 1em;
+			color:@dark-;
+			vertical-align: baseline;
+			display: block;
+			padding: 10px 30px;
+			padding-top: 15px;
+			background-color: @quo;
+		}
 		img{
 			width: 100%;
 		}
@@ -369,6 +379,9 @@ body {
 
 #archive{
 	color:@dark;
+	aside{
+		margin-top: 5px;
+	}
 	a{
 		.link;
 	}
@@ -379,7 +392,14 @@ body {
 	}
 }
 
-
+#tag, #category{
+	& > h1{
+		.hL;
+	}
+	a{
+		.link;
+	}
+}
 
 
 //---------------------------------------------------------------------------------------------
