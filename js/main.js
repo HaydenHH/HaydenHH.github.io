@@ -1,7 +1,8 @@
 // hhy client-side javascript
 window.onload = function(){
 	// alert("1")
-	
+		var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
 
 	$(".recent-post-item").hover(function() {
 		$(this).css('background','#F2F3F3')

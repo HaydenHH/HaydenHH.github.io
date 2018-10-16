@@ -26,12 +26,23 @@ body span::selection {
 #showPic {
   padding: 0;
 }
+#showPic .jumbotron {
+  background-color: #EDC329;
+}
+#topImg ul {
+  margin-top: 30px;
+}
+#topImg ul li {
+  height: 150px;
+  width: 15px;
+  background-color: #EDC329;
+}
 #picCar .carousel-item {
-  height: 450px;
+  height: 500px;
   overflow: hidden;
 }
 #picCar .card {
-  height: 400px;
+  height: 300px;
 }
 #picCar .card .card-body {
   margin-bottom: 30px;
