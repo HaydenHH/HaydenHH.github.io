@@ -1,8 +1,7 @@
 // hhy client-side javascript
 window.onload = function(){
 	// alert("1")
-		var scene = document.getElementById('scene');
-	var parallax = new Parallax(scene);
+	
 
 	$(".recent-post-item").hover(function() {
 		$(this).css('background','#F2F3F3')
@@ -79,7 +78,10 @@ window.onload = function(){
 
 	$("#picCar .carousel-item:eq(0)").addClass('active')
 
+//---
 
+
+var parallax = new Parallax(document.getElementById('scene'));
 
 
 
