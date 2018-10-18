@@ -1,6 +1,6 @@
 @whi +:#E3EAED;
 body {
-  background-color: #EDC329;
+  background-color: #F2F3F3;
   padding: 0px;
   margin: 0;
   color: #1A282C;
@@ -20,8 +20,12 @@ body span::selection {
 #menu-inner > nav {
   background-color: #EDC329;
 }
+#menu-inner > nav .navbar-brand {
+  padding: 0 10px;
+  border-left: 15px double #BB8B15;
+}
 #menu-inner #menu-nav button {
-  margin-right: 30px;
+  margin-right: 50px;
 }
 #showPic {
   padding: 0;
@@ -30,10 +34,10 @@ body span::selection {
   background-color: #EDC329;
 }
 #topImg {
-  background-color: #EDC329;
+  background-image: linear-gradient(to bottom, #edc329, #ebbf28, #eabb26, #e8b825, #e6b424);
 }
 #topImg ul {
-  margin-top: 30px;
+  margin: 40px 0;
 }
 #topImg ul li {
   height: 150px;

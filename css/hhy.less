@@ -15,7 +15,7 @@
 
 
 body {
-  background-color: @yel;
+  background-color: @whi;
   padding: 0px;
   margin: 0;
   color:@dark;
@@ -29,10 +29,15 @@ body {
 #menu-inner{
 	& > nav{
 		background-color: @yel;
+		.navbar-brand{
+			padding: 0 10px;
+			border-left:15px double @bro;
+		}
 	}
 	#menu-nav{
+		
 		button{
-			margin-right: 30px;
+			margin-right: 50px;
 		}
 	}
 }
@@ -47,10 +52,10 @@ body {
 }
 
 #topImg{
-	background-color: @yel;
+	background-image: linear-gradient(to bottom, #edc329, #ebbf28, #eabb26, #e8b825, #e6b424);
 	ul{
 
-		margin-top: 30px;
+		margin: 40px 0;
 		li{
 			height: 150px;
 			width: 15px;

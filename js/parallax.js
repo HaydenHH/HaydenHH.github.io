@@ -26,9 +26,9 @@
     limitX: false,
     limitY: false,
     scalarX: -10.0,
-    scalarY: 2.5,
+    scalarY: 0.5,
     frictionX: 0.3,
-    frictionY: 0.3,
+    frictionY: 0.9,
     originX: -0.2,
     originY: 0.0
   };
