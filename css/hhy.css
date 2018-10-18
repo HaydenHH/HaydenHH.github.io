@@ -29,13 +29,16 @@ body span::selection {
 #showPic .jumbotron {
   background-color: #EDC329;
 }
+#topImg {
+  background-color: #EDC329;
+}
 #topImg ul {
   margin-top: 30px;
 }
 #topImg ul li {
   height: 150px;
   width: 15px;
-  background-color: #EDC329;
+  background-color: #F2F3F3;
 }
 #picCar .carousel-item {
   height: 500px;
@@ -199,7 +202,7 @@ body span::selection {
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary a {
   color: #BB8B15;
-  padding: 2px 30px;
+  padding: 2px 20px;
   border: 1px solid #BB8B15;
   transition: .3s;
 }
