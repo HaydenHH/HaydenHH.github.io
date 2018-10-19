@@ -28,10 +28,22 @@ body {
 
 #menu-inner{
 	& > nav{
+		li a{
+			padding:20px 20px;
+			&:hover{
+				color:@dark;
+			}
+		}
 		background-color: @yel;
 		.navbar-brand{
+			color:@dark-;
 			padding: 0 10px;
-			border-left:15px double @bro;
+			border-left:15px double @dark-;
+			transition: .5s;
+			&:hover{
+				border-left: 5px solid darken(@bro, 30%);
+				color:darken(@bro, 30%);
+			}
 		}
 	}
 	#menu-nav{
@@ -423,6 +435,53 @@ body {
 	}
 }
 
+//about---------------------------------------------------------------------------------------------
+
+
+#page-about{
+	article{
+		color: @dark-;
+		border: 1px solid @dark;
+		padding:0px 25px 25px 10px;
+		clear: both;
+		.fH;
+		img{
+			padding: 35px;
+			float: left;
+		}
+		b{
+			color:@bro;
+		}
+
+	}
+	h1,h2{
+		.hL;
+	}
+	#about-1{
+		#about-name{
+
+			text-align: right;
+			font-size: 2em;
+			font-weight: bold;
+			padding: 0;
+			#e-name{
+				font-size: .5em;
+				color:@grey-light;
+			}
+			span{
+				color:@dark-;
+				font-size: .8em;
+			}
+		}
+	}
+	#about-2,#about-3{
+		padding:0px 25px 25px 30px;
+	}
+	p{
+			text-align: center;
+			font-size: .8em;
+		}
+}
 
 //---------------------------------------------------------------------------------------------
 
@@ -455,3 +514,21 @@ body {
 .holder{
 	margin-top: 20px;
 }
+
+.fH{
+	&:after{
+		content:".";
+        display:block;
+        height:0;
+        clear:left;
+        visibility:hidden;
+	}
+}
+
+
+
+
+
+
+
+

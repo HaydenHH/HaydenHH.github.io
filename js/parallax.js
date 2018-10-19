@@ -29,7 +29,7 @@
     scalarY: 0.5,
     frictionX: 0.3,
     frictionY: 0.9,
-    originX: -0.2,
+    originX: -0.5,
     originY: 0.0
   };
 

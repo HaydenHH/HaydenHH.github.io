@@ -20,9 +20,21 @@ body span::selection {
 #menu-inner > nav {
   background-color: #EDC329;
 }
+#menu-inner > nav li a {
+  padding: 20px 20px;
+}
+#menu-inner > nav li a:hover {
+  color: #1A282C;
+}
 #menu-inner > nav .navbar-brand {
+  color: #3B4F50;
   padding: 0 10px;
-  border-left: 15px double #BB8B15;
+  border-left: 15px double #3B4F50;
+  transition: .5s;
+}
+#menu-inner > nav .navbar-brand:hover {
+  border-left: 5px solid #312506;
+  color: #312506;
 }
 #menu-inner #menu-nav button {
   margin-right: 50px;
@@ -412,6 +424,57 @@ body span::selection {
 #category a:hover {
   color: #000000;
 }
+#page-about article {
+  color: #3B4F50;
+  border: 1px solid #1A282C;
+  padding: 0px 25px 25px 10px;
+  clear: both;
+}
+#page-about article:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: left;
+  visibility: hidden;
+}
+#page-about article img {
+  padding: 35px;
+  float: left;
+}
+#page-about article b {
+  color: #BB8B15;
+}
+#page-about h1,
+#page-about h2 {
+  border-left: 15px double #EDC329;
+  transition: .3s;
+}
+#page-about h1:hover,
+#page-about h2:hover {
+  border-left: 5px solid #EDC329;
+}
+#page-about #about-1 #about-name {
+  text-align: right;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0;
+}
+#page-about #about-1 #about-name #e-name {
+  font-size: .5em;
+  color: #8D8B81;
+}
+#page-about #about-1 #about-name span {
+  color: #3B4F50;
+  font-size: .8em;
+}
+#page-about #about-2,
+#page-about #about-3 {
+  padding: 0px 25px 25px 30px;
+}
+#page-about p {
+  text-align: center;
+  font-size: .8em;
+}
 .link {
   color: #537f8c;
   text-decoration: none;
@@ -434,4 +497,11 @@ body span::selection {
 }
 .holder {
   margin-top: 20px;
+}
+.fH:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: left;
+  visibility: hidden;
 }
