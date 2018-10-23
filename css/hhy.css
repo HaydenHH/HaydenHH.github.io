@@ -17,9 +17,6 @@ body span::selection {
   color: white;
   background-color: #EDC329;
 }
-#menu-inner > nav {
-  background-color: #EDC329;
-}
 #menu-inner > nav li a {
   padding: 20px 20px;
 }
@@ -45,16 +42,14 @@ body span::selection {
 #showPic .jumbotron {
   background-color: #EDC329;
 }
-#topImg {
-  background-image: linear-gradient(to bottom, #edc329, #ebbf28, #eabb26, #e8b825, #e6b424);
-}
 #topImg ul {
-  margin: 40px 0;
+  list-style: none;
+  margin: 20px 0;
 }
-#topImg ul li {
+#topImg ul .layer {
   height: 150px;
   width: 15px;
-  background-color: #F2F3F3;
+  background-color: #EDC329;
 }
 #picCar .carousel-item {
   height: 500px;
@@ -497,6 +492,7 @@ body span::selection {
 }
 .holder {
   margin-top: 20px;
+  font-size: 0.1em;
 }
 .fH:after {
   content: ".";
