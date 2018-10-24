@@ -19,13 +19,13 @@
       
         <tags>
             
-            <tag> critical thinking </tag>
-            
             <tag> research </tag>
             
-            <tag> note </tag>
-            
             <tag> variable </tag>
+            
+            <tag> critical thinking </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -36,7 +36,7 @@
       <link href="/2018/10/22/Think-about-Variable-in-art-creation/"/>
       <url>/2018/10/22/Think-about-Variable-in-art-creation/</url>
       
-        <content type="html"><![CDATA[<h1 id="Thinking-about-Variables"><a href="#Thinking-about-Variables" class="headerlink" title="Thinking about Variables"></a>Thinking about Variables</h1><p>In digital creation, variable could be really important. It is generally used to replace a value, which could change between different individuals.<a id="more"></a> Such as colours, size, position, count, ratio, etc… It makes work looks various and interesting <del>(我真不知道丰富的英文怎么写)</del>. So, the topic is, why we use variable in design rather then fixed value, and does ‘random’ really interested user?</p><h2 id="Method-of-making-a-dynamic-art-work"><a href="#Method-of-making-a-dynamic-art-work" class="headerlink" title="Method of making a dynamic art work"></a>Method of making a dynamic art work</h2><p>The word ‘dynamic’ here means something could change easily and quickly. For example, Photoshop might be the best friend of us <del>no🙃</del>, the ‘smart object’ could be used in a high frequency. It can show the graphic as one layer, which could be combine with multiply layer. The useful thing is, it can be adjusted on the root layer, and its child layer can be easily changed, and effect on root. The only reason I mention that is, smart object could be seen as a component, a variable, it is really efficient in our creation, even it can be creative.</p><h3 id="Symbol-in-AI"><a href="#Symbol-in-AI" class="headerlink" title="Symbol in AI"></a>Symbol in AI</h3><p><del>No more Adobe!!!</del> Well, as a designer, Symbol in Illustrator could be useful. It available artist set a symbol, and draw many symbol with different colours, size, angle of rotate, density. When we draw symbol on a satisfied position, we could refine the  shape of symbol. Really useful.</p><h3 id="Javascript-in-HTML"><a href="#Javascript-in-HTML" class="headerlink" title="Javascript in HTML"></a>Javascript in HTML</h3><p>So many nonsense I wrote before, the only thing I want to say is <del>好像已经说过一次这话了</del> Variable or dynamic data is a model of work. We should manage well the relationship between different parts of component in project. For me, JS give me possibilities to change the outlook of Web, even available me make interaction for user and supply dynamic visual.</p><h3 id="nodeBox"><a href="#nodeBox" class="headerlink" title="nodeBox"></a>nodeBox</h3><p>NodeBox is a powerful tool to create dynamic graphic. It have a GUI face, so we can edit data with clear, simple way. In this work, I tried to use variable as ratio of shape, that means every shape would be created with a random way, but it keep a dynamic ratio, so it shows a motion of graphic.</p><img src="/2018/10/22/Think-about-Variable-in-art-creation/photo1.gif"><p>In this picture, these square are created with a dynamic ratio, the ratio was set as a Sin function, the value changed with frames. As we know, the min value of Sin() is <strong>-1</strong>， the max one is <strong>1</strong>, so the value will be a loop. <del>我爱数学数学爱我(no)</del><br>The interesting thing is, if I change even really small value of variable, it will make totally different visual language. </p><img src="/2018/10/22/Think-about-Variable-in-art-creation/photo2.gif"><h2 id="The-value-of-variable-for-a-design"><a href="#The-value-of-variable-for-a-design" class="headerlink" title="The value of variable for a design"></a>The value of variable for a design</h2><p>It’s no debt that it is difficult to control a variable, but it indeed support more possibilities for artist. Firstly, a dynamic design have more style, which can give <strong>unpredictable effect</strong>; Secondly, variable generally available user to interact with elements or interface, and visual could change when user give different operation, so it support interesting <strong>interactive</strong> experience; Thirdly, flexible variable can suit custom of user, such as change layout base on user’s <strong>devices, location, time and language</strong>. </p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Thinking-about-Variables"><a href="#Thinking-about-Variables" class="headerlink" title="Thinking about Variables"></a>Thinking about Variables</h1><p>In digital creation, variable could be really important. It is generally used to replace a value, which could change between different individuals.<a id="more"></a> Such as colours, size, position, count, ratio, etc… It makes work looks various and interesting <del>(我真不知道丰富的英文怎么写)</del>. So, the topic is, why we use variable in design rather then fixed value, and does ‘random’ really interested user?</p><h2 id="Method-of-making-a-dynamic-art-work"><a href="#Method-of-making-a-dynamic-art-work" class="headerlink" title="Method of making a dynamic art work"></a>Method of making a dynamic art work</h2><p>The word ‘dynamic’ here means something could change easily and quickly. For example, Photoshop might be the best friend of us <del>no🙃</del>, the ‘smart object’ could be used in a high frequency. It can show the graphic as one layer, which could be combine with multiply layer. The useful thing is, it can be adjusted on the root layer, and its child layer can be easily changed, and effect on root. The only reason I mention that is, smart object could be seen as a component, a variable, it is really efficient in our creation, even it can be creative.</p><h3 id="Symbol-in-AI"><a href="#Symbol-in-AI" class="headerlink" title="Symbol in AI"></a>Symbol in AI</h3><p><del>No more Adobe!!!</del> Well, as a designer, Symbol in Illustrator could be useful. It available artist set a symbol, and draw many symbol with different colours, size, angle of rotate, density. When we draw symbol on a satisfied position, we could refine the  shape of symbol. Really useful.</p><h3 id="Javascript-in-HTML"><a href="#Javascript-in-HTML" class="headerlink" title="Javascript in HTML"></a>Javascript in HTML</h3><p>So many nonsense I wrote before, the only thing I want to say is <del>好像已经说过一次这话了</del> Variable or dynamic data is a model of work. We should manage well the relationship between different parts of component in project. For me, JS give me possibilities to change the outlook of Web, even available me make interaction for user and supply dynamic visual.</p><h3 id="nodeBox"><a href="#nodeBox" class="headerlink" title="nodeBox"></a>nodeBox</h3><p>NodeBox is a powerful tool to create dynamic graphic. It have a GUI face, so we can edit data with clear, simple way. In this work, I tried to use variable as ratio of shape, that means every shape would be created with a random way, but it keep a dynamic ratio, so it shows a motion of graphic.</p><img src="/2018/10/22/Think-about-Variable-in-art-creation/photo1.gif"><p>In this picture, these square are created with a dynamic ratio, the ratio was set as a Sin function, the value changed with frames. As we know, the min value of Sin() is <strong>-1</strong>， the max one is <strong>1</strong>, so the value will be a loop. <del>我爱数学数学爱我(no)</del><br>The interesting thing is, if I change even really small value of variable, it will make totally different visual language. </p><img src="/2018/10/22/Think-about-Variable-in-art-creation/photo2.gif"><h3 id="NodeBox-PS-AE"><a href="#NodeBox-PS-AE" class="headerlink" title="NodeBox + PS/AE"></a>NodeBox + PS/AE</h3><p>Nodebox can create random shape easily, it support the dynamic shape and variable can be changed. Furthermore, the shape can be rendered as frames, so they can be used as video. I created motion graphic in NodeBox, and translate to GIF image by PS. PS can quickly adjust layout and colours of elements, so it is possible to make digital poster by variable and motion graphic.</p><img src="/2018/10/22/Think-about-Variable-in-art-creation/photo3.gif"><h2 id="The-value-of-variable-for-a-design"><a href="#The-value-of-variable-for-a-design" class="headerlink" title="The value of variable for a design"></a>The value of variable for a design</h2><p>It’s no debt that it is difficult to control a variable, but it indeed support more possibilities for artist. Firstly, a dynamic design have more style, which can give <strong>unpredictable effect</strong>; Secondly, variable generally available user to interact with elements or interface, and visual could change when user give different operation, so it support interesting <strong>interactive</strong> experience; Thirdly, flexible variable can suit custom of user, such as change layout base on user’s <strong>devices, location, time and language</strong>. </p>]]></content>
       
       
       <categories>
@@ -52,11 +52,11 @@
             
             <tag> digital </tag>
             
+            <tag> thinking </tag>
+            
             <tag> variable </tag>
             
             <tag> nodeBox </tag>
-            
-            <tag> thinking </tag>
             
         </tags>
       
@@ -131,9 +131,9 @@
       
         <tags>
             
-            <tag> critical thinking </tag>
-            
             <tag> research </tag>
+            
+            <tag> critical thinking </tag>
             
             <tag> note </tag>
             
@@ -164,11 +164,11 @@
             
             <tag> research </tag>
             
-            <tag> variable </tag>
-            
             <tag> inspiration </tag>
             
             <tag> programmer </tag>
+            
+            <tag> variable </tag>
             
         </tags>
       
@@ -218,9 +218,9 @@
             
             <tag> digital </tag>
             
-            <tag> research </tag>
-            
             <tag> museum </tag>
+            
+            <tag> research </tag>
             
             <tag> printing </tag>
             
@@ -268,9 +268,9 @@
       
         <tags>
             
-            <tag> research </tag>
-            
             <tag> museum </tag>
+            
+            <tag> research </tag>
             
         </tags>
       
