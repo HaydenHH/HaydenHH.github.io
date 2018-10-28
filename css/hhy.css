@@ -109,6 +109,10 @@ body span::selection {
   background-color: #EDC329;
   color: black;
 }
+#recent-posts .cat-reflection .recent-post-cat > a {
+  background-color: #83AEFF;
+  color: white;
+}
 #recent-posts .cat-gallery .recent-post-cat > a {
   background-color: #8F8FEA;
   color: white;
@@ -333,9 +337,16 @@ body span::selection {
 #post-container #post {
   padding: 50px 10px;
   padding-bottom: 150px;
-  background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
-  background-size: 100% 1%;
+  background: repeating-linear-gradient(to bottom, #F2F3F3 0, #F2F3F3 30px, #bdc2c2 30px, #bdc2c2 31px);
   line-height: 1.7em;
+}
+#post-container #post h1,
+#post-container #post h2,
+#post-container #post h3,
+#post-container #post h4,
+#post-container #post h5,
+#post-container #post h6 {
+  margin-top: 30px;
 }
 #post-container #post h1 {
   font-size: 2.5em;
@@ -364,6 +375,7 @@ body span::selection {
 }
 #post-container #post img {
   width: 100%;
+  margin: 15px 0;
 }
 #bottom-outer {
   margin: 100px 0;

@@ -139,6 +139,10 @@ body {
 		background-color: @yel;
 		color:contrast(@gre, black, white);
 	}
+	.cat-reflection .recent-post-cat > a{
+		background-color: @blu;
+		color:contrast(@blu, black, white);
+	}
 	.cat-gallery .recent-post-cat > a{
 		background-color: @pur;
 		color:contrast(@pur, black, white);
@@ -357,10 +361,13 @@ body {
 		
 		padding: 50px 10px;
 		padding-bottom: 150px;
-		background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
+		background: repeating-linear-gradient(to bottom, @whi 0, @whi 30px, darken(@whi, 20%) 30px, darken(@whi, 20%) 31px);
+		//background-color: @whi;
 		// -webkit-background-size: 1%;
-		background-size: 100% 1%;
 		line-height: 1.7em;
+		h1,h2,h3,h4,h5,h6{
+			margin-top: 30px;
+		}
 		h1{
 			font-size: 2.5em;
 			text-transform: uppercase;
@@ -388,6 +395,7 @@ body {
 		}
 		img{
 			width: 100%;
+			margin: 15px 0;
 		}
 	}
 }
