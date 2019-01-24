@@ -107,8 +107,8 @@
         <category>journal</category>
       </categories>
       <tags>
-        <tag>note</tag>
         <tag>digital</tag>
+        <tag>note</tag>
         <tag>resolution</tag>
       </tags>
   </entry>
@@ -179,10 +179,10 @@
         <category>journal</category>
       </categories>
       <tags>
+        <tag>variable</tag>
         <tag>critical thinking</tag>
         <tag>research</tag>
         <tag>note</tag>
-        <tag>variable</tag>
       </tags>
   </entry>
   <entry>
@@ -246,11 +246,11 @@
         <category>journal</category>
       </categories>
       <tags>
-        <tag>research</tag>
         <tag>idea</tag>
         <tag>digital</tag>
         <tag>variable</tag>
         <tag>programmer</tag>
+        <tag>research</tag>
         <tag>inspiration</tag>
       </tags>
   </entry>
@@ -274,8 +274,8 @@
         <category>gallery</category>
       </categories>
       <tags>
-        <tag>research</tag>
         <tag>digital</tag>
+        <tag>research</tag>
         <tag>museum</tag>
         <tag>printing</tag>
       </tags>
