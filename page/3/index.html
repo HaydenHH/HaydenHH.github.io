@@ -91,6 +91,72 @@
     
       <div class="recent-post-item col-sm-12 rounded-right">
         <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/28/process-make-different-method-to-group/">process:make different method to group<br></a>
+          <!-- 我的编辑 -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+          
+          
+      
+        
+
+          
+            <time datetime="2018-10-28T18:23:43.000Z">
+              2018-10-28
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        <div class="recent-post-preview col-sm-12">
+          <div class="row">
+            
+              <div class="recent-post-placeholder col-md-6">
+                <span ><h1 id="Get-stroke-counts"><a href="#Get-stroke-counts" class="headerlink" title="Get stroke counts"></a>Get stroke counts</h1><p>After last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach.<br><a id="more"></a></p>
+<h2 id="Retrieve-database"><a href="#Retrieve-database" class="headerlink" title="Retrieve database"></a>Retrieve database</h2><p>The principle of analyse data actually just search database, which means every element I might use, have existed in database, it could be prepared or made in time. </p>
+<p>It is easy to get data, such as stroke counts of word, but the difficult thing is to translate that to a new data, which can be used to generated shape.</p>
+<h3 id="Data-driven-shape"><a href="#Data-driven-shape" class="headerlink" title="Data-driven shape"></a>Data-driven shape</h3><p>Data-driven graphic design <em>32p</em>: </p>
+<blockquote>
+<p>“Unlike the physical process of making a mark with a pen, brush, or even a digital tablet, computational drawings are created by a written list of programming instructions based on rules and  procedures that a programmer writes, a computer translates and executes the instructions into individual marks lines, and shapes on the screen.”</p>
+</blockquote>
+<p>Computer generate different graphic base on the data have supported. In current stage, I want to use ‘Stroke’ to effect the <strong>format of graphic</strong>, which means how shapes group up and how they connect each other. The reason I thought is, Chinese word s sometimes have big differences in structure and strokes, it will effect visuals. The strokes will influence the <strong>complexity of the outlook, though it is irrelative to meaning generally, it can clear show different characteristics of words</strong></p>
+<h4 id="Make-points-as-coordinate"><a href="#Make-points-as-coordinate" class="headerlink" title="Make points as coordinate"></a>Make points as coordinate</h4><p>I create a series of points by strokes count of each word, so every word will have some points which can be the <strong>coordinate</strong>. In future work, some specific shape could be set in the coordinate. Furthermore, basing on different Tone, the layout of point could be changed, because Strokes merely influence the <strong>quantity of points</strong>.</p>
+<h4 id="render-graphic-base-on-different-coordinate-of-each-words"><a href="#render-graphic-base-on-different-coordinate-of-each-words" class="headerlink" title="render graphic base on different coordinate of each words"></a>render graphic base on different coordinate of each words</h4><p>The question is, I haven’t decided which way I render graphic. There are two method to render graphic I can use now, </p>
+<ul>
+<li>SVG, render by <a href="http://snapsvg.io/" target="_blank" rel="noopener">Snap.js</a></li>
+<li>Bitmap, render by <a href="https://p5js.org/zh-Hans/" target="_blank" rel="noopener">P5.js</a></li>
+</ul>
+<p>SVG available me to create more beautiful/ delicate shape with high-quality resolution. And Bitmap graphic can generate more curve and massive geometric shape. In future work I will do that  both and choose one or both as final effect.</p>
+<h2 id="The-difficulties-I-faced-now"><a href="#The-difficulties-I-faced-now" class="headerlink" title="The difficulties I faced now"></a>The difficulties I faced now</h2><h3 id="data-analyse"><a href="#data-analyse" class="headerlink" title="data analyse"></a>data analyse</h3><p>在早期进程中，变量的提取非常困难，尤其是我需要逐个把用户键入的字符匹配数据库，当匹配数据库后，再分析它的别的属性。逻辑层面必须非常清晰：<br>用户键入————每一个字————属性，如笔画读音偏旁<br>拼音，检索音调；<br>笔画————生成坐标，<br>坐标————通过笔画数判断坐标数量，通过别的<strong>属性</strong>决定坐标<strong>排列方式</strong><br>偏旁，检索特定的含义，其含义必须被单独设定，<strong>手动</strong></p>
+<h3 id="whole-style"><a href="#whole-style" class="headerlink" title="whole style"></a>whole style</h3><p>The work must be designed to illustrative, it should give the feeling of words, it doesn’t represent a whole sentence, but it should show the abstract meaning of words. </p>
+<img src="/2018/10/28/process-make-different-method-to-group/photo1.png">
+</span>
+              </div>
+              <div class="post-summary col-sm-12 col-md-5">
+                <span>Abstract:</span>
+                <br>
+                <p>Get stroke countsAfter last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach....</p>
+                <a class="rounded" href="/2018/10/28/process-make-different-method-to-group/">Read more >></a>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="recent-post-item col-sm-12 rounded-right">
+        <div class="recent-post-info">
           <a class="recent-post-title" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/">Reflection:Early visualisation of Chinese<br></a>
           <!-- 我的编辑 -->
           <span class="recent-post-cat ">
@@ -324,55 +390,6 @@ As I said, Chinese is a language use tone to define meaning of word, so a same s
         </div>
       </div>
     
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/22/Think-about-Variable-in-art-creation/">Think about Variable in art creation<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/gallery/"cat="gallery">gallery</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-          
-          
-      
-        
-
-          
-            <time datetime="2018-10-22T02:00:17.000Z">
-              2018-10-22
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-              <div class="recent-post-img col-sm-12 col-md-6 "> 
-                <img class="img-responsive" src="/2018/10/22/Think-about-Variable-in-art-creation/photo1.gif" />
-              </div>
-              <div class="post-summary col-sm-12 col-md-4">
-                
-                <span >Abstract:</span>
-                <br>
-                <p>Thinking about VariablesIn digital creation, variable could be really important. It is generally used to replace a value, which could change between different individuals....</p>
-                <a class="rounded" href="/2018/10/22/Think-about-Variable-in-art-creation/">Read more >></a>
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    
     
   </div>
 
@@ -387,7 +404,7 @@ As I said, Chinese is a language use tone to define meaning of word, so a same s
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/14/Reproduction-in-famous-arts/">Reproduction in famous arts</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/02/Reflection-Finished-at-Programming-stage/">Reflection:Finished at Programming stage</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/14/Reproduction-in-famous-arts/">Reproduction in famous arts</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
