@@ -2,9 +2,10 @@
 window.onload = function(){
 	// alert("1")
 	
-
+	let oriColor = $(".recent-post-item").css('backgroundColor')
 	$(".recent-post-item").hover(function() {
-		$(this).css('background','#F2F3F3')
+		
+		$(this).css('backgroundColor', '#42484F')
 		$(".recent-post-title").hover(function() {
 		var thisBoColor = $(this).parent('.recent-post-info').parent('.recent-post-item').css('borderColor');
 		console.log(thisBoColor)	
@@ -14,12 +15,13 @@ window.onload = function(){
 		})
 		}, function() {
 			$(this).parent('.recent-post-info').parent('.recent-post-item').css({
-				'background':'#F2F3F3',
+				'background':oriColor,
 				'transition':'0.78s'
 			})
 		});
 		}, function() {
-			$(this).css('background','white')
+			
+			$(this).css('backgroundColor',oriColor)
 	});
 
 	var cat = $(".recent-post-cat a")
