@@ -1,7 +1,11 @@
 // hhy client-side javascript
 window.onload = function(){
 	// alert("1")
-	
+	$(document).ready(function () {
+		hljs.initHighlightingOnLoad();
+	});
+
+
 	let oriColor = $(".recent-post-item").css('backgroundColor')
 	$(".recent-post-item").hover(function() {
 		

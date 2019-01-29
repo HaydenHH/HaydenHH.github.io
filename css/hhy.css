@@ -18,7 +18,7 @@ body span::selection {
   background-color: #EDC329;
 }
 #menu-inner {
-  background-color: #17191b;
+  background-color: #282b2e;
 }
 #menu-inner > nav li a {
   color: #F2F3F3;
@@ -98,7 +98,7 @@ body span::selection {
 }
 #content-inner {
   overflow: hidden;
-  background-color: #17191b;
+  background-color: #282b2e;
 }
 #recent-posts > h1 {
   border-left: 15px double #EDC329;
@@ -133,7 +133,7 @@ body span::selection {
   display: block;
   transition: .5s;
   transform: rotate(1deg);
-  box-shadow: 3px 8px 2px #a2aaaa;
+  box-shadow: 3px 8px 2px #000000;
   position: absolute;
   width: 90%;
   height: 50%;
@@ -146,7 +146,7 @@ body span::selection {
 #recent-posts .recent-post-cat:hover:after {
   transform: rotate(3deg);
   background-color: #6e7878;
-  box-shadow: 5px 9px 3px #a2aaaa;
+  box-shadow: 5px 9px 3px #000000;
 }
 #recent-posts .recent-post-cat a {
   color: #1A282C;
@@ -159,7 +159,6 @@ body span::selection {
   margin-top: 5px;
   border: 1px solid #EDC329;
   transition: 0.5s;
-  background-color: #232629;
   color: #F2F3F3;
 }
 #recent-posts .recent-post-item a {
@@ -171,8 +170,7 @@ body span::selection {
 #recent-posts .recent-post-item:hover,
 #recent-posts .recent-post-item:focus,
 #recent-posts .recent-post-item:active {
-  border: 1px solid #151102;
-  border-top: 10px solid #EDC329;
+  border: 1px solid #F2F3F3;
 }
 #recent-posts .recent-post-item:hover .recent-post-placeholder > span,
 #recent-posts .recent-post-item:focus .recent-post-placeholder > span,
@@ -283,13 +281,13 @@ body span::selection {
   transition: 0.1s ease-in;
 }
 #post-list > ul .post-list-item:nth-child(n) {
-  background-color: #232629;
+  background-color: #34383c;
 }
 #post-list > ul .post-list-item:nth-child(n) a {
   color: #e5e7e7;
 }
 #post-list > ul .post-list-item:nth-child(2n) {
-  background-color: #2e3337;
+  background-color: #404549;
 }
 #post-list > ul .post-list-item:nth-child(2n) a {
   color: #f2f3f3;
@@ -322,6 +320,7 @@ body span::selection {
 #post-list #post-list-more a {
   color: #bdc2c2;
   text-decoration: none;
+  color: #F2F3F3;
 }
 #post-list #post-list-more a:hover {
   color: #889191;
@@ -363,7 +362,7 @@ body span::selection {
   padding: 50px 10px;
   padding-bottom: 150px;
   border: #EDC329 solid 0.5px;
-  background: #232629;
+  background: #1c1e20;
   line-height: 1.7em;
 }
 #post-container #post h1,
@@ -375,7 +374,7 @@ body span::selection {
   margin-top: 30px;
   border-left: #EDC329 solid 4px;
   padding: 10px 20px;
-  background-color: #464c52;
+  background: #26282b;
 }
 #post-container #post h1 {
   font-size: 2.5em;
@@ -396,7 +395,7 @@ body span::selection {
 }
 #post-container #post blockquote {
   font-size: 1em;
-  background-color: #2e3337;
+  background: #101213;
   vertical-align: baseline;
   color: #EDC329;
   font-style: italic;
@@ -408,7 +407,7 @@ body span::selection {
 }
 #post-container #post code {
   font-size: 1em;
-  background-color: #000000;
+  background: #101213;
   color: #83AEFF;
   vertical-align: baseline;
   display: block;
@@ -424,8 +423,8 @@ body span::selection {
   border: #8D8B81 solid 0.5px;
 }
 #bottom-outer {
-  background-color: #17191b;
-  padding: 100px 0;
+  background-color: #282b2e;
+  padding: 20vh 0;
   text-align: center;
 }
 #bottom-outer #bottom-info {
@@ -442,7 +441,7 @@ body span::selection {
   color: #F2F3F3;
 }
 #archive .list-group-item {
-  background-color: #17191b;
+  background-color: #282b2e;
   border: #EDC329 solid 0.5px;
 }
 #archive aside {
@@ -488,7 +487,7 @@ body span::selection {
 }
 #page-about article {
   color: #F2F3F3;
-  background-color: #2e3337;
+  background-color: #404549;
   border: 1px solid #EDC329;
   padding: 0px 25px 25px 10px;
   clear: both;
@@ -575,5 +574,5 @@ body span::selection {
 }
 .textarea-wrapper--top-level,
 .textarea {
-  background-color: #17191b;
+  background-color: #282b2e;
 }
