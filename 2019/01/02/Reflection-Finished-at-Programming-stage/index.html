@@ -93,12 +93,12 @@
 		  	<h1 id="Reflection-About-programming-and-concept-of-building-Web"><a href="#Reflection-About-programming-and-concept-of-building-Web" class="headerlink" title="Reflection: About programming and concept of building Web"></a>Reflection: About programming and concept of building Web</h1><p>Basically, I’ve finished this Web during this term. To summary, this Web is designed to devote translate words to graphic information. The content I used is Chinese classical poem, I catched poem by JSON which be supported by <a href="https://gushi.ci/" target="_blank" rel="noopener">Gushi.ci</a>. <a id="more"></a>Therefore, user can get massive poem randomly, and they can try to understand it by graphic as well as the translation supported by Baidu’s API. Now, I’m going to conclude some problem I faced, and the final solution.</p>
 <h2 id="use-Javascript-module-to-create-elements-in-time"><a href="#use-Javascript-module-to-create-elements-in-time" class="headerlink" title="use Javascript module to create elements in time."></a>use Javascript module to create elements in time.</h2><p>The target is showing a gallery on Web, there are many of image had been upload on cloud server, and display by <strong>href Link</strong>. I collected all of link in JSON file, and the Web can read link than create elements.</p>
 <h3 id="module-style-and-Event"><a href="#module-style-and-Event" class="headerlink" title="module style and Event"></a>module style and Event</h3><p>As ECMA6 declared:</p>
-<pre><code>$(&apos;body&apos;).append(`
+<pre><code>$(&#39;body&#39;).append(`
     &lt;p&gt;Content:${Variable}&lt;/p&gt;
 `)
 </code></pre><p>` (反引号) this symbol can include string and <strong>variable</strong>, which means it is easy to create module and generate elements on HTML.<br>The question is I should add event listener to elements for motion and interaction. After every new generations, I added event listener repeatedly, which means when user interact with that element, it will response many times! The original method is:</p>
 <pre><code>Array.from(.elements).forEach((t)=&gt;{
-    t.addEventListener(&apos;click&apos;,function(){
+    t.addEventListener(&#39;click&#39;,function(){
         ...
     })
 }) 
@@ -106,14 +106,14 @@
 <p>The SVG object can be chosen by CSS selector or DOM selector, so I would like to set attribute of SVG by <strong>Anime.js</strong> </p>
 <pre><code>let cir = svg.paper.circle(x,y,r) //create circle element
 cir.attr({
-    class:&apos;.cir-in-svg&apos;
+    class:&#39;.cir-in-svg&#39;
 }) // set class so it can be chosen by CSS/Anime
 
 anime({
-    targets:&apos;.cir-in-svg&apos;,
+    targets:&#39;.cir-in-svg&#39;,
     translateX:[
-        {values:100,duration:1000,easing:&apos;linear&apos;},
-        {values:0,duration:1000,easing:&apos;linear&apos;}            
+        {values:100,duration:1000,easing:&#39;linear&#39;},
+        {values:0,duration:1000,easing:&#39;linear&#39;}            
     ],
     opacity:1,
     duration:function(el,i,l){
@@ -145,7 +145,7 @@ let    newArr = Array.from(ranSet)
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/14/Reproduction-in-famous-arts/">Reproduction in famous arts</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/31/Inro-of-Arduino/">Inro of Arduino</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>

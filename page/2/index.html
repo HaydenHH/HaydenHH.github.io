@@ -93,6 +93,59 @@
     
       <div class="recent-post-item col-sm-12 rounded-right">
         <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker<br></a>
+          <!-- 我的编辑 -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+          
+          
+      
+        
+
+          
+            <time datetime="2019-01-17T20:36:54.000Z">
+              2019-01-17
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        <div class="recent-post-preview col-sm-12">
+          <div class="row">
+            
+              <div class="recent-post-placeholder col-md-6">
+                <span ><h1 id="collaboration-with-a-Film-maker"><a href="#collaboration-with-a-Film-maker" class="headerlink" title="collaboration with a Film maker"></a>collaboration with a Film maker</h1><p>To complete the project which require collaboration with other, I found a student who learning in MA Film. She has professional cognition in shot design, so I can get advanced suggestion on animation making or screen writing.<br><a id="more"></a></p>
+<p>The early topic we chose is about relationship in contemporary partner. </p>
+
+<p>Because of the culture shock, emotion between different people could be hard to understand by other who from different countries. Therefore we are going to focus more on <em>behaviour</em> side, which means, in the animation, the <em>emotion</em> expression could not be rendered as main point, the <strong>phenomenon</strong> and <strong>behaviour</strong> will be more important in this project. </p>
+<h2 id="Reason-I-explore-relationship-between-partner"><a href="#Reason-I-explore-relationship-between-partner" class="headerlink" title="Reason I explore relationship between partner"></a>Reason I explore relationship between partner</h2><p>There are many developed countries are holding a low population growth, evermore negative growth. In my opinion, this phenomenon is because of the change of <strong>marry</strong>. Children and children education is becoming kind of <strong>bear</strong> in a family especially in high-knowledge level group. More and more partner have strong individual concept, and they are becoming more <strong>independent</strong>.<br>So I want to explore the reason people become more independent with partner, it could be include the physical factors or emotional reason. </p>
+</span>
+              </div>
+              <div class="post-summary col-sm-12 col-md-5">
+                <span>Abstract:</span>
+                <br>
+                <p>collaboration with a Film makerTo complete the project which require collaboration with other, I found a student who learning in MA Film. She has professional cognition in shot design, so I can get advanced suggestion on animation making or screen writing....</p>
+                <a class="rounded" href="/2019/01/17/collaboration-with-Film-maker/">Read more >></a>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="recent-post-item col-sm-12 rounded-right">
+        <div class="recent-post-info">
           <a class="recent-post-title" href="/2019/01/14/Reproduction-in-famous-arts/">Reproduction in famous arts<br></a>
           <!-- 我的编辑 -->
           <span class="recent-post-cat ">
@@ -192,12 +245,12 @@ change the attitude of visitor...</p>
                 <span ><h1 id="Reflection-About-programming-and-concept-of-building-Web"><a href="#Reflection-About-programming-and-concept-of-building-Web" class="headerlink" title="Reflection: About programming and concept of building Web"></a>Reflection: About programming and concept of building Web</h1><p>Basically, I’ve finished this Web during this term. To summary, this Web is designed to devote translate words to graphic information. The content I used is Chinese classical poem, I catched poem by JSON which be supported by <a href="https://gushi.ci/" target="_blank" rel="noopener">Gushi.ci</a>. <a id="more"></a>Therefore, user can get massive poem randomly, and they can try to understand it by graphic as well as the translation supported by Baidu’s API. Now, I’m going to conclude some problem I faced, and the final solution.</p>
 <h2 id="use-Javascript-module-to-create-elements-in-time"><a href="#use-Javascript-module-to-create-elements-in-time" class="headerlink" title="use Javascript module to create elements in time."></a>use Javascript module to create elements in time.</h2><p>The target is showing a gallery on Web, there are many of image had been upload on cloud server, and display by <strong>href Link</strong>. I collected all of link in JSON file, and the Web can read link than create elements.</p>
 <h3 id="module-style-and-Event"><a href="#module-style-and-Event" class="headerlink" title="module style and Event"></a>module style and Event</h3><p>As ECMA6 declared:</p>
-<pre><code>$(&apos;body&apos;).append(`
+<pre><code>$(&#39;body&#39;).append(`
     &lt;p&gt;Content:${Variable}&lt;/p&gt;
 `)
 </code></pre><p>` (反引号) this symbol can include string and <strong>variable</strong>, which means it is easy to create module and generate elements on HTML.<br>The question is I should add event listener to elements for motion and interaction. After every new generations, I added event listener repeatedly, which means when user interact with that element, it will response many times! The original method is:</p>
 <pre><code>Array.from(.elements).forEach((t)=&gt;{
-    t.addEventListener(&apos;click&apos;,function(){
+    t.addEventListener(&#39;click&#39;,function(){
         ...
     })
 }) 
@@ -205,14 +258,14 @@ change the attitude of visitor...</p>
 <p>The SVG object can be chosen by CSS selector or DOM selector, so I would like to set attribute of SVG by <strong>Anime.js</strong> </p>
 <pre><code>let cir = svg.paper.circle(x,y,r) //create circle element
 cir.attr({
-    class:&apos;.cir-in-svg&apos;
+    class:&#39;.cir-in-svg&#39;
 }) // set class so it can be chosen by CSS/Anime
 
 anime({
-    targets:&apos;.cir-in-svg&apos;,
+    targets:&#39;.cir-in-svg&#39;,
     translateX:[
-        {values:100,duration:1000,easing:&apos;linear&apos;},
-        {values:0,duration:1000,easing:&apos;linear&apos;}            
+        {values:100,duration:1000,easing:&#39;linear&#39;},
+        {values:0,duration:1000,easing:&#39;linear&#39;}            
     ],
     opacity:1,
     duration:function(el,i,l){
@@ -342,55 +395,6 @@ After 5 days, I basically understood the using of p5.js 😃, so I continually r
         </div>
       </div>
     
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/28/Poor-images-and-Glitch-art/">Poor images and Glitch art<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-          
-          
-      
-        
-
-          
-            <time datetime="2018-10-28T22:39:29.000Z">
-              2018-10-28
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-              <div class="recent-post-img col-sm-12 col-md-6 "> 
-                <img class="img-responsive" src="/2018/10/28/Poor-images-and-Glitch-art/photo1.jpg" />
-              </div>
-              <div class="post-summary col-sm-12 col-md-4">
-                
-                <span >Abstract:</span>
-                <br>
-                <p>What’s poor imagePoor image generally are low quality digital image, which means it is defined base on sharpness and resolution....</p>
-                <a class="rounded" href="/2018/10/28/Poor-images-and-Glitch-art/">Read more >></a>
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    
     
   </div>
 
@@ -405,7 +409,7 @@ After 5 days, I basically understood the using of p5.js 😃, so I continually r
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/14/Reproduction-in-famous-arts/">Reproduction in famous arts</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/31/Inro-of-Arduino/">Inro of Arduino</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
