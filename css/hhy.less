@@ -1,12 +1,17 @@
+
 @dark:#1A282C;
 @dark-:#3B4F50;
-@bla:rgb(40, 43, 46);
+
+// @bgc:rgb(40, 43, 46);
+@bgc:rgb(242, 242, 242);
 @grey-light:#8D8B81;
-@yel:#EDC329;
-@bro:#BB8B15;
+// @main_color:#EDC329;
+@main_color:rgb(237, 96, 36);
+
 @light:#CAD8DF;
-@whi:#F2F3F3;
-@whi+:#E3EAED;
+// @font:#F2F3F3;
+@font:rgb(79, 82, 82);
+@font+:#E3EAED;
 @quo:#E0E0DE;
 @pur:#8F8FEA;
 @gre:#99E0A2;
@@ -16,36 +21,37 @@
 
 
 body {
-  background-color: @yel;
+  background-color: @main_color;
   padding: 0px;
   margin: 0;
   color:@dark;
+  background-color: @bgc;
   p::selection,h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,a::selection,div::selection,span::selection{
   	color:white;
-  	background-color: @yel;
+  	background-color: @main_color;
   }
 }
 
 
 #menu-inner{
-	background-color:@bla;
+	background-color:@bgc;
 	& > nav{
 		li a{
-			color:@whi;
+			color:@font;
 			padding:20px 20px;
 			&:hover{
 				color:@light;
 			}
 		}
-		// background-color: @yel;
+		// background-color: @main_color;
 		.navbar-brand{
-			color:@yel;
+			color:@main_color;
 			padding: 0 10px;
-			border-left:15px double @yel;
+			border-left:15px double @main_color;
 			transition: .5s;
 			&:hover{
-				border-left: 5px solid darken(@bro, 30%);
-				color:darken(@bro, 30%);
+				border-left: 5px solid darken(@main_color, 30%);
+				color:darken(@main_color, 30%);
 			}
 		}
 	}
@@ -62,7 +68,7 @@ body {
 #showPic {
 	padding: 0;
 	.jumbotron{
-		background-color: @yel;
+		background-color: @main_color;
 	}
 }
 
@@ -74,7 +80,7 @@ body {
 		.layer{
 			height: 150px;
 			width: 15px;
-			background-color:@yel;
+			background-color:@main_color;
 		}
 		
 	}
@@ -103,7 +109,7 @@ body {
 .page-nav{
 	margin: 20px 0;
 	a,span{
-		color:@whi;
+		color:@font;
 		margin-right:2px;
 	}
 	
@@ -113,7 +119,7 @@ body {
 		font-style: italic;
 		font-size: .8em;
 		text-decoration: none;
-		background-color: @yel;
+		background-color: @main_color;
 		&:hover{
 			color: @dark;
 		}
@@ -121,14 +127,14 @@ body {
 	.current{
 		background-color: @grey-light;
 		&:hover{
-			color: @whi;
+			color: @font;
 		}
 	}
 }
 
 #content-inner{
 	overflow: hidden;
-	background-color:@bla;
+	background-color:@bgc;
 }
 
 #recent-posts{
@@ -138,10 +144,10 @@ body {
 	}
 	.block-title{
 		display: block;
-		color:@whi;
+		color:@font;
 	}
 	.cat-journal .recent-post-cat > a{
-		background-color: @yel;
+		background-color: @main_color;
 		color:contrast(@gre, black, white);
 	}
 	.cat-Reflection .recent-post-cat > a{
@@ -162,7 +168,7 @@ body {
 			display: block;
 			transition: .5s;
 			transform: rotate(1deg);
-			box-shadow: 3px 8px 2px  darken(@bla,30%);
+			box-shadow: 3px 8px 2px  darken(@bgc,30%);
 			position: absolute;
 			width: 90%;
 			height: 50%;
@@ -175,13 +181,13 @@ body {
 			}
 			&:after{
 			transform: rotate(3deg);
-			background-color:darken(@whi,50%);
-			box-shadow: 5px 9px 3px darken(@bla,30%);
+			background-color:darken(@font,50%);
+			box-shadow: 5px 9px 3px darken(@bgc,30%);
 			}
 		}
 		
 		a{
-			color:@dark;
+			color:@font;
 			padding: 5px 30px;
 			font-size: .8em;
 			font-style: italic;
@@ -191,20 +197,20 @@ body {
 	.recent-post-item{
 		padding: 5px 10px 15px 5px;
 		margin-top: 5px;
-		border: 1px solid @yel;
+		border: 1px solid @main_color;
 		transition: 0.5s;
-		// background-color: lighten(@bla,20%) hue(@bla,10%);
-		color:@whi;
-		a{color:@whi;}
+		
+		color:@font;
+		a{color:@font;}
 		.recent-post-title{
-			color:@whi;
+			color:@font;
 		}
 		&:hover,&:focus,&:active{
-			// background-color: @whi;
-			border: 1px solid @whi;
-			// border-top: 10px solid @yel;
+			// background-color: darken(@bgc,10%);
+			border: 1px solid @font;
+			// border-top: 10px solid @main_color;
 			.recent-post-placeholder > span{
-				color:darken(@whi+, 50%);
+				color:darken(@font+, 50%);
 			}
 			.recent-post-info > a{
 				.read;
@@ -231,7 +237,7 @@ body {
 					height: 100%;
 					font-size: .3em;
 					font-style: italic;
-					color:darken(@whi+, 30%);
+					color:darken(@font+, 30%);
 				}
 			}
 			.post-summary{
@@ -248,16 +254,16 @@ body {
 					margin-top: 5px;
 				}
 				a{
-					color:@bro;
+					color:@main_color;
 					padding: 2px 20px;
-					border: 1px solid @bro;
+					border: 1px solid @main_color;
 					transition: .3s;
 
 					&:hover{
 						text-decoration: none;
-						color:@whi;
-						background-color: @yel;
-						border: 1px solid @yel;
+						color:@font;
+						background-color: @main_color;
+						border: 1px solid @main_color;
 
 					}
 				}
@@ -292,8 +298,8 @@ body {
 	
 	h2{
 		transition: .5s;
-		color:@whi;
-		border-left: 15px double @whi;
+		color:@font;
+		border-left: 15px double @font;
 		.hL
 	}
 	& > ul{
@@ -307,19 +313,19 @@ body {
 			padding: 5px 10px;
 			transition: .1s ease-in;
 			&:nth-child(n){
-				background-color:lighten(@bla, 5%) ;
+				background-color:darken(@bgc, 5%) ;
 				a{
-					color:darken(@whi,5%);
+					color:darken(@font,5%);
 				}
 			}
 			&:nth-child(2n){
-				background-color:lighten(@bla, 10%) ;
+				background-color:darken(@bgc, 10%) ;
 				a{
-					color:lighten(@whi, 0%);
+					color:lighten(@font, 0%);
 				}
 			}
 			&:hover{
-				background-color: @yel ;
+				background-color: @main_color ;
 				a{
 					.read;
 				}
@@ -333,16 +339,16 @@ body {
 		}
 	}
 	#post-list-more{
-		background-color: @yel;
+		background-color: @main_color;
 		padding: 10px ;
 		transition: .5s;
 		text-align: right;
 		font-size: .8em;
 		a{.link;
-		color: @whi;
+		color: @font;
 		}
 		&:hover{
-				background-color: darken(@yel, 5%) ;
+				background-color: darken(@main_color, 5%) ;
 				padding-bottom: 20px;
 				a{
 					transform: scale(1.2);
@@ -358,7 +364,7 @@ body {
 	#post-head{
 		padding-bottom: 30px;
 		border-top-right-radius : 5px;
-		background-color: @yel;
+		background-color: @main_color;
 
 	}
 
@@ -368,31 +374,31 @@ body {
 		a{
 			padding: 2px 15px;
 			border-radius: 3px;
-			color: @whi;
+			color: @font;
 			font-size: .8em;
 		} 	
 		
 	}
 	.article-title{
-			color: @whi;
+			color: @font;
 			padding: 10px 0px;
-			border-bottom: 1px solid @whi;
+			border-bottom: 1px solid @font;
 		}
 	#post{
 		
-		color: @whi;
+		color: @font;
 		padding: 50px 10px;
 		padding-bottom: 150px;
-		border: @yel solid .5px;
-		background:darken(@bla,5%);
-		//background-color: @whi;
+		border: @main_color solid .5px;
+		background:darken(@bgc,5%);
+		//background-color: @font;
 		// -webkit-background-size: 1%;
 		line-height: 1.7em;
 		h1,h2,h3,h4,h5,h6{
 			margin-top: 30px;
-			border-left: @yel solid 4px;
+			border-left: @main_color solid 4px;
 			padding: 10px 20px;
-			background:darken(@bla,1%);
+			background:darken(@bgc,1%);
 			// width: 30vw;
 		}
 		h1{
@@ -404,7 +410,7 @@ body {
 			margin-top: 30px;
 		}
 		strong{
-			color:@yel;
+			color:@main_color;
 		}
 		em{
 			color:@blu;
@@ -412,19 +418,19 @@ body {
 		}
 		blockquote{
 			font-size: 1em;
-			background:darken(@bla,10%);
+			background:darken(@bgc,10%);
 			vertical-align: baseline;
-			color:@yel;
+			color:@main_color;
 			font-style: italic;
 			display: block;
 			padding: 10px 30px;
 			padding-top: 15px;
 			margin-top: 50px;
-			border-left: 20px double @yel;
+			border-left: 20px double @main_color;
 		}
 		code{
 			font-size: 1em;
-			background:darken(@bla,10%);
+			background:darken(@bgc,10%);
 			color:@blu;
 			vertical-align: baseline;
 			display: block;
@@ -446,7 +452,7 @@ body {
 
 
 #bottom-outer{
-	background-color: @bla;
+	background-color: @bgc;
 	padding: 20vh 0;
 	text-align: center;
 
@@ -454,9 +460,9 @@ body {
 		color:@grey-light;
 		font-size: .8em;
 		a{
-			color: @yel;
+			color: @main_color;
 			&:hover{
-				color:@bro;
+				color:@main_color;
 			}
 		}
 	}
@@ -464,10 +470,10 @@ body {
 //------------------------------------------------
 
 #archive{
-	color:@whi;
+	color:@font;
 	.list-group-item{
-		background-color: @bla;
-		border: @yel solid .5px;
+		background-color: @bgc;
+		border: @main_color solid .5px;
 	}
 	aside{
 		margin-top: 5px;
@@ -485,7 +491,7 @@ body {
 #tag, #category{
 	& > h1{
 		.hL;
-		color:@whi;
+		color:@font;
 	}
 	a{
 		.link;
@@ -498,9 +504,9 @@ body {
 #page-about{
 	color:@grey-light;
 	article{
-		color: @whi;
-		background-color:lighten(@bla,10%);
-		border: 1px solid @yel;
+		color: @font;
+		background-color:lighten(@bgc,10%);
+		border: 1px solid @main_color;
 		padding:0px 25px 25px 10px;
 		clear: both;
 		.fH;
@@ -509,13 +515,13 @@ body {
 			float: left;
 		}
 		b{
-			color:@bro;
+			color:@main_color;
 		}
 
 	}
 	h1,h2{
 		.hL;
-		color:@yel;
+		color:@main_color;
 	}
 	#about-1{
 		#about-name{
@@ -546,18 +552,18 @@ body {
 //---------------------------------------------------------------------------------------------
 
 .link{
-	color:darken(@whi, 20%);
+	color:darken(@font, 20%);
 	text-decoration: none;
 	&:hover{
-		color:darken(@whi, 40%);
+		color:darken(@font, 40%);
 	}
 }
 
 .hL{
-	border-left: 15px double @yel;
+	border-left: 15px double @main_color;
 	transition: .3s;
 	&:hover{
-		border-left: 5px solid @yel;
+		border-left: 5px solid @main_color;
 	}
 }
 
@@ -588,7 +594,7 @@ body {
 	margin-top: 50px;
 }
 .textarea-wrapper--top-level,.textarea{
-	background-color: @bla;
+	background-color: @bgc;
 }
 
 
