@@ -1,0 +1,226 @@
+
+
+
+<!DOCTYPE html>
+<html lang="English">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play with computer [ MAIVM ]</title>
+  <meta name="baidu-site-verification" content="86burbRUA2" />
+  <meta name="google-site-verification" content="ddD504LkQFv-uiU4zbpAwPJVWsp0KOc-PDdg5ZX1MtU" />
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hhy.css">
+    
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript">
+      window.onload = function(){
+          var parallax = new Parallax(document.getElementById('scene'));
+      }
+     
+    </script>
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css">
+  <script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
+  
+</head>
+<body>
+
+
+<div id="menu-outer">
+
+  <div id="menu-inner">
+    
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"> Hayden's Journal </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+            <li><a class="nav-item nav-link " href="/">Home</a></li>
+          
+            <li><a class="nav-item nav-link " href="/archives">Archives</a></li>
+          
+            <li><a class="nav-item nav-link " href="/about">About</a></li>
+          
+          
+
+        </div>
+      </div>
+    </nav>
+    <!-- nav -->  
+  </div>
+</div>
+
+<div id="content-outer" class="container-fluid">
+  <div id="content-inner" class="row">
+    
+
+<div id="post-container" class="col-sm-12 col-md-7 offset-md-1">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	<div class="row">
+		
+	
+		<div id="post-head" class="col">
+			<h1 class="article-title">Play with computer</h1>
+			<span class="article-tags">
+				 
+					
+
+<a class="post-tag" href="/tags/Processing/">Processing</a> <a class="post-tag" href="/tags/Javascript/">Javascript</a> <a class="post-tag" href="/tags/Regular-expression/">Regular expression</a> <a class="post-tag" href="/tags/Web/">Web</a>
+
+
+			</span>
+
+		
+
+		</div>
+		<article id="post" class="rounded-bottom col-12">
+
+		  
+		  <div class="col-sm-12 col-md-10">
+		  	<h1 id="Play-with-computer"><a href="#Play-with-computer" class="headerlink" title="Play with computer"></a>Play with computer</h1><p>Is computer fool? No, you saw Alpha Go, you saw the super calculator. But I say, computer is still a <strong>tool</strong> <del>fool</del> right now. It rely on your order / operation, <del>sometimes even doesn’t work though</del>. Well, let’s talk about some function it took me and the reason I thought it is a fool, then I will show some methods to deal with computer.</p>
+<a id="more"></a>
+<h2 id="Painting-with-computer"><a href="#Painting-with-computer" class="headerlink" title="Painting with computer"></a>Painting with computer</h2><p>As a designer, computer supported sorts of methods to draw, whatever vector graphic, bitmap,or motional graphic. For painting, CG can imitate real textrue or materials even stroke / brush and press. </p>
+<p>Basically, CG can be defined <strong>Shaded &amp; Flat</strong> (厚涂,平涂)for me. Shaded painting means artist will shade the graphic to make it looks more like <strong>real</strong>, object’s volume / 3D can be described as a objective effect. <strong>Flat painting</strong> have become more popluar than 10 years ago, this style gernerally use <em>solid</em> color and <em>flat</em> shape. Sometimes it’s abstract but has stronger visuals. Furthermore, in Japanese animation field, flat colours are filled into outline of comic, and make animation. Because frame should be drew individually, so flat color is the best way to fill. </p>
+<h2 id="Animation-and-Curve"><a href="#Animation-and-Curve" class="headerlink" title="Animation and Curve"></a>Animation and Curve</h2><p>How to make a animation? By hand, draw every frames, which is easily understand. But different frames count in 1 second will take different effect.</p>
+<ul>
+<li>6-7 frames/s <em>obviously lag</em>, for: <strong>stop motion</strong></li>
+<li>12 frames/s <em>bascially smooth</em>, for: <strong>general animation</strong></li>
+<li>24 frames/s <em>really smooth</em>, for: <strong>action expression / film</strong></li>
+<li>60 frames/s <em>extremelly smooth</em>, for: <strong>game</strong></li>
+</ul>
+<p>It’s sooo hard to draw all frames by hand right?<br>Well, we have computer now, so how can it help artist to make aniamation then.</p>
+<h3 id="Key-frames-animation"><a href="#Key-frames-animation" class="headerlink" title="Key frames animation"></a>Key frames animation</h3><p>Set 2 frames, and computer will generate other frames. It looks wonderful, but, not at all. Key frames only generate simple transform:</p>
+<ul>
+<li>translate</li>
+<li>rotate</li>
+<li>skew</li>
+<li>scale</li>
+</ul>
+<p>For example, if I set two point, one is 0, another is 100. Then computer will generate graphic begin 0 to 100, but the graphic will not change except I set other animation. </p>
+<p>In AE, we can also use <em>cursor</em> to build motion, moving cursor of a graphic will make it as if it be pull / drag, because this action will keep the original shape, so it looks like a organic motion. </p>
+<h4 id="AE-expression-表达式"><a href="#AE-expression-表达式" class="headerlink" title="AE expression 表达式"></a>AE expression 表达式</h4><p>Imagine that, you want to let 5 ball move to right from left, <strong>one by one</strong>. The first thing you might inspire could be set different location of cursor on <strong>timeline</strong>, so they begin from different time. It’s OK, but, how about 100 balls, you can’t do that right, so we use expression.</p>
+<p>AE expression is base on Javascript, we can use expression to get different values and set frames.</p>
+<pre><code>transform.position + time * 100 * index
+</code></pre><ul>
+<li><em>transform.postion</em> means this component ‘s current position</li>
+<li><strong>time</strong> is the progress on timeline</li>
+<li><strong>index</strong> is the index of layer</li>
+</ul>
+<p>This expression means this component will countinue move with time, and it will increase the distance with a higher layer.</p>
+<h4 id="Bezier-curve"><a href="#Bezier-curve" class="headerlink" title="Bezier curve"></a>Bezier curve</h4><p>Computer is good at render geometric, but it can draw curve like human. So we should use Bezier curve to order computer to render a curve. </p>
+<p>Bacially, Bezier curve can render by SVG and P5.js or other language. And it can be sorted as:</p>
+<ul>
+<li>Linear Bezier</li>
+<li>Quadratic Bezier</li>
+<li>Cubic Bezier</li>
+</ul>
+<p>Different Bezier should be applied different <strong>handle point</strong> to control the curve. Quadratic need 2 points, cubic 3. To move the handle point, we can control the motion of curve.</p>
+<p>p5.js:</p>
+<pre><code>shapeBegin()
+vertix(x,y);
+vertix(handleX,handleY);
+vertix(handleX2,handleY2);
+vertix(endX,endY);
+endShape()
+</code></pre><p>We can add more describe by add <strong>vertix()</strong> expression, it apply the coordition of a point to draw line. It is a good way to set point base on <strong>mouseX, mouseY</strong>, so computer will follow the user’s operation. If the motion should be set as automatically action, we can use <strong>frameCount</strong> , which will continue increase with timeline. Because the <em>framecount</em> will infinitve increase, so use cos(frameCount) to get a range of value from <strong>0 to 1</strong>. </p>
+<p>If the handle point should move as a circle, we should get the function of circle, which return X and Y on a circle.</p>
+<pre><code>let cX = x + r * cos(angle * PI / 180)
+let cY = y + r * sin(angle * PI /180)
+</code></pre><p>This is a function to get every point, when we set angle as framecount, this function will continue output coordinate of a circle, and we can use that to set value of <strong>handle of Bezier</strong>, it can move innifitve.</p>
+
+		  </div>
+		</article>
+		
+	</div>
+</div>
+<div id="right-col" class="col-sm-12 col-md-3 ">
+			<div class="col-sm-12">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	<div id="post-list" class=" col-md-12 d-none d-sm-block ">
+		
+		
+		<h2 class="col-sm-10 float-left">All post</h2>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/02/Curve-animation/">Play with computer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/31/Inro-of-Arduino/">Intro of Arduino</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/23/2HoursWork/">2HoursWork</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/22/Why-Where-How/">Why-Where-How</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday</a></li></ul>
+		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
+	</div>
+</div>
+	
+		</div>
+<div class="container-fluid">
+	<div class="col-sm-12 col-md-7 offset-md-1" id="disqus_thread"></div>
+</div>	
+		
+	
+
+<script>
+	(function() { // DON'T EDIT BELOW THIS LINE
+
+	var d = document, s = d.createElement('script');
+	s.src = 'https://hayden-2.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+  </div>
+</div>
+ 
+<div id="bottom-outer" class="container-fluid">
+  <div id="bottom-inner" class="row">
+    <div id="bottom-info" class="col">
+       <i> For LCC MA.IVM Reflective Journal</i>
+        <br>
+        
+        
+            / <a class="" href="/">Home</a>
+        
+            / <a class="" href="/archives">Archives</a>
+        
+            / <a class="" href="/about">About</a>
+        
+        <br>
+        <br>
+        <p>
+          Site by <a href="/about">Heyao</a> / Made by <a href="https://hexo.io/" target="_blank">HEXO</a>
+        </p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/js/jquery-3.3.1.js"></script>
+  
+    <script src="/js/bootstrap.js"></script>
+  
+    <script src="/js/parallax.js"></script>
+  
+
+
+
+
+<!-- Custom Theme JavaScript -->
+
+
+</body>
+</html>
