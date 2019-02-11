@@ -17,14 +17,17 @@
 @gre:#99E0A2;
 @blu:#83AEFF;
 
-
+@cat1:#8F8FEA;
+@cat2:#99E0A2;
+@cat3:#83AEFF;
+@cat4:rgb(245, 131, 255);
 
 
 body {
   background-color: @main_color;
   padding: 0px;
   margin: 0;
-  color:@dark;
+  color:@font;
   background-color: @bgc;
   p::selection,h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,a::selection,div::selection,span::selection{
   	color:white;
@@ -151,13 +154,23 @@ body {
 		color:contrast(@gre, black, white);
 	}
 	.cat-Reflection .recent-post-cat > a{
-		background-color: @blu;
-		color:contrast(@blu, black, white);
+		background-color: @cat1;
+		color:contrast(@cat1, black, white);
 	}
 	.cat-gallery .recent-post-cat > a{
-		background-color: @pur;
-		color:contrast(@pur, black, white);
+		background-color: @cat2;
+		color:contrast(@cat2, black, white);
 	}
+	.cat-workshop .recent-post-cat > a{
+		background-color: @cat3;
+		color:contrast(@cat3, black, white);
+	}
+
+	.cat-research .recent-post-cat > a{
+		background-color: @cat4;
+		color:contrast(@cat4, black, white);
+	}
+
 	.recent-post-cat{
 		position: absolute;
 		left: 0;
@@ -205,12 +218,13 @@ body {
 		.recent-post-title{
 			color:@font;
 		}
+		
 		&:hover,&:focus,&:active{
 			// background-color: darken(@bgc,10%);
 			border: 1px solid @font;
 			// border-top: 10px solid @main_color;
 			.recent-post-placeholder > span{
-				color:darken(@font+, 50%);
+				color:darken(@font, 20%);
 			}
 			.recent-post-info > a{
 				.read;
@@ -237,7 +251,7 @@ body {
 					height: 100%;
 					font-size: .3em;
 					font-style: italic;
-					color:darken(@font+, 30%);
+					color:lighten(@font, 50%);
 				}
 			}
 			.post-summary{
@@ -380,7 +394,7 @@ body {
 		
 	}
 	.article-title{
-			color: @font;
+			color: contrast(@main_color);
 			padding: 10px 0px;
 			border-bottom: 1px solid @font;
 		}

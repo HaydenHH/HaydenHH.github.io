@@ -3,7 +3,7 @@ body {
   background-color: #ed6024;
   padding: 0px;
   margin: 0;
-  color: #1A282C;
+  color: #4f5252;
   background-color: #f2f2f2;
 }
 body p::selection,
@@ -117,11 +117,19 @@ body span::selection {
   color: black;
 }
 #recent-posts .cat-Reflection .recent-post-cat > a {
-  background-color: #83AEFF;
+  background-color: #8F8FEA;
   color: white;
 }
 #recent-posts .cat-gallery .recent-post-cat > a {
-  background-color: #8F8FEA;
+  background-color: #99E0A2;
+  color: black;
+}
+#recent-posts .cat-workshop .recent-post-cat > a {
+  background-color: #83AEFF;
+  color: white;
+}
+#recent-posts .cat-research .recent-post-cat > a {
+  background-color: #f583ff;
   color: white;
 }
 #recent-posts .recent-post-cat {
@@ -176,7 +184,7 @@ body span::selection {
 #recent-posts .recent-post-item:hover .recent-post-placeholder > span,
 #recent-posts .recent-post-item:focus .recent-post-placeholder > span,
 #recent-posts .recent-post-item:active .recent-post-placeholder > span {
-  color: #000000;
+  color: #1d1e1e;
 }
 #recent-posts .recent-post-item:hover .recent-post-info > a,
 #recent-posts .recent-post-item:focus .recent-post-info > a,
@@ -214,7 +222,7 @@ body span::selection {
   height: 100%;
   font-size: .3em;
   font-style: italic;
-  color: #040404;
+  color: #cfd1d1;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary {
   font-size: 0.8em;
@@ -354,7 +362,7 @@ body span::selection {
   font-size: .8em;
 }
 #post-container .article-title {
-  color: #4f5252;
+  color: #ffffff;
   padding: 10px 0px;
   border-bottom: 1px solid #4f5252;
 }

@@ -39,9 +39,9 @@ window.onload = function(){
 	tag.each(function(i=0){
 		i++
 		console.log(this.text)
-		var ran = Math.round(Math.random()*20) + 50
+		var ran = Math.round(Math.random()*100) 
 		$(this).css({
-			'backgroundColor' : 'hsl(' +  ran * i + ',82%,42%)'
+			'backgroundColor' : 'hsl(' +  ran * i + ',92%,72%)'
 		})
 	})
 // archieve
