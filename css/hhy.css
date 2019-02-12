@@ -248,6 +248,9 @@ body span::selection {
   background-color: #ed6024;
   border: 1px solid #ed6024;
 }
+#recent-posts post-gallery img {
+  width: 100%;
+}
 #recent-posts .recent-post-info {
   text-align: right;
 }
