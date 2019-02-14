@@ -233,10 +233,9 @@ body span::selection {
   font-weight: border;
   margin-top: 25px;
 }
-#recent-posts .recent-post-item .recent-post-preview .post-summary p {
-  margin-top: 5px;
-}
 #recent-posts .recent-post-item .recent-post-preview .post-summary a {
+  font-size: 0.8em;
+  font-style: italic;
   color: #ed6024;
   padding: 2px 20px;
   border: 1px solid #ed6024;
@@ -248,8 +247,19 @@ body span::selection {
   background-color: #ed6024;
   border: 1px solid #ed6024;
 }
-#recent-posts post-gallery img {
-  width: 100%;
+#recent-posts .recent-post-item .recent-post-preview .post-summary p {
+  margin-top: 5px;
+}
+#recent-posts .post-gallery img {
+  margin: 0;
+}
+#recent-posts .post-gallery .gallery-img-box {
+  overflow: hidden;
+}
+#recent-posts .post-gallery a {
+  color: #ed6024;
+  font-size: 0.7em;
+  font-style: italic;
 }
 #recent-posts .recent-post-info {
   text-align: right;
@@ -499,7 +509,6 @@ body span::selection {
 }
 #page-about article {
   color: #4f5252;
-  background-color: #ffffff;
   border: 1px solid #ed6024;
   padding: 0px 25px 25px 10px;
   clear: both;
@@ -569,6 +578,20 @@ body span::selection {
   display: inline-block;
   font-size: 0.5em;
   transform: translateX(-10px);
+}
+.post-a {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #ed6024;
+  padding: 2px 20px;
+  border: 1px solid #ed6024;
+  transition: .3s;
+}
+.post-a:hover {
+  text-decoration: none;
+  color: #4f5252;
+  background-color: #ed6024;
+  border: 1px solid #ed6024;
 }
 .holder {
   margin-top: 20px;

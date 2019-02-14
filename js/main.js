@@ -44,6 +44,24 @@ window.onload = function(){
 			'backgroundColor' : 'hsl(' +  ran * i + ',92%,72%)'
 		})
 	})
+
+	// $('.galleryBtn').click(function(event){
+		
+	// 	if($(this).text()== "close"){
+	// 		$(this).text("open")
+	// 	}else{
+	// 		$(this).text("close")
+	// 	}
+
+	// 	let fa = $(this).parent('.post-gallery').find('.gallery-img-box')
+	// 	fa.slideToggle()
+		
+		
+		
+	// })
+	
+
+
 // archieve
 
 	var catList = $("aside .category-list");

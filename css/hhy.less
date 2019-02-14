@@ -264,31 +264,30 @@ body {
 					margin-top: 25px;
 
 				}
+				a{
+					.post-a
+				}
 				p{
 					margin-top: 5px;
 				}
-				a{
-					color:@main_color;
-					padding: 2px 20px;
-					border: 1px solid @main_color;
-					transition: .3s;
-
-					&:hover{
-						text-decoration: none;
-						color:@font;
-						background-color: @main_color;
-						border: 1px solid @main_color;
-
-					}
-				}
+				
 			}
 			
 		}
 	}
 
-	post-gallery{
+	.post-gallery{
 		img{
-			width: 100%;
+			margin: 0;
+		}
+		.gallery-img-box{
+			overflow: hidden;
+			
+		}
+		a{
+			color:@main_color;
+			font-size: 0.7em;
+			font-style: italic;
 		}
 	}
 
@@ -526,7 +525,7 @@ body {
 	color:@grey-light;
 	article{
 		color: @font;
-		background-color:lighten(@bgc,10%);
+		// background-color:lighten(@bgc,10%);
 		border: 1px solid @main_color;
 		padding:0px 25px 25px 10px;
 		clear: both;
@@ -594,6 +593,23 @@ body {
 		display: inline-block;
 		font-size: 0.5em;
 		transform: translateX(-10px);
+	}
+}
+
+.post-a{
+	font-size: 0.8em;
+	font-style: italic;
+	color:@main_color;
+	padding: 2px 20px;
+	border: 1px solid @main_color;
+	transition: .3s;
+
+	&:hover{
+		text-decoration: none;
+		color:@font;
+		background-color: @main_color;
+		border: 1px solid @main_color;
+
 	}
 }
 
