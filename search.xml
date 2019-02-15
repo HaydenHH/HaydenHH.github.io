@@ -12,7 +12,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> research </category>
           
       </categories>
       
@@ -22,6 +22,8 @@
             <tag> Javascript </tag>
             
             <tag> tips </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
