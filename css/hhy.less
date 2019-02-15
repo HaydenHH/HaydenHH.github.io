@@ -32,7 +32,8 @@ body {
   p::selection,h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,a::selection,div::selection,span::selection{
   	color:white;
   	background-color: @main_color;
-  }
+	}
+	overflow-x: hidden;
 }
 
 
@@ -174,7 +175,7 @@ body {
 	.recent-post-cat{
 		position: absolute;
 		left: 0;
-		z-index: 2;
+		z-index: 1;
 		
 		&:after{
 			content: '';
@@ -209,12 +210,12 @@ body {
 
 	.recent-post-item{
 		padding: 5px 10px 15px 5px;
-		margin-top: 5px;
+		margin-top: 10px;
 		border: 1px solid @main_color;
 		transition: 0.5s;
 		
 		color:@font;
-		a{color:@font;}
+		
 		.recent-post-title{
 			color:@font;
 		}
@@ -241,7 +242,7 @@ body {
 				width: 100%;
 			}
 			.recent-post-placeholder{
-				margin-left: 15px;
+				// margin-left: 15px;
 				height: 200px;
 				background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
 				// -webkit-background-size: 1%;
@@ -279,15 +280,23 @@ body {
 	.post-gallery{
 		img{
 			margin: 0;
+			cursor: pointer;
+			border: none;
 		}
 		.gallery-img-box{
 			overflow: hidden;
-			
+			a{
+				.post-a;
+			}
 		}
 		a{
+			
 			color:@main_color;
 			font-size: 0.7em;
 			font-style: italic;
+			&:hover{
+				color: contrast(@main_color)
+			}
 		}
 	}
 
@@ -309,6 +318,44 @@ body {
 		display: inline-block;
 	}
 }
+
+.gallery-img-show{
+	background-color: rgba(165, 165, 164, 0.7);
+	z-index: 99;
+	position: fixed;
+	top:0;
+	height: 100vh;
+	img{
+		float: left;
+		margin-top: 10px;
+		max-height: 80vh;
+		max-width: 80vw;
+	}
+}
+.gallery-btn,.gallery-arrow{
+	border: @font 4px solid;
+	text-align: center;
+	color: @font;
+	padding:0 20px;
+	&:hover{
+		cursor: pointer;
+		background-color: @font;
+		color: contrast(@font)
+	}
+}
+.post-research-tagBox{
+	
+}
+.post-research-tags{
+	font-size: .7em;
+	color: @bgc;
+	&:hover{
+		background-color:@main_color;
+		color:contrast(@main_color);
+	}
+	
+}
+
 // recent-post -----------------------------------------------------------
 .space{
 	visibility: hidden;
@@ -599,16 +646,17 @@ body {
 .post-a{
 	font-size: 0.8em;
 	font-style: italic;
-	color:@main_color;
+	color:contrast(@main_color);
+	background-color:@main_color;
 	padding: 2px 20px;
 	border: 1px solid @main_color;
 	transition: .3s;
 
 	&:hover{
 		text-decoration: none;
-		color:@font;
-		background-color: @main_color;
-		border: 1px solid @main_color;
+		color:contrast(@main_color);
+		background-color: darken(@main_color,20%);
+		
 
 	}
 }

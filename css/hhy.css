@@ -5,6 +5,7 @@ body {
   margin: 0;
   color: #4f5252;
   background-color: #f2f2f2;
+  overflow-x: hidden;
 }
 body p::selection,
 body h1::selection,
@@ -135,7 +136,7 @@ body span::selection {
 #recent-posts .recent-post-cat {
   position: absolute;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 #recent-posts .recent-post-cat:after {
   content: '';
@@ -165,12 +166,9 @@ body span::selection {
 }
 #recent-posts .recent-post-item {
   padding: 5px 10px 15px 5px;
-  margin-top: 5px;
+  margin-top: 10px;
   border: 1px solid #ed6024;
   transition: 0.5s;
-  color: #4f5252;
-}
-#recent-posts .recent-post-item a {
   color: #4f5252;
 }
 #recent-posts .recent-post-item .recent-post-title {
@@ -210,7 +208,6 @@ body span::selection {
   width: 100%;
 }
 #recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder {
-  margin-left: 15px;
   height: 200px;
   background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
   background-size: 100% 5%;
@@ -236,30 +233,49 @@ body span::selection {
 #recent-posts .recent-post-item .recent-post-preview .post-summary a {
   font-size: 0.8em;
   font-style: italic;
-  color: #ed6024;
+  color: #ffffff;
+  background-color: #ed6024;
   padding: 2px 20px;
   border: 1px solid #ed6024;
   transition: .3s;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary a:hover {
   text-decoration: none;
-  color: #4f5252;
-  background-color: #ed6024;
-  border: 1px solid #ed6024;
+  color: #ffffff;
+  background-color: #9e380d;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary p {
   margin-top: 5px;
 }
 #recent-posts .post-gallery img {
   margin: 0;
+  cursor: pointer;
+  border: none;
 }
 #recent-posts .post-gallery .gallery-img-box {
   overflow: hidden;
+}
+#recent-posts .post-gallery .gallery-img-box a {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #ffffff;
+  background-color: #ed6024;
+  padding: 2px 20px;
+  border: 1px solid #ed6024;
+  transition: .3s;
+}
+#recent-posts .post-gallery .gallery-img-box a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #9e380d;
 }
 #recent-posts .post-gallery a {
   color: #ed6024;
   font-size: 0.7em;
   font-style: italic;
+}
+#recent-posts .post-gallery a:hover {
+  color: #ffffff;
 }
 #recent-posts .recent-post-info {
   text-align: right;
@@ -276,6 +292,40 @@ body span::selection {
 #recent-posts .recent-post-author {
   font-size: 0.8em;
   display: inline-block;
+}
+.gallery-img-show {
+  background-color: rgba(165, 165, 164, 0.7);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+}
+.gallery-img-show img {
+  float: left;
+  margin-top: 10px;
+  max-height: 80vh;
+  max-width: 80vw;
+}
+.gallery-btn,
+.gallery-arrow {
+  border: #4f5252 4px solid;
+  text-align: center;
+  color: #4f5252;
+  padding: 0 20px;
+}
+.gallery-btn:hover,
+.gallery-arrow:hover {
+  cursor: pointer;
+  background-color: #4f5252;
+  color: #ffffff;
+}
+.post-research-tags {
+  font-size: .7em;
+  color: #f2f2f2;
+}
+.post-research-tags:hover {
+  background-color: #ed6024;
+  color: #ffffff;
 }
 .space {
   visibility: hidden;
@@ -582,16 +632,16 @@ body span::selection {
 .post-a {
   font-size: 0.8em;
   font-style: italic;
-  color: #ed6024;
+  color: #ffffff;
+  background-color: #ed6024;
   padding: 2px 20px;
   border: 1px solid #ed6024;
   transition: .3s;
 }
 .post-a:hover {
   text-decoration: none;
-  color: #4f5252;
-  background-color: #ed6024;
-  border: 1px solid #ed6024;
+  color: #ffffff;
+  background-color: #9e380d;
 }
 .holder {
   margin-top: 20px;

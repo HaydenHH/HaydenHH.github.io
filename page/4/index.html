@@ -101,8 +101,8 @@
 
       <div class="recent-post-item col-sm-12 rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/16/Chinese-character/">Chinese character<br></a>
-          <!-- 我的编辑 -->
+          <a class="recent-post-title" href="/2019/01/02/Reflection-Finished-at-Programming-stage/">Reflection:Finished at Programming stage<br></a>
+          <!-- journal -->
           <span class="recent-post-cat ">
             
 
@@ -118,8 +118,8 @@
               
       
           
-            <time datetime="2018-10-16T20:15:58.000Z">
-              2018-10-16
+            <time datetime="2019-01-02T01:47:24.000Z">
+              2019-01-02
             </time>
             <hr>
           
@@ -132,263 +132,57 @@
           <div class="row">
             
             
+              <div class="recent-post-placeholder col-sm-12 col-md-5 ml-2">
+                <span ><h1 id="Reflection-About-programming-and-concept-of-building-Web"><a href="#Reflection-About-programming-and-concept-of-building-Web" class="headerlink" title="Reflection: About programming and concept of building Web"></a>Reflection: About programming and concept of building Web</h1><p>Basically, I’ve finished this Web during this term. To summary, this Web is designed to devote translate words to graphic information. The content I used is Chinese classical poem, I catched poem by JSON which be supported by <a href="https://gushi.ci/" target="_blank" rel="noopener">Gushi.ci</a>. <a id="more"></a>Therefore, user can get massive poem randomly, and they can try to understand it by graphic as well as the translation supported by Baidu’s API. Now, I’m going to conclude some problem I faced, and the final solution.</p>
+<h2 id="use-Javascript-module-to-create-elements-in-time"><a href="#use-Javascript-module-to-create-elements-in-time" class="headerlink" title="use Javascript module to create elements in time."></a>use Javascript module to create elements in time.</h2><p>The target is showing a gallery on Web, there are many of image had been upload on cloud server, and display by <strong>href Link</strong>. I collected all of link in JSON file, and the Web can read link than create elements.</p>
+<h3 id="module-style-and-Event"><a href="#module-style-and-Event" class="headerlink" title="module style and Event"></a>module style and Event</h3><p>As ECMA6 declared:</p>
+<pre><code>$(&#39;body&#39;).append(`
+    &lt;p&gt;Content:${Variable}&lt;/p&gt;
+`)
+</code></pre><p>` (反引号) this symbol can include string and <strong>variable</strong>, which means it is easy to create module and generate elements on HTML.<br>The question is I should add event listener to elements for motion and interaction. After every new generations, I added event listener repeatedly, which means when user interact with that element, it will response many times! The original method is:</p>
+<pre><code>Array.from(.elements).forEach((t)=&gt;{
+    t.addEventListener(&#39;click&#39;,function(){
+        ...
+    })
+}) 
+</code></pre><p>To add <strong>EL</strong> for every elements, I chose a <strong>class</strong>, and set to an <strong>Array</strong>, so it can use forEach() to <strong>iterate</strong> (遍历). <strong>But</strong>, the existed elements will be added EL again, which is horrible..So I changed the method of add, I chose the last element which is <strong>the last generated</strong>, and add EL for it. The important thing is <strong>Selector</strong>. </p>
+<p>The SVG object can be chosen by CSS selector or DOM selector, so I would like to set attribute of SVG by <strong>Anime.js</strong> </p>
+<pre><code>let cir = svg.paper.circle(x,y,r) //create circle element
+cir.attr({
+    class:&#39;.cir-in-svg&#39;
+}) // set class so it can be chosen by CSS/Anime
 
-              
+anime({
+    targets:&#39;.cir-in-svg&#39;,
+    translateX:[
+        {values:100,duration:1000,easing:&#39;linear&#39;},
+        {values:0,duration:1000,easing:&#39;linear&#39;}            
+    ],
+    opacity:1,
+    duration:function(el,i,l){
+        return 500 + i*100  // el=targets,i=index,l=length
+    }
+})
+</code></pre><p>SVG can be set by CSS with a good performance and interactivity.  So in future work, my main direction will be vector graphic and interactive animation.</p>
+<h3 id="add-a-random-item-from-existed-Array"><a href="#add-a-random-item-from-existed-Array" class="headerlink" title="add a random item from existed Array"></a>add a random item from existed Array</h3><p>This is a really usually requirement in WEB application, users could load more elements in time, but if every times they click and see <strong>same</strong> arrangement, there will not be cool. <code>There is a simple solution: create a new array, **random** select an element and push to new Array, then return the new one</code>, I thought. That’s wrong. Because it will add repeat elements, if randomly choose. So, the new solution is use Set type which declared by ECMA6, it like Array, can be iterated by for(..of..) The most important thing is : <strong>Set can not save same element</strong></p>
+<pre><code>const originArr = [a,b,c,d,e]
+let ranSet = new Set()
 
-              <div class="recent-post-placeholder col-md-6">
-                <span ><h1 id="The-separation-of-Chinese-character"><a href="#The-separation-of-Chinese-character" class="headerlink" title="The separation of Chinese character"></a>The separation of Chinese character</h1><p>Chinese character is hieroglyph, that means is Chinese character might made from different components which have specific means. For example, the word “grove” in Chinese character is made from two same components, which means “tree”, and the word “forest” in made from three “tree” components. Therefore, Chinese character can be separated to more general information. So, it is possible to visualise the meaning of Chinese character.</p>
-<a id="more"></a>
-<h2 id="Information-reconstruction-and-visualization"><a href="#Information-reconstruction-and-visualization" class="headerlink" title="Information reconstruction and visualization"></a>Information reconstruction and visualization</h2><p>As I said, the composition of CC (Chinese character) could be understood independently, if I separate that can use specific visual elements to represent the individual component, then regroup these, it will be really interesting! It could <em>represent a CC by different point</em>, and people might understand CC by a original, visual method that means, the colour, structure, geometric shape or something could be the part of  a reconstructive Chinese word. <em>What kind of information can be separated and collected from Chinese character?</em> </p>
-<ul>
-<li><p>Meaning of component </p>
-</li>
-<li><p>Stroke count </p>
-</li>
-<li><p>Construction </p>
-<p>The construction of a CC means, how do components group together, top and bottom, left and right, or left &amp; middle &amp; right, even around or special layout.</p>
-</li>
-<li><p>Tone of pronunciation </p>
-</li>
-<li><p>Expression of emotion</p>
-</li>
-<li><p>Feeling </p>
-</li>
-</ul>
-<p>## </p>
+do {
+    ranSet.add(originArr[Math.floor(Math.random() * originArr.length)])
+} while (ranSet.size&lt;5);
+
+let    newArr = Array.from(ranSet)
+</code></pre><p>So, the newArray is the new Array which is absolutely random.</p>
 </span>
               </div>
-              <div class="post-summary col-sm-12 col-md-5">
+              <div class="post-summary col-sm-12 col-md-6">
                 <span>Abstract:</span>
                 <br>
-                <p>The separation of Chinese characterChinese character is hieroglyph, that means is Chinese character might made from different components which have specific means. For example, the word “grove” in Chinese character is made from two same components, which means “tree”, and the word “forest” in made from three “tree” components. Therefore, Chinese character can be separated to more general information. So, it is possible to visualise the meaning of Chinese character....</p>
-                <a class="rounded" href="/2018/10/16/Chinese-character/">Read more >></a>
-              </div>
-              
-            
-          </div>
-        </div>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/16/Critical-Thinking/">Critical Thinking<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-16T15:16:38.000Z">
-              2018-10-16
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-            
-
-              
-
-              <div class="recent-post-placeholder col-md-6">
-                <span ><h1 id="Critical-thinking"><a href="#Critical-thinking" class="headerlink" title="Critical thinking"></a>Critical thinking</h1><p><em>lecturer: Rachael Finney</em> </p>
-<h2 id="research-amp-writing-amp-presentation"><a href="#research-amp-writing-amp-presentation" class="headerlink" title="research &amp; writing &amp; presentation"></a>research &amp; writing &amp; presentation</h2><p>It is a <strong>open direction</strong> of research in LCC, be <strong>confident</strong> in research.We Focus on research, identify the method of research.</p>
-<a id="more"></a>
-<h2 id="4-Session"><a href="#4-Session" class="headerlink" title="4 Session"></a>4 Session</h2><p>1 Research Slow looking</p>
-<p>2 Managing research</p>
-<p>3 writing</p>
-<p>Focus on the relationship in research report. Support research materials and evidence of development process.</p>
-<p>4 Presentation skill<br>5000 words essay</p>
-<h2 id="What-is-critical-thinking"><a href="#What-is-critical-thinking" class="headerlink" title="What is critical thinking"></a>What is critical thinking</h2><ul>
-<li>make question</li>
-</ul>
-<p>When we ask a question, we find the theory or reason of that, and we could get more question. <em>Question could be separated like a tree, deeper and expand</em> </p>
-<ul>
-<li>To side of something</li>
-</ul>
-<p>Critical thinking is not just <strong>justifying</strong> own opinion, it could require us to <em>look at different point of view</em>.<br>Is <em>unbridled curiosity</em> more useful than CT? Sometimes curiosity engage us to find question, so we might think about more on original thing, it still encourage us to think and do more research.</p>
-<h2 id="Doing-critical-thinking"><a href="#Doing-critical-thinking" class="headerlink" title="Doing critical thinking"></a>Doing critical thinking</h2><ol>
-<li><strong>Description</strong></li>
-</ol>
-<ul>
-<li>What</li>
-<li>Who</li>
-<li>Where</li>
-<li>When</li>
-</ul>
-<ol start="2">
-<li><strong>Analysis</strong></li>
-</ol>
-<ul>
-<li>How</li>
-<li>Why</li>
-</ul>
-<ol start="3">
-<li><strong>Evaluation</strong></li>
-</ol>
-<ul>
-<li>What if…?</li>
-<li>What next?</li>
-<li>So what?</li>
-</ul>
-<blockquote>
-<p>We had reaped the rewards of what art historian Jennifer Roberts has called<strong>“deceleration, patience and immersive attention.”</strong>1 To her students at Harvard, Roberts assigned the task of spending three whole hours in front of the John Singleton Copley painting Boy with a Squirrel. It was an exercise that Roberts herself had performed in her study of the painting, an act of temporal largesse that had yielded insights not readily available in any single passing look. <em>Ventura( 2016) Slow Criticism: Art in the Age of Post-Judgement</em></p>
-</blockquote>
-</span>
-              </div>
-              <div class="post-summary col-sm-12 col-md-5">
-                <span>Abstract:</span>
-                <br>
-                <p>Critical thinkinglecturer: Rachael Finney 
-research &amp; writing &amp; presentationIt is a open direction of research in LCC, be confident in research.We Focus on research, identify the method of research....</p>
-                <a class="rounded" href="/2018/10/16/Critical-Thinking/">Read more >></a>
-              </div>
-              
-            
-          </div>
-        </div>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/15/Research-about-M-Mohr/">Research about M.Mohr<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-15T22:08:05.000Z">
-              2018-10-15
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-            
+                <p>Reflection: About programming and concept of building WebBasically, I’ve finished this Web during this term. To summary, this Web is designed to devote translate words to graphic information. The content I used is Chinese classical poem, I catched poem by JSON which be supported by Gushi.ci....</p>
                 
-                <div class="recent-post-img col-sm-12 col-md-6 "> 
-                    
-                    <img class="img-responsive" src="/2018/10/15/Research-about-M-Mohr/photo1.jpg" />
-                  </div>
-                  <div class="post-summary col-sm-12 col-md-4">
-                    
-                    <span >Abstract:</span>
-                    <br>
-                    <p>Research about Manfred MohrManfred Mohr is a pioneer of digital art. I saw his work in V&amp;A museum. His attitude for computer generated art is convincing and similar with me....</p>
-                    <a class="rounded" href="/2018/10/15/Research-about-M-Mohr/">Read more >></a>
-                  </div>
-              
-              
-              
-              
-            
-          </div>
-        </div>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/13/Screen-Printing/">Screen Printing<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-13T22:36:52.000Z">
-              2018-10-13
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-            
-
-              
-
-              <div class="recent-post-placeholder col-md-6">
-                <span ><h2 id="Screen-Printing"><a href="#Screen-Printing" class="headerlink" title="Screen Printing"></a>Screen Printing</h2><p>The induction of screen printing is really interesting for me. Though I contacted screen printing before, heres tutor gave us many useful information.<br><a id="more"></a></p>
-<h2 id="Steps-to-print"><a href="#Steps-to-print" class="headerlink" title="Steps to print"></a>Steps to print</h2><ul>
-<li><p>The first step is clear the table and prepare a <strong>laysheet</strong>. That’s the paper we would print as outcome. And we must bring <strong>original work</strong>. We should place the original work to comfirm the position we print on laysheet. So we paste work (it generally is acid paper) Fixed by tape. Than we fix film board on print machine so it hard to move. A little tip is fold a paper and paste on laysheet, so it is available to move and adjust to a right position though the sheet will be covered by film board.</p>
-</li>
-<li><p>The ink should be adjust to be wet and smooth that’s means it will not dry too quick. To confect (调制) a good quality ink, we should balance the ratio of <strong>acrylic medium</strong> and <strong>acrylic</strong>. Medium should be put into container at first, because it can available acrylic mixed completely. <strong>50%</strong> medium and about 10g acrylic, and tiny other colours if we nee d mixed colour. <del>其实就挤三四陀就好了。</del> </p>
-</li>
-<li><p>To print well, we should print ink equality, <strong>DO NOT</strong> print overly, it lose all of details of engraving. The most important thing is that if we print a multicolour work, the position of laysheet should be accuracy place. We use first work that took mark with laystops to  guarantee that. </p>
-</li>
-</ul>
-<h2 id="Why-use-screen-printing"><a href="#Why-use-screen-printing" class="headerlink" title="Why use screen printing?"></a>Why use screen printing?</h2><p>Screen printing is a technique that print something have original details. Though it could print repeatedly, every times printing with different speeds or force might make different effect. </p>
-<p>Furthermore, the making of film board could be hand drawn that’s means some hand drawn illustrations can be use as film, and print to different colors. Different with digital creation, the process of making film could have tiny differences between original painting, so it will full of unpredictable details that really gorgeous for me.</p>
-</span>
               </div>
-              <div class="post-summary col-sm-12 col-md-5">
-                <span>Abstract:</span>
-                <br>
-                <p>Screen PrintingThe induction of screen printing is really interesting for me. Though I contacted screen printing before, heres tutor gave us many useful information....</p>
-                <a class="rounded" href="/2018/10/13/Screen-Printing/">Read more >></a>
-              </div>
+              <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2 " href="/2019/01/02/Reflection-Finished-at-Programming-stage/">Read more >></a>
               
             
           </div>
@@ -402,8 +196,8 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
         
         <div class="recent-post-item post-gallery col-sm-12 rounded-right "> 
             <div class="recent-post-info">
-                <a class="recent-post-title" href="/2018/10/12/V-A-Classical-digital-work/">V&amp;A Classical digital work<br></a>
-                <!-- 我的编辑 -->
+                <a class="recent-post-title" href="/2018/11/07/Pattern-export/">Pattern export<br></a>
+                <!-- gallery -->
                 <span class="recent-post-cat ">
                   
 
@@ -414,18 +208,25 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
               </div>
             <div class="gallery-img-box col-12 mt-5 p-2">
               <div class="row">
+                 
                 
-                  <a class="col p-0 mx-2 mt-1" href="/2018/10/12/V-A-Classical-digital-work/photo.jpg">
-                    <img class="img-thumbnail" src="/2018/10/12/V-A-Classical-digital-work/photo.jpg" />
-                  </a>
+                  
+                  <div class="gallery-img-a col-sm-12 col-lg m-1 p-0">
+                    <img class="img-thumbnail" src="/2018/11/07/Pattern-export/photo1.jpg" />
+                  </div>
+                  
+                  
                 
                 
               </div>
+              <a class="rounded d-flex flex-row-reverse mt-3" href="/2018/11/07/Pattern-export/">Read more >></a>  
             </div>
-            <a class="rounded col post-a d-flex flex-row-reverse" href="/2018/10/12/V-A-Classical-digital-work/">Read more >></a>
+            
+            
             <!-- <button class="galleryBtn btn  col-12 mt-5">close</button> -->
 
         </div>
+
         
     
       
@@ -434,12 +235,12 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
 
       <div class="recent-post-item col-sm-12 rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/10/Thinkinkaboutresearch/">Thinking about research<br></a>
-          <!-- 我的编辑 -->
+          <a class="recent-post-title" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/">Reflection: Developing CC visualisation V3<br></a>
+          <!-- journal -->
           <span class="recent-post-cat ">
             
 
-<a href="/categories/journal/"cat="journal">journal</a>
+<a href="/categories/Reflection/"cat="Reflection">Reflection</a>
 
 
           </span>
@@ -451,73 +252,8 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
               
       
           
-            <time datetime="2018-10-10T11:55:46.000Z">
-              2018-10-10
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-            
-
-              
-
-              <div class="recent-post-placeholder col-md-6">
-                <span ><h2 id="Discuss-with-research"><a href="#Discuss-with-research" class="headerlink" title="Discuss with research"></a>Discuss with research</h2><p>As an academic skill, research is the vital thing in my study process. In the begin of term, critical thinking and research have been the most important subject. Indeed, research for me was really helpful in the past projects.<br><a id="more"></a><br>I collected others’ ideas and method to seek possibilities in my own work. Evenmore, research could be a tool that understand others’ opion or attitude. That’s means, a work developed by research, it might be more acceptable, because some parts of it were inspired from existent theories and knowledges.</p>
-<p>One of classmates do research by experience and travel real location to feel atmosphere. It would be more sensetive if we go somewhere and observe local objects. Not only take photos, but find out some details in building, environment and human culture. If we want to realize somewhere, it is a good way to stay there, merely do nothing. In my view, doing research not just take notes or sketch something, keeping thinking and being relax could be useful to inspired self.</p>
-<p>Another classmates said a question that always confused me that sometimes we usually don’t know <strong>WHY</strong> did we choose some colours in our work. Sometimes, we indeed like do somtings we would like to do, which without reasons. Evenmore, we found more evidence to demonstrate that. Although it could be a way to develop work, it is still not reasonable. As a designer, we should know the reason we choose some layout or colours, it can be logical and linear. So it is important to draft our project, when we have some satisfied scheme, <em>we should do more research and realize why it is good</em>, so we will get more clear mind to develop that. 🌚</p>
-<p>Finally, somebody showed her FMP for us. They are some engraving works with gorgeous texture. And she pointed some special texture was created by <strong>ACCIDENT</strong> which made because of something broken. Fortunately, this accident made a really good shape with powerful trace. Charley said, </p>
-<blockquote>
-<p>we call it <strong>LUCKY ACCIDENT</strong> </p>
-</blockquote>
-<p>😂😂😂 Is it means art need luck? Of course <strong>NO!</strong> The lucky girl said, she used some bad outcome which printed with unsatisfied texture, she developed by cut and refine the outline. She distinguished the quality of work, and did action research, so she could create better work than early one. <strong><em>Face own lose, find the reason than refine that</em></strong> Maybe reason could be the most important thing when we creating work, and research can help us to define the reason we choose.</p>
-<p>Cheers.</p>
-</span>
-              </div>
-              <div class="post-summary col-sm-12 col-md-5">
-                <span>Abstract:</span>
-                <br>
-                <p>Discuss with researchAs an academic skill, research is the vital thing in my study process. In the begin of term, critical thinking and research have been the most important subject. Indeed, research for me was really helpful in the past projects....</p>
-                <a class="rounded" href="/2018/10/10/Thinkinkaboutresearch/">Read more >></a>
-              </div>
-              
-            
-          </div>
-        </div>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/09/First-day-in-V-A/">First day in V&amp;A<br></a>
-          <!-- 我的编辑 -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-09T12:58:50.000Z">
-              2018-10-09
+            <time datetime="2018-11-01T00:57:36.000Z">
+              2018-11-01
             </time>
             <hr>
           
@@ -531,21 +267,18 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
             
             
                 
-                <div class="recent-post-img col-sm-12 col-md-6 "> 
+                <div class="recent-post-img col-sm-12 col-md-6"> 
                     
-                    <img class="img-responsive" src="/2018/10/09/First-day-in-V-A/IMG_6763.JPG" />
+                    <img class="img-responsive" src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo3.jpg" />
                   </div>
-                  <div class="post-summary col-sm-12 col-md-4">
+                  <div class="post-summary col-sm-12 col-md-6">
                     
                     <span >Abstract:</span>
                     <br>
-                    <p>...</p>
-                    <a class="rounded" href="/2018/10/09/First-day-in-V-A/">Read more >></a>
+                    <p>Reflection: CCV type-3WEB LINK
+After 5 days, I basically understood the using of p5.js 😃, so I continually refine the idea about visualisation of CC (Chinese Character). To definitely show the differences of characters, I chose Strokes counts to generate points and lines. In this article I will describe most progress and details....</p>
                   </div>
-              
-              
-              
-              
+                  <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/">Read more >></a>
             
           </div>
         </div>
@@ -555,33 +288,128 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
       
 
       
+
+      <div class="recent-post-item col-sm-12 rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/28/Poor-images-and-Glitch-art/">Poor images and Glitch art<br></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-28T22:39:29.000Z">
+              2018-10-28
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
         
-        <div class="recent-post-item post-gallery col-sm-12 rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2018/09/02/CHUNCHUNYAN/">The first upload img<br></a>
-                <!-- 我的编辑 -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/gallery/"cat="gallery">gallery</a>
-
-                </span>
+        <div class="recent-post-preview col-sm-12">
+          <div class="row">
+            
+            
                 
-              </div>
-            <div class="gallery-img-box col-12 mt-5 p-2">
-              <div class="row">
-                
-                  <a class="col p-0 mx-2 mt-1" href="/2018/09/02/CHUNCHUNYAN/LRG_DSC06309.JPG">
-                    <img class="img-thumbnail" src="/2018/09/02/CHUNCHUNYAN/LRG_DSC06309.JPG" />
-                  </a>
-                
-                
-              </div>
-            </div>
-            <a class="rounded col post-a d-flex flex-row-reverse" href="/2018/09/02/CHUNCHUNYAN/">Read more >></a>
-            <!-- <button class="galleryBtn btn  col-12 mt-5">close</button> -->
-
+                <div class="recent-post-img col-sm-12 col-md-6"> 
+                    
+                    <img class="img-responsive" src="/2018/10/28/Poor-images-and-Glitch-art/photo1.jpg" />
+                  </div>
+                  <div class="post-summary col-sm-12 col-md-6">
+                    
+                    <span >Abstract:</span>
+                    <br>
+                    <p>What’s poor imagePoor image generally are low quality digital image, which means it is defined base on sharpness and resolution....</p>
+                  </div>
+                  <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2" href="/2018/10/28/Poor-images-and-Glitch-art/">Read more >></a>
+            
+          </div>
         </div>
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item col-sm-12 rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/28/process-make-different-method-to-group/">process:make different method to group<br></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-28T18:23:43.000Z">
+              2018-10-28
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col-sm-12">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-5 ml-2">
+                <span ><h1 id="Get-stroke-counts"><a href="#Get-stroke-counts" class="headerlink" title="Get stroke counts"></a>Get stroke counts</h1><p>After last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach.<br><a id="more"></a></p>
+<h2 id="Retrieve-database"><a href="#Retrieve-database" class="headerlink" title="Retrieve database"></a>Retrieve database</h2><p>The principle of analyse data actually just search database, which means every element I might use, have existed in database, it could be prepared or made in time. </p>
+<p>It is easy to get data, such as stroke counts of word, but the difficult thing is to translate that to a new data, which can be used to generated shape.</p>
+<h3 id="Data-driven-shape"><a href="#Data-driven-shape" class="headerlink" title="Data-driven shape"></a>Data-driven shape</h3><p>Data-driven graphic design <em>32p</em>: </p>
+<blockquote>
+<p>“Unlike the physical process of making a mark with a pen, brush, or even a digital tablet, computational drawings are created by a written list of programming instructions based on rules and  procedures that a programmer writes, a computer translates and executes the instructions into individual marks lines, and shapes on the screen.”</p>
+</blockquote>
+<p>Computer generate different graphic base on the data have supported. In current stage, I want to use ‘Stroke’ to effect the <strong>format of graphic</strong>, which means how shapes group up and how they connect each other. The reason I thought is, Chinese word s sometimes have big differences in structure and strokes, it will effect visuals. The strokes will influence the <strong>complexity of the outlook, though it is irrelative to meaning generally, it can clear show different characteristics of words</strong></p>
+<h4 id="Make-points-as-coordinate"><a href="#Make-points-as-coordinate" class="headerlink" title="Make points as coordinate"></a>Make points as coordinate</h4><p>I create a series of points by strokes count of each word, so every word will have some points which can be the <strong>coordinate</strong>. In future work, some specific shape could be set in the coordinate. Furthermore, basing on different Tone, the layout of point could be changed, because Strokes merely influence the <strong>quantity of points</strong>.</p>
+<h4 id="render-graphic-base-on-different-coordinate-of-each-words"><a href="#render-graphic-base-on-different-coordinate-of-each-words" class="headerlink" title="render graphic base on different coordinate of each words"></a>render graphic base on different coordinate of each words</h4><p>The question is, I haven’t decided which way I render graphic. There are two method to render graphic I can use now, </p>
+<ul>
+<li>SVG, render by <a href="http://snapsvg.io/" target="_blank" rel="noopener">Snap.js</a></li>
+<li>Bitmap, render by <a href="https://p5js.org/zh-Hans/" target="_blank" rel="noopener">P5.js</a></li>
+</ul>
+<p>SVG available me to create more beautiful/ delicate shape with high-quality resolution. And Bitmap graphic can generate more curve and massive geometric shape. In future work I will do that  both and choose one or both as final effect.</p>
+<h2 id="The-difficulties-I-faced-now"><a href="#The-difficulties-I-faced-now" class="headerlink" title="The difficulties I faced now"></a>The difficulties I faced now</h2><h3 id="data-analyse"><a href="#data-analyse" class="headerlink" title="data analyse"></a>data analyse</h3><p>在早期进程中，变量的提取非常困难，尤其是我需要逐个把用户键入的字符匹配数据库，当匹配数据库后，再分析它的别的属性。逻辑层面必须非常清晰：<br>用户键入————每一个字————属性，如笔画读音偏旁<br>拼音，检索音调；<br>笔画————生成坐标，<br>坐标————通过笔画数判断坐标数量，通过别的<strong>属性</strong>决定坐标<strong>排列方式</strong><br>偏旁，检索特定的含义，其含义必须被单独设定，<strong>手动</strong></p>
+<h3 id="whole-style"><a href="#whole-style" class="headerlink" title="whole style"></a>whole style</h3><p>The work must be designed to illustrative, it should give the feeling of words, it doesn’t represent a whole sentence, but it should show the abstract meaning of words. </p>
+<img src="/2018/10/28/process-make-different-method-to-group/photo1.png">
+</span>
+              </div>
+              <div class="post-summary col-sm-12 col-md-6">
+                <span>Abstract:</span>
+                <br>
+                <p>Get stroke countsAfter last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach....</p>
+                
+              </div>
+              <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2 " href="/2018/10/28/process-make-different-method-to-group/">Read more >></a>
+              
+            
+          </div>
+        </div>
+      </div>
         
     
     
@@ -598,14 +426,14 @@ research &amp; writing &amp; presentationIt is a open direction of research in L
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/Tech-and-communication/">Tech and communication</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/11/Creative-process/">Creative process</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/use-GUI-to-build-shape/">use GUI to build shape</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/Oxford-journal/">Oxford journal</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/04/Way-of-seeing/">Way of seeing</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/02/Play-with-computer/">Play with computer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/31/Inro-of-Arduino/">Intro of Arduino</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/28/Think-with-population/">Think about population</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/15/Js-tips/">Web tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/research-Family/">Research: Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/Tech-and-communication/">Tech and communication</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/11/Creative-process/">Creative process</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/use-GUI-to-build-shape/">use GUI to build shape</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/Oxford-journal/">Oxford trip</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/04/Way-of-seeing/">Way of seeing</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/02/Play-with-computer/">Play with computer</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
 	
 </div>
 
-<div class="col-sm-12 offset-md-1 page-nav"><a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a></div>
+<div class="col-sm-12 offset-md-1 page-nav"><a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next</a></div>
 
 
   </div>

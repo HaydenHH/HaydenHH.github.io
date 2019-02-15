@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title>Web tips</title>
+      <link href="/2019/02/15/Js-tips/"/>
+      <url>/2019/02/15/Js-tips/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h3 id="No-selection"><a href="#No-selection" class="headerlink" title="No selection"></a>No selection</h3><pre><code>oncontextmenu=&quot;return false;&quot; onselectstart=&quot;return false&quot;</code></pre><p>add this in tag, broswer will not allow user to select this element. It’s helpful to set a button, because sometimes user will select the text on the button, and it will affect experience.</p><h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h3 id="Circle-index-in-Array"><a href="#Circle-index-in-Array" class="headerlink" title="Circle index in Array"></a>Circle index in Array</h3><p>When design a photo album, developer usually collect all <strong>src</strong> (link) of image in a <strong>Array</strong>, and control <strong>index</strong> to choose a link then exhibit on HTML. </p><p>When user click button, the <strong>index</strong> will <em>increase or decrease</em>, and the <strong>img</strong> tag will update <em>src</em>. But the array has a fixed length, if index bigger / less than length / 0, it will be a problem.</p><p>So I found this code:</p><pre><code>while (index &lt; 0) index += srcArr.lengthwhile (index &gt; srcArr.length) index -= srcArr.length</code></pre><p>It means, if the index become negative, it will become the last element in array, as well as other situation (first). So index will circle change.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+            <tag> tips </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Research: Family</title>
+      <link href="/2019/02/14/research-Family/"/>
+      <url>/2019/02/14/research-Family/</url>
+      
+        <content type="html"><![CDATA[<h1 id="family"><a href="#family" class="headerlink" title="family"></a>family</h1><h2 id="Function-of-a-family"><a href="#Function-of-a-family" class="headerlink" title="Function of a family"></a>Function of a family</h2><p>From: <a href="http://www.yourarticlelibrary.com/family/7-important-functions-of-family-1698-words/6171" target="_blank" rel="noopener">7 Important Functions of Family</a></p><p>Ogburn and Nimkoff:</p><ul><li>(i) Affectional</li><li>(ii) Economic functions </li><li>(iii) Recreational(娱乐的) functions </li><li>(iv) Protective functions </li><li>(v) Religious functions and </li><li>(vi) Educational functions</li></ul><hr><p>K. Davis :</p><ul><li>(i) Reproduction </li><li>(ii) Maintenance </li><li>(iii) Placement and </li><li>(iv) Socialization of the young</li></ul><h2 id="Same-sex-family"><a href="#Same-sex-family" class="headerlink" title="Same-sex family"></a>Same-sex family</h2><blockquote><p>Same-sex couple families accounted for one per cent of all couple families: 87,000 same-sex couple families were cohabiting, 47,000 were in a civil partnership, and 29,000 were married. 14,000 same-sex couple families had dependent children. These children may have come from a previous relationship or through other opportunities such as adoption, artificial insemination, or surrogacy. In the year to 31 March 2016, same-sex couples in the U.K. adopted 450 children, or 9.6 per cent of the total number of children adopted in that year. Most researchers in the field agree that children raised by one or two gay or lesbian parents suffer no particular disadvantage. </p></blockquote><p>Same-sex family are becoming more common, and the homosexual have became more acceptable in more countries, somewhere even allow homosexual marriage. Will it change the tranditional family construction?</p><blockquote><p>In the end, the cereal packet family contained the seed of its own destruction. Today more than ever, people are chasing romance and, in the process, creating instability. High divorce rates over the years have led to a considerable number of lone parents and reconstituted families. Assisted by rising life expectancies, economic and social forces are shifting responsibility back onto the extended family, and, at the same time helping to ease an epidemic of loneliness among the elderly. Younger people are choosing cohabitation over marriage, and it is possible to envisage a looser form of cohabitation overtaking marriage, along with a more serial or task-driven approach to partnering over the course of a lengthening lifespan. The relation between man and woman is increasingly one of equals, although it is very apparent from lone parent families in particular that women are still doing the bulk of the childrearing. More and more people are choosing a childfree life, or having children outside of a more traditional arrangement, and both these trends seem set to continue. It is still early days for same-sex relationships, which may grow more common as gender and sexuality become more fluid and relationships less beholden to old stereotypes and an imperative for procreation.</p></blockquote><p>Contemporary marriage could have became more flexible and free, people might want have more private time or space, somebody even give up marriage, they chose live together but not in law.</p><h2 id="Family-and-population"><a href="#Family-and-population" class="headerlink" title="Family and population"></a>Family and population</h2><p>From: <a href="https://www.weforum.org/agenda/2016/05/what-will-the-family-of-the-future-look-like/" target="_blank" rel="noopener">What will the family of the future look like?</a></p><blockquote><p>Childbearing is higher in countries with higher levels of female labour force participation, economic development, generosity of paid parental leave provision for mothers and paternity leave.</p></blockquote><p><img src="https://assets.weforum.org/editor/wzJSNduErX3CgoCyqM_lSuu_LZ_3weiLOp84Xm7z720.jpg" alt="chart"></p><blockquote><p>However, look at the chart above and you can see that in all countries women still devote more time than men in housework activities. The gender revolution is far from being fully completed, even in the gender-egalitarian Nordic countries.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> research </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> society </tag>
+            
+            <tag> population </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Tech and communication</title>
       <link href="/2019/02/14/Tech-and-communication/"/>
       <url>/2019/02/14/Tech-and-communication/</url>
@@ -72,7 +122,7 @@
     </entry>
     
     <entry>
-      <title>Oxford journal</title>
+      <title>Oxford trip</title>
       <link href="/2019/02/06/Oxford-journal/"/>
       <url>/2019/02/06/Oxford-journal/</url>
       
@@ -81,7 +131,7 @@
       
       <categories>
           
-          <category> journal </category>
+          <category> gallery </category>
           
       </categories>
       
@@ -136,9 +186,9 @@
       
         <tags>
             
-            <tag> Processing </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> Processing </tag>
             
             <tag> Regular expression </tag>
             
@@ -323,9 +373,9 @@
             
             <tag> critical thinking </tag>
             
-            <tag> workshop </tag>
-            
             <tag> arts </tag>
+            
+            <tag> workshop </tag>
             
         </tags>
       
@@ -576,13 +626,13 @@
       
         <tags>
             
-            <tag> variable </tag>
-            
             <tag> critical thinking </tag>
             
             <tag> research </tag>
             
             <tag> note </tag>
+            
+            <tag> variable </tag>
             
         </tags>
       
@@ -719,11 +769,11 @@
             
             <tag> digital </tag>
             
+            <tag> research </tag>
+            
             <tag> variable </tag>
             
             <tag> programmer </tag>
-            
-            <tag> research </tag>
             
             <tag> inspiration </tag>
             
@@ -748,9 +798,9 @@
       
         <tags>
             
-            <tag> screen printing </tag>
-            
             <tag> workshop </tag>
+            
+            <tag> screen printing </tag>
             
         </tags>
       

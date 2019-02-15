@@ -28,6 +28,13 @@ window.onload = function(){
 			$(this).css('backgroundColor',oriColor)
 	});
 
+	$('.recent-post-item').each(function(){
+		let h = $(this).find('.post-summary').css('height')
+		$(this).find('.recent-post-placeholder').css('height',h) 
+		
+		
+	})
+
 	var cat = $(".recent-post-cat a")
 	cat.each(function(){
 		console.log(this.text)
@@ -38,10 +45,18 @@ window.onload = function(){
 	var tag = $(".article-tags a")
 	tag.each(function(i=0){
 		i++
-		console.log(this.text)
-		var ran = Math.round(Math.random()*100) 
+		
+		let ran = Math.round(Math.random()*100) 
 		$(this).css({
 			'backgroundColor' : 'hsl(' +  ran * i + ',92%,72%)'
+		})
+	})
+
+	$('.post-research-tags').each(function(i=0){
+		i++
+		let ran = Math.round(Math.random()*100) 
+		$(this).css({
+			'backgroundColor' : 'hsl(' +  ran * i + ',40%,40%)' 
 		})
 	})
 
@@ -59,6 +74,50 @@ window.onload = function(){
 		
 		
 	// })
+
+	$('.gallery-img-a').click(function(t){
+		
+		 let allImg = Array.from(t.target.parentElement.parentElement.querySelectorAll('.gallery-img-a'))
+		 let srcArr = []
+		 allImg.forEach(function(n){
+			srcArr.push(n.querySelector('img').getAttribute('src')) 
+		 })
+		
+		
+		let link = $(this).find('img').attr('src')
+		
+		let nowIndex = srcArr.indexOf(link)
+
+		$('body').append(`
+		  <div class="gallery-img-show position-fixed col-sm pt-3"  oncontextmenu="return false;" onselectstart="return false">
+				
+			<div class="row p-0 offset-md-2">
+				<div class="gallery-btn col-sm col-md-1 offset-md-2 m-1">X</div>
+				<div id="arrowL" class="gallery-arrow col-sm col-md-1 m-1 d-flex-inline">←</div>
+				<div id="arrowR" class="gallery-arrow col-sm col-md-1 m-1 d-flex-inline">→</div>  		
+			</div>
+			<img src="${link}" class="img-thumbnail gallery-img offset-md-2 ">
+			
+		  </div>
+		`)
+
+		$('.gallery-arrow').click(function(t){
+			if($(this).attr('id') == 'arrowL'){
+				nowIndex -= 1
+			}else{
+				nowIndex ++
+			}
+			while (nowIndex < 0) nowIndex += srcArr.length
+			while (nowIndex > srcArr.length) nowIndex -= srcArr.length
+			$('.gallery-img').attr('src',srcArr[nowIndex])
+		})
+
+		$('.gallery-btn').click(function(){
+		
+			$('.gallery-img-show').remove()
+		})
+	})
+	
 	
 
 
