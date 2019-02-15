@@ -5,6 +5,21 @@ window.onload = function(){
 		hljs.initHighlightingOnLoad();
 	});
 
+	let bgcImg = []
+	for(let i=0;i<13;i++){
+		let src = `../img/g/bg${i}.svg`
+		bgcImg.push(src)
+	}
+	let rNF = (x)=> {
+		return Math.floor(Math.random()*x)
+	}
+	document.getElementById('right-col').style.backgroundImage = `url(${bgcImg[rNF(bgcImg.length)]})`;
+
+	
+		
+		
+		
+	
 
 	let oriColor = $(".recent-post-item").css('backgroundColor')
 	$(".recent-post-item").hover(function() {

@@ -71,6 +71,11 @@ body span::selection {
 #picCar .card .card-body img {
   padding: 0;
 }
+#right-col {
+  background-position: -500px 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .page-nav {
   margin: 20px 0;
 }
@@ -322,6 +327,7 @@ body span::selection {
 .post-research-tags {
   font-size: .7em;
   color: #f2f2f2;
+  text-align: center;
 }
 .post-research-tags:hover {
   background-color: #ed6024;
