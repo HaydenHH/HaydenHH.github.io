@@ -71,11 +71,6 @@ body span::selection {
 #picCar .card .card-body img {
   padding: 0;
 }
-#right-col {
-  background-position: -500px 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .page-nav {
   margin: 20px 0;
 }
