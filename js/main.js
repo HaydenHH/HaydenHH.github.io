@@ -13,7 +13,9 @@ window.onload = function(){
 	let rNF = (x)=> {
 		return Math.floor(Math.random()*x)
 	}
-	document.getElementById('right-col').style.backgroundImage = `url(${bgcImg[rNF(bgcImg.length)]})`;
+	if($('#right-col')){
+		document.getElementById('right-col').style.backgroundImage = `url(${bgcImg[rNF(bgcImg.length)]})`;
+	}
 
 	
 		
