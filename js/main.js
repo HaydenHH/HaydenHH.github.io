@@ -73,7 +73,7 @@ window.onload = function(){
 		i++
 		let ran = Math.round(Math.random()*100) 
 		$(this).css({
-			'backgroundColor' : 'hsl(' +  ran * i + ',40%,40%)' 
+			'backgroundColor' : 'hsl(' +  ran + 5 * i + ',20%,50%)' 
 		})
 	})
 

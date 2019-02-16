@@ -99,7 +99,227 @@
 
       
 
-      <div class="recent-post-item col-sm-12 rounded-right">
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/01/31/Inro-of-Arduino/">Intro of Arduino<br></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2019-01-31T14:20:17.000Z">
+              2019-01-31
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="Arduino"><a href="#Arduino" class="headerlink" title="Arduino"></a>Arduino</h1><p>Using pyscial sensor to get data then import to computer and render graphic or relative interaction. This is an new way to connect computer to human, it could be used in industries field and also can use to created creative images</p>
+<a id="more"></a>
+<h2 id="Analog-模拟信号"><a href="#Analog-模拟信号" class="headerlink" title="Analog(模拟信号)"></a>Analog(模拟信号)</h2><p>The different between <strong>Digital</strong> and <strong>analog</strong> is Analog can change the <strong>value</strong> of output, not only boolean. Which means, a switch with digital only Open/ close circuit, but <strong>analog</strong> can adjust that.</p>
+<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><h3 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h3><p>use:</p>
+<pre><code>#define Name Value
+</code></pre><p>to declare a variable</p>
+<h3 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">High</th>
+<th style="text-align:left">Low</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">True</td>
+<td style="text-align:left">False</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><p>set a pin which <strong>output/input</strong> power use:</p>
+<pre><code>pinMode(pinPin, OUTPUT)
+pinMode(btnPin, INPUT)
+</code></pre><h2 id="componet"><a href="#componet" class="headerlink" title="componet"></a>componet</h2><h3 id="breadBoard"><a href="#breadBoard" class="headerlink" title="breadBoard"></a>breadBoard</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">⇌</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">p</td>
+<td style="text-align:left">⇌</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">⇅</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">⇅</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">⇅</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">T</td>
+<td style="text-align:left">⇅</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>P means Power Rail</li>
+<li>T means Ternimal line</li>
+</ul>
+<p>To build a circuit:</p>
+<ul>
+<li>connet <strong>power</strong> to <strong>p+</strong>, </li>
+<li>p+ to <strong>T</strong>,</li>
+<li>set some <strong>componet</strong> on T, and connect to <strong>Arduino Port</strong> / <strong>analog Port</strong>,</li>
+<li><strong>T</strong> to <strong>p-</strong>,</li>
+<li>p- to <strong>GND</strong></li>
+</ul>
+<h3 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h3><ul>
+<li>long leg =&gt; plus </li>
+<li>short leg =&gt; negative <strong>contact to GND / ground</strong></li>
+</ul>
+</span>
+              </div>
+              <!-- 
+                <div class="post-summary col-4">
+                  <span>Abstract:</span>
+                  <br>
+                  <p>ArduinoUsing pyscial sensor to get data then import to computer and render graphic or relative interaction. This is an new way to connect computer to human, it could be used in industries field and also can use to created creative images...</p>
+                </div>
+               -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/31/Inro-of-Arduino/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
           <a class="recent-post-title" href="/2019/01/28/Think-with-population/">Think about population<br></a>
           <!-- journal -->
@@ -128,25 +348,27 @@
 
         </div> 
         
-        <div class="recent-post-preview col-sm-12">
+        <div class="recent-post-preview col">
           <div class="row">
             
             
                 
-                <div class="recent-post-img col-sm-12 col-md-6"> 
+                <div class="recent-post-img col-sm-12 col-md"> 
                     
                     <img class="img-responsive" src="/2019/01/28/Think-with-population/cut.png" />
                   </div>
-                  <div class="post-summary col-sm-12 col-md-6">
-                    
-                    <span >Abstract:</span>
-                    <br>
-                    <p>Think about populationDuring before visual experiments, I began to think about the growth of population in our planet. As we know, we had have 6 billion population, and this count will increase dramatically  in future, as well as the problem from that....</p>
-                  </div>
-                  <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2" href="/2019/01/28/Think-with-population/">Read more >></a>
+                  
+                    <div class="post-summary col-5">
+                      <span>Abstract:</span>
+                      <br>
+                      <p>Think about populationDuring before visual experiments, I began to think about the growth of population in our planet. As we know, we had have 6 billion population, and this count will increase dramatically  in future, as well as the problem from that....</p>
+                    </div>
+                  
+                  
             
           </div>
         </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/28/Think-with-population/">Read more >></a>
       </div>
         
     
@@ -154,7 +376,7 @@
 
       
 
-      <div class="recent-post-item col-sm-12 rounded-right">
+      <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
           <a class="recent-post-title" href="/2019/01/23/2HoursWork/">2HoursWork<br></a>
           <!-- journal -->
@@ -183,25 +405,27 @@
 
         </div> 
         
-        <div class="recent-post-preview col-sm-12">
+        <div class="recent-post-preview col">
           <div class="row">
             
             
                 
-                <div class="recent-post-img col-sm-12 col-md-6"> 
+                <div class="recent-post-img col-sm-12 col-md"> 
                     
                     <img class="img-responsive" src="/2019/01/23/2HoursWork/Image_01.jpg" />
                   </div>
-                  <div class="post-summary col-sm-12 col-md-6">
-                    
-                    <span >Abstract:</span>
-                    <br>
-                    <p>Short-time workIn this workshop, we been asked to choose some materials to briefly make a work. It could be improve our ability of grouping and idea expression. Which means, in a short-time progress, the technic might not be developed, the important thing is using exist elements to create a simple work but it can express some ideas....</p>
-                  </div>
-                  <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2" href="/2019/01/23/2HoursWork/">Read more >></a>
+                  
+                    <div class="post-summary col-5">
+                      <span>Abstract:</span>
+                      <br>
+                      <p>Short-time workIn this workshop, we been asked to choose some materials to briefly make a work. It could be improve our ability of grouping and idea expression. Which means, in a short-time progress, the technic might not be developed, the important thing is using exist elements to create a simple work but it can express some ideas....</p>
+                    </div>
+                  
+                  
             
           </div>
         </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/23/2HoursWork/">Read more >></a>
       </div>
         
     
@@ -209,7 +433,7 @@
 
       
 
-      <div class="recent-post-item col-sm-12 rounded-right">
+      <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
           <a class="recent-post-title" href="/2019/01/22/Why-Where-How/">Why-Where-How<br></a>
           <!-- journal -->
@@ -238,11 +462,11 @@
 
         </div> 
         
-        <div class="recent-post-preview col-sm-12">
+        <div class="recent-post-preview col">
           <div class="row">
             
             
-              <div class="recent-post-placeholder col-sm-12 col-md-5 ml-2">
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
                 <span ><h1 id="Studio-Gallery-and-work-process"><a href="#Studio-Gallery-and-work-process" class="headerlink" title="Studio / Gallery and work process"></a>Studio / Gallery and work process</h1><p>Artist work in a studio, the studio can convey the outcome and experiment of creation. As an other kind of exhibition, gallery is the place to show artist’s work. Studio can change / effect the style of idea, it could improve the idea from artist, because of the group in studio, idea can be discuss and group by a quickly way.</p>
 <a id="more"></a>
 <h2 id="Process-and-outcome"><a href="#Process-and-outcome" class="headerlink" title="Process and outcome"></a>Process and outcome</h2><p><code>Is the process important than final outcome?</code></p>
@@ -272,17 +496,18 @@
 <p>As MA student, the answer will not be given directly, we should think about it, the reason / method / development</p>
 </span>
               </div>
-              <div class="post-summary col-sm-12 col-md-6">
-                <span>Abstract:</span>
-                <br>
-                <p>Studio / Gallery and work processArtist work in a studio, the studio can convey the outcome and experiment of creation. As an other kind of exhibition, gallery is the place to show artist’s work. Studio can change / effect the style of idea, it could improve the idea from artist, because of the group in studio, idea can be discuss and group by a quickly way....</p>
-                
-              </div>
-              <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2 " href="/2019/01/22/Why-Where-How/">Read more >></a>
+              <!-- 
+                <div class="post-summary col-4">
+                  <span>Abstract:</span>
+                  <br>
+                  <p>Studio / Gallery and work processArtist work in a studio, the studio can convey the outcome and experiment of creation. As an other kind of exhibition, gallery is the place to show artist’s work. Studio can change / effect the style of idea, it could improve the idea from artist, because of the group in studio, idea can be discuss and group by a quickly way....</p>
+                </div>
+               -->
               
             
           </div>
         </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/22/Why-Where-How/">Read more >></a>
       </div>
         
     
@@ -290,7 +515,7 @@
 
       
 
-      <div class="recent-post-item col-sm-12 rounded-right">
+      <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
           <a class="recent-post-title" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Trip to Tate/ Lecture on Friday<br></a>
           <!-- journal -->
@@ -319,84 +544,27 @@
 
         </div> 
         
-        <div class="recent-post-preview col-sm-12">
+        <div class="recent-post-preview col">
           <div class="row">
             
             
                 
-                <div class="recent-post-img col-sm-12 col-md-6"> 
+                <div class="recent-post-img col-sm-12 col-md"> 
                     
                     <img class="img-responsive" src="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/tate7.jpg" />
                   </div>
-                  <div class="post-summary col-sm-12 col-md-6">
-                    
-                    <span >Abstract:</span>
-                    <br>
-                    <p>Trip to tateIn this Friday, we went to the Tate modern museum to catch inspiration. Actually, I visited here twice, but this time is still gave me new ideas even something I didn’t understand....</p>
-                  </div>
-                  <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2" href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Read more >></a>
+                  
+                    <div class="post-summary col-5">
+                      <span>Abstract:</span>
+                      <br>
+                      <p>Trip to tateIn this Friday, we went to the Tate modern museum to catch inspiration. Actually, I visited here twice, but this time is still gave me new ideas even something I didn’t understand....</p>
+                    </div>
+                  
+                  
             
           </div>
         </div>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item col-sm-12 rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/01/17/collaboration-with-Film-maker/">collaboration with Film maker<br></a>
-          <!-- journal -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2019-01-17T20:36:54.000Z">
-              2019-01-17
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col-sm-12">
-          <div class="row">
-            
-            
-              <div class="recent-post-placeholder col-sm-12 col-md-5 ml-2">
-                <span ><h1 id="collaboration-with-a-Film-maker"><a href="#collaboration-with-a-Film-maker" class="headerlink" title="collaboration with a Film maker"></a>collaboration with a Film maker</h1><p>To complete the project which require collaboration with other, I found a student who learning in MA Film. She has professional cognition in shot design, so I can get advanced suggestion on animation making or screen writing.<br><a id="more"></a></p>
-<p>The early topic we chose is about relationship in contemporary partner. </p>
-
-<p>Because of the culture shock, emotion between different people could be hard to understand by other who from different countries. Therefore we are going to focus more on <em>behaviour</em> side, which means, in the animation, the <em>emotion</em> expression could not be rendered as main point, the <strong>phenomenon</strong> and <strong>behaviour</strong> will be more important in this project. </p>
-<h2 id="Reason-I-explore-relationship-between-partner"><a href="#Reason-I-explore-relationship-between-partner" class="headerlink" title="Reason I explore relationship between partner"></a>Reason I explore relationship between partner</h2><p>There are many developed countries are holding a low population growth, evermore negative growth. In my opinion, this phenomenon is because of the change of <strong>marry</strong>. Children and children education is becoming kind of <strong>bear</strong> in a family especially in high-knowledge level group. More and more partner have strong individual concept, and they are becoming more <strong>independent</strong>.<br>So I want to explore the reason people become more independent with partner, it could be include the physical factors or emotional reason. </p>
-</span>
-              </div>
-              <div class="post-summary col-sm-12 col-md-6">
-                <span>Abstract:</span>
-                <br>
-                <p>collaboration with a Film makerTo complete the project which require collaboration with other, I found a student who learning in MA Film. She has professional cognition in shot design, so I can get advanced suggestion on animation making or screen writing....</p>
-                
-              </div>
-              <a class="rounded post-a col-sm-12 col-md-4 offset-md-8 d-inline-flex flex-row-reverse mt-2 " href="/2019/01/17/collaboration-with-Film-maker/">Read more >></a>
-              
-            
-          </div>
-        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/19/Trip-to-Tate-Lecture-on-Friday/">Read more >></a>
       </div>
         
     
@@ -414,7 +582,7 @@
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration:script</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/15/Js-tips/">Web tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/research-Family/">Research: Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/Tech-and-communication/">Tech and communication</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/11/Creative-process/">Creative process</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/Oxford-journal/">Oxford trip</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/use-GUI-to-build-shape/">use GUI to build shape</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/04/Way-of-seeing/">Way of seeing</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/英语拟声词/">英语拟声词</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration:script</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/15/Js-tips/">Web tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/research-Family/">Research: Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/Tech-and-communication/">Tech and communication</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/11/Creative-process/">Creative process</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/use-GUI-to-build-shape/">use GUI to build shape</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/06/Oxford-journal/">Oxford trip</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>

@@ -7,15 +7,13 @@
 @grey-light:#8D8B81;
 // @main_color:#EDC329;
 @main_color:rgb(237, 96, 36);
+@sub_color:rgb(208, 208, 208);
 
 @light:#CAD8DF;
 // @font:#F2F3F3;
 @font:rgb(79, 82, 82);
-@font+:#E3EAED;
+@em:#83AEFF;
 @quo:#E0E0DE;
-@pur:#8F8FEA;
-@gre:#99E0A2;
-@blu:#83AEFF;
 
 @cat1:#8F8FEA;
 @cat2:#99E0A2;
@@ -103,16 +101,10 @@ body {
 			img{padding: 0}
 		}
 	}
-	img{
-		
-	}
-}
-
-#right-col{
-	// background-image: url('../img/bg1.svg');
 	
-
 }
+
+
 // --------------------------------------------
 
 .page-nav{
@@ -157,24 +149,28 @@ body {
 	}
 	.cat-journal .recent-post-cat > a{
 		background-color: @main_color;
-		color:contrast(@gre, black, white);
+		color:contrast(@main_color);
 	}
 	.cat-Reflection .recent-post-cat > a{
 		background-color: @cat1;
-		color:contrast(@cat1, black, white);
+		color:contrast(@cat1);
 	}
 	.cat-gallery .recent-post-cat > a{
 		background-color: @cat2;
-		color:contrast(@cat2, black, white);
+		color:contrast(@cat2);
 	}
 	.cat-workshop .recent-post-cat > a{
 		background-color: @cat3;
-		color:contrast(@cat3, black, white);
+		color:contrast(@cat3);
 	}
 
 	.cat-research .recent-post-cat > a{
 		background-color: @cat4;
 		color:contrast(@cat4, black, white);
+	}
+
+	.post-research{
+		
 	}
 
 	.recent-post-cat{
@@ -252,16 +248,19 @@ body {
 				background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
 				// -webkit-background-size: 1%;
 				background-size: 100% 5%;
-				overflow: hidden;
+				overflow-x: hidden;
 				& > span, & > span a, span span{
 					height: 100%;
 					font-size: .3em;
 					font-style: italic;
 					color:lighten(@font, 50%);
+					&:hover{
+						color:lighten(@font, 30%);
+					}
 				}
 			}
 			.post-summary{
-				font-size: 0.8em;
+				font-size: 0.7em;
 				font-style: italic;
 
 				 span{
@@ -348,9 +347,7 @@ body {
 		color: contrast(@font)
 	}
 }
-.post-research-tagBox{
-	
-}
+
 .post-research-tags{
 	font-size: .7em;
 	color: @bgc;
@@ -486,13 +483,12 @@ body {
 			color:@main_color;
 		}
 		em{
-			color:@blu;
+			color:@em;
 			font-style: italic;
 		}
 		blockquote{
 			font-size: 1em;
 			background:darken(@bgc,10%);
-			vertical-align: baseline;
 			color:@main_color;
 			font-style: italic;
 			display: block;
@@ -504,8 +500,8 @@ body {
 		code{
 			font-size: 1em;
 			background:darken(@bgc,10%);
-			color:@blu;
-			vertical-align: baseline;
+			color:@em;
+
 			display: block;
 			padding: 10px 30px;
 			padding-top: 15px;
