@@ -29,7 +29,7 @@ window.onload = function(){
 		// $(this).css('backgroundColor', '#42484F')
 		$(".recent-post-title").hover(function() {
 		var thisBoColor = $(this).parent('.recent-post-info').parent('.recent-post-item').css('borderColor');
-		console.log(thisBoColor)	
+		// console.log(thisBoColor)	
 		$(this).parent('.recent-post-info').parent('.recent-post-item').css({
 			'background':'#EDC329',
 			'transition':'0.3s ease-out'
@@ -54,7 +54,7 @@ window.onload = function(){
 
 	var cat = $(".recent-post-cat a")
 	cat.each(function(){
-		console.log(this.text)
+		// console.log(this.text)
 		var aClass = 'cat-' + this.text;
 		$(this).parent().parent().parent().addClass(aClass)
 	})
