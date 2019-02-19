@@ -3,7 +3,7 @@ body {
   padding: 0px;
   margin: 0;
   color: #4f5252;
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
   overflow-x: hidden;
 }
 body p::selection,
@@ -19,7 +19,7 @@ body span::selection {
   background-color: #ed6024;
 }
 #menu-inner {
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
 }
 #menu-inner > nav li a {
   color: #4f5252;
@@ -55,6 +55,16 @@ body span::selection {
   height: 150px;
   width: 15px;
   background-color: #ed6024;
+}
+.mainImg {
+  margin-bottom: 30vh;
+}
+.mainDesc {
+  background-color: #ed6024;
+  position: absolute;
+  bottom: 50%;
+  right: -10%;
+  font-size: 1.7em;
 }
 #picCar .carousel-item {
   height: 500px;
@@ -99,7 +109,7 @@ body span::selection {
 }
 #content-inner {
   overflow: hidden;
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
 }
 #recent-posts > h1 {
   border-left: 15px double #ed6024;
@@ -142,7 +152,7 @@ body span::selection {
   display: block;
   transition: .5s;
   transform: rotate(1deg);
-  box-shadow: 3px 8px 2px #a5a5a5;
+  box-shadow: 3px 8px 2px #999292;
   position: absolute;
   width: 90%;
   height: 50%;
@@ -155,7 +165,7 @@ body span::selection {
 #recent-posts .recent-post-cat:hover:after {
   transform: rotate(3deg);
   background-color: #000000;
-  box-shadow: 5px 9px 3px #a5a5a5;
+  box-shadow: 5px 9px 3px #999292;
 }
 #recent-posts .recent-post-cat a {
   color: #4f5252;
@@ -325,7 +335,7 @@ body span::selection {
 }
 .post-research-tags {
   font-size: .7em;
-  color: #f2f2f2;
+  color: #e3e1e1;
   text-align: center;
 }
 .post-research-tags:hover {
@@ -358,13 +368,13 @@ body span::selection {
   transition: 0.1s ease-in;
 }
 #post-list > ul .post-list-item:nth-child(n) {
-  background-color: #e5e5e5;
+  background-color: #d7d4d4;
 }
 #post-list > ul .post-list-item:nth-child(n) a {
   color: #424545;
 }
 #post-list > ul .post-list-item:nth-child(2n) {
-  background-color: #d9d9d9;
+  background-color: #cac7c7;
 }
 #post-list > ul .post-list-item:nth-child(2n) a {
   color: #4f5252;
@@ -439,7 +449,7 @@ body span::selection {
   padding: 50px 10px;
   padding-bottom: 150px;
   border: #ed6024 solid 0.5px;
-  background: #e5e5e5;
+  background: #d7d4d4;
   line-height: 1.7em;
 }
 #post-container #post h1,
@@ -451,7 +461,7 @@ body span::selection {
   margin-top: 30px;
   border-left: #ed6024 solid 4px;
   padding: 10px 20px;
-  background: #efefef;
+  background: #e1dede;
 }
 #post-container #post h1 {
   font-size: 2.5em;
@@ -472,7 +482,7 @@ body span::selection {
 }
 #post-container #post blockquote {
   font-size: 1em;
-  background: #d9d9d9;
+  background: #cac7c7;
   color: #ed6024;
   font-style: italic;
   display: block;
@@ -483,7 +493,7 @@ body span::selection {
 }
 #post-container #post code {
   font-size: 1em;
-  background: #d9d9d9;
+  background: #cac7c7;
   color: #83AEFF;
   display: block;
   padding: 10px 30px;
@@ -498,7 +508,7 @@ body span::selection {
   border: #8D8B81 solid 0.5px;
 }
 #bottom-outer {
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
   padding: 20vh 0;
   text-align: center;
 }
@@ -516,7 +526,7 @@ body span::selection {
   color: #4f5252;
 }
 #archive .list-group-item {
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
   border: #ed6024 solid 0.5px;
 }
 #archive aside {
@@ -662,5 +672,5 @@ body span::selection {
 }
 .textarea-wrapper--top-level,
 .textarea {
-  background-color: #f2f2f2;
+  background-color: #e3e1e1;
 }
