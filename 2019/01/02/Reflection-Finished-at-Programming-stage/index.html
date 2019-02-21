@@ -68,13 +68,14 @@
   <div id="content-inner" class="row">
     
 
-<div id="post-container" class="col-sm-12 col-md-7 offset-md-1">
+<div id="post-container" class="col-sm-12 col-md-10 offset-md-0">
 	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
 	
 	<div class="row">
 		
-	
-		<div id="post-head" class="col">
+		
+		<div id="post-head" class="col col-md-3 h-50 mr-5 d-inline-block">
 			<h1 class="article-title">Reflection:Finished at Programming stage</h1>
 			<span class="article-tags">
 				 
@@ -84,14 +85,24 @@
 
 
 			</span>
-
+			<div class="post-list-box col p-0 m-0">
+				<div class="col-sm-12 p-0">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	<div id="post-list" class=" col-md-12 d-none d-sm-block mt-3 p-0">
 		
-
+		
+		<h2 class="col-sm-10 float-left">All post</h2>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/I-need-a-IdeaPage/">Blog development</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/confirm-a-style-in-animated-illustration/">Confirm a style in animated illustration</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/get-src-by-RegExp/">get src by RegExp</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Research-W-L/">Research:W&L</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Polar-flame/">Polar flame</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/Digital-generation/">Digital generation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/英语拟声词/">英语拟声词</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration: script</a></li></ul>
+		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
+	</div>
+</div>
+	
+			</div>
 		</div>
-		<article id="post" class="rounded-bottom col-12">
-			
-		  
-		  <div class="col-sm-12 col-md-10">
+
+		<article id="post" class="rounded-bottom col  offset-md-0 p-0 ">
+		  <div class="col-sm-12 col-md">
 		  	<h1 id="Reflection-About-programming-and-concept-of-building-Web"><a href="#Reflection-About-programming-and-concept-of-building-Web" class="headerlink" title="Reflection: About programming and concept of building Web"></a>Reflection: About programming and concept of building Web</h1><p>Basically, I’ve finished this Web during this term. To summary, this Web is designed to devote translate words to graphic information. The content I used is Chinese classical poem, I catched poem by JSON which be supported by <a href="https://gushi.ci/" target="_blank" rel="noopener">Gushi.ci</a>. <a id="more"></a>Therefore, user can get massive poem randomly, and they can try to understand it by graphic as well as the translation supported by Baidu’s API. Now, I’m going to conclude some problem I faced, and the final solution.</p>
 <h2 id="use-Javascript-module-to-create-elements-in-time"><a href="#use-Javascript-module-to-create-elements-in-time" class="headerlink" title="use Javascript module to create elements in time."></a>use Javascript module to create elements in time.</h2><p>The target is showing a gallery on Web, there are many of image had been upload on cloud server, and display by <strong>href Link</strong>. I collected all of link in JSON file, and the Web can read link than create elements.</p>
 <h3 id="module-style-and-Event"><a href="#module-style-and-Event" class="headerlink" title="module style and Event"></a>module style and Event</h3><p>As ECMA6 declared:</p>
@@ -134,34 +145,19 @@ do {
 let    newArr = Array.from(ranSet)
 </code></pre><p>So, the newArray is the new Array which is absolutely random.</p>
 
-		  </div>
+			</div>
+			<hr class="my-5 py-5">
+			<div class="col p-0" id="disqus_thread"></div>
 		</article>
 		
 	</div>
 </div>
-<div id="right-col" class="col-sm-12 col-md-3 ">
-			<div class="col-sm-12">
-	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
-	
-	<div id="post-list" class=" col-md-12 d-none d-sm-block mt-3">
-		
-		
-		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Research-W-L/">Research:W&L</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Polar-flame/">Polar flame</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/Digital-generation/">Digital generation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/英语拟声词/">英语拟声词</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration:script</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/15/Js-tips/">Web tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/research-Family/">Research: Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/14/Tech-and-communication/">Tech and communication</a></li></ul>
-		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
-	</div>
-</div>
-	
-		</div>
+
 <div class="container-fluid">
-	<div class="col-sm-12 col-md-7 offset-md-1" id="disqus_thread"></div>
+	
 </div>	
 		
-<script>
-	$(document).ready(function(){
-    hljs.initHighlightingOnLoad();
-});
-</script>
+
 
 <script>
 	(function() { // DON'T EDIT BELOW THIS LINE

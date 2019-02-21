@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Blog development]]></title>
+    <url>%2F2019%2F02%2F20%2FI-need-a-IdeaPage%2F</url>
+    <content type="text"><![CDATA[Blogging!This blog began from Oct 2018, which is the time I started my MA course. At early stage, I used blog to record some experiment and notes on seminar. It is a good way to save and share ideas though nobody ever came here😢😢, it is still a good place I can record my academic life. furthermore, I develop my Blog by Hexo framework, so I learn much knowledge about Web development. And I’m developing more function and style by myself, which real good for my coding ability and career. Let’s talk about more about my Blog construction, function, and future expectation. CategoriesCategory is important to sort post. I used different Caties(categories) to define different function of articles / posts. different caties have individual style and layout, and they have differnt content on index, which support clear information to audience or myself. JournalThis is the essential of blog, most post were defined as Journal, which carry general content, such as note, ideas, experiment, anything else. It could not be academic, and sometime will be post images. So, the layout on index can be divided as two style, preview content&amp; image and abstract. galleryThis is a important class for a visual artist. It shows preview image on index for direct visual expression. Furthermore, the image can be clicked as new block, user can click button to change and scan image of a post. It basically is used to post my outcome or visual experiment. As the increasement of image, I found I might need more style to show differnt kinds of image, such as drawing, photography, vector graphic, motion graphic, video. They are definitely differnt, when I exhibit them, should I use differnt size / resolution ? Maybe. So I add some options in module programme, when code checked differnt type, it generate relateive layout. researchAs digital artist, I would like do research on computer, as well as experiment, so most recording and research article are saved on computer. Then I create this cat as my sketchbook, all of file or text / image can saved and post on research cat, so peers and tutor can easily relize what Im doing. Because it could be simple or short, sometimes massive text from copy and reference, so I decided to use Tag to abstract content of post as research cat. Which means, index only show tag of this kind of post, I and others can click tag to gain more relatvie information from same tag of post. It is a good way to expand idea horizontally. reflectionReflection will be academic when I post that. In future, I will add Grammaly or Translate API to help different language user to understand my article. On index, reflection block will show preview content and catelog and content guide, which means, audience can click a interesting Part / heading of content, and he will go to the sepcific postion of this post. By this way, audience could quickly understand what I’ve done, what steps I used, thinking process. Other expectationI’m going to develop a new cat which can collect ideas. Sometimes I used journal to record idea, but idea could be really short and shuffle, it can not be a article, and it will be burden(累赘) for index, if too many short post are displayed on index. That’s the reason I want to build a idea Page, in this page, all of idea will be grouped and showed, with relative tag, is it sounds really cool? I can shuffle these ideas and randomly scan them when I want to find inspiration. Maybe I can add some function to allow user select some words, and programme will use google search, and find some interdisciplinary research.]]></content>
+      <categories>
+        <category>workshop</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>Javascript</tag>
+        <tag>HTML</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Confirm a style in animated illustration]]></title>
+    <url>%2F2019%2F02%2F20%2Fconfirm-a-style-in-animated-illustration%2F</url>
+    <content type="text"><![CDATA[Reflection: the feasibility of interactive illustrationWhat we didLast week, I and my collaborator completed the script of this project. As the first target we confirmed, we will do a project with narrative expression. Which means, we want to talk about a story. The context of story had been confirmed, Technology and love, as well as the content of story, the effect of technology to people and thier love, story can be separate as 3 chapters: they met they are in love they argued future We r going to show different communicate method in different period which be effected by techonology. In deeper meanning, we want to show the different communication methods. Communication can be seen as physical and psychological. When human develop their technology, and communicatino method, they could trend to communicate with physicals. For example, people seek speed and accuracy in communication, but forget the abstract / emotion expression. In this project, the abstraction expression could not be showed. We show shortage of physical communciation, we show affect of rubbish infomation. evaluateDo we successful in this stage? How good we did? To be honest, it is not complete good. Something good: I and my collaborate confirmed a good topic, which suit our common habbit and specialist field we complete a edited / coherence storyboard Our story have a steady point to express something bad: We have not confirmed the final format or work! We have not confirmed style of artistic 20 days left only 😅 Why?At early stage we want to combine Web and animation with a interactive way. Which means, audience can control / effect some elements when it motion. The question is, level / degree of control, how much user can move this elemnts, does it will be paused when user control it?, can user change the frame?, it is animation or PPT-style Web?. We are be limited by technic, therefore, this work could be become techinic-trend, that’s means the narractive / expression would be effected / limited by exist techinic, that’s not cool. HowTo solove this problem, we should understand what we want to say, and which way could be the suitest one. So, I list the specialist of different technic: format / attribute coherence flexibility interactivity reusability difficulty stylistic animation-autoPlay very good, even with rhythm can add color Filter No can be added on 3D model rhythm control vector rely, weak pixel motion PPT-like animation weak, stop animation high randomness speed of read image reusable low complexed allowed game-like animation very weak even can’t play ex, choose-base visuals ex, user effect narrative low programme-base vector mainly After I listed these advantages and disadvantages of different format, I thought, I can choose different method to express different range / chapter of story. Before I combine / choose a format, it is good to experiment at first, so next step I could make some samples, and we will discuss more about the effect of communication, and can different methods represent different technologies? ReflectionIn this progress, I knew the importance of a steady target of expression, which means, when we doing a project and we have many different option of idea / methodologies, we should choose one with our requirement or expression, the method can express the idea. So, in future work, before option choosing, I will conclude the difference of methods, and their advantages / disadvantages. If I have enough time, try it, then give answer, else list them, analyze them.]]></content>
+      <categories>
+        <category>Reflection</category>
+      </categories>
+      <tags>
+        <tag>illustration</tag>
+        <tag>collaboration</tag>
+        <tag>animation</tag>
+        <tag>WEB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[get src by RegExp]]></title>
+    <url>%2F2019%2F02%2F20%2Fget-src-by-RegExp%2F</url>
+    <content type="text"><![CDATA[Match Src in img tag/src\s*=\s*&quot;(.*?)&quot;/g This code can match all of src in text In Javascriptvar imgReg = /&lt;img.*?(?:&gt;|\/&gt;)/gi; //匹配src属性 var srcReg = /src=[\&#39;\&quot;]?([^\&#39;\&quot;]*)[\&#39;\&quot;]?/i; var arr = str.match(imgReg);]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>HTML</tag>
+        <tag>regular expression</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Research:W&L]]></title>
     <url>%2F2019%2F02%2F19%2FResearch-W-L%2F</url>
     <content type="text"><![CDATA[Wonderlust &amp; Lostnesshumanitieshumanities are the essential which develeoping of whole science and technology. humanity =&gt; social science =&gt; natural science =&gt; foraml science Art =&gt; History =&gt; Language and literature =&gt; Phliosophy =&gt; Theology (神学) positionEach research could be have a Position . When we doing a research, we should define the position we are. What we could contact with Multidisciplinary interdisciplinary Trans-disciplinary Cross-disciplinary ScopeA net of research content Information source Framework information provider information servers factual reference worksheet current awareness subject specific source materials non-print formatbook*quickly scan the content page, find the aespect the book relate to* We shouldn&#39;t read a whole book, find key content, think about what we want to gain. Always read **index** at first. suport Literature textbook Specialist encyclopaedias and dictionaries academic handbook Reader Front-line literature theories research practice policy serial publicationAcademic journal Written by academic and expert in field discipline focused bibliographer abstract (Conclusion in the range of process, it is good way to understand other’s idea) peer review professional magazineArticle can be factual, academic, opinion based, informative news paperVoiceMeaning, message, perspective]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>research method</tag>
+        <tag>academic</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Polar flame]]></title>
@@ -25,9 +73,9 @@
         <category>gallery</category>
       </categories>
       <tags>
-        <tag>programme</tag>
         <tag>digital</tag>
         <tag>visualization</tag>
+        <tag>programme</tag>
         <tag>vector</tag>
       </tags>
   </entry>
@@ -45,7 +93,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[collaboration:script]]></title>
+    <title><![CDATA[collaboration: script]]></title>
     <url>%2F2019%2F02%2F16%2Fcollaboration-storyboard%2F</url>
     <content type="text"><![CDATA[剧本梗概时间线原始的交流 绘图 符号 使用原始语言 使用文字 近代技术 制纸，印刷 电报 电话 无线电 现代通讯 网络通信 ar vr 地点人物一男一女，不同的‌时间，不同的‌身份。 相同的‌交流内容 洞穴人狩猎者/采果者因为连语言的无法顺利沟通，狩猎者只能用食物来表达爱慕的情绪。 男拎兔子，乌拉哇啦女接兔子，点头，😊，包扎 渔民女给男贝壳，上有太阳。太阳转场 农民/纺织者接太阳）女给男衣服，上有字 文艺复兴，诗人鹅毛笔，写信 作家/设计师印了一本书 / 一个版画，上有全家肖像 近代）学生钢笔，情书 工人电话亭，接电话转场：拿到耳边 黑屏 拿开 接下一场景 交流过程我们的故事线 爱 有好感 开始沟通 深入了解 表白 异地交流 争执 心灵上的沟通 爱与战争 有好感 有敌意 表白 开战 思恋，写信 恐惧，写信 争执（错误的交流 更多的交流 和解 Discuss: choose a topicIn my expectation, Love and War would be the topic in the communication. And I want to use Two story at first, then they will concentrate. It will show the influence of war. When we discuss this idea, my collaborator said, the reason of war is hard to be expressed by communication. In my view, conflict and war could be caused by false communication, so the communication in love and war would have common point. But, the reason of war could be influenced by many aspects, not only communication. Furthermore, in this project, we have not too much time, so we should limit the quantity of work. If we talk about war, we will use more time on contrast / influence between two points, that would be complicated, and easy to make audience be confused. So we will talk about Love only in animated illustration Storyboardbegin black, (purl 水声) close-up Sun =&gt; rabit’s eye boy is taking the rabit black, authors Communicate in early stage he give a rabit to her =&gt; she smile (shy), lower her head =&gt; black Title (Crash on stone) she engrave on stone (Two person walking under sunshine) =&gt; close-up the painting painting became real =&gt; He saying something to her (with love and dazzling eyes)(she cant understand) she say ‘You are my Suunn’, point to sun, he repeat, ‘sun’ =&gt; look sun sun =&gt; become character, on different medium. (stone,bamboo,fur,paper)(words are increaing) =&gt; become a complete poem. poem =&gt; She use quill(羽毛笔) to write inscription (落款) =&gt; close up close-up inscription =&gt; he completed by a polish pen =&gt; prepare a sealing wax(火漆蜡)=&gt; print, close up, black They are in love black =&gt; (clank自行车铃铛声)=&gt; (creak 金属摩擦声) eyes,she opends the cap of mailbox =&gt; (louder creak)close, black face,open again (a letter in mailbox loom 隐约可见 ) letter =&gt; close-up,stamp(Penny Black 黑便士)(1840) =&gt; (ring ring),a women answer a landline telephone =&gt; lens shift (with wire) (toot) shift to a booth(电话亭 Type K1), he is talking, bus go through (1960 AEC Routemaster) =&gt; lens shift she is talking by a big mobilephone (1980) =&gt; lens shift (click) he hang out phone, walk out booth(Type K6), take a bus (ALX 400), bus go far-away he sleep with smile =&gt; black They argued black =&gt; (ringringringgggg) he wake, on bus iphone?? (20?0), email pop up continually =&gt; he open app =&gt; chat history(boring) =&gt; he call =&gt; close-up icon icon =&gt; she answer the call =&gt; (In AR) he argued with her =&gt; close-up subtitle, clothes and subtitle change rapidly. massive subtitle &lt;= many times =&gt; massvie notifications he is arguing (in AR calling), she close camera =&gt; her face disappear and become ‘sound only’ on screens in a dark room (Snap 开关声) light up, his back, looks sad. (room is extremly simple) =&gt; (sigh) black communication of spirit face, he opend a box he’s writing a poem fold a paper plane =&gt; fly to earth]]></content>
       <categories>
@@ -107,9 +155,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[use GUI to build shape]]></title>
-    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
-    <content type="text"><![CDATA[use GUI to build shape]]></content>
+    <title><![CDATA[Oxford trip]]></title>
+    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
+    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -118,9 +166,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oxford trip]]></title>
-    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
-    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
+    <title><![CDATA[use GUI to build shape]]></title>
+    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
+    <content type="text"><![CDATA[use GUI to build shape]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -275,9 +323,9 @@
       </categories>
       <tags>
         <tag>web</tag>
+        <tag>visualisation</tag>
         <tag>p5.js</tag>
         <tag>Bazier curve</tag>
-        <tag>visualisation</tag>
       </tags>
   </entry>
   <entry>

@@ -47,17 +47,22 @@ body span::selection {
 #showPic .jumbotron {
   background-color: #ed6024;
 }
+#topImg {
+  position: fixed;
+  top: 100px;
+  margin-bottom: -100px;
+}
 #topImg ul {
   list-style: none;
   margin: 20px 0;
 }
 #topImg ul .layer {
-  height: 150px;
-  width: 15px;
-  background-color: #ed6024;
+  height: 250px;
+  width: 30px;
+  background-color: #d7d4d4;
 }
 .mainImg {
-  margin-bottom: 30vh;
+  margin-bottom: 13vh;
 }
 .mainDesc {
   background-color: #ed6024;
@@ -147,6 +152,12 @@ body span::selection {
   left: 0;
   z-index: 1;
 }
+#recent-posts .recent-post-cat a {
+  color: #4f5252;
+  padding: 5px 30px;
+  font-size: .8em;
+  font-style: italic;
+}
 #recent-posts .recent-post-cat:after {
   content: '';
   display: block;
@@ -167,12 +178,6 @@ body span::selection {
   background-color: #000000;
   box-shadow: 5px 9px 3px #999292;
 }
-#recent-posts .recent-post-cat a {
-  color: #4f5252;
-  padding: 5px 30px;
-  font-size: .8em;
-  font-style: italic;
-}
 #recent-posts .recent-post-item {
   padding: 5px 10px 15px 5px;
   margin-top: 10px;
@@ -181,30 +186,20 @@ body span::selection {
   color: #4f5252;
 }
 #recent-posts .recent-post-item .recent-post-title {
-  color: #4f5252;
+  color: #ed6024;
+}
+#recent-posts .recent-post-item .recent-post-title h1 {
+  font-size: 1.1em;
 }
 #recent-posts .recent-post-item:hover,
 #recent-posts .recent-post-item:focus,
 #recent-posts .recent-post-item:active {
   border: 1px solid #4f5252;
 }
-#recent-posts .recent-post-item:hover .recent-post-placeholder > span,
-#recent-posts .recent-post-item:focus .recent-post-placeholder > span,
-#recent-posts .recent-post-item:active .recent-post-placeholder > span {
-  color: #1d1e1e;
-}
-#recent-posts .recent-post-item:hover .recent-post-info > a,
-#recent-posts .recent-post-item:focus .recent-post-info > a,
-#recent-posts .recent-post-item:active .recent-post-info > a {
+#recent-posts .recent-post-item:hover .recent-post-title,
+#recent-posts .recent-post-item:focus .recent-post-title,
+#recent-posts .recent-post-item:active .recent-post-title {
   text-decoration: underline;
-}
-#recent-posts .recent-post-item:hover .recent-post-info > a:before,
-#recent-posts .recent-post-item:focus .recent-post-info > a:before,
-#recent-posts .recent-post-item:active .recent-post-info > a:before {
-  content: 'read >>';
-  display: inline-block;
-  font-size: 0.5em;
-  transform: translateX(-10px);
 }
 #recent-posts .recent-post-item .recent-post-preview {
   padding-left: 5px;
@@ -215,25 +210,6 @@ body span::selection {
 }
 #recent-posts .recent-post-item .recent-post-preview img {
   width: 100%;
-}
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder {
-  height: 200px;
-  background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
-  background-size: 100% 5%;
-  overflow-x: hidden;
-}
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span,
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span a,
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder span span {
-  height: 100%;
-  font-size: .3em;
-  font-style: italic;
-  color: #cfd1d1;
-}
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span:hover,
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder > span a:hover,
-#recent-posts .recent-post-item .recent-post-preview .recent-post-placeholder span span:hover {
-  color: #9b9f9f;
 }
 #recent-posts .recent-post-item .recent-post-preview .post-summary {
   font-size: 0.7em;
@@ -261,6 +237,25 @@ body span::selection {
 #recent-posts .recent-post-item .recent-post-preview .post-summary p {
   margin-top: 5px;
 }
+#recent-posts .recent-post-item .recent-post-placeholder {
+  height: 200px;
+  background: linear-gradient(180deg, #f3f3f2 5%, #ccd2d4 5%, #ccd2d4 10%, #f3f3f2 10%);
+  background-size: 100% 5%;
+  overflow-x: hidden;
+}
+#recent-posts .recent-post-item .recent-post-placeholder > span,
+#recent-posts .recent-post-item .recent-post-placeholder > span a,
+#recent-posts .recent-post-item .recent-post-placeholder span span {
+  height: 100%;
+  font-size: .3em;
+  font-style: italic;
+  color: #cfd1d1;
+}
+#recent-posts .recent-post-item .recent-post-placeholder > span:hover,
+#recent-posts .recent-post-item .recent-post-placeholder > span a:hover,
+#recent-posts .recent-post-item .recent-post-placeholder span span:hover {
+  color: #9b9f9f;
+}
 #recent-posts .post-gallery img {
   margin: 0;
   cursor: pointer;
@@ -283,12 +278,12 @@ body span::selection {
   color: #ffffff;
   background-color: #9e380d;
 }
-#recent-posts .post-gallery a {
+#recent-posts .post-gallery > a {
   color: #ed6024;
   font-size: 0.7em;
   font-style: italic;
 }
-#recent-posts .post-gallery a:hover {
+#recent-posts .post-gallery > a:hover {
   color: #ffffff;
 }
 #recent-posts .recent-post-info {
@@ -342,6 +337,17 @@ body span::selection {
   background-color: #ed6024;
   color: #ffffff;
 }
+.post-reflection .post-reflection-ul li {
+  border: #ed6024 0.5px solid;
+}
+.post-reflection .post-reflection-ul li a {
+  color: #ed6024;
+  padding: 2px 20px;
+}
+.post-reflection .post-reflection-ul li a:hover {
+  background-color: #ed6024;
+  color: #ffffff;
+}
 .space {
   visibility: hidden;
 }
@@ -358,7 +364,6 @@ body span::selection {
 #post-list > ul {
   clear: both;
   text-align: right;
-  background-color: #8D8B81;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -368,13 +373,13 @@ body span::selection {
   transition: 0.1s ease-in;
 }
 #post-list > ul .post-list-item:nth-child(n) {
-  background-color: #d7d4d4;
+  background-color: #dedcdc;
 }
 #post-list > ul .post-list-item:nth-child(n) a {
   color: #424545;
 }
 #post-list > ul .post-list-item:nth-child(2n) {
-  background-color: #cac7c7;
+  background-color: #d7d4d4;
 }
 #post-list > ul .post-list-item:nth-child(2n) a {
   color: #4f5252;
@@ -407,7 +412,7 @@ body span::selection {
 #post-list #post-list-more a {
   color: #1d1e1e;
   text-decoration: none;
-  color: #4f5252;
+  color: #ffffff;
 }
 #post-list #post-list-more a:hover {
   color: #000000;
@@ -431,7 +436,6 @@ body span::selection {
 #post-container #post-head {
   padding-bottom: 30px;
   border-top-right-radius: 5px;
-  background-color: #ed6024;
 }
 #post-container .article-tags a {
   padding: 2px 15px;
@@ -440,16 +444,13 @@ body span::selection {
   font-size: .8em;
 }
 #post-container .article-title {
-  color: #ffffff;
-  padding: 10px 0px;
-  border-bottom: 1px solid #4f5252;
+  color: #ed6024;
 }
 #post-container #post {
   color: #4f5252;
   padding: 50px 10px;
   padding-bottom: 150px;
-  border: #ed6024 solid 0.5px;
-  background: #d7d4d4;
+  overflow-x: auto;
   line-height: 1.7em;
 }
 #post-container #post h1,
@@ -459,14 +460,17 @@ body span::selection {
 #post-container #post h5,
 #post-container #post h6 {
   margin-top: 30px;
-  border-left: #ed6024 solid 4px;
+  border-bottom: #4f5252 dotted 1px;
   padding: 10px 20px;
-  background: #e1dede;
+  margin: 70px auto;
 }
-#post-container #post h1 {
-  font-size: 2.5em;
+#post-container #post div > h1 {
+  font-size: 2em;
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 0px 0;
+  width: 100%;
+  text-align: left;
+  border: #4f5252 solid 1px;
 }
 #post-container #post p,
 #post-container #post ul,
@@ -493,19 +497,39 @@ body span::selection {
 }
 #post-container #post code {
   font-size: 1em;
-  background: #cac7c7;
+  background: #464d59;
   color: #83AEFF;
   display: block;
   padding: 10px 30px;
   padding-top: 15px;
 }
 #post-container #post img {
-  height: 50%;
   width: 70%;
-  margin: 15px 0;
+  margin: 20px auto;
   padding: 5px;
   border-radius: 5px;
-  border: #8D8B81 solid 0.5px;
+}
+#post-container #post table {
+  margin: 50px 0;
+}
+#post-container #post tr {
+  font-size: .9em;
+  border: 0.5px solid #4f5252;
+}
+#post-container #post tr th,
+#post-container #post tr td {
+  padding: 2px 10px;
+  text-align: center;
+}
+#post-container #post tr td:hover {
+  background-color: #d7d4d4;
+}
+#post-container #post tr:nth-child(even) {
+  background-color: #dcd9d9;
+}
+#post-container #post thead:first-child {
+  color: #ffffff;
+  background-color: #ed6024;
 }
 #bottom-outer {
   background-color: #e3e1e1;

@@ -13,6 +13,7 @@
 // @font:#F2F3F3;
 @font:rgb(79, 82, 82);
 @em:#83AEFF;
+@code:rgb(70, 77, 89);
 @quo:#E0E0DE;
 
 @cat1:#8F8FEA;
@@ -37,6 +38,7 @@ body {
 
 #menu-inner{
 	background-color:@bgc;
+	
 	& > nav{
 		li a{
 			color:@font;
@@ -76,19 +78,24 @@ body {
 
 #topImg{
 	// background-image: linear-gradient(to bottom, #edc329, #ebbf28, #eabb26, #e8b825, #e6b424);
+	position: fixed;
+	top: 100px;
+	margin-bottom: -100px;
 	ul{
 		list-style: none;
 		margin: 20px 0;
+		
 		.layer{
-			height: 150px;
-			width: 15px;
-			background-color:@main_color;
+			height: 250px;
+			width: 30px;
+			background-color:darken(@bgc,5%);
+			
 		}
 		
 	}
 }
 .mainImg{
-	margin-bottom: 30vh;
+	margin-bottom: 13vh;
 }
 .mainDesc{
 		background-color: @main_color;
@@ -186,8 +193,14 @@ body {
 	.recent-post-cat{
 		position: absolute;
 		left: 0;
+		// top: 10px;
 		z-index: 1;
-		
+		a{
+			color:@font;
+			padding: 5px 30px;
+			font-size: .8em;
+			font-style: italic;
+		}
 		&:after{
 			content: '';
 			display: block;
@@ -211,12 +224,7 @@ body {
 			}
 		}
 		
-		a{
-			color:@font;
-			padding: 5px 30px;
-			font-size: .8em;
-			font-style: italic;
-		}
+		
 	}
 
 	.recent-post-item{
@@ -228,18 +236,20 @@ body {
 		color:@font;
 		
 		.recent-post-title{
-			color:@font;
+			
+			h1{
+				font-size: 1.1em;
+			}
+			color:@main_color;
 		}
 		
 		&:hover,&:focus,&:active{
 			// background-color: darken(@bgc,10%);
 			border: 1px solid @font;
 			// border-top: 10px solid @main_color;
-			.recent-post-placeholder > span{
-				color:darken(@font, 20%);
-			}
-			.recent-post-info > a{
-				.read;
+			
+			.recent-post-title{
+				// .read;
 				text-decoration: underline;
 			}
 		}
@@ -252,23 +262,7 @@ body {
 			img{
 				width: 100%;
 			}
-			.recent-post-placeholder{
-				// margin-left: 15px;
-				height: 200px;
-				background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
-				// -webkit-background-size: 1%;
-				background-size: 100% 5%;
-				overflow-x: hidden;
-				& > span, & > span a, span span{
-					height: 100%;
-					font-size: .3em;
-					font-style: italic;
-					color:lighten(@font, 50%);
-					&:hover{
-						color:lighten(@font, 30%);
-					}
-				}
-			}
+			
 			.post-summary{
 				font-size: 0.7em;
 				font-style: italic;
@@ -289,6 +283,23 @@ body {
 			}
 			
 		}
+		.recent-post-placeholder{
+			// margin-left: 15px;
+			height: 200px;
+			background: linear-gradient(180deg, rgba(243,243,242,1) 5%, rgba(204,210,212,1) 5%, rgba(204,210,212,1) 10%, rgba(243,243,242,1) 10%);
+			// -webkit-background-size: 1%;
+			background-size: 100% 5%;
+			overflow-x: hidden;
+			& > span, & > span a, span span{
+				height: 100%;
+				font-size: .3em;
+				font-style: italic;
+				color:lighten(@font, 50%);
+				&:hover{
+					color:lighten(@font, 30%);
+				}
+			}
+		}
 	}
 
 	.post-gallery{
@@ -303,7 +314,7 @@ body {
 				.post-a;
 			}
 		}
-		a{
+		&>a{
 			
 			color:@main_color;
 			font-size: 0.7em;
@@ -369,6 +380,25 @@ body {
 	
 }
 
+.post-reflection{
+	
+	.post-reflection-ul{
+		li{
+			// margin-left: 5%;
+			border: @main_color .5px solid;
+			a{
+				color:@main_color;
+				padding: 2px 20px;
+				&:hover{
+					background-color: @main_color;
+					color: contrast(@main_color);
+				}
+			}
+		}
+		
+	}
+}
+
 // recent-post -----------------------------------------------------------
 .space{
 	visibility: hidden;
@@ -385,7 +415,7 @@ body {
 	& > ul{
 		clear: both;
 		text-align: right;
-		background-color: @grey-light;
+		
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -393,13 +423,13 @@ body {
 			padding: 5px 10px;
 			transition: .1s ease-in;
 			&:nth-child(n){
-				background-color:darken(@bgc, 5%) ;
+				background-color:darken(@bgc, 2%) ;
 				a{
 					color:darken(@font,5%);
 				}
 			}
 			&:nth-child(2n){
-				background-color:darken(@bgc, 10%) ;
+				background-color:darken(@bgc, 5%) ;
 				a{
 					color:lighten(@font, 0%);
 				}
@@ -425,7 +455,7 @@ body {
 		text-align: right;
 		font-size: .8em;
 		a{.link;
-		color: @font;
+		color: contrast(@main_color);
 		}
 		&:hover{
 				background-color: darken(@main_color, 5%) ;
@@ -444,12 +474,9 @@ body {
 	#post-head{
 		padding-bottom: 30px;
 		border-top-right-radius : 5px;
-		background-color: @main_color;
-
-	}
-
+		// background-color: @main_color;
 	
-
+	}
 	.article-tags{
 		a{
 			padding: 2px 15px;
@@ -460,31 +487,36 @@ body {
 		
 	}
 	.article-title{
-			color: contrast(@main_color);
-			padding: 10px 0px;
-			border-bottom: 1px solid @font;
+			color: @main_color;
+			
+			// border-bottom: 1px solid @font;
 		}
 	#post{
 		
 		color: @font;
 		padding: 50px 10px;
 		padding-bottom: 150px;
-		border: @main_color solid .5px;
-		background:darken(@bgc,5%);
-		//background-color: @font;
+		overflow-x:auto;
+		// background:darken(@bgc,5%);
+		
 		// -webkit-background-size: 1%;
 		line-height: 1.7em;
 		h1,h2,h3,h4,h5,h6{
 			margin-top: 30px;
-			border-left: @main_color solid 4px;
+			border-bottom: @font dotted 1px;
+			
 			padding: 10px 20px;
-			background:darken(@bgc,1%);
-			// width: 30vw;
+			// background:darken(@bgc,1%);
+			
+			margin: 70px auto;
 		}
-		h1{
-			font-size: 2.5em;
+		div > h1{
+			font-size: 2em;
 			text-transform: uppercase;
-			margin:20px 0;
+			margin:0px 0;
+			width: 100%;
+			text-align: left;
+			border: @font solid 1px;
 		}
 		p,ul,ol{
 			margin-top: 30px;
@@ -509,7 +541,7 @@ body {
 		}
 		code{
 			font-size: 1em;
-			background:darken(@bgc,10%);
+			background:@code;
 			color:@em;
 
 			display: block;
@@ -518,12 +550,36 @@ body {
 			
 		}
 		img{
-			height: 50%;
+			
 			width: 70%;
-			margin: 15px 0;
+			margin: 20px auto;
 			padding: 5px;
 			border-radius: 5px;
-			border: @grey-light solid .5px;
+			// border: @grey-light solid .5px;
+		}
+
+		table{
+			margin: 50px 0;
+		}
+		tr{
+			font-size: .9em;
+			border: .5px solid @font;
+			
+			th,td{
+				padding: 2px 10px;
+				text-align: center;
+			}
+			td:hover{
+				background-color:darken(@bgc,5%);
+			}
+		}
+		tr:nth-child(even) {background-color:darken(@bgc,3%);}
+		thead:first-child {
+			tr{
+				// border: @main_color 1px solid;
+			}
+			color: contrast(@main_color);
+			background-color:@main_color;
 		}
 	}
 }
@@ -640,6 +696,7 @@ body {
 }
 
 .hL{
+	
 	border-left: 15px double @main_color;
 	transition: .3s;
 	&:hover{

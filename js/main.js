@@ -46,11 +46,15 @@ window.onload = function(){
 	});
 
 	$('.recent-post-item').each(function(){
+		
 		let h = $(this).find('.post-summary').css('height')
 		$(this).find('.recent-post-placeholder').css('height',h) 
-		
-		
 	})
+
+	$('.recent-post-item:eq(0)').find('.recent-post-title h1').append(`<span class="badge badge-warning mx-1">New</span>`)
+	// $('.post-list-item:eq(0)').append(`<span class="badge badge-secondary mx-1">New</span>`)
+	$('.post-reflection-li:eq(0)').remove()
+	
 
 	var cat = $(".recent-post-cat a")
 	cat.each(function(){
