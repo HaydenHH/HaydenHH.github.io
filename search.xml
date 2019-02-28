@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Explore ThreeJS]]></title>
+    <url>%2F2019%2F02%2F26%2FExplore-ThreeJS%2F</url>
+    <content type="text"><![CDATA[ThreeJSBeginTo begin 3JS, we should use scene,camera,renderer var scene = new THREE.Scene(); var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); var renderer = new THREE.WebGLRenderer(); renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); GeometryThe base logic to add cube to scene is: generate a geometric object set a material set a Mesh object, which group geo and mtr add to scene adjust position of camera So, the key points are Geometry,Materail,Mesh , mesh should added to scene animationAnimation in ThreeJS is not complicated, it use requestAniamtionFrame (RAF) to consecutively render animated graphic. var animate = function () { requestAnimationFrame( animate ); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render( scene, camera ); }; then, run animate() NOTEThe first time I forgot to set size of render and I also need to add renderer to body renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); Draw some Lines in 3DFirst, I should new a Geometry object, then I push Vector3 points to Vertices of geo object. Using specific material, and group in Line object geometry.vertices.push(new THREE.Vector3(x,y,z)) var material = new THREE.LineBasicMaterial( { color: 0x0000ff } ); var line = new THREE.Line(geo, material)]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Three JS</tag>
+        <tag>3D</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Explore CreateJS]]></title>
+    <url>%2F2019%2F02%2F23%2FExplore-CreateJS%2F</url>
+    <content type="text"><![CDATA[build environmentCreateJS render tag by JS, so the script should run after the load of html. &lt;body onload=&quot;init()&quot;&gt; &lt;canvas id=&quot;cav&quot;&gt;&lt;/canvas&gt; &lt;/body&gt; The most important thing is, canvas should be spelled rightly! stageGLuse stageGL to genrate a createJS object which allow WebGL. let s = new createjs.StageGL(&#39; canvas&#39;s ID&#39;) it can’t render Shape object, because it is vector graphic, so we use Cache to translate it to bitmap.before cache, the shape object must be appended to stage let shape = new createjs.Shape() let cache = shape.cache(x,y,width,height) cache object can be moved position / rotation and opacity It will have high performance because memory has saved the shape.]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>digital</tag>
+        <tag>Javascript</tag>
+        <tag>CreateJS</tag>
+        <tag>HTML</tag>
+        <tag>HTML canvas</tag>
+        <tag>animation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NOTE]]></title>
+    <url>%2F2019%2F02%2F22%2FZs-Psychology%2F</url>
+    <content type="text"><![CDATA[My projectexplore the regular of human development / population growth ArtistMedia Web Animation 3D ani]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[CreateJs]]></title>
+    <url>%2F2019%2F02%2F22%2FCreateJs%2F</url>
+    <content type="text"><![CDATA[collision: detect the width / height and X / Y position: function isCollide(a, b) { return !( ((a.y + a.height) &lt; (b.y)) || (a.y &gt; (b.y + b.height)) || ((a.x + a.width) &lt; b.x) || (a.x &gt; (b.x + b.width)) ); }]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[collaboration: as not only artist]]></title>
+    <url>%2F2019%2F02%2F22%2Fcollaboration-as-not-only-artist%2F</url>
+    <content type="text"><![CDATA[With techgeography &amp; geochemistrytechnology had combined with nature, we can find the using of nature force like solar station, wind farm. Is it a kind of collaboration of human and nature? using technology our knowledge is nothing but hte glass of our own imperfections using analog LED on architecture to build visual guide. work with patterns, weavers. Collecting tone of pixel and translate to tone, a programmer collaborate with a visual artist, produce sound by data of pattern; using algal biotechnology to clear water.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Blog development]]></title>
     <url>%2F2019%2F02%2F20%2FI-need-a-IdeaPage%2F</url>
     <content type="text"><![CDATA[Blogging!This blog began from Oct 2018, which is the time I started my MA course. At early stage, I used blog to record some experiment and notes on seminar. It is a good way to save and share ideas though nobody ever came here😢😢, it is still a good place I can record my academic life. furthermore, I develop my Blog by Hexo framework, so I learn much knowledge about Web development. And I’m developing more function and style by myself, which real good for my coding ability and career. Let’s talk about more about my Blog construction, function, and future expectation. CategoriesCategory is important to sort post. I used different Caties(categories) to define different function of articles / posts. different caties have individual style and layout, and they have differnt content on index, which support clear information to audience or myself. JournalThis is the essential of blog, most post were defined as Journal, which carry general content, such as note, ideas, experiment, anything else. It could not be academic, and sometime will be post images. So, the layout on index can be divided as two style, preview content&amp; image and abstract. galleryThis is a important class for a visual artist. It shows preview image on index for direct visual expression. Furthermore, the image can be clicked as new block, user can click button to change and scan image of a post. It basically is used to post my outcome or visual experiment. As the increasement of image, I found I might need more style to show differnt kinds of image, such as drawing, photography, vector graphic, motion graphic, video. They are definitely differnt, when I exhibit them, should I use differnt size / resolution ? Maybe. So I add some options in module programme, when code checked differnt type, it generate relateive layout. researchAs digital artist, I would like do research on computer, as well as experiment, so most recording and research article are saved on computer. Then I create this cat as my sketchbook, all of file or text / image can saved and post on research cat, so peers and tutor can easily relize what Im doing. Because it could be simple or short, sometimes massive text from copy and reference, so I decided to use Tag to abstract content of post as research cat. Which means, index only show tag of this kind of post, I and others can click tag to gain more relatvie information from same tag of post. It is a good way to expand idea horizontally. reflectionReflection will be academic when I post that. In future, I will add Grammaly or Translate API to help different language user to understand my article. On index, reflection block will show preview content and catelog and content guide, which means, audience can click a interesting Part / heading of content, and he will go to the sepcific postion of this post. By this way, audience could quickly understand what I’ve done, what steps I used, thinking process. Other expectationI’m going to develop a new cat which can collect ideas. Sometimes I used journal to record idea, but idea could be really short and shuffle, it can not be a article, and it will be burden(累赘) for index, if too many short post are displayed on index. That’s the reason I want to build a idea Page, in this page, all of idea will be grouped and showed, with relative tag, is it sounds really cool? I can shuffle these ideas and randomly scan them when I want to find inspiration. Maybe I can add some function to allow user select some words, and programme will use google search, and find some interdisciplinary research.]]></content>
@@ -22,9 +75,9 @@
         <category>Reflection</category>
       </categories>
       <tags>
+        <tag>animation</tag>
         <tag>illustration</tag>
         <tag>collaboration</tag>
-        <tag>animation</tag>
         <tag>WEB</tag>
       </tags>
   </entry>
@@ -73,9 +126,9 @@
         <category>gallery</category>
       </categories>
       <tags>
+        <tag>programme</tag>
         <tag>digital</tag>
         <tag>visualization</tag>
-        <tag>programme</tag>
         <tag>vector</tag>
       </tags>
   </entry>
@@ -101,9 +154,9 @@
       </categories>
       <tags>
         <tag>idea</tag>
+        <tag>animation</tag>
         <tag>collaboration</tag>
         <tag>script</tag>
-        <tag>animation</tag>
       </tags>
   </entry>
   <entry>
@@ -323,9 +376,9 @@
       </categories>
       <tags>
         <tag>web</tag>
-        <tag>visualisation</tag>
         <tag>p5.js</tag>
         <tag>Bazier curve</tag>
+        <tag>visualisation</tag>
       </tags>
   </entry>
   <entry>
@@ -362,8 +415,8 @@
         <category>Reflection</category>
       </categories>
       <tags>
-        <tag>variable</tag>
         <tag>Javascript</tag>
+        <tag>variable</tag>
         <tag>visualisation</tag>
       </tags>
   </entry>

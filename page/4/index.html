@@ -104,26 +104,6 @@
 
     
     
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
         
         
        
@@ -343,6 +323,51 @@
     
     
 
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
 
 
 
@@ -366,106 +391,121 @@
       
 
       
+      <div class="recent-post-item post-reflection col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/"><h1>Reflection: Developing CC visualisation V3</h1></a>
+              <!-- reflection -->
+                            
+              <span class="recent-post-cat ">
+                
 
-      <div class="recent-post-item post-journal col rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/02/02/Play-with-computer/"><h1>Play with computer</h1></a>
-          <!-- journal -->
-          <span class="recent-post-cat ">
-            
+<a href="/categories/Reflection/"cat="Reflection">Reflection</a>
 
-<a href="/categories/workshop/"cat="workshop">workshop</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
+              </span>
               
-      
-          
-            <time datetime="2019-02-02T05:29:01.000Z">
-              2019-02-02
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2018-11-01T00:57:36.000Z">
+              2018-11-01
             </time>
             <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col">
-          <div class="row">
-            
-            
-              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
-                <span ><h1 id="Play-with-computer"><a href="#Play-with-computer" class="headerlink" title="Play with computer"></a>Play with computer</h1><p>Is computer fool? No, you saw Alpha Go, you saw the super calculator. But I say, computer is still a <strong>tool</strong> <del>fool</del> right now. It rely on your order / operation, <del>sometimes even doesn’t work though</del>. Well, let’s talk about some function it took me and the reason I thought it is a fool, then I will show some methods to deal with computer.</p>
-<a id="more"></a>
-<h2 id="Painting-with-computer"><a href="#Painting-with-computer" class="headerlink" title="Painting with computer"></a>Painting with computer</h2><p>As a designer, computer supported sorts of methods to draw, whatever vector graphic, bitmap,or motional graphic. For painting, CG <a href="ComputerGraphic">^1</a> can imitate real textrue or materials even stroke / brush and press. </p>
-<p>Basically, CG can be defined <strong>Shaded &amp; Flat</strong> (厚涂,平涂)for me. Shaded painting means artist will shade the graphic to make it looks more like <strong>real</strong>, object’s volume / 3D can be described as a objective effect. <strong>Flat painting</strong> have become more popluar than 10 years ago, this style gernerally use <em>solid</em> color and <em>flat</em> shape. Sometimes it’s abstract but has stronger visuals. Furthermore, in Japanese animation field, flat colours are filled into outline of comic, and make animation. Because frame should be drew individually, so flat color is the best way to fill. </p>
-<h2 id="Animation-and-Curve"><a href="#Animation-and-Curve" class="headerlink" title="Animation and Curve"></a>Animation and Curve</h2><p>How to make a animation? By hand, draw every frames, which is easily understand. But different frames count in 1 second will take different effect.</p>
-<ul>
-<li>6-7 frames/s <em>obviously lag</em>, for: <strong>stop motion</strong></li>
-<li>12 frames/s <em>bascially smooth</em>, for: <strong>general animation</strong></li>
-<li>24 frames/s <em>really smooth</em>, for: <strong>action expression / film</strong></li>
-<li>60 frames/s <em>extremelly smooth</em>, for: <strong>game</strong></li>
-</ul>
-<p>It’s sooo hard to draw all frames by hand right?<br>Well, we have computer now, so how can it help artist to make aniamation then.</p>
-<h3 id="Key-frames-animation"><a href="#Key-frames-animation" class="headerlink" title="Key frames animation"></a>Key frames animation</h3><p>Set 2 frames, and computer will generate other frames. It looks wonderful, but, not at all. Key frames only generate simple transform:</p>
-<ul>
-<li>translate</li>
-<li>rotate</li>
-<li>skew</li>
-<li>scale</li>
-</ul>
-<p>For example, if I set two point, one is 0, another is 100. Then computer will generate graphic begin 0 to 100, but the graphic will not change except I set other animation. </p>
-<p>In AE, we can also use <em>cursor</em> to build motion, moving cursor of a graphic will make it as if it be pull / drag, because this action will keep the original shape, so it looks like a organic motion. </p>
-<h4 id="AE-expression-表达式"><a href="#AE-expression-表达式" class="headerlink" title="AE expression 表达式"></a>AE expression 表达式</h4><p>Imagine that, you want to let 5 ball move to right from left, <strong>one by one</strong>. The first thing you might inspire could be set different location of cursor on <strong>timeline</strong>, so they begin from different time. It’s OK, but, how about 100 balls, you can’t do that right, so we use expression.</p>
-<p>AE expression is base on Javascript, we can use expression to get different values and set frames.</p>
-<pre><code>transform.position + time * 100 * index
-</code></pre><ul>
-<li><em>transform.postion</em> means this component ‘s current position</li>
-<li><strong>time</strong> is the progress on timeline</li>
-<li><strong>index</strong> is the index of layer</li>
-</ul>
-<p>This expression means this component will countinue move with time, and it will increase the distance with a higher layer.</p>
-<h4 id="Bezier-curve"><a href="#Bezier-curve" class="headerlink" title="Bezier curve"></a>Bezier curve</h4><p>Computer is good at render geometric, but it can draw curve like human. So we should use Bezier curve to order computer to render a curve. </p>
-<p>Bacially, Bezier curve can render by SVG and P5.js or other language. And it can be sorted as:</p>
-<ul>
-<li>Linear Bezier</li>
-<li>Quadratic Bezier</li>
-<li>Cubic Bezier</li>
-</ul>
-<p>Different Bezier should be applied different <strong>handle point</strong> to control the curve. Quadratic need 2 points, cubic 3. To move the handle point, we can control the motion of curve.</p>
-<p>p5.js:</p>
-<pre><code>shapeBegin()
-vertix(x,y);
-vertix(handleX,handleY);
-vertix(handleX2,handleY2);
-vertix(endX,endY);
-endShape()
-</code></pre><p>We can add more describe by add <strong>vertix()</strong> expression, it apply the coordition of a point to draw line. It is a good way to set point base on <strong>mouseX, mouseY</strong>, so computer will follow the user’s operation. If the motion should be set as automatically action, we can use <strong>frameCount</strong> , which will continue increase with timeline. Because the <em>framecount</em> will infinitve increase, so use cos(frameCount) to get a range of value from <strong>0 to 1</strong>. </p>
-<p>If the handle point should move as a circle, we should get the function of circle, which return X and Y on a circle.</p>
-<pre><code>let cX = x + r * cos(angle * PI / 180)
-let cY = y + r * sin(angle * PI /180)
-</code></pre><p>This is a function to get every point, when we set angle as framecount, this function will continue output coordinate of a circle, and we can use that to set value of <strong>handle of Bezier</strong>, it can move innifitve.</p>
-
-</span>
-              </div>
-              <!-- 
-                <div class="post-summary col-4">
-                  <span>Abstract:</span>
-                  <br>
-                  <p>Play with computerIs computer fool? No, you saw Alpha Go, you saw the super calculator. But I say, computer is still a tool fool right now. It rely on your order / operation, sometimes even doesn’t work though. Well, let’s talk about some function it took me and the reason I thought it is a fool, then I will show some methods to deal with computer....</p>
-                </div>
-               -->
-              
-            
+           
           </div>
-        </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/02/02/Play-with-computer/">Read more >></a>
+          <div class="row ">
+            <div class="recent-post-placeholder col d-none d-md-block ml-3 border">
+                <span ><h1 id="Reflection-CCV-type-3"><a href="#Reflection-CCV-type-3" class="headerlink" title="Reflection: CCV type-3"></a>Reflection: CCV type-3</h1><p><a href="https://haydenhh.github.io/CCfont/">WEB LINK</a></p>
+<p>After 5 days, I basically understood the using of p5.js 😃, so I continually refine the idea about visualisation of CC <em>(Chinese Character)</em>. To definitely show the differences of characters, I chose <strong>Strokes counts</strong> to generate <strong>points and lines</strong>. In this article I will describe most progress and details.<br><a id="more"></a></p>
+<h2 id="Point-amp-Line"><a href="#Point-amp-Line" class="headerlink" title="Point &amp; Line"></a>Point &amp; Line</h2><p>As my early experiments, the words were analysed and render as <strong>SVG shape</strong>, and these shapes are similar with real symbol of tone. It can clearly show the tone of words, but my expectation is not only show Tone of word. <strong>Individual elements should connect each other, as same as the composition of sentence is words.</strong> </p>
+<p>To express <em>the composition of sentence</em>, I decided to use <strong>Lines</strong> as the format of compose. Which means every words will be translated to individual elements, and they connect and group as lines.</p>
+<p>Now, I would like to remember the process of create lines.</p>
+<h3 id="Thinking-process-methodology"><a href="#Thinking-process-methodology" class="headerlink" title="Thinking process/ methodology"></a>Thinking process/ methodology</h3><p><strong>Two points can be connected as a line.</strong> (两点一线)<br>It is really clear, a creation of line in computer, should have two points, and each point should be marked as X &amp; Y. Therefore, I should provide X1,X2,Y1,Y2 to draw a line in programmer.</p>
+<pre><code>line(x1,y1,x2,y2)
+</code></pre><p>So, I tried to make groups of points, which base on <strong>Stroke of count</strong>.</p>
+<h4 id="CCV-type-2"><a href="#CCV-type-2" class="headerlink" title="CCV type-2"></a>CCV type-2</h4><p>Here is the first outcome of <strong>Points</strong>, the quantity of points equal the strokes count of word.</p>
+<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo1.jpg">
+<p>To be honest, it is really simple, even ugly. However, the only reason I did that is, I try to successfully create <strong>right</strong> counts of point. </p>
+<h4 id="CCV-type-2-1"><a href="#CCV-type-2-1" class="headerlink" title="CCV type-2+"></a>CCV type-2+</h4><p>Next step, I connected every points, by lines. There are many developments on logical stage, I will list that but it is so complex to clarify every things(<del>太懒了，解释不清</del>):</p>
+<ol>
+<li>Wrap 换行</li>
+<li>Javascript Object</li>
+<li>Loop render 实时渲染</li>
+</ol>
+<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo1p.jpg">
+<p>Actually, it is more ugly than I did before. Firstly, black is too <strong>thick</strong> when it shows on <strong>dense lines</strong>. Secondly, the order of points is too regular, so these lines create many sharp negative room, which make too strong contrast. So bad. 辣眼睛啊. </p>
+<h4 id="CCV-type-3-Curve-Bezier-curve"><a href="#CCV-type-3-Curve-Bezier-curve" class="headerlink" title="CCV type-3. Curve! Bezier curve!"></a>CCV type-3. Curve! Bezier curve!</h4><p>To save my <strong>** thick work, I decided to use curve, </strong>beautiful<strong> curve. Different with hand-draw curve, computer actually not good at draw curve. Thank for great mathematicians,<del>(对不起，王老师，杨老师，熊老师我没学好数学)</del> we indeed have method to let computer render curve. One of that, is </strong>Bezier curve**. It means, we can set handles to control the curve of line.<br><a href="https://codepen.io/haydenhh/pen/dgQKMJ" target="_blank" rel="noopener">Bezier Curve edit tool</a> </p>
+<pre><code>bezierCurve(x1,y1,x2,y2,x3,y3,x4,y4)
+
+//x2,y2;x3,y3; mean the points of handle.    
+</code></pre><img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo2o.jpg">
+<h3 id="Decoration"><a href="#Decoration" class="headerlink" title="Decoration"></a>Decoration</h3><p>As MA IVM student, it is impossible to work without decoration. Actually, not only decoration, but also for better interaction and communication of user. In this step, I begin to consider the outlook of webpage, such as colour, layout, interaction and performance. </p>
+<h4 id="colour"><a href="#colour" class="headerlink" title="colour"></a>colour</h4><p>I changed the colour of background to show more strong curves.</p>
+<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo2.jpg">
+<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo3.jpg">
+<p><a href="https://www.dropbox.com/s/r05qkt99ix1p1h0/TYPE-3Full.pdf?dl=0" target="_blank" rel="noopener">download original image on Dropbox</a></p>
+<h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><p>Currently, there are some questions need to develop:</p>
+<ol>
+<li>Input might be available to move with viewpoint, so user can preview the image when they are typing.</li>
+<li>Button extremely need to improve! Difficult to understand, ugly style. 天啊.</li>
+<li>Poem bank should be easier to use, and I might be should add more one box to show the content, so user can save more time.</li>
+</ol>
+</span>
+            </div>
+            <ul class="post-reflection-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Reflection-CCV-type-3">#Reflection CCV type 3</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Point-amp-Line">#Point amp Line</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Thinking-process-methodology">#Thinking process methodology</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-2">#CCV type 2</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-2-1">#CCV type 2 1</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-3-Curve-Bezier-curve">#CCV type 3 Curve Bezier curve</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Decoration">#Decoration</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#colour">#colour</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#layout">#layout</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/">Read more >></a>  
+
       </div>
         
     
@@ -475,7 +515,7 @@ let cY = y + r * sin(angle * PI /180)
 
       <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/01/31/Inro-of-Arduino/"><h1>Intro of Arduino</h1></a>
+          <a class="recent-post-title" href="/2018/10/28/Poor-images-and-Glitch-art/"><h1>Poor images and Glitch art</h1></a>
           <!-- journal -->
           <span class="recent-post-cat ">
             
@@ -492,228 +532,8 @@ let cY = y + r * sin(angle * PI /180)
               
       
           
-            <time datetime="2019-01-31T14:20:17.000Z">
-              2019-01-31
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col">
-          <div class="row">
-            
-            
-              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
-                <span ><h1 id="Arduino"><a href="#Arduino" class="headerlink" title="Arduino"></a>Arduino</h1><p>Using pyscial sensor to get data then import to computer and render graphic or relative interaction. This is an new way to connect computer to human, it could be used in industries field and also can use to created creative images</p>
-<a id="more"></a>
-<h2 id="Analog-模拟信号"><a href="#Analog-模拟信号" class="headerlink" title="Analog(模拟信号)"></a>Analog(模拟信号)</h2><p>The different between <strong>Digital</strong> and <strong>analog</strong> is Analog can change the <strong>value</strong> of output, not only boolean. Which means, a switch with digital only Open/ close circuit, but <strong>analog</strong> can adjust that.</p>
-<h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><h3 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h3><p>use:</p>
-<pre><code>#define Name Value
-</code></pre><p>to declare a variable</p>
-<h3 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">High</th>
-<th style="text-align:left">Low</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">True</td>
-<td style="text-align:left">False</td>
-</tr>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0</td>
-</tr>
-</tbody>
-</table>
-<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><p>set a pin which <strong>output/input</strong> power use:</p>
-<pre><code>pinMode(pinPin, OUTPUT)
-pinMode(btnPin, INPUT)
-</code></pre><h2 id="componet"><a href="#componet" class="headerlink" title="componet"></a>componet</h2><h3 id="breadBoard"><a href="#breadBoard" class="headerlink" title="breadBoard"></a>breadBoard</h3><table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">+</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">⇌</td>
-</tr>
-<tr>
-<td style="text-align:left">-</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">p</td>
-<td style="text-align:left">⇌</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">⇅</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">⇅</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">⇅</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">T</td>
-<td style="text-align:left">⇅</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>P means Power Rail</li>
-<li>T means Ternimal line</li>
-</ul>
-<p>To build a circuit:</p>
-<ul>
-<li>connet <strong>power</strong> to <strong>p+</strong>, </li>
-<li>p+ to <strong>T</strong>,</li>
-<li>set some <strong>componet</strong> on T, and connect to <strong>Arduino Port</strong> / <strong>analog Port</strong>,</li>
-<li><strong>T</strong> to <strong>p-</strong>,</li>
-<li>p- to <strong>GND</strong></li>
-</ul>
-<h3 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h3><ul>
-<li>long leg =&gt; plus </li>
-<li>short leg =&gt; negative <strong>contact to GND / ground</strong></li>
-</ul>
-</span>
-              </div>
-              <!-- 
-                <div class="post-summary col-4">
-                  <span>Abstract:</span>
-                  <br>
-                  <p>ArduinoUsing pyscial sensor to get data then import to computer and render graphic or relative interaction. This is an new way to connect computer to human, it could be used in industries field and also can use to created creative images...</p>
-                </div>
-               -->
-              
-            
-          </div>
-        </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/31/Inro-of-Arduino/">Read more >></a>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item post-journal col rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/01/28/Think-with-population/"><h1>Think about population</h1></a>
-          <!-- journal -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2019-01-28T12:42:43.000Z">
-              2019-01-28
+            <time datetime="2018-10-28T22:39:29.000Z">
+              2018-10-28
             </time>
             <hr>
           
@@ -729,20 +549,20 @@ pinMode(btnPin, INPUT)
                 
                 <div class="recent-post-img col-sm-12 col-md"> 
                     
-                    <img class="img-responsive" src="/2019/01/28/Think-with-population/cut.png" />
+                    <img class="img-responsive" src="/2018/10/28/Poor-images-and-Glitch-art/photo1.jpg" />
                   </div>
                   
                     <div class="post-summary col-5">
                       <span>Abstract:</span>
                       <br>
-                      <p>Think about populationDuring before visual experiments, I began to think about the growth of population in our planet. As we know, we had have 6 billion population, and this count will increase dramatically  in future, as well as the problem from that....</p>
+                      <p>What’s poor imagePoor image generally are low quality digital image, which means it is defined base on sharpness and resolution....</p>
                     </div>
                   
                   
             
           </div>
         </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/28/Think-with-population/">Read more >></a>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/28/Poor-images-and-Glitch-art/">Read more >></a>
       </div>
         
     
@@ -752,7 +572,7 @@ pinMode(btnPin, INPUT)
 
       <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/01/23/2HoursWork/"><h1>2HoursWork</h1></a>
+          <a class="recent-post-title" href="/2018/10/28/process-make-different-method-to-group/"><h1>process:make different method to group</h1></a>
           <!-- journal -->
           <span class="recent-post-cat ">
             
@@ -769,8 +589,165 @@ pinMode(btnPin, INPUT)
               
       
           
-            <time datetime="2019-01-23T23:36:16.000Z">
-              2019-01-23
+            <time datetime="2018-10-28T18:23:43.000Z">
+              2018-10-28
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="Get-stroke-counts"><a href="#Get-stroke-counts" class="headerlink" title="Get stroke counts"></a>Get stroke counts</h1><p>After last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach.<br><a id="more"></a></p>
+<h2 id="Retrieve-database"><a href="#Retrieve-database" class="headerlink" title="Retrieve database"></a>Retrieve database</h2><p>The principle of analyse data actually just search database, which means every element I might use, have existed in database, it could be prepared or made in time. </p>
+<p>It is easy to get data, such as stroke counts of word, but the difficult thing is to translate that to a new data, which can be used to generated shape.</p>
+<h3 id="Data-driven-shape"><a href="#Data-driven-shape" class="headerlink" title="Data-driven shape"></a>Data-driven shape</h3><p>Data-driven graphic design <em>32p</em>: </p>
+<blockquote>
+<p>“Unlike the physical process of making a mark with a pen, brush, or even a digital tablet, computational drawings are created by a written list of programming instructions based on rules and  procedures that a programmer writes, a computer translates and executes the instructions into individual marks lines, and shapes on the screen.”</p>
+</blockquote>
+<p>Computer generate different graphic base on the data have supported. In current stage, I want to use ‘Stroke’ to effect the <strong>format of graphic</strong>, which means how shapes group up and how they connect each other. The reason I thought is, Chinese word s sometimes have big differences in structure and strokes, it will effect visuals. The strokes will influence the <strong>complexity of the outlook, though it is irrelative to meaning generally, it can clear show different characteristics of words</strong></p>
+<h4 id="Make-points-as-coordinate"><a href="#Make-points-as-coordinate" class="headerlink" title="Make points as coordinate"></a>Make points as coordinate</h4><p>I create a series of points by strokes count of each word, so every word will have some points which can be the <strong>coordinate</strong>. In future work, some specific shape could be set in the coordinate. Furthermore, basing on different Tone, the layout of point could be changed, because Strokes merely influence the <strong>quantity of points</strong>.</p>
+<h4 id="render-graphic-base-on-different-coordinate-of-each-words"><a href="#render-graphic-base-on-different-coordinate-of-each-words" class="headerlink" title="render graphic base on different coordinate of each words"></a>render graphic base on different coordinate of each words</h4><p>The question is, I haven’t decided which way I render graphic. There are two method to render graphic I can use now, </p>
+<ul>
+<li>SVG, render by <a href="http://snapsvg.io/" target="_blank" rel="noopener">Snap.js</a></li>
+<li>Bitmap, render by <a href="https://p5js.org/zh-Hans/" target="_blank" rel="noopener">P5.js</a></li>
+</ul>
+<p>SVG available me to create more beautiful/ delicate shape with high-quality resolution. And Bitmap graphic can generate more curve and massive geometric shape. In future work I will do that  both and choose one or both as final effect.</p>
+<h2 id="The-difficulties-I-faced-now"><a href="#The-difficulties-I-faced-now" class="headerlink" title="The difficulties I faced now"></a>The difficulties I faced now</h2><h3 id="data-analyse"><a href="#data-analyse" class="headerlink" title="data analyse"></a>data analyse</h3><p>在早期进程中，变量的提取非常困难，尤其是我需要逐个把用户键入的字符匹配数据库，当匹配数据库后，再分析它的别的属性。逻辑层面必须非常清晰：<br>用户键入————每一个字————属性，如笔画读音偏旁<br>拼音，检索音调；<br>笔画————生成坐标，<br>坐标————通过笔画数判断坐标数量，通过别的<strong>属性</strong>决定坐标<strong>排列方式</strong><br>偏旁，检索特定的含义，其含义必须被单独设定，<strong>手动</strong></p>
+<h3 id="whole-style"><a href="#whole-style" class="headerlink" title="whole style"></a>whole style</h3><p>The work must be designed to illustrative, it should give the feeling of words, it doesn’t represent a whole sentence, but it should show the abstract meaning of words. </p>
+<img src="/2018/10/28/process-make-different-method-to-group/photo1.png">
+</span>
+              </div>
+              <!-- 
+                <div class="post-summary col-4">
+                  <span>Abstract:</span>
+                  <br>
+                  <p>Get stroke countsAfter last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach....</p>
+                </div>
+               -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/28/process-make-different-method-to-group/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+      <div class="recent-post-item post-reflection col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/"><h1>Reflection:Early visualisation of Chinese</h1></a>
+              <!-- reflection -->
+                            
+              <span class="recent-post-cat ">
+                
+
+<a href="/categories/Reflection/"cat="Reflection">Reflection</a>
+
+              </span>
+              
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2018-10-25T18:56:46.000Z">
+              2018-10-25
+            </time>
+            <hr>
+           
+          </div>
+          <div class="row ">
+            <div class="recent-post-placeholder col d-none d-md-block ml-3 border">
+                <span ><h1 id="Reflection-Early-experiments-about-visualisation"><a href="#Reflection-Early-experiments-about-visualisation" class="headerlink" title="Reflection: Early experiments about visualisation"></a>Reflection: Early experiments about visualisation</h1><p>In this stage, I’ve done a prototype of visualisation application, it available user to support dynamic data and translate to geometric shape. I used JavaScript to build the application as well as NodeBox and illustrator. Then I will review the process of work.</p>
+<h2 id="Source-of-idea"><a href="#Source-of-idea" class="headerlink" title="Source of idea"></a>Source of idea</h2><p>At first, we visited the V&amp;A museum, there are series of digital arts exhibited. I observed the layout and variant of graphic, but was confused by the irregular shape. I tired to find the reason and the meaning of artists want to convey. I failed.</p>
+<p>这些数字渲染的作品充满了不确定性和随机性，但是不变的是他们的排列方式。艺术家用特殊的算法计算了图形的位置，并通过控制变量的方法让图形拥有不同的形状或者结构。</p>
+<p>In M.Mohr’s work, I saw his algorithm generate shape as random symbol, they are ordered in grid system with a tiny translation of position. So I want to collect information and data as variable to generate more specific shape. I chose Chinese letter as the source of information, because Chinese letter can be separated to be different parts which have individual meanings.</p>
+<h2 id="Work-process"><a href="#Work-process" class="headerlink" title="Work process"></a>Work process</h2><p>To complete my idea, it is important to <strong>distinguish</strong> the letter. I set a database, it will return the value of <strong>phonogram, stroke count, radical</strong> of letter whatever user type are( except special/strange word or symbol ).</p>
+<p>After return of data, I used JS to analyse that and change the image which show on Web.</p>
+<p>通过的采集的数据的分析，再遍历数据库，当有匹配对象的时候，返回它的详细信息，例如<strong>拼音，笔画和部首</strong>。 通过拆分返回的拼音字符串，再遍历每个字符串，与音调的数据库匹配，返回后即可以得到那个有音调的拼音所属于的音调。</p>
+<img src="/2018/10/25/Reflection-Early-visualisation-of-Chinese/photo1.png">
+<p>Base on the tone of letters, specific shape will be set on Web. The method of render image is add and append tag in DOM as</p>
+<pre><code> &lt;embed src=Dynamic link&gt;svg img&lt;/embed&gt;
+</code></pre><h2 id="Goodthing"><a href="#Goodthing" class="headerlink" title="Goodthing"></a>Goodthing</h2><p>To see a draft effect, I chose tone as variable to make graphic. I successful complete the logical stage (逻辑层面). Though it just show tone as characteristic of a word, it is easily to add more effect on shape. It clearly shows the differences of Chinese character which same as my first expectation</p>
+<h2 id="Something-need-to-develop"><a href="#Something-need-to-develop" class="headerlink" title="Something need to develop"></a>Something need to develop</h2><h3 id="More-illustrative"><a href="#More-illustrative" class="headerlink" title="More illustrative"></a>More illustrative</h3><p>I used shape of symbol to show the tone of word, which is same as we daily use. But the final outcome should not be the showing  of symbol. The expression of tone might be a <strong>method/ structure</strong> when rendering shape. So, they the variable from tones should have the ability that show the change of tone/ level. <strong>Curve</strong> might be a good choice.</p>
+<p>In future work, there will more information be add in graphic, but how should I keep a balance? What’s the composition of individual graphic? </p>
+</span>
+            </div>
+            <ul class="post-reflection-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Reflection-Early-experiments-about-visualisation">#Reflection Early experiments about visualisation</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Source-of-idea">#Source of idea</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Work-process">#Work process</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Goodthing">#Goodthing</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Something-need-to-develop">#Something need to develop</a>
+                </li>
+            
+                 
+                <li class="row post-reflection-li p-0 mb-1" >
+                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#More-illustrative">#More illustrative</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/">Read more >></a>  
+
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/"><h1>Draft: Visualization of tone of Chinese word</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-24T01:29:27.000Z">
+              2018-10-24
             </time>
             <hr>
           
@@ -786,20 +763,21 @@ pinMode(btnPin, INPUT)
                 
                 <div class="recent-post-img col-sm-12 col-md"> 
                     
-                    <img class="img-responsive" src="/2019/01/23/2HoursWork/Image_01.jpg" />
+                    <img class="img-responsive" src="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/photo1.gif" />
                   </div>
                   
                     <div class="post-summary col-5">
                       <span>Abstract:</span>
                       <br>
-                      <p>Short-time workIn this workshop, we been asked to choose some materials to briefly make a work. It could be improve our ability of grouping and idea expression. Which means, in a short-time progress, the technic might not be developed, the important thing is using exist elements to create a simple work but it can express some ideas....</p>
+                      <p>Draft: Dynamic visualisation of Tone of Chinese letterWEB Link
+As I said, Chinese is a language use tone to define meaning of word, so a same spell/ pronunciation will have definitely different meaning if they have different tone....</p>
                     </div>
                   
                   
             
           </div>
         </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/23/2HoursWork/">Read more >></a>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/">Read more >></a>
       </div>
         
     
@@ -809,7 +787,7 @@ pinMode(btnPin, INPUT)
 
       <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/01/22/Why-Where-How/"><h1>Why-Where-How</h1></a>
+          <a class="recent-post-title" href="/2018/10/24/Start-P5-js/"><h1>Start P5.js</h1></a>
           <!-- journal -->
           <span class="recent-post-cat ">
             
@@ -826,8 +804,8 @@ pinMode(btnPin, INPUT)
               
       
           
-            <time datetime="2019-01-22T19:24:47.000Z">
-              2019-01-22
+            <time datetime="2018-10-23T23:53:35.000Z">
+              2018-10-24
             </time>
             <hr>
           
@@ -841,47 +819,286 @@ pinMode(btnPin, INPUT)
             
             
               <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
-                <span ><h1 id="Studio-Gallery-and-work-process"><a href="#Studio-Gallery-and-work-process" class="headerlink" title="Studio / Gallery and work process"></a>Studio / Gallery and work process</h1><p>Artist work in a studio, the studio can convey the outcome and experiment of creation. As an other kind of exhibition, gallery is the place to show artist’s work. Studio can change / effect the style of idea, it could improve the idea from artist, because of the group in studio, idea can be discuss and group by a quickly way.</p>
-<a id="more"></a>
-<h2 id="Process-and-outcome"><a href="#Process-and-outcome" class="headerlink" title="Process and outcome"></a>Process and outcome</h2><p><code>Is the process important than final outcome?</code></p>
-<p>Different ideology / methodology in working process will reflect the variation.</p>
-<p>Outcome can be seen as the proof of thinking track, develop, so an outcome could be the conclusion of hold project, so it is still important for reflection.</p>
-<h2 id="Yinka"><a href="#Yinka" class="headerlink" title="Yinka"></a>Yinka</h2><p><code>Blur the boundary</code></p>
-<p><em>reason of share, being a part of discourse / composition</em></p>
-<p><em>The artist devote to improve the communication of immigrator.</em></p>
-<p>He used African pattern and fabric to combine with Western arts work, even manipulate a painting with his own face.</p>
-<p>To be honest, I don’t like his work, there are many methods to combine cultural elements, but in his way, some pattern merely are filled into a random outline.</p>
-<p><a href="http://yinkashonibare.com/" target="_blank" rel="noopener">yinka</a></p>
-<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><p><a href="http://www.barbarakruger.com/" target="_blank" rel="noopener">barbara</a></p>
-<p><em>where</em><br>She put text on some specific location which suit the group can accept.</p>
-<p><em>simple idea &amp; strong visuals</em> </p>
-<p>the artist emphasised the font on publication, using big big size, border, solid background. </p>
-<h2 id="collage"><a href="#collage" class="headerlink" title="collage"></a>collage</h2><p><a href="https://www.thomasdanegallery.com/artists/41-arturo-herrera/works/" target="_blank" rel="noopener">arturo herrera</a></p>
-<p>different fragment from different culture</p>
-<p><em>mix fragment</em> </p>
-<p>people could be <strong>mixture</strong> of something </p>
-<p><code>use camera as blade</code></p>
-<p>use grey tone, like <em>graphite</em> (石墨)</p>
-<p>collage could be the way to blend materials / resource existed </p>
-<p><em>whimsy</em></p>
-<p><em>gesture</em></p>
-<h2 id="paint-or-photography"><a href="#paint-or-photography" class="headerlink" title="paint or photography"></a>paint or photography</h2><p><a href="https://www.matthewmarks.com/new-york/artists/vija-celmins/" target="_blank" rel="noopener">Vija Celmins</a></p>
-<h1 id="Individual-visuals"><a href="#Individual-visuals" class="headerlink" title="Individual visuals"></a>Individual visuals</h1><p>Defining an individual language will be important as an artist, the visuals of an artist/ designer could not be accepted by all of people, but it convey own idea.</p>
-<p>As MA student, the answer will not be given directly, we should think about it, the reason / method / development</p>
+                <span ><h1 id="Start-at-P5-js"><a href="#Start-at-P5-js" class="headerlink" title="Start at P5.js"></a>Start at P5.js</h1><p>Most digital artists might realize about Processing, which can make good <strong>data driven</strong> design. However, it made by Java, so it merely run on 模拟器(simulators) , it is not convenient to suitable different devices today. So, P5 is a good replacement, it base on Javascript so most devices such as mobile desktop both run it.</p>
+<h2 id="What-does-P5-do"><a href="#What-does-P5-do" class="headerlink" title="What does P5 do?"></a>What does P5 do?</h2><p><em>Same as processing, it drive data to generate graphic.</em> It generate shape in canvas element, so it makes bitmap graphics basically. </p>
+<h2 id="advanced-aspects"><a href="#advanced-aspects" class="headerlink" title="advanced aspects"></a>advanced aspects</h2><h3 id="accessibility"><a href="#accessibility" class="headerlink" title="accessibility"></a>accessibility</h3><p>It base on Javascript so most devices support to run P5 scripts. Furthermore, it is super easy to write! It has <strong>Event function</strong> which can continue monitor and return the position of mouse, so shapes can be dynamic and changed or move with the operation of user.</p>
+<h3 id="High-performance"><a href="#High-performance" class="headerlink" title="High performance"></a>High performance</h3><p>Bitmap graphics are suitable to generated massively, different with SVG in html, bitmap graphics not add DOM, so it can be rendered quickly.</p>
+</span>
+              </div>
+              <!--  -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/24/Start-P5-js/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/22/Seminar-method-of-research/"><h1>Seminar: method of research</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-22T18:06:27.000Z">
+              2018-10-22
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="Seminar-method-of-research"><a href="#Seminar-method-of-research" class="headerlink" title="Seminar: method of research"></a>Seminar: method of research</h1><p>Translating between different media, in different filed.<br><a id="more"></a></p>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><h2 id="practice-based-research"><a href="#practice-based-research" class="headerlink" title="practice based research"></a>practice based research</h2><p>Do practice as research, collect experience and knowledge in experiment. Think about </p>
+<ul>
+<li>WHY, Why you, why now</li>
+<li>benefit from course</li>
+<li>institution and fund </li>
+<li>application</li>
+</ul>
+<p>as PhD working process, some outcome or inspiration could come from different work/ research, it is a <strong>loop</strong>, artist should consider before work process, and make reflective development. </p>
+<p>The elements in research process could be considered as different way, it depends what background/ context it comes from. A artist should connect different elements as narrative group to support information. We see the graphic in image, and analyse the background, story, history of image.</p>
+<h2 id="What-is-document"><a href="#What-is-document" class="headerlink" title="What is document"></a>What is document</h2><p>In my view:</p>
+<blockquote>
+<p>Document could be the article which made with description, image   or reference. It show something clear, and can be saved individual. It should be sorted. </p>
+</blockquote>
+<p><strong>Tomas Keenan</strong> and <strong>Hito Steyler</strong> give some description.<br>To teach, evidentiary proof, They are contested, meanings explored and contrasted.</p>
+<blockquote>
+<p>We have experienced a shift from the document as evidence, to the document as trigger and catalyst of events</p>
+</blockquote>
+<ul>
+<li><p>Primary sources</p>
+<p>  P research is original record.</p>
+</li>
+<li><p>Secondary sources</p>
+<p>  Writing and understanding from primary sources.</p>
+</li>
+</ul>
+<h2 id="How-Analysis"><a href="#How-Analysis" class="headerlink" title="How Analysis"></a>How Analysis</h2><ul>
+<li>description </li>
+<li>Things I feel are evoked by or associated with the artefact </li>
+<li>Why chose </li>
+<li>Strength and shortcomings </li>
+</ul>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><img src="/2018/10/22/Seminar-method-of-research/photo.jpg">
+<p>This work shows a group of symbols. Although they look irregular, actually they are made by strict algorithms that means computer render them by a specific programmer or ruler. This work can be remade thousands times without once completely same group, but they are made with same <strong>visual language </strong>. The key point in this work is <strong> variable </strong> which means the work base on essential elements, and they grouped with random way, because of variable.</p>
+<p>The reason I appreciate this work is, variable available us to create a work which can be dynamic and random. It can convey multiple emotions and information, because different users might have individual information, so a dynamic work could bring more specific feelings.</p>
+<p>This work is made by circles and poly line, they order by algorithm and changed with variable. It shows a strong visual, but it has supported more specific information, that means it merely show graphic and regular, rather then represent a emotion or story. It is only shape. Therefore, in my work, I would like to draw more informative graphic which might show more potential feeling.</p>
 </span>
               </div>
               <!-- 
                 <div class="post-summary col-4">
                   <span>Abstract:</span>
                   <br>
-                  <p>Studio / Gallery and work processArtist work in a studio, the studio can convey the outcome and experiment of creation. As an other kind of exhibition, gallery is the place to show artist’s work. Studio can change / effect the style of idea, it could improve the idea from artist, because of the group in studio, idea can be discuss and group by a quickly way....</p>
+                  <p>Seminar: method of researchTranslating between different media, in different filed....</p>
                 </div>
                -->
               
             
           </div>
         </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/01/22/Why-Where-How/">Read more >></a>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/22/Seminar-method-of-research/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+      
+        <div class="recent-post-item post-gallery col-sm-12 rounded-right "> 
+            <div class="recent-post-info">
+                <a class="recent-post-title" href="/2018/10/22/Think-about-Variable-in-art-creation/"><h1>Think about Variable in art creation</h1></a>
+                <!-- gallery -->
+                
+                <span class="recent-post-cat ">
+                  
+
+<a href="/categories/gallery/"cat="gallery">gallery</a>
+
+                </span>
+                
+              </div>
+            <div class="gallery-img-box col-12 mt-5 p-2">
+              <div class="row">
+                 
+                
+                  
+                  <div class="gallery-img-a col-sm-12 col-lg m-1 p-0">
+                    <img class="img-thumbnail" src="/2018/10/22/Think-about-Variable-in-art-creation/photo1.gif" />
+                  </div>
+                  
+                  
+                
+                
+              </div>
+              <a class="rounded d-flex flex-row-reverse mt-3" href="/2018/10/22/Think-about-Variable-in-art-creation/">Read more >></a>  
+            </div>
+            
+            
+            <!-- <button class="galleryBtn btn  col-12 mt-5">close</button> -->
+
+        </div>
+
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/17/How-artist-do-research/"><h1>How artist do research</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-17T22:13:22.000Z">
+              2018-10-17
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="How-designer-does-research"><a href="#How-designer-does-research" class="headerlink" title="How designer does research"></a>How designer does research</h1><p>Whatever innovation must not be create from nothing, it must be developed or conducted by many basic theories or idea. Creation could <strong>constructed by original things</strong>, the important thing is to get <strong>existed thing</strong> to built new up. <a id="more"></a> Therefore, it is vital to do research for a designer. Research is a way to find new idea, though it might be created by others, but as designer, we can translate the idea to own. Furthermore, it is necessary to collect evidence and theories to prove own work.</p>
+<h2 id="Research-can-be-enjoyable"><a href="#Research-can-be-enjoyable" class="headerlink" title="Research can be enjoyable"></a>Research can be enjoyable</h2><p>In research seminar, two designers showed their idea about research and method to achieve a good development of work. But the important thing for me is, how to keep a positive attitude to do research, which means we should <strong>enjoy</strong> the process of research rather then complete an assignment. </p>
+<p>As <a href="https://twitter.com/fiona_grady" target="_blank" rel="noopener">Fiona</a> said,</p>
+<blockquote>
+<p>the research in social media can improve the confidence of artists because they can get constructive feedback and gain more friends which have same interests.</p>
+</blockquote>
+<p>For me, do research on social media could not be a good idea because I generally be attracted by other things. The point I absolutely agree is that we should gain confidence and pleasure in the process of research. It might improve my <strong>ambition</strong> to realise new things or accept something I hadn’t agreed or understood. </p>
+<h2 id="how-do-we-do-research-in-a-happy-experience"><a href="#how-do-we-do-research-in-a-happy-experience" class="headerlink" title="how do we do research in a happy experience?"></a>how do we do research in a happy experience?</h2><p>It’s no doubt that people always glad to do something might make self <strong>happy </strong>. To make self be happy, we should focus on something we interested. Unfortunately, sometimes the topic of subject could not the favourite one, even some theories are serious and boring. <em>how can we change the attitude and be more excited in process of research?</em>  In my view, the key is <strong>synchronise with experiment</strong>. That’s means, when we are doing  research, we should do some experiments and sketch or mind-map, so we can see the process of our thinking and understanding, we might get clear understanding, and it the <strong>result or outcome</strong> could make us be more confident, rather then a dozen of paper, so boring, isn’t it.</p>
+</span>
+              </div>
+              <!-- 
+                <div class="post-summary col-4">
+                  <span>Abstract:</span>
+                  <br>
+                  <p>How designer does researchWhatever innovation must not be create from nothing, it must be developed or conducted by many basic theories or idea. Creation could constructed by original things, the important thing is to get existed thing to built new up....</p>
+                </div>
+               -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/17/How-artist-do-research/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2018/10/16/Chinese-character/"><h1>Chinese character</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2018-10-16T20:15:58.000Z">
+              2018-10-16
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="The-separation-of-Chinese-character"><a href="#The-separation-of-Chinese-character" class="headerlink" title="The separation of Chinese character"></a>The separation of Chinese character</h1><p>Chinese character is hieroglyph, that means is Chinese character might made from different components which have specific means. For example, the word “grove” in Chinese character is made from two same components, which means “tree”, and the word “forest” in made from three “tree” components. Therefore, Chinese character can be separated to more general information. So, it is possible to visualise the meaning of Chinese character.</p>
+<a id="more"></a>
+<h2 id="Information-reconstruction-and-visualization"><a href="#Information-reconstruction-and-visualization" class="headerlink" title="Information reconstruction and visualization"></a>Information reconstruction and visualization</h2><p>As I said, the composition of CC (Chinese character) could be understood independently, if I separate that can use specific visual elements to represent the individual component, then regroup these, it will be really interesting! It could <em>represent a CC by different point</em>, and people might understand CC by a original, visual method that means, the colour, structure, geometric shape or something could be the part of  a reconstructive Chinese word. <em>What kind of information can be separated and collected from Chinese character?</em> </p>
+<ul>
+<li><p>Meaning of component </p>
+</li>
+<li><p>Stroke count </p>
+</li>
+<li><p>Construction </p>
+<p>The construction of a CC means, how do components group together, top and bottom, left and right, or left &amp; middle &amp; right, even around or special layout.</p>
+</li>
+<li><p>Tone of pronunciation </p>
+</li>
+<li><p>Expression of emotion</p>
+</li>
+<li><p>Feeling </p>
+</li>
+</ul>
+<p>## </p>
+</span>
+              </div>
+              <!-- 
+                <div class="post-summary col-4">
+                  <span>Abstract:</span>
+                  <br>
+                  <p>The separation of Chinese characterChinese character is hieroglyph, that means is Chinese character might made from different components which have specific means. For example, the word “grove” in Chinese character is made from two same components, which means “tree”, and the word “forest” in made from three “tree” components. Therefore, Chinese character can be separated to more general information. So, it is possible to visualise the meaning of Chinese character....</p>
+                </div>
+               -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/16/Chinese-character/">Read more >></a>
       </div>
         
     
@@ -890,7 +1107,7 @@ pinMode(btnPin, INPUT)
 
 
 
-			<div class="col page-nav p-0"><a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next</a></div>
+			<div class="col page-nav p-0"><a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a></div>
 		</div>
 		<div id="right-col" class="col-sm-12 col-md pr-4">
 			<div class="col-sm-12 p-0">
@@ -900,7 +1117,7 @@ pinMode(btnPin, INPUT)
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/I-need-a-IdeaPage/">Blog development</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/confirm-a-style-in-animated-illustration/">Confirm a style in animated illustration</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/get-src-by-RegExp/">get src by RegExp</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Research-W-L/">Research:W&L</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Polar-flame/">Polar flame</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/Digital-generation/">Digital generation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/英语拟声词/">英语拟声词</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration: script</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/Explore-CreateJS/">Explore CreateJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/Zs-Psychology/">NOTE</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/CreateJs/">CreateJs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/collaboration-as-not-only-artist/">collaboration: as not only artist</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/I-need-a-IdeaPage/">Blog development</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/confirm-a-style-in-animated-illustration/">Confirm a style in animated illustration</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
