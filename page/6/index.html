@@ -109,21 +109,6 @@
 
     
     
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
         
         
        
@@ -343,6 +328,56 @@
     
     
 
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
 
 
 
@@ -366,206 +401,28 @@
       
 
       
-      <div class="recent-post-item post-reflection col rounded-right "> 
-                       
-          <div class="recent-post-info">
-              <a class="recent-post-title" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/"><h1>Reflection: Developing CC visualisation V3</h1></a>
-              <!-- reflection -->
-                            
-              <span class="recent-post-cat ">
-                
-
-<a href="/categories/Reflection/"cat="Reflection">Reflection</a>
-
-              </span>
-              
-              <p class="recent-post-author">
-                <b>Author:</b>Hayden
-              </p>
-            
-            
-            <time datetime="2018-11-01T00:57:36.000Z">
-              2018-11-01
-            </time>
-            <hr>
-           
-          </div>
-          <div class="row ">
-            <div class="recent-post-placeholder col d-none d-md-block ml-3 border">
-                <span ><h1 id="Reflection-CCV-type-3"><a href="#Reflection-CCV-type-3" class="headerlink" title="Reflection: CCV type-3"></a>Reflection: CCV type-3</h1><p><a href="https://haydenhh.github.io/CCfont/">WEB LINK</a></p>
-<p>After 5 days, I basically understood the using of p5.js 😃, so I continually refine the idea about visualisation of CC <em>(Chinese Character)</em>. To definitely show the differences of characters, I chose <strong>Strokes counts</strong> to generate <strong>points and lines</strong>. In this article I will describe most progress and details.<br><a id="more"></a></p>
-<h2 id="Point-amp-Line"><a href="#Point-amp-Line" class="headerlink" title="Point &amp; Line"></a>Point &amp; Line</h2><p>As my early experiments, the words were analysed and render as <strong>SVG shape</strong>, and these shapes are similar with real symbol of tone. It can clearly show the tone of words, but my expectation is not only show Tone of word. <strong>Individual elements should connect each other, as same as the composition of sentence is words.</strong> </p>
-<p>To express <em>the composition of sentence</em>, I decided to use <strong>Lines</strong> as the format of compose. Which means every words will be translated to individual elements, and they connect and group as lines.</p>
-<p>Now, I would like to remember the process of create lines.</p>
-<h3 id="Thinking-process-methodology"><a href="#Thinking-process-methodology" class="headerlink" title="Thinking process/ methodology"></a>Thinking process/ methodology</h3><p><strong>Two points can be connected as a line.</strong> (两点一线)<br>It is really clear, a creation of line in computer, should have two points, and each point should be marked as X &amp; Y. Therefore, I should provide X1,X2,Y1,Y2 to draw a line in programmer.</p>
-<pre><code>line(x1,y1,x2,y2)
-</code></pre><p>So, I tried to make groups of points, which base on <strong>Stroke of count</strong>.</p>
-<h4 id="CCV-type-2"><a href="#CCV-type-2" class="headerlink" title="CCV type-2"></a>CCV type-2</h4><p>Here is the first outcome of <strong>Points</strong>, the quantity of points equal the strokes count of word.</p>
-<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo1.jpg">
-<p>To be honest, it is really simple, even ugly. However, the only reason I did that is, I try to successfully create <strong>right</strong> counts of point. </p>
-<h4 id="CCV-type-2-1"><a href="#CCV-type-2-1" class="headerlink" title="CCV type-2+"></a>CCV type-2+</h4><p>Next step, I connected every points, by lines. There are many developments on logical stage, I will list that but it is so complex to clarify every things(<del>太懒了，解释不清</del>):</p>
-<ol>
-<li>Wrap 换行</li>
-<li>Javascript Object</li>
-<li>Loop render 实时渲染</li>
-</ol>
-<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo1p.jpg">
-<p>Actually, it is more ugly than I did before. Firstly, black is too <strong>thick</strong> when it shows on <strong>dense lines</strong>. Secondly, the order of points is too regular, so these lines create many sharp negative room, which make too strong contrast. So bad. 辣眼睛啊. </p>
-<h4 id="CCV-type-3-Curve-Bezier-curve"><a href="#CCV-type-3-Curve-Bezier-curve" class="headerlink" title="CCV type-3. Curve! Bezier curve!"></a>CCV type-3. Curve! Bezier curve!</h4><p>To save my <strong>** thick work, I decided to use curve, </strong>beautiful<strong> curve. Different with hand-draw curve, computer actually not good at draw curve. Thank for great mathematicians,<del>(对不起，王老师，杨老师，熊老师我没学好数学)</del> we indeed have method to let computer render curve. One of that, is </strong>Bezier curve**. It means, we can set handles to control the curve of line.<br><a href="https://codepen.io/haydenhh/pen/dgQKMJ" target="_blank" rel="noopener">Bezier Curve edit tool</a> </p>
-<pre><code>bezierCurve(x1,y1,x2,y2,x3,y3,x4,y4)
-
-//x2,y2;x3,y3; mean the points of handle.    
-</code></pre><img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo2o.jpg">
-<h3 id="Decoration"><a href="#Decoration" class="headerlink" title="Decoration"></a>Decoration</h3><p>As MA IVM student, it is impossible to work without decoration. Actually, not only decoration, but also for better interaction and communication of user. In this step, I begin to consider the outlook of webpage, such as colour, layout, interaction and performance. </p>
-<h4 id="colour"><a href="#colour" class="headerlink" title="colour"></a>colour</h4><p>I changed the colour of background to show more strong curves.</p>
-<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo2.jpg">
-<img src="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/photo3.jpg">
-<p><a href="https://www.dropbox.com/s/r05qkt99ix1p1h0/TYPE-3Full.pdf?dl=0" target="_blank" rel="noopener">download original image on Dropbox</a></p>
-<h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><p>Currently, there are some questions need to develop:</p>
-<ol>
-<li>Input might be available to move with viewpoint, so user can preview the image when they are typing.</li>
-<li>Button extremely need to improve! Difficult to understand, ugly style. 天啊.</li>
-<li>Poem bank should be easier to use, and I might be should add more one box to show the content, so user can save more time.</li>
-</ol>
-</span>
-            </div>
-            <ul class="post-reflection-ul list-unstyled col m-0 px-4">
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Reflection-CCV-type-3">#Reflection CCV type 3</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Point-amp-Line">#Point amp Line</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Thinking-process-methodology">#Thinking process methodology</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-2">#CCV type 2</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-2-1">#CCV type 2 1</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#CCV-type-3-Curve-Bezier-curve">#CCV type 3 Curve Bezier curve</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#Decoration">#Decoration</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#colour">#colour</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/#layout">#layout</a>
-                </li>
-                    
-            </ul> 
-          </div>
-         
-          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/11/01/Reflection-Developing-CC-visualisaiton-T-3/">Read more >></a>  
-
-      </div>
-        
-    
-      
-
-      
 
       <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/28/Poor-images-and-Glitch-art/"><h1>Poor images and Glitch art</h1></a>
+          <a class="recent-post-title" href="/2018/09/02/hello-world/"><h1>Hello World</h1></a>
           <!-- journal -->
           <span class="recent-post-cat ">
             
 
-<a href="/categories/journal/"cat="journal">journal</a>
+
 
 
           </span>
           
             <p class="recent-post-author">
-              <b>Author:</b>Hayden
+              <b>Author:</b>World
             </p>
 
               
       
           
-            <time datetime="2018-10-28T22:39:29.000Z">
-              2018-10-28
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col">
-          <div class="row">
-            
-            
-                
-                <div class="recent-post-img col-sm-12 col-md"> 
-                    
-                    <img class="img-responsive" src="/2018/10/28/Poor-images-and-Glitch-art/photo1.jpg" />
-                  </div>
-                  
-                    <div class="post-summary col-5">
-                      <span>Abstract:</span>
-                      <br>
-                      <p>What’s poor imagePoor image generally are low quality digital image, which means it is defined base on sharpness and resolution....</p>
-                    </div>
-                  
-                  
-            
-          </div>
-        </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/28/Poor-images-and-Glitch-art/">Read more >></a>
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item post-journal col rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/28/process-make-different-method-to-group/"><h1>process:make different method to group</h1></a>
-          <!-- journal -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-28T18:23:43.000Z">
-              2018-10-28
+            <time datetime="2018-09-02T08:42:08.238Z">
+              2018-09-02
             </time>
             <hr>
           
@@ -579,180 +436,27 @@
             
             
               <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
-                <span ><h1 id="Get-stroke-counts"><a href="#Get-stroke-counts" class="headerlink" title="Get stroke counts"></a>Get stroke counts</h1><p>After last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach.<br><a id="more"></a></p>
-<h2 id="Retrieve-database"><a href="#Retrieve-database" class="headerlink" title="Retrieve database"></a>Retrieve database</h2><p>The principle of analyse data actually just search database, which means every element I might use, have existed in database, it could be prepared or made in time. </p>
-<p>It is easy to get data, such as stroke counts of word, but the difficult thing is to translate that to a new data, which can be used to generated shape.</p>
-<h3 id="Data-driven-shape"><a href="#Data-driven-shape" class="headerlink" title="Data-driven shape"></a>Data-driven shape</h3><p>Data-driven graphic design <em>32p</em>: </p>
-<blockquote>
-<p>“Unlike the physical process of making a mark with a pen, brush, or even a digital tablet, computational drawings are created by a written list of programming instructions based on rules and  procedures that a programmer writes, a computer translates and executes the instructions into individual marks lines, and shapes on the screen.”</p>
-</blockquote>
-<p>Computer generate different graphic base on the data have supported. In current stage, I want to use ‘Stroke’ to effect the <strong>format of graphic</strong>, which means how shapes group up and how they connect each other. The reason I thought is, Chinese word s sometimes have big differences in structure and strokes, it will effect visuals. The strokes will influence the <strong>complexity of the outlook, though it is irrelative to meaning generally, it can clear show different characteristics of words</strong></p>
-<h4 id="Make-points-as-coordinate"><a href="#Make-points-as-coordinate" class="headerlink" title="Make points as coordinate"></a>Make points as coordinate</h4><p>I create a series of points by strokes count of each word, so every word will have some points which can be the <strong>coordinate</strong>. In future work, some specific shape could be set in the coordinate. Furthermore, basing on different Tone, the layout of point could be changed, because Strokes merely influence the <strong>quantity of points</strong>.</p>
-<h4 id="render-graphic-base-on-different-coordinate-of-each-words"><a href="#render-graphic-base-on-different-coordinate-of-each-words" class="headerlink" title="render graphic base on different coordinate of each words"></a>render graphic base on different coordinate of each words</h4><p>The question is, I haven’t decided which way I render graphic. There are two method to render graphic I can use now, </p>
-<ul>
-<li>SVG, render by <a href="http://snapsvg.io/" target="_blank" rel="noopener">Snap.js</a></li>
-<li>Bitmap, render by <a href="https://p5js.org/zh-Hans/" target="_blank" rel="noopener">P5.js</a></li>
-</ul>
-<p>SVG available me to create more beautiful/ delicate shape with high-quality resolution. And Bitmap graphic can generate more curve and massive geometric shape. In future work I will do that  both and choose one or both as final effect.</p>
-<h2 id="The-difficulties-I-faced-now"><a href="#The-difficulties-I-faced-now" class="headerlink" title="The difficulties I faced now"></a>The difficulties I faced now</h2><h3 id="data-analyse"><a href="#data-analyse" class="headerlink" title="data analyse"></a>data analyse</h3><p>在早期进程中，变量的提取非常困难，尤其是我需要逐个把用户键入的字符匹配数据库，当匹配数据库后，再分析它的别的属性。逻辑层面必须非常清晰：<br>用户键入————每一个字————属性，如笔画读音偏旁<br>拼音，检索音调；<br>笔画————生成坐标，<br>坐标————通过笔画数判断坐标数量，通过别的<strong>属性</strong>决定坐标<strong>排列方式</strong><br>偏旁，检索特定的含义，其含义必须被单独设定，<strong>手动</strong></p>
-<h3 id="whole-style"><a href="#whole-style" class="headerlink" title="whole style"></a>whole style</h3><p>The work must be designed to illustrative, it should give the feeling of words, it doesn’t represent a whole sentence, but it should show the abstract meaning of words. </p>
-<img src="/2018/10/28/process-make-different-method-to-group/photo1.png">
+                <span ><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 </span>
               </div>
-              <!-- 
-                <div class="post-summary col-4">
-                  <span>Abstract:</span>
-                  <br>
-                  <p>Get stroke countsAfter last tutorial, Ive continually developed the Web project. I added new function to get the strokes of words which user typed. Then I would like to reflect the hold process, what difficulties I faced, the idea I got, and the methodology of reach....</p>
-                </div>
-               -->
+              <!--  -->
               
             
           </div>
         </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/28/process-make-different-method-to-group/">Read more >></a>
-      </div>
-        
-    
-      
-
-      
-      <div class="recent-post-item post-reflection col rounded-right "> 
-                       
-          <div class="recent-post-info">
-              <a class="recent-post-title" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/"><h1>Reflection:Early visualisation of Chinese</h1></a>
-              <!-- reflection -->
-                            
-              <span class="recent-post-cat ">
-                
-
-<a href="/categories/Reflection/"cat="Reflection">Reflection</a>
-
-              </span>
-              
-              <p class="recent-post-author">
-                <b>Author:</b>Hayden
-              </p>
-            
-            
-            <time datetime="2018-10-25T18:56:46.000Z">
-              2018-10-25
-            </time>
-            <hr>
-           
-          </div>
-          <div class="row ">
-            <div class="recent-post-placeholder col d-none d-md-block ml-3 border">
-                <span ><h1 id="Reflection-Early-experiments-about-visualisation"><a href="#Reflection-Early-experiments-about-visualisation" class="headerlink" title="Reflection: Early experiments about visualisation"></a>Reflection: Early experiments about visualisation</h1><p>In this stage, I’ve done a prototype of visualisation application, it available user to support dynamic data and translate to geometric shape. I used JavaScript to build the application as well as NodeBox and illustrator. Then I will review the process of work.</p>
-<h2 id="Source-of-idea"><a href="#Source-of-idea" class="headerlink" title="Source of idea"></a>Source of idea</h2><p>At first, we visited the V&amp;A museum, there are series of digital arts exhibited. I observed the layout and variant of graphic, but was confused by the irregular shape. I tired to find the reason and the meaning of artists want to convey. I failed.</p>
-<p>这些数字渲染的作品充满了不确定性和随机性，但是不变的是他们的排列方式。艺术家用特殊的算法计算了图形的位置，并通过控制变量的方法让图形拥有不同的形状或者结构。</p>
-<p>In M.Mohr’s work, I saw his algorithm generate shape as random symbol, they are ordered in grid system with a tiny translation of position. So I want to collect information and data as variable to generate more specific shape. I chose Chinese letter as the source of information, because Chinese letter can be separated to be different parts which have individual meanings.</p>
-<h2 id="Work-process"><a href="#Work-process" class="headerlink" title="Work process"></a>Work process</h2><p>To complete my idea, it is important to <strong>distinguish</strong> the letter. I set a database, it will return the value of <strong>phonogram, stroke count, radical</strong> of letter whatever user type are( except special/strange word or symbol ).</p>
-<p>After return of data, I used JS to analyse that and change the image which show on Web.</p>
-<p>通过的采集的数据的分析，再遍历数据库，当有匹配对象的时候，返回它的详细信息，例如<strong>拼音，笔画和部首</strong>。 通过拆分返回的拼音字符串，再遍历每个字符串，与音调的数据库匹配，返回后即可以得到那个有音调的拼音所属于的音调。</p>
-<img src="/2018/10/25/Reflection-Early-visualisation-of-Chinese/photo1.png">
-<p>Base on the tone of letters, specific shape will be set on Web. The method of render image is add and append tag in DOM as</p>
-<pre><code> &lt;embed src=Dynamic link&gt;svg img&lt;/embed&gt;
-</code></pre><h2 id="Goodthing"><a href="#Goodthing" class="headerlink" title="Goodthing"></a>Goodthing</h2><p>To see a draft effect, I chose tone as variable to make graphic. I successful complete the logical stage (逻辑层面). Though it just show tone as characteristic of a word, it is easily to add more effect on shape. It clearly shows the differences of Chinese character which same as my first expectation</p>
-<h2 id="Something-need-to-develop"><a href="#Something-need-to-develop" class="headerlink" title="Something need to develop"></a>Something need to develop</h2><h3 id="More-illustrative"><a href="#More-illustrative" class="headerlink" title="More illustrative"></a>More illustrative</h3><p>I used shape of symbol to show the tone of word, which is same as we daily use. But the final outcome should not be the showing  of symbol. The expression of tone might be a <strong>method/ structure</strong> when rendering shape. So, they the variable from tones should have the ability that show the change of tone/ level. <strong>Curve</strong> might be a good choice.</p>
-<p>In future work, there will more information be add in graphic, but how should I keep a balance? What’s the composition of individual graphic? </p>
-</span>
-            </div>
-            <ul class="post-reflection-ul list-unstyled col m-0 px-4">
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Reflection-Early-experiments-about-visualisation">#Reflection Early experiments about visualisation</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Source-of-idea">#Source of idea</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Work-process">#Work process</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Goodthing">#Goodthing</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#Something-need-to-develop">#Something need to develop</a>
-                </li>
-            
-                 
-                <li class="row post-reflection-li p-0 mb-1" >
-                  <a class="col-12" href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/#More-illustrative">#More illustrative</a>
-                </li>
-                    
-            </ul> 
-          </div>
-         
-          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/25/Reflection-Early-visualisation-of-Chinese/">Read more >></a>  
-
-      </div>
-        
-    
-      
-
-      
-
-      <div class="recent-post-item post-journal col rounded-right">
-        <div class="recent-post-info">
-          <a class="recent-post-title" href="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/"><h1>Draft: Visualization of tone of Chinese word</h1></a>
-          <!-- journal -->
-          <span class="recent-post-cat ">
-            
-
-<a href="/categories/journal/"cat="journal">journal</a>
-
-
-          </span>
-          
-            <p class="recent-post-author">
-              <b>Author:</b>Hayden
-            </p>
-
-              
-      
-          
-            <time datetime="2018-10-24T01:29:27.000Z">
-              2018-10-24
-            </time>
-            <hr>
-          
-         
-         
-
-        </div> 
-        
-        <div class="recent-post-preview col">
-          <div class="row">
-            
-            
-                
-                <div class="recent-post-img col-sm-12 col-md"> 
-                    
-                    <img class="img-responsive" src="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/photo1.gif" />
-                  </div>
-                  
-                    <div class="post-summary col-5">
-                      <span>Abstract:</span>
-                      <br>
-                      <p>Draft: Dynamic visualisation of Tone of Chinese letterWEB Link
-As I said, Chinese is a language use tone to define meaning of word, so a same spell/ pronunciation will have definitely different meaning if they have different tone....</p>
-                    </div>
-                  
-                  
-            
-          </div>
-        </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/10/24/Draft-Visualizetion-of-tone-of-Chinese-word/">Read more >></a>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2018/09/02/hello-world/">Read more >></a>
       </div>
         
     
@@ -761,7 +465,7 @@ As I said, Chinese is a language use tone to define meaning of word, so a same s
 
 
 
-			<div class="col page-nav p-0"><a class="extend prev" rel="prev" href="/page/5/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next</a></div>
+			<div class="col page-nav p-0"><a class="extend prev" rel="prev" href="/page/5/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span></div>
 		</div>
 		<div id="right-col" class="col-sm-12 col-md pr-4">
 			<div class="col-sm-12 p-0">
@@ -771,7 +475,7 @@ As I said, Chinese is a language use tone to define meaning of word, so a same s
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/I-need-a-IdeaPage/">Blog development</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/confirm-a-style-in-animated-illustration/">Confirm a style in animated illustration</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/20/get-src-by-RegExp/">get src by RegExp</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Research-W-L/">Research:W&L</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/Polar-flame/">Polar flame</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/Digital-generation/">Digital generation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/英语拟声词/">英语拟声词</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/16/collaboration-storyboard/">collaboration: script</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/Text-based-Graphic/">Text-based Graphic</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/historyOfConceptualArt/">history Of Conceptual Art</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/Explore-CreateJS/">Explore CreateJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/Zs-Psychology/">NOTE</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/CreateJs/">CreateJs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/collaboration-as-not-only-artist/">collaboration: as not only artist</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>

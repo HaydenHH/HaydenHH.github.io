@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Text-based Graphic]]></title>
+    <url>%2F2019%2F03%2F05%2FText-based-Graphic%2F</url>
+    <content type="text"><![CDATA[Generate bitmap by TextBitmap is the image combined by individual pixel. To reproduce a bitmap, we can analyze each value of pixel. Which means we should get the color of this pixel, when we generate new pixel / graphic, we can use these data, so the new image will looks like the original one. 位图是由像素组成的,为了重绘一个位图,我们要分析每一个像素的数据比如颜色和位置. 当得到那些数据后,在绘制的时候,就能把相对应的数据带入新的像素(这可能是由字符或者别的图形组成的), 这样的新图片看起来就会和原来的图片很像. EnvironmentIn this workshop, I’m going to use HTML and Javascript to build the drawing programme. To control Canvas in HTML5, I used CreateJS to draw and set graphic, which eaiser than original Web canvas API. Get pixel dataFirstly, we should create image then add it in context of canvas. let ctx = document.getElementByID(&#39;canvas ID&#39;).getContext(&#39;2d&#39;) let img = new Image() img.src = &#39;img/xxx.jpg&#39; ctx.drawImg(img,0,0) So far, we’ve draw the image on canvas, so we can call getImageData to build a object which save data of pixel in memory. let imgDt = ctx.getImageData(0,0,img.width,img.height) // chose a range of area, same as image&#39;s size draw pixel one by oneBefore we use these data to draw, we should relize what’s it. getImageData() built a ImageData object, this object has a data attribute, and all of pixel data have saved in there as a Uint8ClampedArray, which only save the number in [0-255]. And our pixel will be analyze the color as RGBA. So each pixel will add a number in this Array. These a article I read, it analyzed the regular of ArrayLink For draw pixel at X and Y axis, we should use two For() loop to create graphic in 2D. for(let v=0;v&lt;img.width;v++){ for(let row=0;row&lt;img.height;row++){ // these two for loop can iterate each pixel // key point is to get index from IMGdata let index = [v*img.width + row]*4 imgDt[index] //color R imgDt[index+1 ] //color G imgDt[index+2 ] //color B imgDt[index+3 ] //color A } }]]></content>
+      <categories>
+        <category>workshop</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>CreateJS</tag>
+        <tag>bitmap</tag>
+        <tag>Canvas</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[history Of Conceptual Art]]></title>
     <url>%2F2019%2F03%2F04%2FhistoryOfConceptualArt%2F</url>
     <content type="text"><![CDATA[History of conceptual artWhat is art, why it can be an art. Paul Cezanne - trees and Rocks near the chateau Noir For expressionism, a painting could represent nothing, it show visuals. For conceptual art, Duchamp created Fountain which is a signatured toilet put in a gallery, he changed people’s attitude to art. Robert Rauschenburg, eraesd.Is painting be valued by the aritist’s popularity? Chirs Burden, shoot Michael Craig-Martin,an Oak tree The work shows a glass desk which put a cup of water, which shows affordance to locate / put somehing there. But the desk is so high so people are impossible to put thing on there, which shows hindrance Marina Abramovic, Rhythm 0 The artist allow audience see herself as a object, and use some tool on her body, base on please or punish. People hurt her in the end. This performance show human’s evil heart Richard Prince, cowboy Damien Hirst, A Thousand Years An installation which division death and live. Tracey Emin, My bed Arst’s show a bed which audience can imagine the situation of the holder. It shows some negative / despair, so it has a potential narrative ability. Cornelia Parker, the Distance Andrea Fraser, untitled Fraser problematizes whether selling art to collectors in of itself is a form of prostitution. Mediengruppe Bitnik, Surveillance Chess Who can read the artThe reason of a creation of a art, must be understood. whatever it can be or not, art should be read. Who is the audience? What kind of people have the ability to read? It is a scope of art. Which means, this thing in these crowds, would be seen as art, and in others people’s opinion, it could be nothing even a rubbish. So when we talk about an art, or discuss is it an art, shall we think about the context of creation, reason of creation. Art without audienceIf an art which doesn’t need any audience, the artist do the work only for self, it show his own feeling, emotion, is it an Art? If you understand the meaning of that, or you appreciate the visuals of that, you think it is a art; if not, that is not art for you. So for an art, a personal art, the value not be defined as how much people understand that, is could be how it shows author’s idea. Are art works as common goodsWe know arts can take commercial profit for artist, even Van Gogh sold his work for survive as well. So, art definitely can be a kind of good, cause it bring money. Arts as common goods]]></content>
@@ -11,7 +25,7 @@
   <entry>
     <title><![CDATA[Explore ThreeJS]]></title>
     <url>%2F2019%2F02%2F26%2FExplore-ThreeJS%2F</url>
-    <content type="text"><![CDATA[ThreeJSBeginTo begin 3JS, we should use scene,camera,renderer var scene = new THREE.Scene(); var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); var renderer = new THREE.WebGLRenderer(); renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); GeometryThe base logic to add cube to scene is: generate a geometric object set a material set a Mesh object, which group geo and mtr add to scene adjust position of camera So, the key points are Geometry,Materail,Mesh , mesh should added to scene animationAnimation in ThreeJS is not complicated, it use requestAniamtionFrame (RAF) to consecutively render animated graphic. var animate = function () { requestAnimationFrame( animate ); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render( scene, camera ); }; then, run animate() NOTEThe first time I forgot to set size of render and I also need to add renderer to body renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); Draw some Lines in 3DFirst, I should new a Geometry object, then I push Vector3 points to Vertices of geo object. Using specific material, and group in Line object geometry.vertices.push(new THREE.Vector3(x,y,z)) var material = new THREE.LineBasicMaterial( { color: 0x0000ff } ); var line = new THREE.Line(geo, material)]]></content>
+    <content type="text"><![CDATA[ThreeJSBeginTo begin 3JS, we should use scene,camera,renderer var scene = new THREE.Scene(); var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); var renderer = new THREE.WebGLRenderer(); renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); GeometryThe base logic to add cube to scene is: generate a geometric object set a material set a Mesh object, which group geo and mtr add to scene adjust position of camera So, the key points are Geometry,Materail,Mesh , mesh should added to scene animationAnimation in ThreeJS is not complicated, it use requestAniamtionFrame (RAF) to consecutively render animated graphic. var animate = function () { requestAnimationFrame( animate ); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render( scene, camera ); }; then, run animate() NOTEThe first time I forgot to set size of render and I also need to add renderer to body renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); Draw some Lines in 3DFirst, I should new a Geometry object, then I push Vector3 points to Vertices of geo object. Using specific material, and group in Line object geometry.vertices.push(new THREE.Vector3(x,y,z)) var material = new THREE.LineBasicMaterial( { color: 0x0000ff } ); var line = new THREE.Line(geo, material) BufferSometimes we should use cache (缓存), to quickly load 3D object, so we use Buffer to save the location of point, Vertices. Because Javascript’s Array is not real array, so we use 强类型 array to save data. let arr = new Float32Array([1,2,3]) This piece of code create a 浮点数 array, which can quickly use.]]></content>
       <categories>
         <category>research</category>
       </categories>
@@ -31,8 +45,8 @@
       <tags>
         <tag>digital</tag>
         <tag>Javascript</tag>
-        <tag>CreateJS</tag>
         <tag>HTML</tag>
+        <tag>CreateJS</tag>
         <tag>HTML canvas</tag>
         <tag>animation</tag>
       </tags>
@@ -134,9 +148,9 @@
         <category>gallery</category>
       </categories>
       <tags>
-        <tag>programme</tag>
         <tag>digital</tag>
         <tag>visualization</tag>
+        <tag>programme</tag>
         <tag>vector</tag>
       </tags>
   </entry>
@@ -216,9 +230,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[use GUI to build shape]]></title>
-    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
-    <content type="text"><![CDATA[use GUI to build shape]]></content>
+    <title><![CDATA[Oxford trip]]></title>
+    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
+    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -227,9 +241,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oxford trip]]></title>
-    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
-    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
+    <title><![CDATA[use GUI to build shape]]></title>
+    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
+    <content type="text"><![CDATA[use GUI to build shape]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -469,10 +483,10 @@
         <category>journal</category>
       </categories>
       <tags>
+        <tag>variable</tag>
         <tag>critical thinking</tag>
         <tag>research</tag>
         <tag>note</tag>
-        <tag>variable</tag>
       </tags>
   </entry>
   <entry>
@@ -538,9 +552,9 @@
       <tags>
         <tag>idea</tag>
         <tag>digital</tag>
-        <tag>research</tag>
         <tag>variable</tag>
         <tag>programmer</tag>
+        <tag>research</tag>
         <tag>inspiration</tag>
       </tags>
   </entry>
