@@ -378,6 +378,11 @@
     
     
 
+    
+    
+    
+    
+
 
 
 
@@ -397,6 +402,55 @@
     <div class="col-12"><h1 class="holder" >&nbsp</h1></div>
  
     <h1 class="block-title col-md-12 ml-1">Recent Posts</h1>
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/03/06/how-I-mix-art-and-Tech/"><h1>how I mix art and Tech</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+
+              
+      
+          
+            <time datetime="2019-03-06T14:25:12.000Z">
+              2019-03-06
+            </time>
+            <hr>
+          
+         
+         
+
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="How-I-mix-art-and-Tech"><a href="#How-I-mix-art-and-Tech" class="headerlink" title="How I mix art and Tech"></a>How I mix art and Tech</h1></span>
+              </div>
+              <!--  -->
+              
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/03/06/how-I-mix-art-and-Tech/">Read more >></a>
+      </div>
+        
     
       
 
@@ -451,6 +505,7 @@ ctx.drawImg(img,0,0)
 // chose a range of area, same as image&#39;s size
 </code></pre><h2 id="draw-pixel-one-by-one"><a href="#draw-pixel-one-by-one" class="headerlink" title="draw pixel one by one"></a>draw pixel one by one</h2><p>Before we use these data to draw, we should relize what’s it. <strong>getImageData()</strong> built a <em>ImageData</em> object, this object has a <strong>data</strong> attribute, and all of pixel data have saved in there as a <strong>Uint8ClampedArray</strong>, which only save the number in [0-255]. And our pixel will be analyze the color as <strong>RGBA</strong>. So each pixel will add a number in this Array.</p>
 <p>These a article I read, it analyzed the regular of Array<a href="https://hacks.mozilla.org/2011/12/faster-canvas-pixel-manipulation-with-typed-arrays/" target="_blank" rel="noopener">Link</a></p>
+<p>other <a href="http://tutorials.jenkov.com/html5-canvas/pixels.html#manipulating-the-pixels" target="_blank" rel="noopener">Link</a></p>
 <p>For draw pixel at X and Y axis, we should use two For() loop to create graphic in 2D.</p>
 <pre><code>for(let v=0;v&lt;img.width;v++){
     for(let row=0;row&lt;img.height;row++){
@@ -461,10 +516,19 @@ ctx.drawImg(img,0,0)
         imgDt[index] //color R
         imgDt[index+1 ] //color G
         imgDt[index+2 ] //color B
-        imgDt[index+3 ] //color A
+        imgDt[index+3 ] //color A, influence size
+
+        // there&#39;re all of pixel data
+
+        let dot = new createjs.Shape()
+        dot.graphics.beginFill(RGB).drawCircle(0,0,size)
+
+        Stage.addchild(dot)
 
     }
 }
+
+Stage.update()
 </code></pre></span>
               </div>
               <!--  -->
@@ -620,19 +684,19 @@ ctx.drawImg(img,0,0)
                   
                   
                   <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/digital"> digital</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
                     <a class="post-research-tags col p-2" href="/tags/Javascript"> Javascript</a>
                   </div>
                   
                   <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/HTML"> HTML</a>
+                    <a class="post-research-tags col p-2" href="/tags/digital"> digital</a>
                   </div>
                   
                   <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
                     <a class="post-research-tags col p-2" href="/tags/CreateJS"> CreateJS</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/HTML"> HTML</a>
                   </div>
                   
                   <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
@@ -1008,53 +1072,6 @@ ctx.drawImg(img,0,0)
       </div>
         
     
-      
-
-      
-        <div class="recent-post-item post-research col rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/02/20/get-src-by-RegExp/"><h1>get src by RegExp</h1></a>
-                <!-- research -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/research/"cat="research">research</a>
-
-                </span>
-                  
- 
-            </div>
-
-              
-                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
-                  
-                  
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Javascript"> Javascript</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/HTML"> HTML</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/regular-expression"> regular expression</a>
-                  </div>
-                  
-                  <hr>
-                  
-                </div>
-                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/02/20/get-src-by-RegExp/">Read more >></a>
-                
-            
-           
-            
-
-        </div>
-      
-        
-    
     
   </div>
 
@@ -1070,7 +1087,7 @@ ctx.drawImg(img,0,0)
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/Text-based-Graphic/">Text-based Graphic</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/historyOfConceptualArt/">history Of Conceptual Art</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/Explore-CreateJS/">Explore CreateJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/Zs-Psychology/">NOTE</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/CreateJs/">CreateJs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/collaboration-as-not-only-artist/">collaboration: as not only artist</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/how-I-mix-art-and-Tech/">how I mix art and Tech</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/Text-based-Graphic/">Text-based Graphic</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/historyOfConceptualArt/">history Of Conceptual Art</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/Explore-CreateJS/">Explore CreateJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/Zs-Psychology/">NOTE</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/CreateJs/">CreateJs</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
