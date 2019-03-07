@@ -337,14 +337,17 @@ body span::selection {
   background-color: #ed6024;
   color: #ffffff;
 }
-.post-reflection .post-reflection-ul li {
+.post-reflection-ul li,
+.post-workshop-ul li {
   border: #ed6024 0.5px solid;
 }
-.post-reflection .post-reflection-ul li a {
+.post-reflection-ul li a,
+.post-workshop-ul li a {
   color: #ed6024;
   padding: 2px 20px;
 }
-.post-reflection .post-reflection-ul li a:hover {
+.post-reflection-ul li a:hover,
+.post-workshop-ul li a:hover {
   background-color: #ed6024;
   color: #ffffff;
 }
