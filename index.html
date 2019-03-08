@@ -377,6 +377,381 @@
 		<div class="col-sm-12 col-md-8 p-1">
 
 			
+
+
+
+
+  <div id="recent-posts">
+    <div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+ 
+    <h1 class="block-title col-md-12 ml-1">Recent Posts</h1>
+    
+      
+
+      
+        <div class="recent-post-item post-research col rounded-right "> 
+            <div class="recent-post-info">
+                <a class="recent-post-title" href="/2019/03/07/Research-Editing/"><h1>Research: Hitchcock</h1></a>
+                <!-- research -->
+                <span class="recent-post-cat ">
+                  
+
+<a href="/categories/research/"cat="research">research</a>
+
+                </span>
+                  
+ 
+            </div>
+
+              
+                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
+                  
+                  
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/editing"> editing</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/space"> space</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/composition"> composition</a>
+                  </div>
+                  
+                  <hr>
+                  
+                </div>
+                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/03/07/Research-Editing/">Read more >></a>
+                
+            
+           
+            
+
+        </div>
+      
+        
+    
+      
+
+      
+        <!-- note -->
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/03/06/how-I-mix-art-and-Tech/"><h1>how I mix art and Tech</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+              
+          
+            <time datetime="2019-03-06T14:25:12.000Z">
+              2019-03-06
+            </time>
+            <hr>
+          
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="How-I-mix-art-and-Tech"><a href="#How-I-mix-art-and-Tech" class="headerlink" title="How I mix art and Tech"></a>How I mix art and Tech</h1></span>
+              </div>
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/03/06/how-I-mix-art-and-Tech/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+      <div class="recent-post-item post-workshop col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2019/03/05/Text-based-Graphic/"><h1>Text-based Graphic</h1></a>
+              <!-- workshop -->
+                            
+              <span class="recent-post-cat ">
+                
+
+<a href="/categories/workshop/"cat="workshop">workshop</a>
+
+              </span>
+              
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2019-03-05T14:14:25.000Z">
+              2019-03-05
+            </time>
+            <hr>
+           
+          </div>
+          <div class="row ">
+            <div class="recent-post-placeholder col d-none d-md-block ml-3 border">
+                
+                  <span ><h1 id="Generate-bitmap-by-Text"><a href="#Generate-bitmap-by-Text" class="headerlink" title="Generate bitmap by Text"></a>Generate bitmap by Text</h1><p>Bitmap is the image combined by individual <strong>pixel</strong>. To reproduce a bitmap, we can analyze each <strong>value of pixel</strong>. Which means we should get the color of this pixel, when we generate new pixel / graphic, we can use these data, so the new image will looks like the original one.</p>
+<hr>
+<p>位图是由像素组成的,为了重绘一个位图,我们要分析每一个像素的数据比如颜色和位置. 当得到那些数据后,在绘制的时候,就能把相对应的数据带入新的像素(这可能是由字符或者别的图形组成的), 这样的新图片看起来就会和原来的图片很像.</p>
+<h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><p>In this workshop, I’m going to use HTML and Javascript to build the drawing programme. To control <strong>Canvas</strong> in HTML5, I used <strong>CreateJS</strong> to draw and set graphic, which eaiser than original Web canvas API.</p>
+<h2 id="Get-pixel-data"><a href="#Get-pixel-data" class="headerlink" title="Get pixel data"></a>Get pixel data</h2><p>Firstly, we should create <strong>image</strong> then add it in <strong>context</strong> of canvas.</p>
+<pre><code>let ctx = document.getElementByID(&#39;canvas ID&#39;).getContext(&#39;2d&#39;)
+let img = new Image()
+img.src = &#39;img/xxx.jpg&#39;
+
+ctx.drawImg(img,0,0)
+</code></pre><p>So far, we’ve draw the image on canvas, so we can call <strong>getImageData</strong> to build a object which save data of pixel in memory.</p>
+<pre><code>let imgDt = ctx.getImageData(0,0,img.width,img.height)
+// chose a range of area, same as image&#39;s size
+</code></pre><h2 id="draw-pixel-one-by-one"><a href="#draw-pixel-one-by-one" class="headerlink" title="draw pixel one by one"></a>draw pixel one by one</h2><p>Before we use these data to draw, we should relize what’s it. <strong>getImageData()</strong> built a <em>ImageData</em> object, this object has a <strong>data</strong> attribute, and all of pixel data have saved in there as a <strong>Uint8ClampedArray</strong>, which only save the number in [0-255]. And our pixel will be analyze the color as <strong>RGBA</strong>. So each pixel will add a number in this Array.</p>
+<p>These a article I read, it analyzed the regular of Array<a href="https://hacks.mozilla.org/2011/12/faster-canvas-pixel-manipulation-with-typed-arrays/" target="_blank" rel="noopener">Link</a></p>
+<p>other <a href="http://tutorials.jenkov.com/html5-canvas/pixels.html#manipulating-the-pixels" target="_blank" rel="noopener">Link</a></p>
+<p>For draw pixel at X and Y axis, we should use two For() loop to create graphic in 2D.</p>
+<pre><code>for(let v=0;v&lt;img.width;v++){
+    for(let row=0;row&lt;img.height;row++){
+        // these two for loop can iterate each pixel
+        // key point is to get index from IMGdata
+
+        let index = [v*img.width + row]*4
+        imgDt[index] //color R
+        imgDt[index+1 ] //color G
+        imgDt[index+2 ] //color B
+        imgDt[index+3 ] //color A, influence size
+
+        // there&#39;re all of pixel data
+
+        let dot = new createjs.Shape()
+        dot.graphics.beginFill(RGB).drawCircle(0,0,size)
+
+        Stage.addchild(dot)
+
+    }
+}
+
+Stage.update()
+</code></pre></span>
+                
+            </div>
+            <ul class="post-workshop-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Generate-bitmap-by-Text">#Generate bitmap by Text</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Environment">#Environment</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Get-pixel-data">#Get pixel data</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#draw-pixel-one-by-one">#draw pixel one by one</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/03/05/Text-based-Graphic/">Read more >></a>  
+
+      </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/03/04/historyOfConceptualArt/"><h1>history Of Conceptual Art</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+              
+          
+            <time datetime="2019-03-04T10:28:42.000Z">
+              2019-03-04
+            </time>
+            <hr>
+          
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+              <div class="recent-post-img col-sm-12 col-md"> 
+                  
+                    <img class="img-responsive" src="https://i.pinimg.com/736x/8a/a0/fd/8aa0fd11bf63050a1e9b082348d20a2c.jpg" />
+                  
+              </div>
+                  
+              <div class="post-summary col-5">
+                  <span>Abstract:</span>
+                  <br>
+                  
+                  <p>History of conceptual artWhat is art, why it can be an art. Who define it is art. There are many problem we should think about. These conceptual artist both create some innovative / creative even crazy thing, they ask public, what is art....</p>
+                  
+              </div>
+                  
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/03/04/historyOfConceptualArt/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+        <div class="recent-post-item post-research col rounded-right "> 
+            <div class="recent-post-info">
+                <a class="recent-post-title" href="/2019/02/26/Explore-ThreeJS/"><h1>Explore ThreeJS</h1></a>
+                <!-- research -->
+                <span class="recent-post-cat ">
+                  
+
+<a href="/categories/research/"cat="research">research</a>
+
+                </span>
+                  
+ 
+            </div>
+
+              
+                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
+                  
+                  
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/Javascript"> Javascript</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/3D"> 3D</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/Three-JS"> Three JS</a>
+                  </div>
+                  
+                  <hr>
+                  
+                </div>
+                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/02/26/Explore-ThreeJS/">Read more >></a>
+                
+            
+           
+            
+
+        </div>
+      
+        
+    
+      
+
+      
+        <!-- note -->
+        
+    
+      
+
+      
+        <!-- note -->
+        
+    
+      
+
+      
+        <!-- note -->
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/02/22/collaboration-as-not-only-artist/"><h1>collaboration: as not only artist</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+              
+          
+            <time datetime="2019-02-22T10:09:29.000Z">
+              2019-02-22
+            </time>
+            <hr>
+          
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-10 ml-3 border">
+                <span ><h1 id="With-tech"><a href="#With-tech" class="headerlink" title="With tech"></a>With tech</h1><h2 id="geography-amp-geochemistry"><a href="#geography-amp-geochemistry" class="headerlink" title="geography &amp; geochemistry"></a>geography &amp; geochemistry</h2><p>technology had combined with nature, we can find the using of nature force like <em>solar station</em>, <em>wind farm</em>. Is it a kind of collaboration of human and nature?</p>
+<h2 id="using-technology"><a href="#using-technology" class="headerlink" title="using technology"></a>using technology</h2><blockquote>
+<p>our knowledge is nothing but hte glass of our own imperfections</p>
+</blockquote>
+<ul>
+<li>using analog LED on architecture to build visual guide.</li>
+<li>work with patterns, <em>weavers</em>.</li>
+<li>Collecting tone of <strong>pixel</strong> and translate to tone, a programmer collaborate with a visual artist, produce sound by data of pattern;</li>
+<li>using algal biotechnology to clear water.</li>
+</ul>
+</span>
+              </div>
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/02/22/collaboration-as-not-only-artist/">Read more >></a>
+      </div>
+        
+    
+    
+  </div>
+
+
+
 			<div class="col page-nav p-0"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next</a></div>
 		</div>
 		<div id="right-col" class="col-sm-12 col-md pr-4">
