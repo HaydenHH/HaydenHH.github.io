@@ -553,7 +553,7 @@ body span::selection {
   color: #4f5252;
 }
 #archive .list-group-item {
-  background-color: #e3e1e1;
+  background-color: transparent;
   border: #ed6024 solid 0.5px;
 }
 #archive aside {
