@@ -75,7 +75,7 @@
 	<div class="row">
 		
 		
-		<div id="post-head" class="col col-md-3 h-50 mr-5 d-inline-block">
+		<div id="post-head" class="col-12 col-md-3 m-sm-0 mr-md-5  d-md-inline-block">
 			<h1 class="article-title">Explore ThreeJS</h1>
 			<span class="article-tags">
 				 
@@ -93,7 +93,7 @@
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/Research-Editing/">Research: Hitchcock</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/Explore-Blender/">Explore Blender</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/how-I-mix-art-and-Tech/">how I mix art and Tech</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/Text-based-Graphic/">Text-based Graphic</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/historyOfConceptualArt/">history Of Conceptual Art</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/Explore-CreateJS/">Explore CreateJS</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/11/about-FMP/">about FMP</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/Research-Editing/">Research: Hitchcock</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/Explore-Blender/">Explore Blender</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/how-I-mix-art-and-Tech/">how I mix art and Tech</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/Text-based-Graphic/">Text-based Graphic</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/historyOfConceptualArt/">history Of Conceptual Art</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/Explore-ThreeJS/">Explore ThreeJS</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
@@ -101,7 +101,7 @@
 			</div>
 		</div>
 
-		<article id="post" class="rounded-bottom col  offset-md-0 p-0 ">
+		<article id="post" class="rounded-bottom col-12 col-md  offset-md-0 p-0 ">
 		  <div class="col-sm-12 col-md">
 		  	<h1 id="ThreeJS"><a href="#ThreeJS" class="headerlink" title="ThreeJS"></a>ThreeJS</h1><h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><p>To begin 3JS, we should use <strong>scene</strong>,<strong>camera</strong>,<strong>renderer</strong></p>
 <pre><code>var scene = new THREE.Scene();
@@ -132,7 +132,7 @@ document.body.appendChild( renderer.domElement );
 <h1 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h1><p>The first time I forgot to set <strong>size of render</strong> and I also need to add renderer to body</p>
 <pre><code>renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
-</code></pre><h2 id="Draw-some-Lines-in-3D"><a href="#Draw-some-Lines-in-3D" class="headerlink" title="Draw some Lines in 3D"></a>Draw some Lines in 3D</h2><p>First, I should new a <strong>Geometry</strong> object, then I push <strong>Vector3</strong> points to <strong>Vertices</strong> of geo object. Using specific material, and group in <strong>Line</strong> object</p>
+</code></pre><h3 id="Draw-some-Lines-in-3D"><a href="#Draw-some-Lines-in-3D" class="headerlink" title="Draw some Lines in 3D"></a>Draw some Lines in 3D</h3><p>First, I should new a <strong>Geometry</strong> object, then I push <strong>Vector3</strong> points to <strong>Vertices</strong> of geo object. Using specific material, and group in <strong>Line</strong> object</p>
 <pre><code>geometry.vertices.push(new THREE.Vector3(x,y,z))
 
 var material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
@@ -140,6 +140,20 @@ var line = new THREE.Line(geo, material)
 </code></pre><h3 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h3><p>Sometimes we should use <strong>cache</strong> (缓存), to quickly load 3D object, so we use <strong>Buffer</strong> to save the location of point, <strong>Vertices</strong>. Because Javascript’s <strong>Array</strong> is not real array, so we use <strong>强类型</strong> array to save data.</p>
 <pre><code>let arr = new Float32Array([1,2,3])
 </code></pre><p>This piece of code create a 浮点数 array, which can quickly use.</p>
+<h3 id="load-own-3D-object"><a href="#load-own-3D-object" class="headerlink" title="load own 3D object"></a>load own 3D object</h3><p>ThreeJS allow user load own object. <strong>Blender 2.8</strong> can export usable object as GLTF, we should reference a script to use a GLTF loader. Then implement a <em>GLTFLoader class</em>:</p>
+<pre><code>let loader = new THREE.GLTFLoader();
+loader.load(
+    &quot;js/myObject.glb&quot;,
+    function(gltf){
+        let scene = gltf.scene // it&#39;s a scece
+        let model = scene.children // there would be a Array, all of object in there
+        s.add(model) // s is our global variable
+    },
+    function(xhr){
+        console.log( ( xhr.loaded / xhr.total * 100 ) + &#39;% loaded&#39; ); //异步操作
+    }
+)
+</code></pre><p>Another thing we should note is, the model could be really large, or far away global center, <em>so our camera would not shot that, so it will not appear </em>. The solution is, move it to global center. </p>
 
 			</div>
 			<hr class="my-5 py-5">

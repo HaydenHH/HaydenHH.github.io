@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[about FMP]]></title>
+    <url>%2F2019%2F03%2F11%2Fabout-FMP%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>note</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Research: Hitchcock]]></title>
     <url>%2F2019%2F03%2F07%2FResearch-Editing%2F</url>
     <content type="text"><![CDATA[Hitchcock’s compositionarchitectureThe Architecture of Thrill: How Hitchcock Inspires Spatial Effects In architecture the forms of transition are the consequence of previously affixed objects, and the practical necessity that the physical construction of a building imposes. For example, the walkway in the shape of a square of the transept floor in a church or the polygonal or circular form of a roof that results in a dome. The interest of a space in transition is how it changes from one form to another. In Strangers on a Train, there is another theme that we don’t want to leave out: the magnetism of architecture and its direct relation with the notion of suspense. The film is shot in Washington, a monumental city of great hubs and plazas. It’s revealing to observe how in the movie the confrontation between two men (Guy and Bruno), is always obstructed by architecture. The monument has the burden of staging and of being the magnetic force that adds suspense to the whole scene. The architecture in this case acts an analogy of the domination Bruno exerts over Guy. Also present in all of Hitchcock’s movies is the mysterious relationship between central and periphery. That is, the relationship between small and large scale, where small objects take on different connotations after being immersed in a metropolitan context.]]></content>
@@ -16,7 +24,7 @@
   <entry>
     <title><![CDATA[Explore Blender]]></title>
     <url>%2F2019%2F03%2F07%2FExplore-Blender%2F</url>
-    <content type="text"><![CDATA[selectalt + click =&gt; loop chose renderer eevee PBR rendering Movingkey G // movingand press X,Y,Z to moving on axis edit modeAfter change the size of object, we should Apply Object Transform, so it will change to 1:1:1 on Scale Insert face, (I), create a new face Extrude, (E) bevel,(cl + B) Loop Cut]]></content>
+    <content type="text"><![CDATA[selectalt + click =&gt; loop chose renderer eevee PBR rendering Movingkey G // movingand press X,Y,Z to moving on axis edit modeAfter change the size / scale of object, we should Apply Object Transform, so it will change to 1:1:1 on Scale Insert face, (I), create a new face Extrude, (E) bevel,(cl + B) Loop Cut 如果要封一个面,选上所有的点,按F 物理要制作一条电线,先绘制曲线,然后细分曲面几次; 再绘制一个圆线,然后再曲线的曲线设置中的’geometric’把圆线代入,则得到了一条电线. 再加上物理:软体/ 碰撞. 导出How to Import a 3D Blender Object into a Three.js Project as a glTF File Blender 2.8 allow user export 3D modle as GLB file, which a advanced format to save 3D object, include its vertices / UV / Material even animation.]]></content>
       <categories>
         <category>note</category>
       </categories>
@@ -59,7 +67,7 @@
   <entry>
     <title><![CDATA[Explore ThreeJS]]></title>
     <url>%2F2019%2F02%2F26%2FExplore-ThreeJS%2F</url>
-    <content type="text"><![CDATA[ThreeJSBeginTo begin 3JS, we should use scene,camera,renderer var scene = new THREE.Scene(); var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); var renderer = new THREE.WebGLRenderer(); renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); GeometryThe base logic to add cube to scene is: generate a geometric object set a material set a Mesh object, which group geo and mtr add to scene adjust position of camera So, the key points are Geometry,Materail,Mesh , mesh should added to scene animationAnimation in ThreeJS is not complicated, it use requestAniamtionFrame (RAF) to consecutively render animated graphic. var animate = function () { requestAnimationFrame( animate ); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render( scene, camera ); }; then, run animate() NOTEThe first time I forgot to set size of render and I also need to add renderer to body renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); Draw some Lines in 3DFirst, I should new a Geometry object, then I push Vector3 points to Vertices of geo object. Using specific material, and group in Line object geometry.vertices.push(new THREE.Vector3(x,y,z)) var material = new THREE.LineBasicMaterial( { color: 0x0000ff } ); var line = new THREE.Line(geo, material) BufferSometimes we should use cache (缓存), to quickly load 3D object, so we use Buffer to save the location of point, Vertices. Because Javascript’s Array is not real array, so we use 强类型 array to save data. let arr = new Float32Array([1,2,3]) This piece of code create a 浮点数 array, which can quickly use.]]></content>
+    <content type="text"><![CDATA[ThreeJSBeginTo begin 3JS, we should use scene,camera,renderer var scene = new THREE.Scene(); var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); var renderer = new THREE.WebGLRenderer(); renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); GeometryThe base logic to add cube to scene is: generate a geometric object set a material set a Mesh object, which group geo and mtr add to scene adjust position of camera So, the key points are Geometry,Materail,Mesh , mesh should added to scene animationAnimation in ThreeJS is not complicated, it use requestAniamtionFrame (RAF) to consecutively render animated graphic. var animate = function () { requestAnimationFrame( animate ); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render( scene, camera ); }; then, run animate() NOTEThe first time I forgot to set size of render and I also need to add renderer to body renderer.setSize( window.innerWidth, window.innerHeight ); document.body.appendChild( renderer.domElement ); Draw some Lines in 3DFirst, I should new a Geometry object, then I push Vector3 points to Vertices of geo object. Using specific material, and group in Line object geometry.vertices.push(new THREE.Vector3(x,y,z)) var material = new THREE.LineBasicMaterial( { color: 0x0000ff } ); var line = new THREE.Line(geo, material) BufferSometimes we should use cache (缓存), to quickly load 3D object, so we use Buffer to save the location of point, Vertices. Because Javascript’s Array is not real array, so we use 强类型 array to save data. let arr = new Float32Array([1,2,3]) This piece of code create a 浮点数 array, which can quickly use. load own 3D objectThreeJS allow user load own object. Blender 2.8 can export usable object as GLTF, we should reference a script to use a GLTF loader. Then implement a GLTFLoader class: let loader = new THREE.GLTFLoader(); loader.load( &quot;js/myObject.glb&quot;, function(gltf){ let scene = gltf.scene // it&#39;s a scece let model = scene.children // there would be a Array, all of object in there s.add(model) // s is our global variable }, function(xhr){ console.log( ( xhr.loaded / xhr.total * 100 ) + &#39;% loaded&#39; ); //异步操作 } ) Another thing we should note is, the model could be really large, or far away global center, so our camera would not shot that, so it will not appear . The solution is, move it to global center.]]></content>
       <categories>
         <category>research</category>
       </categories>
@@ -133,8 +141,8 @@
       <tags>
         <tag>animation</tag>
         <tag>illustration</tag>
-        <tag>WEB</tag>
         <tag>collaboration</tag>
+        <tag>WEB</tag>
       </tags>
   </entry>
   <entry>
@@ -182,9 +190,9 @@
         <category>gallery</category>
       </categories>
       <tags>
-        <tag>programme</tag>
         <tag>digital</tag>
         <tag>visualization</tag>
+        <tag>programme</tag>
         <tag>vector</tag>
       </tags>
   </entry>
@@ -502,8 +510,8 @@
         <category>journal</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>Web</tag>
+        <tag>javascript</tag>
         <tag>p5.js</tag>
         <tag>processing</tag>
         <tag>bitmap</tag>
@@ -533,8 +541,8 @@
       <tags>
         <tag>idea</tag>
         <tag>digital</tag>
-        <tag>variable</tag>
         <tag>thinking</tag>
+        <tag>variable</tag>
         <tag>nodeBox</tag>
       </tags>
   </entry>
