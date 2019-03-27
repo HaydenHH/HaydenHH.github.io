@@ -49,6 +49,7 @@ body span::selection {
 }
 #topImg {
   position: fixed;
+  z-index: -1;
   top: 100px;
   margin-bottom: -100px;
 }
