@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html lang="English">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-processing in ThreeJS [ Hayden&#39;s Journal ]</title>
+  <meta name="baidu-site-verification" content="86burbRUA2" />
+  <meta name="google-site-verification" content="ddD504LkQFv-uiU4zbpAwPJVWsp0KOc-PDdg5ZX1MtU" />
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hhy.css">
+    
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript">
+      window.onload = function(){
+          var parallax = new Parallax(document.getElementById('scene'));
+           
+      }
+     
+    </script>
+  
+  
+            
+</head>
+<body>
+
+
+<div id="menu-outer">
+
+  <div id="menu-inner">
+    
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"> Hayden's Journal </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+            <li><a class="nav-item nav-link " href="/">Home</a></li>
+          
+            <li><a class="nav-item nav-link " href="/archives">Archives</a></li>
+          
+            <li><a class="nav-item nav-link " href="/about">About</a></li>
+          
+          
+
+        </div>
+      </div>
+    </nav>
+    <!-- nav -->  
+  </div>
+</div>
+
+<div id="content-outer" class="container-fluid">
+  <div id="content-inner" class="row">
+    
+
+<div id="post-container" class="col-sm-12 col-md-10 offset-md-0">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	
+	<div class="row">
+		
+		
+		<div id="post-head" class="col-12 col-md-3 m-sm-0 mr-md-5  d-md-inline-block">
+			<h1 class="article-title">Post-processing in ThreeJS</h1>
+			<span class="article-tags">
+				 
+					
+
+<a class="post-tag" href="/tags/Web/">Web</a> <a class="post-tag" href="/tags/ThreeJS/">ThreeJS</a> <a class="post-tag" href="/tags/JavaScript/">JavaScript</a> <a class="post-tag" href="/tags/aniamtion/">aniamtion</a>
+
+
+			</span>
+			<div class="post-list-box col p-0 m-0">
+				<div class="col-sm-12 p-0">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	<div id="post-list" class=" col-md-12 d-none d-sm-block mt-3 p-0">
+		
+		
+		<h2 class="col-sm-10 float-left">All post</h2>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/30/History-of-Arts/">History of Arts</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/23/Music-and-narrative/">Music and narrative</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/Family-in-Asian/">Family in Asian</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/Host-a-Website/">Host a Website</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/Start-WebVR/">Start WebVR</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/Research-Editing/">Research: Hitchcock</a></li></ul>
+		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
+	</div>
+</div>
+	
+			</div>
+		</div>
+
+		<article id="post" class="rounded-bottom col-12 col-md  offset-md-0 p-0 ">
+		  <div class="col-sm-12 col-md">
+		  	<h1 id="Post-processing-in-ThreeJS"><a href="#Post-processing-in-ThreeJS" class="headerlink" title="Post-processing in ThreeJS"></a>Post-processing in ThreeJS</h1><p>This article will record the brief process of building a composed-effect  in 3D Web page with THREE.JS. As artist, Web 3D allow me to create some strong visual, it could be interactive and dynamic. Working with THREE.js, I can apply 3D model or text on Web with different angles, colours, which really different with custom graphic work.</p>
+<h2 id="Prepare-library-and-reference-file"><a href="#Prepare-library-and-reference-file" class="headerlink" title="Prepare library and reference file"></a>Prepare library and reference file</h2><p>Post-processing it’s not core in ThreeJS, so we should copy the extra files and reference them.</p>
+<pre><code>&lt;script src=&quot;js/EffectComposer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/CopyShader.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/MaskPass.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/RenderPass.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/ShaderPass.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>The most important thing is, the <strong>EffectComposer</strong> file must be linked <strong>at first</strong>, another thing is, these files should be copied from a common ThreeJS property. I used older Three.js file at first, then I faced a dozen of problems about <strong>compatibility (兼容性)</strong>.</p>
+<pre><code>let composer,renderPass
+
+composer = new THREE.EffectComposer( renderer )
+// 把渲染器声明为一个合成器
+
+renderPass = new THREE.RenderPass(scene, camera)
+// 把场景和照相机能渲染出的画面定义为一个 渲染传递,这样能把已有的画面添加进混合器
+
+composer.addPass(renderPass)
+</code></pre><p>So far, we made renderer to be a <strong>composer</strong>, it can replace existing renderer and render image. The different thing is it can add different <strong>effect</strong> now. Before we add effect on composer, we should change the way of render function.</p>
+<pre><code>function animate(){
+    requestAnimationFrame(animate)
+    ...
+
+    // renderer.render 这是之前的渲染器,现在可以不用它了
+    composer.render()
+}
+</code></pre><p>So we can add effect now. I’m a beginner now, in my view, the ways to add effects can be division as <strong>EffectPass</strong> and <strong>ShaderPass</strong>. There’re many effects had been prepared in ThreeJS official documentation, so we can use it directly.</p>
+<pre><code> bloomPass = new THREE.BloomPass()
+ composer.addPass(bloomPass)
+
+glitchEffect = new THREE.GlitchPass()
+composer.addPass(glitchEffect)
+
+filmEffect = new THREE.FilmPass(0.5,0.015,56,false)
+composer.addPass(filmEffect)
+</code></pre><p>We can see, if we use some library like xxxPass, it could be used really easily. A really important thing is, </p>
+<pre><code>xxx.renderToScreen = true
+</code></pre><p>should be added if this is <strong>the last effect</strong>.</p>
+<p>sometimes we will use some custom shader, so we might use <strong>ShaderPass</strong> to declare this shader, like this:</p>
+<pre><code>    halfToneEffect = new THREE.ShaderPass( THREE.DotScreenShader );
+halfToneEffect.uniforms[ &#39;scale&#39; ].value = 5;
+composer.addPass( halfToneEffect );
+
+
+RGBeffect = new THREE.ShaderPass( THREE.RGBShiftShader );
+RGBeffect.uniforms[ &#39;amount&#39; ].value = 0.01;
+RGBeffect.renderToScreen = true;
+composer.addPass( RGBeffect );
+</code></pre><p>By this way, we can add multiply effects on renderer and make our image more interesting! Let’s see some example I made.</p>
+<p><img src="https://i.loli.net/2019/05/05/5cce4cee59eb8.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4ce6cd277.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cdf2a7ad.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cd6d4c08.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cce37405.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cc66cbf1.png" alt="img"></p>
+<h2 id="about-idea"><a href="#about-idea" class="headerlink" title="about idea"></a>about idea</h2><p>Maybe you can see these image have different colour and tiny differences about details. Because I used the advantages of digital media, I made the colours and direction of light, texture of objects, intensity of fog are changing at ranges of time. Then I added animation on objects, so they will rotate and move.</p>
+<p>The reason I did that is I’d like show the differences of individual objects. Like a man, we are both different, but still have some common point. Because of these common, the group we combined is full of diversity. This the point I’d like going to explore in EPIV project.</p>
+
+			</div>
+			<hr class="my-5 py-5">
+			<div class="col p-2" id="disqus_thread"></div>
+		</article>
+		
+	</div>
+</div>
+
+<div class="container-fluid">
+	
+</div>	
+		
+
+
+<script>
+	(function() { // DON'T EDIT BELOW THIS LINE
+
+	var d = document, s = d.createElement('script');
+	s.src = 'https://hayden-2.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+  </div>
+</div>
+ 
+<div id="bottom-outer" class="container-fluid">
+  <div id="bottom-inner" class="row">
+    <div id="bottom-info" class="col">
+       <i> For LCC MA.IVM Reflective Journal</i>
+        <br>
+        
+        
+            / <a class="" href="/">Home</a>
+        
+            / <a class="" href="/archives">Archives</a>
+        
+            / <a class="" href="/about">About</a>
+        
+        <br>
+        <br>
+        <p>
+          Site by <a href="/about">Heyao</a> / Made by <a href="https://hexo.io/" target="_blank">HEXO</a>
+        </p>
+        
+    </div>
+  </div>
+</div>
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/js/jquery-3.3.1.js"></script>
+  
+    <script src="/js/bootstrap.js"></script>
+  
+    <script src="/js/parallax.js"></script>
+  
+
+
+
+
+<!-- Custom Theme JavaScript -->
+
+
+</body>
+</html>
