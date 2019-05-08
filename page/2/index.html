@@ -98,56 +98,6 @@
 
     
     
-        
-        
-        
-            
-                
-            
-            
-            
-        
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
 
 
     
@@ -218,6 +168,64 @@
 
     
     
+        
+        
+        
+            
+                
+            
+            
+            
+        
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
 
 
     
@@ -351,10 +359,6 @@
             
             
         
-    
-
-
-    
     
 
 
@@ -398,6 +402,115 @@
     <div class="col-12"><h1 class="holder" >&nbsp</h1></div>
  
     <h1 class="block-title col-md-12 ml-1">Recent Posts</h1>
+    
+      
+
+      
+      <div class="recent-post-item post-workshop col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2019/03/05/Text-based-Graphic/"><h1>Text-based Graphic</h1></a>
+              <!-- workshop -->
+                            
+              <span class="recent-post-cat ">
+                
+
+<a href="/categories/workshop/"cat="workshop">workshop</a>
+
+              </span>
+              
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2019-03-05T14:14:25.000Z">
+              2019-03-05
+            </time>
+            <hr>
+           
+          </div>
+          <div class="row ">
+            <div class="recent-post-placeholder col-sm-12 col-md-6 d-none d-md-block ml-3 border">
+                
+                  <span ><h1 id="Generate-bitmap-by-Text"><a href="#Generate-bitmap-by-Text" class="headerlink" title="Generate bitmap by Text"></a>Generate bitmap by Text</h1><p>Bitmap is the image combined by individual <strong>pixel</strong>. To reproduce a bitmap, we can analyze each <strong>value of pixel</strong>. Which means we should get the color of this pixel, when we generate new pixel / graphic, we can use these data, so the new image will looks like the original one.</p>
+<hr>
+<p>位图是由像素组成的,为了重绘一个位图,我们要分析每一个像素的数据比如颜色和位置. 当得到那些数据后,在绘制的时候,就能把相对应的数据带入新的像素(这可能是由字符或者别的图形组成的), 这样的新图片看起来就会和原来的图片很像.</p>
+<h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><p>In this workshop, I’m going to use HTML and Javascript to build the drawing programme. To control <strong>Canvas</strong> in HTML5, I used <strong>CreateJS</strong> to draw and set graphic, which eaiser than original Web canvas API.</p>
+<h2 id="Get-pixel-data"><a href="#Get-pixel-data" class="headerlink" title="Get pixel data"></a>Get pixel data</h2><p>Firstly, we should create <strong>image</strong> then add it in <strong>context</strong> of canvas.</p>
+<pre><code>let ctx = document.getElementByID(&#39;canvas ID&#39;).getContext(&#39;2d&#39;)
+let img = new Image()
+img.src = &#39;img/xxx.jpg&#39;
+
+ctx.drawImg(img,0,0)
+</code></pre><p>So far, we’ve draw the image on canvas, so we can call <strong>getImageData</strong> to build a object which save data of pixel in memory.</p>
+<pre><code>let imgDt = ctx.getImageData(0,0,img.width,img.height)
+// chose a range of area, same as image&#39;s size
+</code></pre><h2 id="draw-pixel-one-by-one"><a href="#draw-pixel-one-by-one" class="headerlink" title="draw pixel one by one"></a>draw pixel one by one</h2><p>Before we use these data to draw, we should relize what’s it. <strong>getImageData()</strong> built a <em>ImageData</em> object, this object has a <strong>data</strong> attribute, and all of pixel data have saved in there as a <strong>Uint8ClampedArray</strong>, which only save the number in [0-255]. And our pixel will be analyze the color as <strong>RGBA</strong>. So each pixel will add a number in this Array.</p>
+<p>These a article I read, it analyzed the regular of Array<a href="https://hacks.mozilla.org/2011/12/faster-canvas-pixel-manipulation-with-typed-arrays/" target="_blank" rel="noopener">Link</a></p>
+<p>other <a href="http://tutorials.jenkov.com/html5-canvas/pixels.html#manipulating-the-pixels" target="_blank" rel="noopener">Link</a></p>
+<p>For draw pixel at X and Y axis, we should use two For() loop to create graphic in 2D.</p>
+<pre><code>for(let v=0;v&lt;img.width;v++){
+    for(let row=0;row&lt;img.height;row++){
+        // these two for loop can iterate each pixel
+        // key point is to get index from IMGdata
+
+        let index = [v*img.width + row]*4
+        imgDt[index] //color R
+        imgDt[index+1 ] //color G
+        imgDt[index+2 ] //color B
+        imgDt[index+3 ] //color A, influence size
+
+        // there&#39;re all of pixel data
+
+        let dot = new createjs.Shape()
+        dot.graphics.beginFill(RGB).drawCircle(0,0,size)
+
+        Stage.addchild(dot)
+
+    }
+}
+
+Stage.update()
+</code></pre><p><img src="https://i.loli.net/2019/03/13/5c891cac51e33.png" alt="alt"><br><img src="https://i.loli.net/2019/03/13/5c891cac9be24.png" alt="alt"></p>
+<h2 id="Source-of-text"><a href="#Source-of-text" class="headerlink" title="Source of text"></a>Source of text</h2><p>To get some interesing text, I used <strong>Google could document</strong>, which support user type text by voice. And we can use <strong>sunflower</strong> to output voice, so the speach will be recorded.</p>
+</span>
+                
+            </div>
+            <ul class="post-workshop-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Generate-bitmap-by-Text">#Generate bitmap by Text</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Environment">#Environment</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Get-pixel-data">#Get pixel data</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#draw-pixel-one-by-one">#draw pixel one by one</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/03/05/Text-based-Graphic/#Source-of-text">#Source of text</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/03/05/Text-based-Graphic/">Read more >></a>  
+
+      </div>
+        
     
       
 
@@ -869,53 +982,6 @@
       
         
     
-      
-
-      
-      
-        <div class="recent-post-item post-gallery col-sm-12 rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/02/19/Polar-flame/"><h1>Polar flame</h1></a>
-                <!-- gallery -->
-                
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/gallery/"cat="gallery">gallery</a>
-
-                </span>
-                
-              </div>
-            <div class="gallery-img-box col-12 mt-5 p-2">
-              <div class="row">
-                 
-                
-                  
-                  <div class="gallery-img-a col-sm-12 col-lg m-1 p-0">
-                    <img class="img-thumbnail" src="/2019/02/19/Polar-flame/img1.jpg" />
-                  </div>
-                  
-                  
-                
-                  
-                  <div class="gallery-img-a col-sm-12 col-lg m-1 p-0">
-                    <img class="img-thumbnail" src="/2019/02/19/Polar-flame/img2.jpg" />
-                  </div>
-                  
-                  
-                
-                
-              </div>
-              <a class="rounded d-flex flex-row-reverse mt-3" href="/2019/02/19/Polar-flame/">Read more >></a>  
-            </div>
-            
-            
-            <!-- <button class="galleryBtn btn  col-12 mt-5">close</button> -->
-
-        </div>
-
-        
-    
     
   </div>
 
@@ -931,7 +997,7 @@
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/visiting-in-7th-May/">visiting in 7th May</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/30/History-of-Arts/">History of Arts</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/23/Music-and-narrative/">Music and narrative</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/Family-in-Asian/">Family in Asian</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/Host-a-Website/">Host a Website</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/Start-WebVR/">Start WebVR</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/FMP-proposal/">FMP proposal</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/visiting-in-7th-May/">visiting in 7th May</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/30/History-of-Arts/">History of Arts</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/23/Music-and-narrative/">Music and narrative</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/Family-in-Asian/">Family in Asian</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/Host-a-Website/">Host a Website</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
