@@ -508,8 +508,8 @@ body span::selection {
   padding-top: 15px;
 }
 #post-container #post img {
-  width: 70%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 5px 0;
   padding: 5px;
   border-radius: 5px;
 }
