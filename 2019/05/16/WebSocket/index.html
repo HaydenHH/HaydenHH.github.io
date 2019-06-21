@@ -1,0 +1,277 @@
+
+
+
+<!DOCTYPE html>
+<html lang="English">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket [ Hayden&#39;s Journal ]</title>
+  <meta name="baidu-site-verification" content="86burbRUA2" />
+  <meta name="google-site-verification" content="OGzkUO2d_kRU2zpchWHwmxb_a-laYsIlpZ8TFBNkegg" />
+  
+    
+      <link rel="stylesheet" href="/css/hhy.css">
+    
+      <link rel="stylesheet" href="/css/default.css">
+    
+      <link rel="stylesheet" href="/css/bootstrap.css">
+    
+      <link rel="stylesheet" href="/css/bootstrap-grid.css">
+    
+  
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  
+            
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+
+
+<div id="menu-outer">
+
+  <div id="menu-inner">
+    
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"> Hayden's Journal </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+            <li><a class="nav-item nav-link " href="/">Home</a></li>
+          
+            <li><a class="nav-item nav-link " href="/archives">Archives</a></li>
+          
+            <li><a class="nav-item nav-link " href="/about">About</a></li>
+          
+          
+
+        </div>
+      </div>
+    </nav>
+    <!-- nav -->  
+  </div>
+</div>
+
+<div id="content-outer" class="container-fluid">
+  <div id="content-inner" class="row">
+    
+
+<div id="post-container" class="col-sm-12 col-md-10 offset-md-0">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	
+	<div class="row">
+		
+		
+		<div id="post-head" class="col-12 col-md-3 m-sm-0 mr-md-5  d-md-inline-block">
+			<h1 class="article-title">WebSocket</h1>
+			<span class="article-tags">
+				 
+					
+
+<a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/http/">http</a> <a class="post-tag" href="/tags/JavaScript/">JavaScript</a> <a class="post-tag" href="/tags/nodeJS/">nodeJS</a> <a class="post-tag" href="/tags/svg/">svg</a>
+
+
+			</span>
+			<div class="post-list-box col p-0 m-0">
+				<div class="col-sm-12 p-0">
+	<div class="col-12"><h1 class="holder" >&nbsp</h1></div>
+	
+	<div id="post-list" class=" col-md-12 d-none d-sm-block mt-3 p-0">
+		
+		
+		<h2 class="col-sm-10 float-left">All post</h2>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/city-upon-cities/">city upon cities</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/futurism-and-fascism/">futurism and fascism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/16/WebSocket/">WebSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/NodeJs-server/">NodeJs server</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/FMP-proposal/">FMP proposal</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/visiting-in-7th-May/">visiting in 7th May</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li></ul>
+		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
+	</div>
+</div>
+	
+			</div>
+		</div>
+
+		<article id="post" class="rounded-bottom col-12 col-md  offset-md-0 p-0 ">
+		  <div class="col-sm-12 col-md">
+		  	<h1 id="WebSocket-Polling-Application"><a href="#WebSocket-Polling-Application" class="headerlink" title="WebSocket Polling Application"></a>WebSocket Polling Application</h1><p>During these days, the basic acknowledge of HTTP has been learned. So I established an application for easily communicate with real-time information translation. In this post, I will record the brief way to set a chat server, and some visuals technics will be displayed, like <strong>Snap.svg</strong>,<strong>Anime.js</strong>.</p>
+<h2 id="What’s-WebSocket"><a href="#What’s-WebSocket" class="headerlink" title="What’s WebSocket"></a>What’s WebSocket</h2><p><em>这段用中文写 :P</em></p>
+<p>我们的互联网通过HTTP协议来传输数据,即服务器收到请求后会发送相应数据给用户浏览器,浏览器渲染页面. 这个过程其实是 <strong>无状态</strong> 的, 可以理解成,妈妈给小孩喂食,小孩要拍妈妈一下,妈妈才会知道他要吃下一口(这个妈妈可能一边喂饭一边看电视). 而WebSocket,是一种比较新的协议,它允许客户端和服务器长时间的连接在一起,达成握手(HandShake)状态后可以一直传输信息. 所以这种状态可以理解成, 小孩张张嘴,妈妈就把饭喂进来了(妈妈一直乖乖地盯着堡堡呢). 这种协议方式,具有很高的效率并且执行起来比较简单(?). 传统HTTP协议中, 一些类双向连接服务都是通过不断的询问,即,妈妈时不时拍下宝宝,问他要不要继续吃. </p>
+<p>好,我理解的就这样了,不能指望一个文科生懂这么深对吧.</p>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><p><em>This is not completed code, copy would not effect</em></p>
+<p>My server was established by <strong>NodeJs &amp; Express</strong>, so I can use NPM install WebSocket framework. <a href="https://socket.io/" target="_blank" rel="noopener">Socket.io</a> is an excellent frame to build webSocket serve.</p>
+<pre><code>$ npm install --save express@4.15.2
+// intall express frame
+
+$ npm install --save socket.io
+// socket.io
+</code></pre><hr>
+<p>At Server:</p>
+<pre><code>let io = require(&#39;socket.io&#39;)(http);
+
+io.on(&#39;connection&#39;, function(socket){
+      console.log(&#39;a user connected&#39;);
+      // this log will be showed on console of terminal
+
+      io.emit(&#39;somebodyCame&#39;,socket.id)
+      // this command will send msg to ALL user, with new user&#39;s id
+
+      socket.on(&#39;sendMsg&#39;,(msg)=&gt;{
+              // when user sent msg to server, 
+              // server will operate this function
+
+              io.emit(&#39;sendMsgToAll&#39;, msg )
+              // server will send variable as msg to ALL user
+      })
+});
+</code></pre><hr>
+<p>At Front-End:</p>
+<pre><code>let socket = io();
+// socket.js must be referenced in HTML
+
+socket.on(&#39;someBodyCame&#39;,(id)=&gt;{
+        DOMElement.innerHTML = id
+        // new user&#39;s ID will be displayed on HTML
+        // as response of server
+})
+
+let msg = &#39;Hello,suzie&#39;
+DOMButtonElement.onclick =()=&gt;{
+        socket.emit(&#39;sendMsg&#39;,msg) 
+        // when the button was clicked
+        // &#39;Hello,suzie&#39; will be sent to server
+}
+
+socket.on(&#39;sendMsgToAll&#39;,(msg)=&gt;{
+        DOMElement2.innerHTML = msg
+        // msg will be displayed on HTML
+        // ALL of user, in same time
+})
+</code></pre><p>That’s basically all! The process is:</p>
+<p><strong>User =msg=&gt; Server =msg=&gt; AllUsers</strong></p>
+<hr>
+<h2 id="让球球从中心扩散"><a href="#让球球从中心扩散" class="headerlink" title="让球球从中心扩散"></a>让球球从中心扩散</h2><p><em>又要写中文了 :S</em></p>
+<p>画一个圆很简单,一百个也很简单,一百个有着不同大小颜色的也很简单;不过,怎么从中心分散地随机排列呢?怎么让他们从中心向外移动呢? 我们需要做一点初中水平的数学计算.</p>
+<ol>
+<li>获得屏幕宽度,高度,得出屏幕中心点坐标</li>
+<li>中心坐标加随机正负中点值</li>
+<li>获得所有圆心的坐标</li>
+<li>计算圆心处于哪个象限,即x,y分别往那个方向移动</li>
+<li>计算斜率,得出移动距离</li>
+</ol>
+<p>其中要点是,得到每个圆的坐标,这需要遍历所有圆:</p>
+<pre><code>svg.selectAll(&#39;.cir&#39;).forEach((cir)=&gt;{
+        let cirCoor = {
+        x:cir.node.getBoundingClientBox().x,
+        y:cir.node.getBoundingClientBox().y
+        }            
+    ...
+})
+</code></pre><p>要使用Element.getBoundingClientBox()来获取DOM元素在屏幕中的相对坐标,而不是它的属性.它的属性在进行了移动以后数据不会更新,会有偏差.</p>
+<p>动画方面使用Anime.js,它使用CSS属性来进行移动元素,非常适合svg动画,性能也很高:)</p>
+<pre><code>let ani = anime({
+        targets:&#39;.cir&#39;, //使用CSS选择器
+        translateX:{
+                value: function(el,index,length){
+                // 值得注意的是, 使用方法来计算移动值, 方法可以返回 这个对象,对象序列,对象总数
+                // 这些数值可以让我们使对象的运动存在差异和相关性
+                        return `+=${calcMethod(el)}`
+                        // 这里返回的计算是 += , 即在原来的值上增加
+                        // 通过这种更新值的方式,可以让元素多次运动
+                        // calcMethod()则是需要我们定义的外部计算方法.
+                },
+                duration:1000,
+                delay:function(el,index){
+                        return 10 * index
+                        // 序列越高出发时间越久,所以每个元素都是逐个开始运动的
+                }
+        }
+</code></pre>
+			</div>
+			<hr class="my-5 py-5">
+			<div  class="col p-2" id="disqus_thread"></div>
+			<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			/*
+			var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			*/
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://hayden-2.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</article>
+		
+	</div>
+</div>
+
+<div class="container-fluid">
+	
+</div>	
+		
+
+
+                            
+
+
+  </div>
+</div>
+ 
+<div id="bottom-outer" class="container-fluid">
+  <div id="bottom-inner" class="row">
+    <div id="bottom-info" class="col">
+       <i> For LCC MA.IVM Reflective Journal</i>
+        <br>
+        
+        
+            / <a class="" href="/">Home</a>
+        
+            / <a class="" href="/archives">Archives</a>
+        
+            / <a class="" href="/about">About</a>
+        
+        <br>
+        <br>
+        <p>
+          Made by <a href="/about">Heyao</a> / Site by <a href="https://hexo.io/" target="_blank">HEXO</a>
+        </p>
+        
+    </div>
+  </div>
+</div>
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/main.js"></script>
+  
+    <script src="/js/jquery-3.3.1.js"></script>
+  
+    <script src="/js/bootstrap.js"></script>
+  
+    <script src="/js/md5.js"></script>
+  
+    <script src="/js/highlight.js"></script>
+  
+
+
+
+
+<!-- Custom Theme JavaScript -->
+
+
+</body>
+</html>

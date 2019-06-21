@@ -8,26 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MA_IVM [ Hayden&#39;s Journal ]</title>
   <meta name="baidu-site-verification" content="86burbRUA2" />
-  <meta name="google-site-verification" content="ddD504LkQFv-uiU4zbpAwPJVWsp0KOc-PDdg5ZX1MtU" />
+  <meta name="google-site-verification" content="OGzkUO2d_kRU2zpchWHwmxb_a-laYsIlpZ8TFBNkegg" />
   
-    <!-- stylesheets list from config.yml -->
     
       <link rel="stylesheet" href="/css/hhy.css">
     
+      <link rel="stylesheet" href="/css/default.css">
+    
       <link rel="stylesheet" href="/css/bootstrap.css">
     
-      <link rel="stylesheet" href="/css/boosttrap-grid.css">
+      <link rel="stylesheet" href="/css/bootstrap-grid.css">
     
   
 
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- jQuery -->
     
   
             
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <body>
 
 
@@ -93,6 +93,68 @@
 
     
     
+
+
+    
+    
+
+
+    
+    
+        
+        
+        
+            
+                
+            
+            
+            
+        
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
         
         
         
@@ -122,56 +184,6 @@
 
 
     
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-        
-        
-        
-            
-                
-            
-            
-            
-        
     
 
 
@@ -408,12 +420,12 @@
 
       <div class="recent-post-item post-journal col rounded-right">
         <div class="recent-post-info">
-          <a class="recent-post-title" href="/2019/05/11/NodeJs-server/"><h1>NodeJs server</h1></a>
+          <a class="recent-post-title" href="/2019/06/20/city-upon-cities/"><h1>city upon cities</h1></a>
           <!-- journal -->
           <span class="recent-post-cat ">
             
 
-
+<a href="/categories/journal/"cat="journal">journal</a>
 
           </span>
           
@@ -422,8 +434,8 @@
             </p>
               
           
-            <time datetime="2019-05-11T19:34:21.000Z">
-              2019-05-11
+            <time datetime="2019-06-20T13:53:54.000Z">
+              2019-06-20
             </time>
             <hr>
           
@@ -433,78 +445,275 @@
           <div class="row">
             
               <div class="recent-post-placeholder col-sm-12 col-md-8 ml-3 border">
-                <span ><h1 id="Using-NodeJS-to-serve-with-Visualisation-on-Web"><a href="#Using-NodeJS-to-serve-with-Visualisation-on-Web" class="headerlink" title="Using NodeJS to serve with Visualisation on Web"></a>Using NodeJS to serve with Visualisation on Web</h1><p>This article focus on Web and HTTP technique at first, because in current stage I’m learning how to collect and sort data. In next article I will show the method I combine data with visuals in my work.</p>
-<p>写了个开头,我决定还是用中文写.毕竟很多东西我自己都不懂.</p>
-<h2 id="基本阐述"><a href="#基本阐述" class="headerlink" title="基本阐述"></a>基本阐述</h2><p>今天所有人都使用互联网,不过可能只有少数人了解它的原理.在多数人眼里,互联网可能只是很多可以相互点击,链接的网页.(实际上确实差不多) 作为数字艺术工作者,我在进行视觉可视化项目的期间接触了大量的网页相关知识,并且在未来的工作中,我可能会涉及更多的网络相关技术,所以我大概了了解了网络原理,然后现在来解释一下加深自己的认识.</p>
-<p>Web的全名是,<strong>World Wide Web</strong>,直译应该是,世界范围的网络,我个人很喜欢万维网这个翻译😁.万维网的简写是 <strong>www</strong>, 我们可以发现这个就是我们非常熟悉的网址开头,三达不溜. 在讨论网址(域名)之前,我们不能忘记了另一个玩意儿,它甚至在www之前,不过我们基本很少手动输入它: <strong>http://</strong>,它的全称是 <strong>超文本传输协议</strong>,它告诉浏览器用何种方式去获得网页. 所以,我们浏览网页的步骤是:</p>
-<p><strong>通过http协议,输入域名来访问一个服务器,服务器发送网页给浏览器</strong></p>
-<p>这里我们知道了,之所以输入网址或者点开链接后会进入一个页面,是因为你的浏览器访问了那个服务器,服务器反手给了你一个新的页面.服务器是什么呢?在我看来,服务器就是一台24小时不关机的电脑.它既然是电脑,必然有程序来执行命令,有的程序负责通过得到的请求,来及时生成动态的网页;有的程序负责将这些网页投送给浏览器,即让用户看见. 打个比方就是,服务器是一个餐厅,浏览器(client)是一个顾客,顾客选好菜以后,通过http协议把菜单(XMLHttpRequest)请求给后台,后台厨师(如PHP,PYTHON)随手烹饪,然后交给传菜员(Apache,NodeJS)来分配菜品(HTML)给顾客.</p>
-<p>其中传输协议和请求方式都有不同的好几种,我也不是很懂所以不多说了.只看最基本的.对于我来说,使用服务器来进行数据可视化的好处是,服务器能储存和读写数据,这有利于我们使用灵活的,动态的数据来进行创作.</p>
-<h2 id="开始架设简单的服务器"><a href="#开始架设简单的服务器" class="headerlink" title="开始架设简单的服务器"></a>开始架设简单的服务器</h2><p>进入mac的终端</p>
-<pre><code>$ mkdir &lt;name&gt;   
-$ cd &lt;name&gt;
-</code></pre><p>这一步我们创建了一个文件夹在电脑根目录,并且进入了它,之后的操作都会作用在这个文件夹内. 然后安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodeJS</a> 和<a href="https://expressjs.com/" target="_blank" rel="noopener">express</a>(nodeJS框架) </p>
-<p>现在开始编写服务器脚本,并储存成js文件放在文件夹的根目录.</p>
-<pre><code>let express = require(&#39;express&#39;)
-let app = express()
-
-app.get(&#39;/&#39;,(req,res)=&gt;{
-    res.send(&#39;Hello,world&#39;)
-})    
-
-let server = app.listen(8081,()=&gt;{
-let host = server.address().address
-let port = server.address().port
-console.log(`here&#39;s ${host}:${port}`);
-})
-</code></pre><p>通过非常简单的几步,我们创建了一个WEB服务器,并且拥有了一个最基本的功能,当有请求链接进它的接口时,它会发出回应.现在通过终端命令启动它.</p>
-<pre><code>node &lt;name&gt;.js
-</code></pre><p>现在,只要在浏览器输入<em>localhost:8081</em>就能访问这个服务器.8081是这个服务器的端口,目前的程序,只有访问这个端口,服务器才会发出回应. 然后我们就可以开始下一步的工作,通过访问其他公司开放的API,访问并获得数据. 因为我准备观察个体的区别,所以我准备获得一些推特上的post,之后再进行自然语言的分析.</p>
-<p>先安装<a href="https://www.npmjs.com/package/twitter" target="_blank" rel="noopener">twitter for NodeJS</a>,可以很方便的调用推特的API</p>
-<pre><code>$ npm install twitter
-</code></pre><p>+++</p>
-<pre><code>var Twitter = require(&#39;twitter&#39;);
-
-var client = new Twitter({
-    consumer_key:&#39;xxx&#39;,
-    consumer_secret:&#39;xxx&#39;,
-    bearer_token:&#39;xxx&#39;
-});
-
-client.get(&#39;tweets/search/30day/&lt;envName&gt;.json&#39;, {&quot;query&quot;:&quot;place:London&quot;}, function(error, tweets, response) {
-    res.type(&#39;json&#39;)
-    res.send(tweets)
-});
-</code></pre><p>xxx所代表的密码需要自己去twitter注册,并且新建一个app项目,才能获得令牌和密码来访问推特的服务器.现在来说一些client.get(url,{“query”:””},function())中,参数的意义</p>
-<ol>
-<li><p>链接,即通过这个链接可以访问推特API,在样例中,我使用的是高级搜索,还有基本搜索的url可以更简单的使用.如 <em><a href="https://api.twitter.com/1.1/search/tweets.json" target="_blank" rel="noopener">https://api.twitter.com/1.1/search/tweets.json</a></em></p>
-</li>
-<li><p>请求时发送的数据,通过这些数据,推特服务器会提供详细的,相对应的推文过来.具体格式查看<a href="https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/operators-by-product" target="_blank" rel="noopener">作用器文档</a>,<a href="https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/standard-operators" target="_blank" rel="noopener">标准搜索作用器</a></p>
-</li>
-<li><p>回馈函数, 设置了响应的类型,并发送数据给客户端</p>
-</li>
-</ol>
-<p>以上的操作可以使服务器请求推特API并得到响应数据然后发送给客户端.而如何使服务器开始请求,提供什么样的要求去请求呢?此时我们就要使用前端脚本来命令客户端来发送数据到服务器,并把需要的请求发送出去,得到想要的数据.</p>
-<h2 id="更多的服务器功能"><a href="#更多的服务器功能" class="headerlink" title="更多的服务器功能"></a>更多的服务器功能</h2><pre><code>app.get(&#39;*&#39;, function(req, res) {
-    res.send(&#39;error&#39;);
-});
-</code></pre><p>当服务器被请求不存在的页面时,发送错误提醒.</p>
-<pre><code>app.all(&#39;*&#39;, function(req, res, next) {
-    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
-    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);
-    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);
-    res.header(&quot;X-Powered-By&quot;,&#39; 3.2.1&#39;)
-    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);
-    next();
-});
-</code></pre><p>允许跨域.</p>
+                <span ><h1 id="City-Upon-Cities"><a href="#City-Upon-Cities" class="headerlink" title="City Upon Cities"></a>City Upon Cities</h1><p>British is actually an country which has appearance <strong>level division</strong> in society. People live different area which could represent their <strong>material standard</strong>. This phenomenon is definitely exist in each countries, but it does more serious in London.</p>
+<p><strong>Class struggle</strong> was not fresh since some revolutions in about 1840. People want to get more fair class in society, so they want to execute capitalists and rich man by violent force as the method of protest had been failure. Why people and society against capitalism in that context? If we review the process of capitalism development, we see capitalist must get original means, which could be money, resource, labour force. In this process of <strong>collection</strong>, the value of mean changed, and the class of person changed. After the completion of collection of original means, the structure of class in society would not change easily, because people who have more means will use their energy to grab more worth over and over again.When they can’t get anymore from nature, they begin invade and rob other people’s. Today, in advanced society, capitalism can support most people to share this worth and profits, but the class division still exist, as <strong>exploitation</strong> as well, though the target have been changed, they began to grab means from other countries. </p>
+<p>Our city was built upon other cities, towns or countrysides. We can’t say it is unfair, it seems is necessary during the social expand. We can see this progress as the combination of groups. Individuals concentrate as groups, but can groups concentrate as bigger group? What’s the relationship between each groups.</p>
+<h2 id="class-in-a-city"><a href="#class-in-a-city" class="headerlink" title="class in a city"></a>class in a city</h2><p>In EP&amp;IV project, I used Web to build a city. To show the <strong>class division</strong>, I stacked multiple platform to represent different class in a city. </p>
+<p>The first floor is represent <strong>capitalism</strong> and <strong>money</strong>, which means our life could be led by money and materials. Simply say, we are both desire better life, and the standard of life generally be symbolised by physical means. So people work for higher salaries, company developed for larger market, and government promoted new policy for sustainable sustainable profits. Materials are definitely influence our life. Second floor is politics, and third floor is represent religion. As social creature, human must concentrate together and convert into a part of group. The social structure today, basically is vertical, which means it has strong division on class, the person who controlled politics and religion, he has more right and influences. </p>
+<p><img src="https://i.loli.net/2019/06/20/5d0b8683c351617047.jpg" alt="pyramid-of-capitalism-e1331670725967.jpg"></p>
+<h2 id="why-I-think-about-class"><a href="#why-I-think-about-class" class="headerlink" title="why I think about class"></a>why I think about class</h2><p>The people have more power and right are easily ignore the people live in base, and they might even don’t understand or imagine what the situation of poor people live in. Though we can think other’s life doesn’t be relative with us, and it doesn’t matter about own, but is it true? If we review the early period of capitalism development, we see the collection of means is selfish, violent even brutal. The first group of capitalists earned money by exploiting. Until today, many companies force staff work over time without extra salary, some factories decrease profits of staff to save cost. In advanced countries, they send manufacture to developing countries because the people live in poor region generally need more less salary. In China, even the high-tech industry like IT, medicine, has serious problem on <strong>labour exploitation</strong>. <strong>996</strong> is a popular word which be focused recently in Internet in China. The meaning of 996 is, begin work at 9am, finish at 9pm, 6 days a week. This work model is high-stress for staff, they can’t get fair pay after they work over time. Even the leader of company like ALIBABA, JINGDONG, said this model is <strong>valuable, profitable</strong> for staff, and they exchange the concept of working overtime, they equal overtime to hard-working and struggle. It is really bad, the capitalists  even try to lie and blame staff, like say, you are not hardworking because you not work overtime. It definitely is exploitation in contemporary society, in capitalism. The horrible thing is, IT workers are richer and basically have higher education, so they generally have larger voice in society. Even this, they were exploited. How does poor person, who know their suffering? How they pour out, who can listen them? It is horrible, if we don’t care base people. Our current life, material could be earned from a poor person, who was exploited. We can’t  change the structure of society, but we should care more about these people poor than us, because we could live on their stress.</p>
 </span>
               </div>
             
           </div>
         </div>
-        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/05/11/NodeJs-server/">Read more >></a>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/06/20/city-upon-cities/">Read more >></a>
       </div>
+        
+    
+      
+
+      
+
+      <div class="recent-post-item post-journal col rounded-right">
+        <div class="recent-post-info">
+          <a class="recent-post-title" href="/2019/06/20/futurism-and-fascism/"><h1>futurism and fascism</h1></a>
+          <!-- journal -->
+          <span class="recent-post-cat ">
+            
+
+<a href="/categories/journal/"cat="journal">journal</a>
+
+          </span>
+          
+            <p class="recent-post-author">
+              <b>Author:</b>Hayden
+            </p>
+              
+          
+            <time datetime="2019-06-20T12:33:11.000Z">
+              2019-06-20
+            </time>
+            <hr>
+          
+        </div> 
+        
+        <div class="recent-post-preview col">
+          <div class="row">
+            
+              <div class="recent-post-placeholder col-sm-12 col-md-8 ml-3 border">
+                <span ><h1 id="Thinking-about-Futurism"><a href="#Thinking-about-Futurism" class="headerlink" title="Thinking about Futurism"></a>Thinking about Futurism</h1><p>For my FMP, I focused on the influence of <strong>technology</strong> on art,  hence I’m going to collect more research about <strong>Futurism</strong>. Futurism was popular from early 20 century, which be influenced by the development of technology and industry. </p>
+<h2 id="How-artist-look-through-new-technology"><a href="#How-artist-look-through-new-technology" class="headerlink" title="How artist look through new technology"></a>How artist look through new technology</h2><p>Industry evolution introduced human go into a new era, it also inspired artist to think about some completely new elements which just pop-up in public sight, such as machine, building, sounds from <strong>unnatural</strong>. </p>
+<p>Before futurism was popular, the most famous genre could be expressionism. Expressionism artist like to use emotional brush and sensitive colors to express their feeling. As well as <strong>Cubism</strong>, artist began to think objects with different way, or they divided object and reconstruct them. These genre showed the method of expressing of <strong>abstract meaning</strong>. </p>
+<p>When industry era was coming, more new products were made from factory, and there were more knowledges and objects had became difficult be understood by public. People were impact by high-speed cars, they were confused because the noise of machine, they were exciting because the new weapon which showed strong force of army. That’s why futurism became popular. </p>
+<p><img src="https://i.loli.net/2019/05/22/5ce53a0dddea053742.jpg" alt="Futurism.jpg"></p>
+<p><img src="https://i.loli.net/2019/05/22/5ce53a0c808e123516.jpg" alt="Futurism"></p>
+<p><img src="https://i.loli.net/2019/05/22/5ce53a0b319d753730.jpg" alt="Futurism"></p>
+<p>In these pictures, we can see the form of Futurism could be concluded as <strong>repeatedly</strong>, <strong>geometrical</strong>，<strong>segmental</strong>. Artist use these style to show the abstract things like wind or speed. For paining building, they generally use exaggerated perspective to show the magnificence of building, because the industry supported stronger structure, and efficiency of construction, which amazed public, and artist showed that by their visual elements.</p>
+<h2 id="Futurism-and-Fascism"><a href="#Futurism-and-Fascism" class="headerlink" title="Futurism and Fascism"></a>Futurism and Fascism</h2><p>Futurism promoted the <strong>mechanisation</strong> and <strong>modernisation</strong> of popularisation in western countries, especially in Italy. Italian society focused on industry with a high-level because the effect of Futurism. In this context, which like ‘human can control machine’ , ‘speed is force’ , etc, the thought of <strong>Fascism</strong> inspired in Italy. People desire more resource to do industry producing, so some left-wing people want to grab resource from other country by invasion.</p>
+<p>Be enthusiastic with material and science, people could lost some own thinking, they follow other, like cult of personality. In a high concentrate society, each person became a part of group, just like the screw in the country machine. People admire <strong>consolidation</strong>, they focused on the force and honour of country even race. For more efficiently call people to concentrate together, Fascist created a kind of aesthetic to serve their concept, which we can call that Fascism aesthetic. </p>
+<p><img src="https://i.loli.net/2019/06/16/5d06051a0df0022363.jpg" alt="img"> </p>
+<p>Fascist glad use <strong>repeat</strong>,<strong>united</strong> elements to make people decrease the position of <strong>own</strong> and enhance the group. This format is similar with Futurism, we can see these genres have strong visuals on emotional effect. The repeat format shows the energy of group, it seems support a safe feeling for individuals. In this environment, individual given their <strong>character</strong> up, and become similar with other component in the group. By this way, the specials and differences of individuals became doesn’t ever important. So we can the see the force of stack and concentration though it could be extreme and aggressive or dictatorship,  individuals got a satisfied situation as they combined in a group. </p>
+<p>In visuals aspect, when people focus on a group of elements, they generally see the <strong>structure</strong> and <strong>format</strong> of that, the multiply-style of elements always be ignored. But actually each elements would have different character, even it is tiny, but we still should not ignore that.</p>
+</span>
+              </div>
+            
+          </div>
+        </div>
+        <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/06/20/futurism-and-fascism/">Read more >></a>
+      </div>
+        
+    
+      
+
+      
+      <div class="recent-post-item post-workshop col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2019/05/16/WebSocket/"><h1>WebSocket</h1></a>
+              <!-- workshop -->
+                            
+              <span class="recent-post-cat ">
+                
+
+<a href="/categories/workshop/"cat="workshop">workshop</a>
+
+              </span>
+              
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2019-05-16T05:20:14.000Z">
+              2019-05-16
+            </time>
+            <hr>
+           
+          </div>
+          <div class="row ">
+            <div class="recent-post-placeholder col-sm-12 col-md-6 d-none d-md-block ml-3 border">
+                
+                  <span ><h1 id="WebSocket-Polling-Application"><a href="#WebSocket-Polling-Application" class="headerlink" title="WebSocket Polling Application"></a>WebSocket Polling Application</h1><p>During these days, the basic acknowledge of HTTP has been learned. So I established an application for easily communicate with real-time information translation. In this post, I will record the brief way to set a chat server, and some visuals technics will be displayed, like <strong>Snap.svg</strong>,<strong>Anime.js</strong>.</p>
+<h2 id="What’s-WebSocket"><a href="#What’s-WebSocket" class="headerlink" title="What’s WebSocket"></a>What’s WebSocket</h2><p><em>这段用中文写 :P</em></p>
+<p>我们的互联网通过HTTP协议来传输数据,即服务器收到请求后会发送相应数据给用户浏览器,浏览器渲染页面. 这个过程其实是 <strong>无状态</strong> 的, 可以理解成,妈妈给小孩喂食,小孩要拍妈妈一下,妈妈才会知道他要吃下一口(这个妈妈可能一边喂饭一边看电视). 而WebSocket,是一种比较新的协议,它允许客户端和服务器长时间的连接在一起,达成握手(HandShake)状态后可以一直传输信息. 所以这种状态可以理解成, 小孩张张嘴,妈妈就把饭喂进来了(妈妈一直乖乖地盯着堡堡呢). 这种协议方式,具有很高的效率并且执行起来比较简单(?). 传统HTTP协议中, 一些类双向连接服务都是通过不断的询问,即,妈妈时不时拍下宝宝,问他要不要继续吃. </p>
+<p>好,我理解的就这样了,不能指望一个文科生懂这么深对吧.</p>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><p><em>This is not completed code, copy would not effect</em></p>
+<p>My server was established by <strong>NodeJs &amp; Express</strong>, so I can use NPM install WebSocket framework. <a href="https://socket.io/" target="_blank" rel="noopener">Socket.io</a> is an excellent frame to build webSocket serve.</p>
+<pre><code>$ npm install --save express@4.15.2
+// intall express frame
+
+$ npm install --save socket.io
+// socket.io
+</code></pre><hr>
+<p>At Server:</p>
+<pre><code>let io = require(&#39;socket.io&#39;)(http);
+
+io.on(&#39;connection&#39;, function(socket){
+      console.log(&#39;a user connected&#39;);
+      // this log will be showed on console of terminal
+
+      io.emit(&#39;somebodyCame&#39;,socket.id)
+      // this command will send msg to ALL user, with new user&#39;s id
+
+      socket.on(&#39;sendMsg&#39;,(msg)=&gt;{
+              // when user sent msg to server, 
+              // server will operate this function
+
+              io.emit(&#39;sendMsgToAll&#39;, msg )
+              // server will send variable as msg to ALL user
+      })
+});
+</code></pre><hr>
+<p>At Front-End:</p>
+<pre><code>let socket = io();
+// socket.js must be referenced in HTML
+
+socket.on(&#39;someBodyCame&#39;,(id)=&gt;{
+        DOMElement.innerHTML = id
+        // new user&#39;s ID will be displayed on HTML
+        // as response of server
+})
+
+let msg = &#39;Hello,suzie&#39;
+DOMButtonElement.onclick =()=&gt;{
+        socket.emit(&#39;sendMsg&#39;,msg) 
+        // when the button was clicked
+        // &#39;Hello,suzie&#39; will be sent to server
+}
+
+socket.on(&#39;sendMsgToAll&#39;,(msg)=&gt;{
+        DOMElement2.innerHTML = msg
+        // msg will be displayed on HTML
+        // ALL of user, in same time
+})
+</code></pre><p>That’s basically all! The process is:</p>
+<p><strong>User =msg=&gt; Server =msg=&gt; AllUsers</strong></p>
+<hr>
+<h2 id="让球球从中心扩散"><a href="#让球球从中心扩散" class="headerlink" title="让球球从中心扩散"></a>让球球从中心扩散</h2><p><em>又要写中文了 :S</em></p>
+<p>画一个圆很简单,一百个也很简单,一百个有着不同大小颜色的也很简单;不过,怎么从中心分散地随机排列呢?怎么让他们从中心向外移动呢? 我们需要做一点初中水平的数学计算.</p>
+<ol>
+<li>获得屏幕宽度,高度,得出屏幕中心点坐标</li>
+<li>中心坐标加随机正负中点值</li>
+<li>获得所有圆心的坐标</li>
+<li>计算圆心处于哪个象限,即x,y分别往那个方向移动</li>
+<li>计算斜率,得出移动距离</li>
+</ol>
+<p>其中要点是,得到每个圆的坐标,这需要遍历所有圆:</p>
+<pre><code>svg.selectAll(&#39;.cir&#39;).forEach((cir)=&gt;{
+        let cirCoor = {
+        x:cir.node.getBoundingClientBox().x,
+        y:cir.node.getBoundingClientBox().y
+        }            
+    ...
+})
+</code></pre><p>要使用Element.getBoundingClientBox()来获取DOM元素在屏幕中的相对坐标,而不是它的属性.它的属性在进行了移动以后数据不会更新,会有偏差.</p>
+<p>动画方面使用Anime.js,它使用CSS属性来进行移动元素,非常适合svg动画,性能也很高:)</p>
+<pre><code>let ani = anime({
+        targets:&#39;.cir&#39;, //使用CSS选择器
+        translateX:{
+                value: function(el,index,length){
+                // 值得注意的是, 使用方法来计算移动值, 方法可以返回 这个对象,对象序列,对象总数
+                // 这些数值可以让我们使对象的运动存在差异和相关性
+                        return `+=${calcMethod(el)}`
+                        // 这里返回的计算是 += , 即在原来的值上增加
+                        // 通过这种更新值的方式,可以让元素多次运动
+                        // calcMethod()则是需要我们定义的外部计算方法.
+                },
+                duration:1000,
+                delay:function(el,index){
+                        return 10 * index
+                        // 序列越高出发时间越久,所以每个元素都是逐个开始运动的
+                }
+        }
+</code></pre></span>
+                
+            </div>
+            <ul class="post-workshop-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/16/WebSocket/#WebSocket-Polling-Application">#WebSocket Polling Application</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/16/WebSocket/#What’s-WebSocket">#What’s WebSocket</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/16/WebSocket/#Coding">#Coding</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/16/WebSocket/#让球球从中心扩散">#让球球从中心扩散</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/05/16/WebSocket/">Read more >></a>  
+
+      </div>
+        
+    
+      
+
+      
+        <div class="recent-post-item post-research col rounded-right "> 
+            <div class="recent-post-info">
+                <a class="recent-post-title" href="/2019/05/11/NodeJs-server/"><h1>NodeJs server</h1></a>
+                <!-- research -->
+                <span class="recent-post-cat ">
+                  
+
+<a href="/categories/research/"cat="research">research</a>
+
+                </span>
+                  
+ 
+            </div>
+
+              
+                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
+                  
+                  
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/Web"> Web</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/http"> http</a>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
+                    <a class="post-research-tags col p-2" href="/tags/JavaScript"> JavaScript</a>
+                  </div>
+                  
+                  <hr>
+                  
+                </div>
+                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/05/11/NodeJs-server/">Read more >></a>
+                
+            
+           
+            
+
+        </div>
+      
         
     
       
@@ -873,151 +1082,6 @@ composer.addPass( RGBeffect );
       </div>
         
     
-      
-
-      
-        <div class="recent-post-item post-research col rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/03/24/Host-a-Website/"><h1>Host a Website</h1></a>
-                <!-- research -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/research/"cat="research">research</a>
-
-                </span>
-                  
- 
-            </div>
-
-              
-                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
-                  
-                  
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Web"> Web</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/http"> http</a>
-                  </div>
-                  
-                  <hr>
-                  
-                </div>
-                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/03/24/Host-a-Website/">Read more >></a>
-                
-            
-           
-            
-
-        </div>
-      
-        
-    
-      
-
-      
-        <div class="recent-post-item post-research col rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/03/23/Start-WebVR/"><h1>Start WebVR</h1></a>
-                <!-- research -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/research/"cat="research">research</a>
-
-                </span>
-                  
- 
-            </div>
-
-              
-                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
-                  
-                  
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Javascript"> Javascript</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/animation"> animation</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Web"> Web</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/ThreeJS"> ThreeJS</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/WebVR"> WebVR</a>
-                  </div>
-                  
-                  <hr>
-                  
-                </div>
-                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/03/23/Start-WebVR/">Read more >></a>
-                
-            
-           
-            
-
-        </div>
-      
-        
-    
-      
-
-      
-        <div class="recent-post-item post-research col rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/03/07/Research-Editing/"><h1>Research: Hitchcock</h1></a>
-                <!-- research -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/research/"cat="research">research</a>
-
-                </span>
-                  
- 
-            </div>
-
-              
-                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
-                  
-                  
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/editing"> editing</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/space"> space</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/composition"> composition</a>
-                  </div>
-                  
-                  <hr>
-                  
-                </div>
-                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/03/07/Research-Editing/">Read more >></a>
-                
-            
-           
-            
-
-        </div>
-      
-        
-    
     
   </div>
 
@@ -1034,7 +1098,7 @@ composer.addPass( RGBeffect );
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/NodeJs-server/">NodeJs server</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/FMP-proposal/">FMP proposal</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/visiting-in-7th-May/">visiting in 7th May</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/30/History-of-Arts/">History of Arts</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/23/Music-and-narrative/">Music and narrative</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/Family-in-Asian/">Family in Asian</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/city-upon-cities/">city upon cities</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/futurism-and-fascism/">futurism and fascism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/16/WebSocket/">WebSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/NodeJs-server/">NodeJs server</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/FMP-proposal/">FMP proposal</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/visiting-in-7th-May/">visiting in 7th May</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Post-processing-in-ThreeJS/">Post-processing in ThreeJS</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>
@@ -1088,7 +1152,9 @@ composer.addPass( RGBeffect );
   
     <script src="/js/bootstrap.js"></script>
   
-    <script src="/js/parallax.js"></script>
+    <script src="/js/md5.js"></script>
+  
+    <script src="/js/highlight.js"></script>
   
 
 

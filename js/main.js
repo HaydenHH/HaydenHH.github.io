@@ -1,10 +1,6 @@
 // hhy client-side javascript
 window.onload = function(){
-	// alert("1")
-	$(document).ready(function () {
-		hljs.initHighlightingOnLoad();
-	});
-
+	// hljs.initHighlightingOnLoad();
 	let bgcImg = []
 	for(let i=0;i<13;i++){
 		let src = `../img/g/bg${i}.svg`
@@ -13,10 +9,6 @@ window.onload = function(){
 	let rNF = (x)=> {
 		return Math.floor(Math.random()*x)
 	}
-	// if(document.getElementById('bottom-outer')){
-	// 	document.getElementById('bottom-outer').style.backgroundImage = `url(${bgcImg[rNF(bgcImg.length)]})`;
-	// }
-
 	
 		
 		
@@ -81,20 +73,6 @@ window.onload = function(){
 		})
 	})
 
-	// $('.galleryBtn').click(function(event){
-		
-	// 	if($(this).text()== "close"){
-	// 		$(this).text("open")
-	// 	}else{
-	// 		$(this).text("close")
-	// 	}
-
-	// 	let fa = $(this).parent('.post-gallery').find('.gallery-img-box')
-	// 	fa.slideToggle()
-		
-		
-		
-	// })
 
 	$('.gallery-img-a').click(function(t){
 		
@@ -139,7 +117,56 @@ window.onload = function(){
 		})
 	})
 	
+// post 
+
+
+
+	let strongWord = $('#post-container #post strong')
+	const appid = '20190105000254845';
+	const key = 'U0V67jcwJv9A0sPrByhj';
+	const salt = (new Date).getTime();
+	// 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
 	
+	
+	
+
+	strongWord.each(function () {
+		var result = /[^\u4e00-\u9fa5]/.test(this.innerHTML)
+		let copy = this.innerHTML
+		$(this).innerHTML == null
+		let from,to
+		if(result == false){
+			from = 'zh'
+			to = 'en'
+		}else{
+			from = 'en'
+			to = 'zh'
+		}
+		let all = copy
+		let transl 
+		let str1 = appid + all + salt + key;
+		let sign = MD5(str1);
+		let target = $(this)
+		$.ajax({
+			url: 'https://fanyi-api.baidu.com/api/trans/vip/translate',
+			type: 'get',
+			dataType: 'jsonp',
+			data: {
+				q: copy,
+				appid: appid,
+				salt: salt,
+				from: from,
+				to: to,
+				sign: sign
+			},
+			success: function (data) {
+				transl = data.trans_result[0].dst
+				target.replaceWith($('<strong><ruby>' + copy + `<rt>${transl}</rt>` + '</ruby></strong>'));
+			}
+		});	
+		
+	  })
+
 
 
 // archieve
@@ -185,7 +212,7 @@ window.onload = function(){
 //---
 
 
-var parallax = new Parallax(document.getElementById('scene'));
+// var parallax = new Parallax(document.getElementById('scene'));
 
 
 
