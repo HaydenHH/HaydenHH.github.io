@@ -93,6 +93,72 @@
 
     
     
+
+
+    
+    
+
+
+    
+    
+        
+        
+        
+            
+                
+            
+            
+            
+        
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
         
         
         
@@ -126,68 +192,6 @@
 
 
     
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-
-
-    
-    
-        
-        
-        
-            
-                
-            
-            
-            
-        
     
 
 
@@ -425,6 +429,115 @@
     <div class="col-12"><h1 class="holder" >&nbsp</h1></div>
  
     <h1 class="block-title col-md-12 ml-1">Recent Posts</h1>
+    
+      
+
+      
+      <div class="recent-post-item post-workshop col rounded-right "> 
+                       
+          <div class="recent-post-info">
+              <a class="recent-post-title" href="/2019/05/05/Post-processing-in-ThreeJS/"><h1>Post-processing in ThreeJS</h1></a>
+              <!-- workshop -->
+                            
+              <span class="recent-post-cat ">
+                
+
+<a href="/categories/workshop/"cat="workshop">workshop</a>
+
+              </span>
+              
+              <p class="recent-post-author">
+                <b>Author:</b>Hayden
+              </p>
+            
+            
+            <time datetime="2019-05-05T02:47:54.000Z">
+              2019-05-05
+            </time>
+            <hr>
+           
+          </div>
+          <div class="row ">
+            <div class="recent-post-placeholder col-sm-12 col-md-6 d-none d-md-block ml-3 border">
+                
+                  <span ><h1 id="Post-processing-in-ThreeJS"><a href="#Post-processing-in-ThreeJS" class="headerlink" title="Post-processing in ThreeJS"></a>Post-processing in ThreeJS</h1><p>This article will record the brief process of building a composed-effect  in 3D Web page with THREE.JS. As artist, Web 3D allow me to create some strong visual, it could be interactive and dynamic. Working with THREE.js, I can apply 3D model or text on Web with different angles, colours, which really different with custom graphic work.</p>
+<h2 id="Prepare-library-and-reference-file"><a href="#Prepare-library-and-reference-file" class="headerlink" title="Prepare library and reference file"></a>Prepare library and reference file</h2><p>Post-processing it’s not core in ThreeJS, so we should copy the extra files and reference them.</p>
+<pre><code>&lt;script src=&quot;js/EffectComposer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/CopyShader.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/MaskPass.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/RenderPass.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/ShaderPass.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>The most important thing is, the <strong>EffectComposer</strong> file must be linked <strong>at first</strong>, another thing is, these files should be copied from a common ThreeJS property. I used older Three.js file at first, then I faced a dozen of problems about <strong>compatibility (兼容性)</strong>.</p>
+<pre><code>let composer,renderPass
+
+composer = new THREE.EffectComposer( renderer )
+// 把渲染器声明为一个合成器
+
+renderPass = new THREE.RenderPass(scene, camera)
+// 把场景和照相机能渲染出的画面定义为一个 渲染传递,这样能把已有的画面添加进混合器
+
+composer.addPass(renderPass)
+</code></pre><p>So far, we made renderer to be a <strong>composer</strong>, it can replace existing renderer and render image. The different thing is it can add different <strong>effect</strong> now. Before we add effect on composer, we should change the way of render function.</p>
+<pre><code>function animate(){
+    requestAnimationFrame(animate)
+    ...
+
+    // renderer.render 这是之前的渲染器,现在可以不用它了
+    composer.render()
+}
+</code></pre><p>So we can add effect now. I’m a beginner now, in my view, the ways to add effects can be division as <strong>EffectPass</strong> and <strong>ShaderPass</strong>. There’re many effects had been prepared in ThreeJS official documentation, so we can use it directly.</p>
+<pre><code> bloomPass = new THREE.BloomPass()
+ composer.addPass(bloomPass)
+
+glitchEffect = new THREE.GlitchPass()
+composer.addPass(glitchEffect)
+
+filmEffect = new THREE.FilmPass(0.5,0.015,56,false)
+composer.addPass(filmEffect)
+</code></pre><p>We can see, if we use some library like xxxPass, it could be used really easily. A really important thing is, </p>
+<pre><code>xxx.renderToScreen = true
+</code></pre><p>should be added if this is <strong>the last effect</strong>.</p>
+<p>sometimes we will use some custom shader, so we might use <strong>ShaderPass</strong> to declare this shader, like this:</p>
+<pre><code>    halfToneEffect = new THREE.ShaderPass( THREE.DotScreenShader );
+halfToneEffect.uniforms[ &#39;scale&#39; ].value = 5;
+composer.addPass( halfToneEffect );
+
+
+RGBeffect = new THREE.ShaderPass( THREE.RGBShiftShader );
+RGBeffect.uniforms[ &#39;amount&#39; ].value = 0.01;
+RGBeffect.renderToScreen = true;
+composer.addPass( RGBeffect );
+</code></pre><p>By this way, we can add multiply effects on renderer and make our image more interesting! Let’s see some example I made.</p>
+<p><img src="https://i.loli.net/2019/05/05/5cce4cee59eb8.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4ce6cd277.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cdf2a7ad.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cd6d4c08.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cce37405.png" alt="img"><br><img src="https://i.loli.net/2019/05/05/5cce4cc66cbf1.png" alt="img"></p>
+<h2 id="about-idea"><a href="#about-idea" class="headerlink" title="about idea"></a>about idea</h2><p>Maybe you can see these image have different colour and tiny differences about details. Because I used the advantages of digital media, I made the colours and direction of light, texture of objects, intensity of fog are changing at ranges of time. Then I added animation on objects, so they will rotate and move.</p>
+<p>The reason I did that is I’d like show the differences of individual objects. Like a man, we are both different, but still have some common point. Because of these common, the group we combined is full of diversity. This the point I’d like going to explore in EPIV project.</p>
+</span>
+                
+            </div>
+            <ul class="post-workshop-ul list-unstyled col m-0 px-4">
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/05/Post-processing-in-ThreeJS/#Post-processing-in-ThreeJS">#Post processing in ThreeJS</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/05/Post-processing-in-ThreeJS/#Prepare-library-and-reference-file">#Prepare library and reference file</a>
+                </li>
+            
+                 
+                <li class="row post-workshop-li p-0 mb-1" >
+                  <a class="col-12" href="/2019/05/05/Post-processing-in-ThreeJS/#about-idea">#about idea</a>
+                </li>
+                    
+            </ul> 
+          </div>
+         
+          <a class="rounded post-a col-sm-12 col-md-5 offset-md-7 d-inline-flex flex-row-reverse mt-4 " href="/2019/05/05/Post-processing-in-ThreeJS/">Read more >></a>  
+
+      </div>
+        
     
       
 
@@ -895,53 +1008,6 @@ Stage.update()
       </div>
         
     
-      
-
-      
-        <div class="recent-post-item post-research col rounded-right "> 
-            <div class="recent-post-info">
-                <a class="recent-post-title" href="/2019/02/26/Explore-ThreeJS/"><h1>Explore ThreeJS</h1></a>
-                <!-- research -->
-                <span class="recent-post-cat ">
-                  
-
-<a href="/categories/research/"cat="research">research</a>
-
-                </span>
-                  
- 
-            </div>
-
-              
-                <div class="post-research-tagBox row  mt-5 ml-5 px-3">
-                  
-                  
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Javascript"> Javascript</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/3D"> 3D</a>
-                  </div>
-                  
-                  <div class="col-sm-12 col-md-3 d-inline-flex p-0 ">
-                    <a class="post-research-tags col p-2" href="/tags/Three-JS"> Three JS</a>
-                  </div>
-                  
-                  <hr>
-                  
-                </div>
-                <a class="rounded col-sm-12 col-md-5 offset-md-7 mt-3 px-2  post-a d-flex flex-row-reverse" href="/2019/02/26/Explore-ThreeJS/">Read more >></a>
-                
-            
-           
-            
-
-        </div>
-      
-        
-    
     
   </div>
 
@@ -958,7 +1024,7 @@ Stage.update()
 		
 		
 		<h2 class="col-sm-10 float-left">All post</h2>
-		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/generated-Rose/">generated Rose</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/05/what-is-the-abstract-reality/">what is the abstract reality</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/03/mondrian-and-neoplasticism/">mondrian and neoplasticism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/city-upon-cities/">city upon cities</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/futurism-and-fascism/">futurism and fascism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/16/WebSocket/">WebSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/11/NodeJs-server/">NodeJs server</a></li></ul>
+		<ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/Grab-idea-from-free-drawing/">Grab idea from free drawing</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/generated-Rose/">generated Rose</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/05/what-is-the-abstract-reality/">what is the abstract reality</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/03/mondrian-and-neoplasticism/">mondrian and neoplasticism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/city-upon-cities/">city upon cities</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/futurism-and-fascism/">futurism and fascism</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/16/WebSocket/">WebSocket</a></li></ul>
 		<div id="post-list-more" class="col-12"><a  href="/archives">More</a></div>
 	</div>
 </div>

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Grab idea from free drawing]]></title>
+    <url>%2F2019%2F10%2F21%2FGrab-idea-from-free-drawing%2F</url>
+    <content type="text"><![CDATA[As the exploration of showing compact of emotion, I tried to use high contrast colour and mixed texutre to build symthetic visuals. However, the hireachy would easily be affected by strong colours, as well as details. Hence, I began to find some others works to realize how they solve contrast and balance. Firstly, this work by Kandisky is my favorite one. He used couples of complemantary colour with high saturation, however, the visuals seems not over intensive. The reason could be that, he used pure geometrics, and there are no complicated curve in painting. Hence these colours could not inspire memories about natural reality, they merely show the differences and contrast. Further, in Stanley Donwood‘s works, such as: the perspective is solved well, he used geometrics to break natural perspective, simplely say, a wrong / unreal perspective would attract attention. When viewer find something not common, they can quickly feel it, and point the wrong. Especially geometrics, a geometric has unreal perspectives could make this painting more dynamic because it is abstracted by mind, and our mind allow abstract conigtion has bias.]]></content>
+      <categories>
+        <category>gallery</category>
+      </categories>
+      <tags>
+        <tag>illustration</tag>
+        <tag>abstract</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[generated Rose]]></title>
     <url>%2F2019%2F10%2F21%2Fgenerated-Rose%2F</url>
     <content type="text"><![CDATA[To imitate organic shape, I use Perlin noise to add random anchor at outline, and change position as Perlin noise as well.]]></content>
@@ -9,8 +21,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>paper</tag>
         <tag>abstract</tag>
+        <tag>paper</tag>
       </tags>
   </entry>
   <entry>
@@ -366,9 +378,9 @@
         <category>gallery</category>
       </categories>
       <tags>
+        <tag>programme</tag>
         <tag>digital</tag>
         <tag>visualization</tag>
-        <tag>programme</tag>
         <tag>vector</tag>
       </tags>
   </entry>
@@ -448,9 +460,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oxford trip]]></title>
-    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
-    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
+    <title><![CDATA[use GUI to build shape]]></title>
+    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
+    <content type="text"><![CDATA[use GUI to build shape]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -459,9 +471,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[use GUI to build shape]]></title>
-    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
-    <content type="text"><![CDATA[use GUI to build shape]]></content>
+    <title><![CDATA[Oxford trip]]></title>
+    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
+    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -602,9 +614,9 @@
         <category>gallery</category>
       </categories>
       <tags>
+        <tag>illustration</tag>
         <tag>pattern</tag>
         <tag>AI</tag>
-        <tag>illustration</tag>
       </tags>
   </entry>
   <entry>
@@ -616,9 +628,9 @@
       </categories>
       <tags>
         <tag>web</tag>
-        <tag>visualisation</tag>
         <tag>p5.js</tag>
         <tag>Bazier curve</tag>
+        <tag>visualisation</tag>
       </tags>
   </entry>
   <entry>

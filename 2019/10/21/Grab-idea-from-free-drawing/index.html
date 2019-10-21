@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reflection:Early visualisation of Chinese [ Hayden&#39;s Journal ]</title>
+  <title>Grab idea from free drawing [ Hayden&#39;s Journal ]</title>
   <meta name="baidu-site-verification" content="86burbRUA2" />
   <meta name="google-site-verification" content="OGzkUO2d_kRU2zpchWHwmxb_a-laYsIlpZ8TFBNkegg" />
   
@@ -72,12 +72,12 @@
 		
 		
 		<div id="post-head" class="col-12 col-md-3 m-sm-0 mr-md-5  d-md-inline-block">
-			<h1 class="article-title">Reflection:Early visualisation of Chinese</h1>
+			<h1 class="article-title">Grab idea from free drawing</h1>
 			<span class="article-tags">
 				 
 					
 
-<a class="post-tag" href="/tags/Javascript/">Javascript</a> <a class="post-tag" href="/tags/variable/">variable</a> <a class="post-tag" href="/tags/visualisation/">visualisation</a>
+<a class="post-tag" href="/tags/illustration/">illustration</a> <a class="post-tag" href="/tags/abstract/">abstract</a>
 
 
 			</span>
@@ -99,19 +99,14 @@
 
 		<article id="post" class="rounded-bottom col-12 col-md  offset-md-0 p-0 ">
 		  <div class="col-sm-12 col-md">
-		  	<h1 id="Reflection-Early-experiments-about-visualisation"><a href="#Reflection-Early-experiments-about-visualisation" class="headerlink" title="Reflection: Early experiments about visualisation"></a>Reflection: Early experiments about visualisation</h1><p>In this stage, I’ve done a prototype of visualisation application, it available user to support dynamic data and translate to geometric shape. I used JavaScript to build the application as well as NodeBox and illustrator. Then I will review the process of work.</p>
-<h2 id="Source-of-idea"><a href="#Source-of-idea" class="headerlink" title="Source of idea"></a>Source of idea</h2><p>At first, we visited the V&amp;A museum, there are series of digital arts exhibited. I observed the layout and variant of graphic, but was confused by the irregular shape. I tired to find the reason and the meaning of artists want to convey. I failed.</p>
-<p>这些数字渲染的作品充满了不确定性和随机性，但是不变的是他们的排列方式。艺术家用特殊的算法计算了图形的位置，并通过控制变量的方法让图形拥有不同的形状或者结构。</p>
-<p>In M.Mohr’s work, I saw his algorithm generate shape as random symbol, they are ordered in grid system with a tiny translation of position. So I want to collect information and data as variable to generate more specific shape. I chose Chinese letter as the source of information, because Chinese letter can be separated to be different parts which have individual meanings.</p>
-<h2 id="Work-process"><a href="#Work-process" class="headerlink" title="Work process"></a>Work process</h2><p>To complete my idea, it is important to <strong>distinguish</strong> the letter. I set a database, it will return the value of <strong>phonogram, stroke count, radical</strong> of letter whatever user type are( except special/strange word or symbol ).</p>
-<p>After return of data, I used JS to analyse that and change the image which show on Web.</p>
-<p>通过的采集的数据的分析，再遍历数据库，当有匹配对象的时候，返回它的详细信息，例如<strong>拼音，笔画和部首</strong>。 通过拆分返回的拼音字符串，再遍历每个字符串，与音调的数据库匹配，返回后即可以得到那个有音调的拼音所属于的音调。</p>
-<img src="/2018/10/25/Reflection-Early-visualisation-of-Chinese/photo1.png">
-<p>Base on the tone of letters, specific shape will be set on Web. The method of render image is add and append tag in DOM as</p>
-<pre><code> &lt;embed src=Dynamic link&gt;svg img&lt;/embed&gt;
-</code></pre><h2 id="Goodthing"><a href="#Goodthing" class="headerlink" title="Goodthing"></a>Goodthing</h2><p>To see a draft effect, I chose tone as variable to make graphic. I successful complete the logical stage (逻辑层面). Though it just show tone as characteristic of a word, it is easily to add more effect on shape. It clearly shows the differences of Chinese character which same as my first expectation</p>
-<h2 id="Something-need-to-develop"><a href="#Something-need-to-develop" class="headerlink" title="Something need to develop"></a>Something need to develop</h2><h3 id="More-illustrative"><a href="#More-illustrative" class="headerlink" title="More illustrative"></a>More illustrative</h3><p>I used shape of symbol to show the tone of word, which is same as we daily use. But the final outcome should not be the showing  of symbol. The expression of tone might be a <strong>method/ structure</strong> when rendering shape. So, they the variable from tones should have the ability that show the change of tone/ level. <strong>Curve</strong> might be a good choice.</p>
-<p>In future work, there will more information be add in graphic, but how should I keep a balance? What’s the composition of individual graphic? </p>
+		  	<p><img src="https://i.loli.net/2019/10/21/4QXwOEvfV1lUntP.jpg" alt="img"><br><img src="https://i.loli.net/2019/10/21/3QcB9lmVg2PShWo.jpg" alt="img"><br><img src="https://i.loli.net/2019/10/21/yebpRK1sEhYWwx4.jpg" alt="img"><br><img src="https://i.loli.net/2019/10/21/32OP8vRnoTWC4Va.jpg" alt="img"></p>
+<p>As the exploration of showing compact of emotion, I tried to use high contrast colour and mixed texutre to build symthetic visuals. However, the hireachy would easily be affected by strong colours, as well as details. Hence, I began to find some others works to realize how they solve contrast and balance.</p>
+<p>Firstly, this work by Kandisky is my favorite one.</p>
+<p><img src="https://i.loli.net/2019/10/21/gLdZkE9fvVH62FW.jpg" alt="370.jpg"></p>
+<p>He used couples of complemantary colour with high saturation, however, the visuals seems not over intensive. The reason could be that, he used pure geometrics, and there are no complicated curve in painting. Hence these colours could not inspire memories about natural reality, they merely show the differences and contrast.</p>
+<p>Further, in <strong><a href="http://www.slowlydownward.com/selected-works/" target="_blank" rel="noopener">Stanley Donwood</a>‘s</strong> works, such as:</p>
+<p><img src="https://i.loli.net/2019/10/21/Gl6YPoj1F2SIaOs.jpg" alt="pacific-coast-actual.jpg"><br><img src="https://i.loli.net/2019/10/21/fxcLMat5m2TCjQE.jpg" alt="first-minos-wall.jpg"><br><img src="https://i.loli.net/2019/10/21/48DdTUnbQXq2Rf7.jpg" alt="war-village.jpg"></p>
+<p>the perspective is solved well, he used geometrics to break natural perspective, simplely say, a wrong / unreal perspective would attract attention. When viewer find something not common, they can quickly feel it, and point the wrong. Especially geometrics, a geometric has unreal perspectives could make this painting more dynamic because it is abstracted by mind, and our mind allow abstract conigtion has bias.</p>
 
 			</div>
 			<hr class="my-5 py-5">
