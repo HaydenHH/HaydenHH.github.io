@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Reflection 29 Oct]]></title>
+    <url>%2F2019%2F10%2F29%2FReflection-1029%2F</url>
+    <content type="text"><![CDATA[During this week, I’ve complete a whole plan to show all of this project. As the main point I want to show, external factor like environment, atmosphere or other person would affect individual emotion. As also, individual emotion could influence externals as well. Especially, potential expression could hurt others in some situation like apathy, ignoring, libel, etc… Hence, I have a strong motivation to show this point. reveal the influence of emotion, see what emotion shows. like this sketch, others’ attitude could make individual be different and strange. Besides, it could be seen as kind of discrimination. Though the expression could be invisible and weak, it would affect and hurt other. Web constructionThe basic process of browsing would like this: User see some scene with varying elements or lighting （looks weird), so character wants to explore why this world is changing. He goes into a factory, and produce sort of factors which can effect environment and generate elements with personal expression or other information. Then he can go to gallery, garden, Computer room to see some scenes he could effect. So, there are some scenes could appear in web Introduction Emotion factory Computer room Gallery Garden Factory sketchesFor rendering an intensive and serious (even horror) feeling, I’d like use dark, close space to show the factory scene. And couple of sketches indicate how emotion factor be produced. Lighting is important in this scene, hence I used BloomEffect to enhance lighting in Web. Emotion factorsEach factor would be different, and it could represent the emotion of user in a moment. Effected by various element like temperature, lighting, sentiments, the graphic on ‘factor’ will be generated as mixed style and colours. I painted some sketched to explore the method of generation. After generation, these pattern will used in other scene as the influence of viewer to the scene. ProblemThere is an issue for me, as I said I will use couple of scenes in project and viewer will brows them in order. However, they are hard to organisation. How camera move into other scene? At the technical point, it is difficult to create coherent connection between different scene. Besides, user need enough motivation to encourage he continue watching and interact. For me, if I am a visitor, sometimes I would not do complicated operation in an exhibition work. ( Afraid to damage it ) Therefore, the connection should be automatic, so even nobody interact with, it can play whole process. StyleIn my painting progress, I found some stroke / texture and organic outline has really strong visual effect. In my early programming, most of visual on Web is Pure vector, so the visual look simple and little boring. In future development, there’s required to add more bitmap / hand-draw elements on objects. Next stepCompleting all of scene draftily is important, so I can preview the whole process of browsing.]]></content>
+      <categories>
+        <category>reflection</category>
+      </categories>
+      <tags>
+        <tag>Interation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Reflection 22ed Oct]]></title>
+    <url>%2F2019%2F10%2F22%2Freflection-1022%2F</url>
+    <content type="text"><![CDATA[what Ive doneIn early process, I’ve fulfilled the technic of detection of facial expression and engage it to drive graphic generation. However, the detection of facial-expression has a high frequency which reach least once/0.7s hence, the generation of graphic will consume huge of performance and would make lagging in future development. So I changed method in many times to expect a more smooth effect. programmingThe first changing is, I used 3D visual as main element in Web. Supported by WebGL, 3D element can be rendered with higher frequency in Web, so it can be more dynamic, and user can better realise the effecting of emotion. Secondly, I make emotional data influence lighting in 3d scene rather than directly effect on graphic. Hence the atmosphere can be showed with effected by sentiments. Thirdly, 3d animation was using in webpage. A interactive 3D animation would be attractive. paintingTo plan the composition of 3D element, I painted some sketches. In this idea, boxes are mapped with hand-draw style texture or some mixed-colour graphics, so each box can display different feeling. Besides, this style would make work attract more young viewer, the orthographical view is popular in Web which can show all of elements with same perspective so viewer can better focus on each individuals. Nice &amp; Badgood interaction3D is good for interaction on Web, user can control sight and distance by mouse, and they can affect visuals by their facial expression during I wrote face detection programming. So in this project viewer can interact with most of elements. Not only the hand activity, but also the facial expression would influence visuals, hence it access kind of abstract interaction. dynamic generationMost of element would be different because the factor of them is base on real-time data capture. bad interfaceBecause there are some function should be controlled by user, user interface is pretty ‘busy’ and uncomfortable so far. Furthermore, the main style of GUI has not been ensured, is it be stylish? warm? abstract or real-looking? bad introductionAs a Web and interactive application, this work must introduce user how they control or affect elements. Hence there is a serious problem, how I introduce user or encourage them to interact with these scene in this project. Next step design better GUI think about introduction and motivation which user would like to explore whole scenes. order of scenes]]></content>
+      <categories>
+        <category>reflection</category>
+      </categories>
+      <tags>
+        <tag>3d</tag>
+        <tag>webGL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Grab idea from free drawing]]></title>
     <url>%2F2019%2F10%2F21%2FGrab-idea-from-free-drawing%2F</url>
     <content type="text"><![CDATA[As the exploration of showing compact of emotion, I tried to use high contrast colour and mixed texutre to build symthetic visuals. However, the hireachy would easily be affected by strong colours, as well as details. Hence, I began to find some others works to realize how they solve contrast and balance. Firstly, this work by Kandisky is my favorite one. He used couples of complemantary colour with high saturation, however, the visuals seems not over intensive. The reason could be that, he used pure geometrics, and there are no complicated curve in painting. Hence these colours could not inspire memories about natural reality, they merely show the differences and contrast. Further, in Stanley Donwood‘s works, such as: the perspective is solved well, he used geometrics to break natural perspective, simplely say, a wrong / unreal perspective would attract attention. When viewer find something not common, they can quickly feel it, and point the wrong. Especially geometrics, a geometric has unreal perspectives could make this painting more dynamic because it is abstracted by mind, and our mind allow abstract conigtion has bias.]]></content>
@@ -474,9 +497,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oxford trip]]></title>
-    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
-    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
+    <title><![CDATA[use GUI to build shape]]></title>
+    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
+    <content type="text"><![CDATA[use GUI to build shape]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -485,9 +508,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[use GUI to build shape]]></title>
-    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
-    <content type="text"><![CDATA[use GUI to build shape]]></content>
+    <title><![CDATA[Oxford trip]]></title>
+    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
+    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
       <categories>
         <category>gallery</category>
       </categories>
