@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[concept sketches]]></title>
+    <url>%2F2019%2F10%2F31%2Fconcept-sketches%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>gallery</category>
+      </categories>
+      <tags>
+        <tag>flat</tag>
+        <tag>sketch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Reflection 29 Oct]]></title>
     <url>%2F2019%2F10%2F29%2FReflection-1029%2F</url>
     <content type="text"><![CDATA[During this week, I’ve complete a whole plan to show all of this project. As the main point I want to show, external factor like environment, atmosphere or other person would affect individual emotion. As also, individual emotion could influence externals as well. Especially, potential expression could hurt others in some situation like apathy, ignoring, libel, etc… Hence, I have a strong motivation to show this point. reveal the influence of emotion, see what emotion shows. like this sketch, others’ attitude could make individual be different and strange. Besides, it could be seen as kind of discrimination. Though the expression could be invisible and weak, it would affect and hurt other. Web constructionThe basic process of browsing would like this: User see some scene with varying elements or lighting （looks weird), so character wants to explore why this world is changing. He goes into a factory, and produce sort of factors which can effect environment and generate elements with personal expression or other information. Then he can go to gallery, garden, Computer room to see some scenes he could effect. So, there are some scenes could appear in web Introduction Emotion factory Computer room Gallery Garden Factory sketchesFor rendering an intensive and serious (even horror) feeling, I’d like use dark, close space to show the factory scene. And couple of sketches indicate how emotion factor be produced. Lighting is important in this scene, hence I used BloomEffect to enhance lighting in Web. Emotion factorsEach factor would be different, and it could represent the emotion of user in a moment. Effected by various element like temperature, lighting, sentiments, the graphic on ‘factor’ will be generated as mixed style and colours. I painted some sketched to explore the method of generation. After generation, these pattern will used in other scene as the influence of viewer to the scene. ProblemThere is an issue for me, as I said I will use couple of scenes in project and viewer will brows them in order. However, they are hard to organisation. How camera move into other scene? At the technical point, it is difficult to create coherent connection between different scene. Besides, user need enough motivation to encourage he continue watching and interact. For me, if I am a visitor, sometimes I would not do complicated operation in an exhibition work. ( Afraid to damage it ) Therefore, the connection should be automatic, so even nobody interact with, it can play whole process. StyleIn my painting progress, I found some stroke / texture and organic outline has really strong visual effect. In my early programming, most of visual on Web is Pure vector, so the visual look simple and little boring. In future development, there’s required to add more bitmap / hand-draw elements on objects. Next stepCompleting all of scene draftily is important, so I can preview the whole process of browsing.]]></content>
