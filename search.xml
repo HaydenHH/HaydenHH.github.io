@@ -35,6 +35,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[think about intensity in visuals]]></title>
+    <url>%2F2019%2F10%2F23%2Fthink-about-intensity-in-visuals%2F</url>
+    <content type="text"><![CDATA[form intensityFor translating the emotional data to visuals, I need to find a method to seek the similarity between them. As Kandinsky’s theories, he pointed human senses have common endpoint, which means they can be cognized in a specific situation. Emotion have different type, but there is common point in them, that is the intensity. If I explain what is intensity of a emotion, a emotion has high intensity will appearance suddenly, quickly, unpredictably and strongly. It could fill up all of emotion in mind, so it has high intensity and consistency. Since, this kind of emotion could be represented by graphics with high density. In practice, this feeling can be simplified as simple geometric. In this sketch, I can see the right graphic is definitely more peaceful or soften than left one, because it has more blank space so its intensity is lower than left, hence it looks not so intensive. Another point is, curve could also influence the feeling about intensity of visual. In this figure, I draw curves in different context. In left graphic, curve is drawn between two close lines. Hence it makes contrast in this situation, and it looks more active, unstable than under one. However, when curve is drawn between bigger space, it would be more harmony. conclusionSo far, Ive found some ruler in emotion-2-visuals. Intensive graphic could show more quick, sudden, nervous , strong feeling. Curve in intensive lines could increase contrast, oppositely, it could improve the motion in graphics. color intensityColor can easily shock the vision, and it can be simply explained, high saturation and high contrast of hue would make stronger effect.]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>abstract</tag>
+        <tag>emotion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Reflection 22ed Oct]]></title>
     <url>%2F2019%2F10%2F22%2Freflection-1022%2F</url>
     <content type="text"><![CDATA[what Ive doneIn early process, I’ve fulfilled the technic of detection of facial expression and engage it to drive graphic generation. However, the detection of facial-expression has a high frequency which reach least once/0.7s hence, the generation of graphic will consume huge of performance and would make lagging in future development. So I changed method in many times to expect a more smooth effect. programmingThe first changing is, I used 3D visual as main element in Web. Supported by WebGL, 3D element can be rendered with higher frequency in Web, so it can be more dynamic, and user can better realise the effecting of emotion. Secondly, I make emotional data influence lighting in 3d scene rather than directly effect on graphic. Hence the atmosphere can be showed with effected by sentiments. Thirdly, 3d animation was using in webpage. A interactive 3D animation would be attractive. paintingTo plan the composition of 3D element, I painted some sketches. In this idea, boxes are mapped with hand-draw style texture or some mixed-colour graphics, so each box can display different feeling. Besides, this style would make work attract more young viewer, the orthographical view is popular in Web which can show all of elements with same perspective so viewer can better focus on each individuals. Nice &amp; Badgood interaction3D is good for interaction on Web, user can control sight and distance by mouse, and they can affect visuals by their facial expression during I wrote face detection programming. So in this project viewer can interact with most of elements. Not only the hand activity, but also the facial expression would influence visuals, hence it access kind of abstract interaction. dynamic generationMost of element would be different because the factor of them is base on real-time data capture. bad interfaceBecause there are some function should be controlled by user, user interface is pretty ‘busy’ and uncomfortable so far. Furthermore, the main style of GUI has not been ensured, is it be stylish? warm? abstract or real-looking? bad introductionAs a Web and interactive application, this work must introduce user how they control or affect elements. Hence there is a serious problem, how I introduce user or encourage them to interact with these scene in this project. Next step design better GUI think about introduction and motivation which user would like to explore whole scenes. order of scenes]]></content>
@@ -169,10 +181,10 @@
         <category>journal</category>
       </categories>
       <tags>
-        <tag>population</tag>
         <tag>FMP</tag>
         <tag>technology</tag>
         <tag>media</tag>
+        <tag>population</tag>
       </tags>
   </entry>
   <entry>
@@ -329,8 +341,8 @@
       </categories>
       <tags>
         <tag>Javascript</tag>
-        <tag>3D</tag>
         <tag>Three JS</tag>
+        <tag>3D</tag>
       </tags>
   </entry>
   <entry>
@@ -389,8 +401,8 @@
       <tags>
         <tag>animation</tag>
         <tag>illustration</tag>
-        <tag>collaboration</tag>
         <tag>WEB</tag>
+        <tag>collaboration</tag>
       </tags>
   </entry>
   <entry>
@@ -520,9 +532,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[use GUI to build shape]]></title>
-    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
-    <content type="text"><![CDATA[use GUI to build shape]]></content>
+    <title><![CDATA[Oxford trip]]></title>
+    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
+    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -531,9 +543,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oxford trip]]></title>
-    <url>%2F2019%2F02%2F06%2FOxford-journal%2F</url>
-    <content type="text"><![CDATA[Go Oxfordexcept to go, Ashmolean Museum to see Jeff Koons I should arrived at 12:30 Pitt River Museum Transpot:Oxford Tube photo]]></content>
+    <title><![CDATA[use GUI to build shape]]></title>
+    <url>%2F2019%2F02%2F06%2Fuse-GUI-to-build-shape%2F</url>
+    <content type="text"><![CDATA[use GUI to build shape]]></content>
       <categories>
         <category>gallery</category>
       </categories>
@@ -773,10 +785,10 @@
         <category>journal</category>
       </categories>
       <tags>
+        <tag>variable</tag>
         <tag>critical thinking</tag>
         <tag>research</tag>
         <tag>note</tag>
-        <tag>variable</tag>
       </tags>
   </entry>
   <entry>
@@ -842,9 +854,9 @@
       <tags>
         <tag>idea</tag>
         <tag>digital</tag>
-        <tag>research</tag>
         <tag>variable</tag>
         <tag>programmer</tag>
+        <tag>research</tag>
         <tag>inspiration</tag>
       </tags>
   </entry>
